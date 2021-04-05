@@ -1,0 +1,53 @@
+--------------- Build Started: 03/23/2021 11:17:58 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\HP\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\Design01.cyprj" -d CY8C4245AXI-483 -s "C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0025: error: No input on Instance "A6", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_16)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_12.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_16)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_12.2)
+ADD: sdb.M0025: error: No input on Instance "A5", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_14)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_11.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_14)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_11.2)
+ADD: sdb.M0025: error: No input on Instance "A7", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_12)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_10.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_12)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_10.2)
+ADD: sdb.M0025: error: No input on Instance "A1", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_8)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_8.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_8)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_8.2)
+ADD: sdb.M0025: error: No input on Instance "A8", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_22)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_15.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_22)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_15.2)
+ADD: sdb.M0025: error: No input on Instance "A4", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_24)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_16.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_24)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_16.2)
+ADD: sdb.M0025: error: No input on Instance "A3", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_26)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_17.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_26)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_17.2)
+ADD: sdb.M0025: error: No input on Instance "A2", terminal "y_0".
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_28)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_18.2)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_28)
+ * C:\Users\HP\Documents\PSoC Creator\Workspace03\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_18.2)
+Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
+--------------- Build Failed: 03/23/2021 11:18:03 ---------------

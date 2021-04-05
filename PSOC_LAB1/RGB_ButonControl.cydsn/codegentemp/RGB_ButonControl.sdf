@@ -1,0 +1,22 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2021-03-21T13:56:43Z")
+ (DESIGN "RGB_ButonControl")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "RGB_ButonControl")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT RED\(0\)_PAD RED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT GREEN\(0\)_PAD GREEN\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT BLUE\(0\)_PAD BLUE\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT sw\(0\)_PAD sw\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

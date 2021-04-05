@@ -1,0 +1,8 @@
+D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o : D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
+
+D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+
+D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
+
+D:/TUTORIALS/PSOC_LAB2/karasimsek.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
+

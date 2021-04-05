@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LAB_3_PSOC\049kit_LED_Blink">
+<ExpandedNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\TopDesign</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Pins</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Analog</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Clocks</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Interrupts</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\System</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Directives</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.cydwr\Flash Security</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Header Files</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Header Files\cyapicallbacks.h</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Source Files</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Source Files\main.c</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Generated_Source</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Generated_Source\PSoC4</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\TopDesign</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Pins</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Analog</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Clocks</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Interrupts</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\System</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Directives</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.cydwr\Flash Security</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Header Files</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Header Files\cyapicallbacks.h</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Source Files</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Source Files\main.c</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Generated_Source</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Generated_Source\PSoC4</v>
+<v>LAB_3_PSOC\Capsense_049\TopDesign</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Pins</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Analog</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Clocks</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Interrupts</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\System</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Directives</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.cydwr\Flash Security</v>
+<v>LAB_3_PSOC\Capsense_049\Header Files</v>
+<v>LAB_3_PSOC\Capsense_049\Header Files\cyapicallbacks.h</v>
+<v>LAB_3_PSOC\Capsense_049\Source Files</v>
+<v>LAB_3_PSOC\Capsense_049\Source Files\main.c</v>
+<v>LAB_3_PSOC\Capsense_049\Generated_Source</v>
+<v>LAB_3_PSOC\Capsense_049\Generated_Source\PSoC4</v>
+<v>LAB_3_PSOC\Clock_App\TopDesign</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Pins</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Analog</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Clocks</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Interrupts</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\System</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Directives</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.cydwr\Flash Security</v>
+<v>LAB_3_PSOC\Clock_App\Header Files</v>
+<v>LAB_3_PSOC\Clock_App\Header Files\cyapicallbacks.h</v>
+<v>LAB_3_PSOC\Clock_App\Source Files</v>
+<v>LAB_3_PSOC\Clock_App\Source Files\main.c</v>
+<v>LAB_3_PSOC\Clock_App\Generated_Source</v>
+<v>LAB_3_PSOC\Clock_App\Generated_Source\PSoC4</v>
+<v>LAB_3_PSOC\UltraSonic180715\TopDesign</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Pins</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Analog</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\DMA</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Clocks</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Interrupts</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\System</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Directives</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.cydwr\Flash Security</v>
+<v>LAB_3_PSOC\UltraSonic180715\Header Files</v>
+<v>LAB_3_PSOC\UltraSonic180715\Header Files\cyapicallbacks.h</v>
+<v>LAB_3_PSOC\UltraSonic180715\Source Files</v>
+<v>LAB_3_PSOC\UltraSonic180715\Source Files\main.c</v>
+<v>LAB_3_PSOC\UltraSonic180715\Generated_Source</v>
+<v>LAB_3_PSOC\UltraSonic180715\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Clock_App</v>
+<v>LAB_3_PSOC\UltraSonic180715</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\TopDesign</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\TopDesign</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Capsense_049\TopDesign</v>
+<v>LAB_3_PSOC\Capsense_049\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\Clock_App</v>
+<v>LAB_3_PSOC\Clock_App\TopDesign</v>
+<v>LAB_3_PSOC\Clock_App\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\UltraSonic180715</v>
+<v>LAB_3_PSOC\UltraSonic180715\TopDesign</v>
+<v>LAB_3_PSOC\UltraSonic180715\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\TopDesign</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\TopDesign</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Capsense_049\TopDesign</v>
+<v>LAB_3_PSOC\Capsense_049\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\Clock_App</v>
+<v>LAB_3_PSOC\Clock_App\TopDesign</v>
+<v>LAB_3_PSOC\Clock_App\TopDesign\TopDesign.cysch</v>
+<v>LAB_3_PSOC\UltraSonic180715</v>
+<v>LAB_3_PSOC\UltraSonic180715\TopDesign</v>
+<v>LAB_3_PSOC\UltraSonic180715\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Led_blink.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Led_blink_PM.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.cyacd</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.elf</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.hex</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.map</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.gpdsc</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.rpt</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink_timing.html</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_1_PM.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_2.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_2_PM.lst</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\8x8DOT_Matrix.cyacd</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\8x8DOT_Matrix.elf</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\8x8DOT_Matrix.hex</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\CortexM0\ARM_GCC_541\Debug\8x8DOT_Matrix.map</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.gpdsc</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix.rpt</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\8x8DOT_Matrix_timing.html</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_CSHL.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_INT.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_PM.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_SampleClk.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_SenseClk.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_SMS.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CapSense_TunerHelper.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_PM.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Capsense_049.cyacd</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Capsense_049.elf</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Capsense_049.hex</v>
+<v>LAB_3_PSOC\Capsense_049\CortexM0\ARM_GCC_541\Debug\Capsense_049.map</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.gpdsc</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049.rpt</v>
+<v>LAB_3_PSOC\Capsense_049\Capsense_049_timing.html</v>
+<v>LAB_3_PSOC\Clock_App</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Back_Light_On_N.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Back_Light_On_N_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Back_Light_On_P.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Back_Light_On_P_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\ISR.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_Char.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_Char_BarGraph.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_Char_LCDPort.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_Char_LCDPort_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_Char_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Power_Up_LCD_Pin_1.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Power_Up_LCD_Pin_1_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Set_Time.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\Set_Time_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\SetTime_ISR.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\TCPWM_1.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Listing Files\TCPWM_1_PM.lst</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Clock_App.cyacd</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Clock_App.elf</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Clock_App.hex</v>
+<v>LAB_3_PSOC\Clock_App\CortexM0\ARM_GCC_541\Debug\Clock_App.map</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.gpdsc</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App.rpt</v>
+<v>LAB_3_PSOC\Clock_App\Clock_App_timing.html</v>
+<v>LAB_3_PSOC\UltraSonic180715</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_12MHz.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\CyDMA.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Echo.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Echo_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Trigger.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\Trigger_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SCBCLK.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx_PM.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART_BOOT.lst</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\UltraSonic180715.elf</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\UltraSonic180715.hex</v>
+<v>LAB_3_PSOC\UltraSonic180715\CortexM0\ARM_GCC_541\Debug\UltraSonic180715.map</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.gpdsc</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715.rpt</v>
+<v>LAB_3_PSOC\UltraSonic180715\UltraSonic180715_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable_1.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Led_blink.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Led_blink_PM.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.cyacd</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.elf</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.hex</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\CortexM0\ARM_GCC_541\Debug\049kit_LED_Blink.map</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.gpdsc</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink.rpt</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\049kit_LED_Blink_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\cy_pins_v2_20</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Capsense_049\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\Capsense_049\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\Capsense_049\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\CapSense_CSD_P4_v2_60.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\cy_clock_v2_20.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\TCPWM_P4_v2_10.pdf</v>
+<v>LAB_3_PSOC\Clock_App</v>
+<v>LAB_3_PSOC\Clock_App\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\Clock_App\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\Clock_App\System Reference Guides</v>
+<v>LAB_3_PSOC\Clock_App\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\Clock_App\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\Clock_App\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\Clock_App\CharLCD_v2_20.pdf</v>
+<v>LAB_3_PSOC\Clock_App\cy_clock_v2_20.pdf</v>
+<v>LAB_3_PSOC\Clock_App\cy_isr_v1_70</v>
+<v>LAB_3_PSOC\Clock_App\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>LAB_3_PSOC\Clock_App\cy_pins_v2_20</v>
+<v>LAB_3_PSOC\Clock_App\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\Clock_App\TCPWM_P4_v2_10.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715</v>
+<v>LAB_3_PSOC\UltraSonic180715\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\UltraSonic180715\PSoC 4200M Family Datasheet</v>
+<v>LAB_3_PSOC\UltraSonic180715\System Reference Guides</v>
+<v>LAB_3_PSOC\UltraSonic180715\System Reference Guides\cy_boot_v5_70</v>
+<v>LAB_3_PSOC\UltraSonic180715\System Reference Guides\cy_dmac_v1_10</v>
+<v>LAB_3_PSOC\UltraSonic180715\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\UltraSonic180715\Connector20_v1_0.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\cy_clock_v2_20.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\cy_pins_v2_20</v>
+<v>LAB_3_PSOC\UltraSonic180715\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\Gnd_v1_0.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\Power_v1_0.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\SCB_P4_v4_0.pdf</v>
+<v>LAB_3_PSOC\UltraSonic180715\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LAB_3_PSOC</v>
+<v>LAB_3_PSOC\049kit_LED_Blink</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\049kit_LED_Blink\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\cy_pins_v2_20</v>
+<v>LAB_3_PSOC\8x8DOT_Matrix\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LAB_3_PSOC\Capsense_049</v>
+<v>LAB_3_PSOC\Capsense_049\PSoC 4 Architecture TRM</v>
+<v>LAB_3_PSOC\Capsense_049\PSoC 4200 Family Datasheet</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides\cy_boot_v6_0</v>
+<v>LAB_3_PSOC\Capsense_049\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LAB_3_PSOC\Capsense_049\Bootloadable_v1_60.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\CapSense_CSD_P4_v2_60.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\cy_clock_v2_20.pdf</v>
+<v>LAB_3_PSOC\Capsense_049\cy_pins_v2_20.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs />
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1169, 554" SelectedTabbedMdiWindow="0a0a9eb4-c96c-42d7-8d3a-7c442e8e39b6"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0a0a9eb4-c96c-42d7-8d3a-7c442e8e39b6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

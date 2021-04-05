@@ -1,0 +1,73 @@
+#***************************************************************************
+
+#sjplacer
+
+#Version:            1.1
+
+#Build Date:         Sep  9 2019 11:47:43
+
+#File Generated:     Mar 29 2021 21:02:33
+
+#Purpose:            
+
+#Copyright (C) 2010-2011 by Softjin Technologies Pvt Ltd. All rights reserved.
+
+#***************************************************************************
+
+Executing : D:\PSoC Creator\4.4\PSoC Creator\bin/sjplacer.exe --proj-name karasimsek --netlist-vh2 karasimsek_p.vh2 --arch p4_udb2x2a --arch-file D:\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_2x2_04.cydata --ip-file D:\PSoC Creator\4.4\PSoC Creator\dev\psoc4/psoc4a/ip_blocks.cydata --rrg-file D:\PSoC Creator\4.4\PSoC Creator\dev\psoc4/psoc4a/route_arch-rrg.cydata --irq-file D:\PSoC Creator\4.4\PSoC Creator\dev\psoc4/psoc4a/irqconn.cydata --dsi-conn-file D:\PSoC Creator\4.4\PSoC Creator\dev\psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file karasimsek_p.lib --sdc-file karasimsek.sdc --io-pcf karasimsek.pci --outdir .
+
+		Softjin Techologies Placer, Version 1.1
+
+Build Date : Sep  9 2019	11:45:12
+
+D2004: Option and Settings Summary
+=============================================================
+Netlist vh2 file          - karasimsek_p.vh2
+Architecture file         - D:\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_2x2_04.cydata
+Package                   - 
+Defparam file             - 
+SDC file                  - karasimsek.sdc
+Output directory          - .
+Timing library            - karasimsek_p.lib
+IO Placement file         - karasimsek.pci
+
+D2050: Starting reading inputs for placer
+=============================================================
+D2065: Reading netlist file : "karasimsek_p.vh2"
+D2065: Reading arch file : "D:\PSoC Creator\4.4\PSoC Creator\dev\arch/udbdsi_2x2_04.cydata"
+D2051: Reading of inputs for placer completed successfully
+
+D2053: Starting placement of the design
+=============================================================
+
+Phase 2
+Phase 3
+I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
+
+Design Statistics after Packing
+    Number of Combinational MCs 	:	0
+    Number of Sequential MCs    	:	0
+    Number of DPs               	:	0
+    Number of Controls          	:	0
+    Number of Status            	:	0
+    Number of SyncCells         	:	0
+    Number of count7cells       	:	0
+
+Device Utilization Summary after Packing
+    Macrocells                  :	0/32
+    UDBS                        :	0/4
+    IOs                         :	8/36
+
+
+D2088: Phase 3, elapsed time : 0.0 (sec)
+
+Phase 4
+D2088: Phase 4, elapsed time : 0.0 (sec)
+
+Phase 8
+D2088: Phase 8, elapsed time : 0.0 (sec)
+
+D2054: Placement of the design completed successfully
+
+I2076: Total run-time: 0.4 sec.
+

@@ -1,0 +1,20 @@
+net ClockBlock_HFClk
+	term   ":m0s8clockblockcell.hfclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_0.clock"
+	term   ":interrupt_0.clock"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_16.clock"
+	term   ":interrupt_16.clock"
+end ClockBlock_HFClk
+net Net_189
+	term   ":logicalport_0.interrupt"
+	switch ":logicalport_0.interrupt==>Stub-:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v16+:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v18"
+	switch "Stub-:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v16+:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v18==>:interrupt_idmux_0.in_0"
+	switch ":interrupt_idmux_0.interrupt_idmux_0__out==>:interrupt_0.interrupt"
+	term   ":interrupt_0.interrupt"
+end Net_189
+net Net_37
+	term   ":m0s8tcpwmcell_0.interrupt"
+	switch ":m0s8tcpwmcell_0.interrupt==>:interrupt_idmux_16.in_0"
+	switch ":interrupt_idmux_16.interrupt_idmux_16__out==>:interrupt_16.interrupt"
+	term   ":interrupt_16.interrupt"
+end Net_37

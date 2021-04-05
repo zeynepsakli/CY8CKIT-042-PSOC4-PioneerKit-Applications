@@ -1,0 +1,1214 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Segment_disp.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Segment_disp_SetDriveMode,"ax",%progbits
+  20              		.align	2
+  21              		.global	Segment_disp_SetDriveMode
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Segment_disp_SetDriveMode, %function
+  25              	Segment_disp_SetDriveMode:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC4\\Segment_disp.c"
+   1:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/Segment_disp.c **** * File Name: Segment_disp.c  
+   3:Generated_Source\PSoC4/Segment_disp.c **** * Version 2.20
+   4:Generated_Source\PSoC4/Segment_disp.c **** *
+   5:Generated_Source\PSoC4/Segment_disp.c **** * Description:
+   6:Generated_Source\PSoC4/Segment_disp.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:Generated_Source\PSoC4/Segment_disp.c **** *
+   8:Generated_Source\PSoC4/Segment_disp.c **** ********************************************************************************
+   9:Generated_Source\PSoC4/Segment_disp.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  10:Generated_Source\PSoC4/Segment_disp.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  11:Generated_Source\PSoC4/Segment_disp.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  12:Generated_Source\PSoC4/Segment_disp.c **** * the software package with which this file was provided.
+  13:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+  14:Generated_Source\PSoC4/Segment_disp.c **** 
+  15:Generated_Source\PSoC4/Segment_disp.c **** #include "cytypes.h"
+  16:Generated_Source\PSoC4/Segment_disp.c **** #include "Segment_disp.h"
+  17:Generated_Source\PSoC4/Segment_disp.c **** 
+  18:Generated_Source\PSoC4/Segment_disp.c **** 
+  19:Generated_Source\PSoC4/Segment_disp.c **** #if defined(Segment_disp__PC)
+  20:Generated_Source\PSoC4/Segment_disp.c ****     #define Segment_disp_SetP4PinDriveMode(shift, mode)  \
+  21:Generated_Source\PSoC4/Segment_disp.c ****     do { \
+  22:Generated_Source\PSoC4/Segment_disp.c ****         Segment_disp_PC =   (Segment_disp_PC & \
+  23:Generated_Source\PSoC4/Segment_disp.c ****                                 (uint32)(~(uint32)(Segment_disp_DRIVE_MODE_IND_MASK << \
+  24:Generated_Source\PSoC4/Segment_disp.c ****                                 (Segment_disp_DRIVE_MODE_BITS * (shift))))) | \
+  25:Generated_Source\PSoC4/Segment_disp.c ****                                 (uint32)((uint32)(mode) << \
+  26:Generated_Source\PSoC4/Segment_disp.c ****                                 (Segment_disp_DRIVE_MODE_BITS * (shift))); \
+  27:Generated_Source\PSoC4/Segment_disp.c ****     } while (0)
+  28:Generated_Source\PSoC4/Segment_disp.c **** #else
+  29:Generated_Source\PSoC4/Segment_disp.c ****     #if (CY_PSOC4_4200L)
+  30:Generated_Source\PSoC4/Segment_disp.c ****         #define Segment_disp_SetP4PinDriveMode(shift, mode)  \
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 2
+
+
+  31:Generated_Source\PSoC4/Segment_disp.c ****         do { \
+  32:Generated_Source\PSoC4/Segment_disp.c ****             Segment_disp_USBIO_CTRL_REG = (Segment_disp_USBIO_CTRL_REG & \
+  33:Generated_Source\PSoC4/Segment_disp.c ****                                     (uint32)(~(uint32)(Segment_disp_DRIVE_MODE_IND_MASK << \
+  34:Generated_Source\PSoC4/Segment_disp.c ****                                     (Segment_disp_DRIVE_MODE_BITS * (shift))))) | \
+  35:Generated_Source\PSoC4/Segment_disp.c ****                                     (uint32)((uint32)(mode) << \
+  36:Generated_Source\PSoC4/Segment_disp.c ****                                     (Segment_disp_DRIVE_MODE_BITS * (shift))); \
+  37:Generated_Source\PSoC4/Segment_disp.c ****         } while (0)
+  38:Generated_Source\PSoC4/Segment_disp.c ****     #endif
+  39:Generated_Source\PSoC4/Segment_disp.c **** #endif
+  40:Generated_Source\PSoC4/Segment_disp.c ****   
+  41:Generated_Source\PSoC4/Segment_disp.c **** 
+  42:Generated_Source\PSoC4/Segment_disp.c **** #if defined(Segment_disp__PC) || (CY_PSOC4_4200L) 
+  43:Generated_Source\PSoC4/Segment_disp.c ****     /*******************************************************************************
+  44:Generated_Source\PSoC4/Segment_disp.c ****     * Function Name: Segment_disp_SetDriveMode
+  45:Generated_Source\PSoC4/Segment_disp.c ****     ****************************************************************************//**
+  46:Generated_Source\PSoC4/Segment_disp.c ****     *
+  47:Generated_Source\PSoC4/Segment_disp.c ****     * \brief Sets the drive mode for each of the Pins component's pins.
+  48:Generated_Source\PSoC4/Segment_disp.c ****     * 
+  49:Generated_Source\PSoC4/Segment_disp.c ****     * <b>Note</b> This affects all pins in the Pins component instance. Use the
+  50:Generated_Source\PSoC4/Segment_disp.c ****     * Per-Pin APIs if you wish to control individual pin's drive modes.
+  51:Generated_Source\PSoC4/Segment_disp.c ****     *
+  52:Generated_Source\PSoC4/Segment_disp.c ****     * <b>Note</b> USBIOs have limited drive functionality. Refer to the Drive Mode
+  53:Generated_Source\PSoC4/Segment_disp.c ****     * parameter for more information.
+  54:Generated_Source\PSoC4/Segment_disp.c ****     *
+  55:Generated_Source\PSoC4/Segment_disp.c ****     * \param mode
+  56:Generated_Source\PSoC4/Segment_disp.c ****     *  Mode for the selected signals. Valid options are documented in 
+  57:Generated_Source\PSoC4/Segment_disp.c ****     *  \ref driveMode.
+  58:Generated_Source\PSoC4/Segment_disp.c ****     *
+  59:Generated_Source\PSoC4/Segment_disp.c ****     * \return
+  60:Generated_Source\PSoC4/Segment_disp.c ****     *  None
+  61:Generated_Source\PSoC4/Segment_disp.c ****     *
+  62:Generated_Source\PSoC4/Segment_disp.c ****     * \sideeffect
+  63:Generated_Source\PSoC4/Segment_disp.c ****     *  If you use read-modify-write operations that are not atomic, the ISR can
+  64:Generated_Source\PSoC4/Segment_disp.c ****     *  cause corruption of this function. An ISR that interrupts this function 
+  65:Generated_Source\PSoC4/Segment_disp.c ****     *  and performs writes to the Pins component Drive Mode registers can cause 
+  66:Generated_Source\PSoC4/Segment_disp.c ****     *  corrupted port data. To avoid this issue, you should either use the Per-Pin
+  67:Generated_Source\PSoC4/Segment_disp.c ****     *  APIs (primary method) or disable interrupts around this function.
+  68:Generated_Source\PSoC4/Segment_disp.c ****     *
+  69:Generated_Source\PSoC4/Segment_disp.c ****     * \funcusage
+  70:Generated_Source\PSoC4/Segment_disp.c ****     *  \snippet Segment_disp_SUT.c usage_Segment_disp_SetDriveMode
+  71:Generated_Source\PSoC4/Segment_disp.c ****     *******************************************************************************/
+  72:Generated_Source\PSoC4/Segment_disp.c ****     void Segment_disp_SetDriveMode(uint8 mode)
+  73:Generated_Source\PSoC4/Segment_disp.c ****     {
+  28              		.loc 1 73 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  74:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__0__SHIFT, mode);
+  34              		.loc 1 74 0
+  35 0000 154B     		ldr	r3, .L2
+  36 0002 1A68     		ldr	r2, [r3]
+  37 0004 0721     		movs	r1, #7
+  38 0006 8A43     		bics	r2, r1
+  39 0008 0243     		orrs	r2, r0
+  40 000a 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 3
+
+
+  75:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__1__SHIFT, mode);
+  41              		.loc 1 75 0
+  42 000c 1A68     		ldr	r2, [r3]
+  43 000e 3131     		adds	r1, r1, #49
+  44 0010 8A43     		bics	r2, r1
+  45 0012 C100     		lsls	r1, r0, #3
+  46 0014 0A43     		orrs	r2, r1
+  47 0016 1A60     		str	r2, [r3]
+  76:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__2__SHIFT, mode);
+  48              		.loc 1 76 0
+  49 0018 1968     		ldr	r1, [r3]
+  50 001a 104A     		ldr	r2, .L2+4
+  51 001c 0A40     		ands	r2, r1
+  52 001e 8101     		lsls	r1, r0, #6
+  53 0020 0A43     		orrs	r2, r1
+  54 0022 1A60     		str	r2, [r3]
+  77:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__3__SHIFT, mode);
+  55              		.loc 1 77 0
+  56 0024 1968     		ldr	r1, [r3]
+  57 0026 0E4A     		ldr	r2, .L2+8
+  58 0028 0A40     		ands	r2, r1
+  59 002a 4102     		lsls	r1, r0, #9
+  60 002c 0A43     		orrs	r2, r1
+  61 002e 1A60     		str	r2, [r3]
+  78:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__4__SHIFT, mode);
+  62              		.loc 1 78 0
+  63 0030 1968     		ldr	r1, [r3]
+  64 0032 0C4A     		ldr	r2, .L2+12
+  65 0034 0A40     		ands	r2, r1
+  66 0036 0103     		lsls	r1, r0, #12
+  67 0038 0A43     		orrs	r2, r1
+  68 003a 1A60     		str	r2, [r3]
+  79:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__5__SHIFT, mode);
+  69              		.loc 1 79 0
+  70 003c 1968     		ldr	r1, [r3]
+  71 003e 0A4A     		ldr	r2, .L2+16
+  72 0040 0A40     		ands	r2, r1
+  73 0042 C103     		lsls	r1, r0, #15
+  74 0044 0A43     		orrs	r2, r1
+  75 0046 1A60     		str	r2, [r3]
+  80:Generated_Source\PSoC4/Segment_disp.c **** 		Segment_disp_SetP4PinDriveMode(Segment_disp__6__SHIFT, mode);
+  76              		.loc 1 80 0
+  77 0048 1968     		ldr	r1, [r3]
+  78 004a 084A     		ldr	r2, .L2+20
+  79 004c 0A40     		ands	r2, r1
+  80 004e 8004     		lsls	r0, r0, #18
+  81              	.LVL1:
+  82 0050 1043     		orrs	r0, r2
+  83 0052 1860     		str	r0, [r3]
+  81:Generated_Source\PSoC4/Segment_disp.c ****     }
+  84              		.loc 1 81 0
+  85              		@ sp needed
+  86 0054 7047     		bx	lr
+  87              	.L3:
+  88 0056 C046     		.align	2
+  89              	.L2:
+  90 0058 08000440 		.word	1074003976
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 4
+
+
+  91 005c 3FFEFFFF 		.word	-449
+  92 0060 FFF1FFFF 		.word	-3585
+  93 0064 FF8FFFFF 		.word	-28673
+  94 0068 FF7FFCFF 		.word	-229377
+  95 006c FFFFE3FF 		.word	-1835009
+  96              		.cfi_endproc
+  97              	.LFE0:
+  98              		.size	Segment_disp_SetDriveMode, .-Segment_disp_SetDriveMode
+  99              		.section	.text.Segment_disp_Write,"ax",%progbits
+ 100              		.align	2
+ 101              		.global	Segment_disp_Write
+ 102              		.code	16
+ 103              		.thumb_func
+ 104              		.type	Segment_disp_Write, %function
+ 105              	Segment_disp_Write:
+ 106              	.LFB1:
+  82:Generated_Source\PSoC4/Segment_disp.c **** #endif
+  83:Generated_Source\PSoC4/Segment_disp.c **** 
+  84:Generated_Source\PSoC4/Segment_disp.c **** 
+  85:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+  86:Generated_Source\PSoC4/Segment_disp.c **** * Function Name: Segment_disp_Write
+  87:Generated_Source\PSoC4/Segment_disp.c **** ****************************************************************************//**
+  88:Generated_Source\PSoC4/Segment_disp.c **** *
+  89:Generated_Source\PSoC4/Segment_disp.c **** * \brief Writes the value to the physical port (data output register), masking
+  90:Generated_Source\PSoC4/Segment_disp.c **** *  and shifting the bits appropriately. 
+  91:Generated_Source\PSoC4/Segment_disp.c **** *
+  92:Generated_Source\PSoC4/Segment_disp.c **** * The data output register controls the signal applied to the physical pin in 
+  93:Generated_Source\PSoC4/Segment_disp.c **** * conjunction with the drive mode parameter. This function avoids changing 
+  94:Generated_Source\PSoC4/Segment_disp.c **** * other bits in the port by using the appropriate method (read-modify-write or
+  95:Generated_Source\PSoC4/Segment_disp.c **** * bit banding).
+  96:Generated_Source\PSoC4/Segment_disp.c **** *
+  97:Generated_Source\PSoC4/Segment_disp.c **** * <b>Note</b> This function should not be used on a hardware digital output pin 
+  98:Generated_Source\PSoC4/Segment_disp.c **** * as it is driven by the hardware signal attached to it.
+  99:Generated_Source\PSoC4/Segment_disp.c **** *
+ 100:Generated_Source\PSoC4/Segment_disp.c **** * \param value
+ 101:Generated_Source\PSoC4/Segment_disp.c **** *  Value to write to the component instance.
+ 102:Generated_Source\PSoC4/Segment_disp.c **** *
+ 103:Generated_Source\PSoC4/Segment_disp.c **** * \return 
+ 104:Generated_Source\PSoC4/Segment_disp.c **** *  None 
+ 105:Generated_Source\PSoC4/Segment_disp.c **** *
+ 106:Generated_Source\PSoC4/Segment_disp.c **** * \sideeffect
+ 107:Generated_Source\PSoC4/Segment_disp.c **** *  If you use read-modify-write operations that are not atomic; the Interrupt 
+ 108:Generated_Source\PSoC4/Segment_disp.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
+ 109:Generated_Source\PSoC4/Segment_disp.c **** *  interrupts this function and performs writes to the Pins component data 
+ 110:Generated_Source\PSoC4/Segment_disp.c **** *  register can cause corrupted port data. To avoid this issue, you should 
+ 111:Generated_Source\PSoC4/Segment_disp.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
+ 112:Generated_Source\PSoC4/Segment_disp.c **** *  this function.
+ 113:Generated_Source\PSoC4/Segment_disp.c **** *
+ 114:Generated_Source\PSoC4/Segment_disp.c **** * \funcusage
+ 115:Generated_Source\PSoC4/Segment_disp.c **** *  \snippet Segment_disp_SUT.c usage_Segment_disp_Write
+ 116:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+ 117:Generated_Source\PSoC4/Segment_disp.c **** void Segment_disp_Write(uint8 value)
+ 118:Generated_Source\PSoC4/Segment_disp.c **** {
+ 107              		.loc 1 118 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 5
+
+
+ 111              		@ link register save eliminated.
+ 112              	.LVL2:
+ 119:Generated_Source\PSoC4/Segment_disp.c ****     uint8 drVal = (uint8)(Segment_disp_DR & (uint8)(~Segment_disp_MASK));
+ 113              		.loc 1 119 0
+ 114 0000 044A     		ldr	r2, .L5
+ 115 0002 1368     		ldr	r3, [r2]
+ 116 0004 DBB2     		uxtb	r3, r3
+ 117 0006 7F21     		movs	r1, #127
+ 118 0008 8B43     		bics	r3, r1
+ 119              	.LVL3:
+ 120:Generated_Source\PSoC4/Segment_disp.c ****     drVal = (drVal | ((uint8)(value << Segment_disp_SHIFT) & Segment_disp_MASK));
+ 120              		.loc 1 120 0
+ 121 000a 0840     		ands	r0, r1
+ 122              	.LVL4:
+ 123 000c 1843     		orrs	r0, r3
+ 124              	.LVL5:
+ 121:Generated_Source\PSoC4/Segment_disp.c ****     Segment_disp_DR = (uint32)drVal;
+ 125              		.loc 1 121 0
+ 126 000e 1060     		str	r0, [r2]
+ 122:Generated_Source\PSoC4/Segment_disp.c **** }
+ 127              		.loc 1 122 0
+ 128              		@ sp needed
+ 129 0010 7047     		bx	lr
+ 130              	.L6:
+ 131 0012 C046     		.align	2
+ 132              	.L5:
+ 133 0014 00000440 		.word	1074003968
+ 134              		.cfi_endproc
+ 135              	.LFE1:
+ 136              		.size	Segment_disp_Write, .-Segment_disp_Write
+ 137              		.section	.text.Segment_disp_Read,"ax",%progbits
+ 138              		.align	2
+ 139              		.global	Segment_disp_Read
+ 140              		.code	16
+ 141              		.thumb_func
+ 142              		.type	Segment_disp_Read, %function
+ 143              	Segment_disp_Read:
+ 144              	.LFB2:
+ 123:Generated_Source\PSoC4/Segment_disp.c **** 
+ 124:Generated_Source\PSoC4/Segment_disp.c **** 
+ 125:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+ 126:Generated_Source\PSoC4/Segment_disp.c **** * Function Name: Segment_disp_Read
+ 127:Generated_Source\PSoC4/Segment_disp.c **** ****************************************************************************//**
+ 128:Generated_Source\PSoC4/Segment_disp.c **** *
+ 129:Generated_Source\PSoC4/Segment_disp.c **** * \brief Reads the associated physical port (pin status register) and masks 
+ 130:Generated_Source\PSoC4/Segment_disp.c **** *  the required bits according to the width and bit position of the component
+ 131:Generated_Source\PSoC4/Segment_disp.c **** *  instance. 
+ 132:Generated_Source\PSoC4/Segment_disp.c **** *
+ 133:Generated_Source\PSoC4/Segment_disp.c **** * The pin's status register returns the current logic level present on the 
+ 134:Generated_Source\PSoC4/Segment_disp.c **** * physical pin.
+ 135:Generated_Source\PSoC4/Segment_disp.c **** *
+ 136:Generated_Source\PSoC4/Segment_disp.c **** * \return 
+ 137:Generated_Source\PSoC4/Segment_disp.c **** *  The current value for the pins in the component as a right justified number.
+ 138:Generated_Source\PSoC4/Segment_disp.c **** *
+ 139:Generated_Source\PSoC4/Segment_disp.c **** * \funcusage
+ 140:Generated_Source\PSoC4/Segment_disp.c **** *  \snippet Segment_disp_SUT.c usage_Segment_disp_Read  
+ 141:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 6
+
+
+ 142:Generated_Source\PSoC4/Segment_disp.c **** uint8 Segment_disp_Read(void)
+ 143:Generated_Source\PSoC4/Segment_disp.c **** {
+ 145              		.loc 1 143 0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 144:Generated_Source\PSoC4/Segment_disp.c ****     return (uint8)((Segment_disp_PS & Segment_disp_MASK) >> Segment_disp_SHIFT);
+ 150              		.loc 1 144 0
+ 151 0000 024B     		ldr	r3, .L8
+ 152 0002 1B68     		ldr	r3, [r3]
+ 153 0004 7F20     		movs	r0, #127
+ 154 0006 1840     		ands	r0, r3
+ 145:Generated_Source\PSoC4/Segment_disp.c **** }
+ 155              		.loc 1 145 0
+ 156              		@ sp needed
+ 157 0008 7047     		bx	lr
+ 158              	.L9:
+ 159 000a C046     		.align	2
+ 160              	.L8:
+ 161 000c 04000440 		.word	1074003972
+ 162              		.cfi_endproc
+ 163              	.LFE2:
+ 164              		.size	Segment_disp_Read, .-Segment_disp_Read
+ 165              		.section	.text.Segment_disp_ReadDataReg,"ax",%progbits
+ 166              		.align	2
+ 167              		.global	Segment_disp_ReadDataReg
+ 168              		.code	16
+ 169              		.thumb_func
+ 170              		.type	Segment_disp_ReadDataReg, %function
+ 171              	Segment_disp_ReadDataReg:
+ 172              	.LFB3:
+ 146:Generated_Source\PSoC4/Segment_disp.c **** 
+ 147:Generated_Source\PSoC4/Segment_disp.c **** 
+ 148:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+ 149:Generated_Source\PSoC4/Segment_disp.c **** * Function Name: Segment_disp_ReadDataReg
+ 150:Generated_Source\PSoC4/Segment_disp.c **** ****************************************************************************//**
+ 151:Generated_Source\PSoC4/Segment_disp.c **** *
+ 152:Generated_Source\PSoC4/Segment_disp.c **** * \brief Reads the associated physical port's data output register and masks 
+ 153:Generated_Source\PSoC4/Segment_disp.c **** *  the correct bits according to the width and bit position of the component 
+ 154:Generated_Source\PSoC4/Segment_disp.c **** *  instance. 
+ 155:Generated_Source\PSoC4/Segment_disp.c **** *
+ 156:Generated_Source\PSoC4/Segment_disp.c **** * The data output register controls the signal applied to the physical pin in 
+ 157:Generated_Source\PSoC4/Segment_disp.c **** * conjunction with the drive mode parameter. This is not the same as the 
+ 158:Generated_Source\PSoC4/Segment_disp.c **** * preferred Segment_disp_Read() API because the 
+ 159:Generated_Source\PSoC4/Segment_disp.c **** * Segment_disp_ReadDataReg() reads the data register instead of the status 
+ 160:Generated_Source\PSoC4/Segment_disp.c **** * register. For output pins this is a useful function to determine the value 
+ 161:Generated_Source\PSoC4/Segment_disp.c **** * just written to the pin.
+ 162:Generated_Source\PSoC4/Segment_disp.c **** *
+ 163:Generated_Source\PSoC4/Segment_disp.c **** * \return 
+ 164:Generated_Source\PSoC4/Segment_disp.c **** *  The current value of the data register masked and shifted into a right 
+ 165:Generated_Source\PSoC4/Segment_disp.c **** *  justified number for the component instance.
+ 166:Generated_Source\PSoC4/Segment_disp.c **** *
+ 167:Generated_Source\PSoC4/Segment_disp.c **** * \funcusage
+ 168:Generated_Source\PSoC4/Segment_disp.c **** *  \snippet Segment_disp_SUT.c usage_Segment_disp_ReadDataReg 
+ 169:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+ 170:Generated_Source\PSoC4/Segment_disp.c **** uint8 Segment_disp_ReadDataReg(void)
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 7
+
+
+ 171:Generated_Source\PSoC4/Segment_disp.c **** {
+ 173              		.loc 1 171 0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 172:Generated_Source\PSoC4/Segment_disp.c ****     return (uint8)((Segment_disp_DR & Segment_disp_MASK) >> Segment_disp_SHIFT);
+ 178              		.loc 1 172 0
+ 179 0000 024B     		ldr	r3, .L11
+ 180 0002 1B68     		ldr	r3, [r3]
+ 181 0004 7F20     		movs	r0, #127
+ 182 0006 1840     		ands	r0, r3
+ 173:Generated_Source\PSoC4/Segment_disp.c **** }
+ 183              		.loc 1 173 0
+ 184              		@ sp needed
+ 185 0008 7047     		bx	lr
+ 186              	.L12:
+ 187 000a C046     		.align	2
+ 188              	.L11:
+ 189 000c 00000440 		.word	1074003968
+ 190              		.cfi_endproc
+ 191              	.LFE3:
+ 192              		.size	Segment_disp_ReadDataReg, .-Segment_disp_ReadDataReg
+ 193              		.section	.text.Segment_disp_SetInterruptMode,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	Segment_disp_SetInterruptMode
+ 196              		.code	16
+ 197              		.thumb_func
+ 198              		.type	Segment_disp_SetInterruptMode, %function
+ 199              	Segment_disp_SetInterruptMode:
+ 200              	.LFB4:
+ 174:Generated_Source\PSoC4/Segment_disp.c **** 
+ 175:Generated_Source\PSoC4/Segment_disp.c **** 
+ 176:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+ 177:Generated_Source\PSoC4/Segment_disp.c **** * Function Name: Segment_disp_SetInterruptMode
+ 178:Generated_Source\PSoC4/Segment_disp.c **** ****************************************************************************//**
+ 179:Generated_Source\PSoC4/Segment_disp.c **** *
+ 180:Generated_Source\PSoC4/Segment_disp.c **** * \brief Configures the interrupt mode for each of the Pins component's
+ 181:Generated_Source\PSoC4/Segment_disp.c **** *  pins. Alternatively you may set the interrupt mode for all the pins
+ 182:Generated_Source\PSoC4/Segment_disp.c **** *  specified in the Pins component.
+ 183:Generated_Source\PSoC4/Segment_disp.c **** *
+ 184:Generated_Source\PSoC4/Segment_disp.c **** *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
+ 185:Generated_Source\PSoC4/Segment_disp.c **** *  interrupt may trigger it.
+ 186:Generated_Source\PSoC4/Segment_disp.c **** *
+ 187:Generated_Source\PSoC4/Segment_disp.c **** * \param position
+ 188:Generated_Source\PSoC4/Segment_disp.c **** *  The pin position as listed in the Pins component. You may OR these to be 
+ 189:Generated_Source\PSoC4/Segment_disp.c **** *  able to configure the interrupt mode of multiple pins within a Pins 
+ 190:Generated_Source\PSoC4/Segment_disp.c **** *  component. Or you may use Segment_disp_INTR_ALL to configure the
+ 191:Generated_Source\PSoC4/Segment_disp.c **** *  interrupt mode of all the pins in the Pins component.       
+ 192:Generated_Source\PSoC4/Segment_disp.c **** *  - Segment_disp_0_INTR       (First pin in the list)
+ 193:Generated_Source\PSoC4/Segment_disp.c **** *  - Segment_disp_1_INTR       (Second pin in the list)
+ 194:Generated_Source\PSoC4/Segment_disp.c **** *  - ...
+ 195:Generated_Source\PSoC4/Segment_disp.c **** *  - Segment_disp_INTR_ALL     (All pins in Pins component)
+ 196:Generated_Source\PSoC4/Segment_disp.c **** *
+ 197:Generated_Source\PSoC4/Segment_disp.c **** * \param mode
+ 198:Generated_Source\PSoC4/Segment_disp.c **** *  Interrupt mode for the selected pins. Valid options are documented in
+ 199:Generated_Source\PSoC4/Segment_disp.c **** *  \ref intrMode.
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 8
+
+
+ 200:Generated_Source\PSoC4/Segment_disp.c **** *
+ 201:Generated_Source\PSoC4/Segment_disp.c **** * \return 
+ 202:Generated_Source\PSoC4/Segment_disp.c **** *  None
+ 203:Generated_Source\PSoC4/Segment_disp.c **** *  
+ 204:Generated_Source\PSoC4/Segment_disp.c **** * \sideeffect
+ 205:Generated_Source\PSoC4/Segment_disp.c **** *  It is recommended that the interrupt be disabled before calling this 
+ 206:Generated_Source\PSoC4/Segment_disp.c **** *  function to avoid unintended interrupt requests. Note that the interrupt
+ 207:Generated_Source\PSoC4/Segment_disp.c **** *  type is port wide, and therefore will trigger for any enabled pin on the 
+ 208:Generated_Source\PSoC4/Segment_disp.c **** *  port.
+ 209:Generated_Source\PSoC4/Segment_disp.c **** *
+ 210:Generated_Source\PSoC4/Segment_disp.c **** * \funcusage
+ 211:Generated_Source\PSoC4/Segment_disp.c **** *  \snippet Segment_disp_SUT.c usage_Segment_disp_SetInterruptMode
+ 212:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+ 213:Generated_Source\PSoC4/Segment_disp.c **** void Segment_disp_SetInterruptMode(uint16 position, uint16 mode)
+ 214:Generated_Source\PSoC4/Segment_disp.c **** {
+ 201              		.loc 1 214 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205              		@ link register save eliminated.
+ 206              	.LVL6:
+ 215:Generated_Source\PSoC4/Segment_disp.c ****     uint32 intrCfg;
+ 216:Generated_Source\PSoC4/Segment_disp.c ****     
+ 217:Generated_Source\PSoC4/Segment_disp.c ****     intrCfg =  Segment_disp_INTCFG & (uint32)(~(uint32)position);
+ 207              		.loc 1 217 0
+ 208 0000 034A     		ldr	r2, .L14
+ 209 0002 1368     		ldr	r3, [r2]
+ 210 0004 8343     		bics	r3, r0
+ 211              	.LVL7:
+ 218:Generated_Source\PSoC4/Segment_disp.c ****     Segment_disp_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+ 212              		.loc 1 218 0
+ 213 0006 0840     		ands	r0, r1
+ 214              	.LVL8:
+ 215 0008 1843     		orrs	r0, r3
+ 216 000a 1060     		str	r0, [r2]
+ 219:Generated_Source\PSoC4/Segment_disp.c **** }
+ 217              		.loc 1 219 0
+ 218              		@ sp needed
+ 219 000c 7047     		bx	lr
+ 220              	.L15:
+ 221 000e C046     		.align	2
+ 222              	.L14:
+ 223 0010 0C000440 		.word	1074003980
+ 224              		.cfi_endproc
+ 225              	.LFE4:
+ 226              		.size	Segment_disp_SetInterruptMode, .-Segment_disp_SetInterruptMode
+ 227              		.section	.text.Segment_disp_ClearInterrupt,"ax",%progbits
+ 228              		.align	2
+ 229              		.global	Segment_disp_ClearInterrupt
+ 230              		.code	16
+ 231              		.thumb_func
+ 232              		.type	Segment_disp_ClearInterrupt, %function
+ 233              	Segment_disp_ClearInterrupt:
+ 234              	.LFB5:
+ 220:Generated_Source\PSoC4/Segment_disp.c **** 
+ 221:Generated_Source\PSoC4/Segment_disp.c **** 
+ 222:Generated_Source\PSoC4/Segment_disp.c **** /*******************************************************************************
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 9
+
+
+ 223:Generated_Source\PSoC4/Segment_disp.c **** * Function Name: Segment_disp_ClearInterrupt
+ 224:Generated_Source\PSoC4/Segment_disp.c **** ****************************************************************************//**
+ 225:Generated_Source\PSoC4/Segment_disp.c **** *
+ 226:Generated_Source\PSoC4/Segment_disp.c **** * \brief Clears any active interrupts attached with the component and returns 
+ 227:Generated_Source\PSoC4/Segment_disp.c **** *  the value of the interrupt status register allowing determination of which
+ 228:Generated_Source\PSoC4/Segment_disp.c **** *  pins generated an interrupt event.
+ 229:Generated_Source\PSoC4/Segment_disp.c **** *
+ 230:Generated_Source\PSoC4/Segment_disp.c **** * \return 
+ 231:Generated_Source\PSoC4/Segment_disp.c **** *  The right-shifted current value of the interrupt status register. Each pin 
+ 232:Generated_Source\PSoC4/Segment_disp.c **** *  has one bit set if it generated an interrupt event. For example, bit 0 is 
+ 233:Generated_Source\PSoC4/Segment_disp.c **** *  for pin 0 and bit 1 is for pin 1 of the Pins component.
+ 234:Generated_Source\PSoC4/Segment_disp.c **** *  
+ 235:Generated_Source\PSoC4/Segment_disp.c **** * \sideeffect
+ 236:Generated_Source\PSoC4/Segment_disp.c **** *  Clears all bits of the physical port's interrupt status register, not just
+ 237:Generated_Source\PSoC4/Segment_disp.c **** *  those associated with the Pins component.
+ 238:Generated_Source\PSoC4/Segment_disp.c **** *
+ 239:Generated_Source\PSoC4/Segment_disp.c **** * \funcusage
+ 240:Generated_Source\PSoC4/Segment_disp.c **** *  \snippet Segment_disp_SUT.c usage_Segment_disp_ClearInterrupt
+ 241:Generated_Source\PSoC4/Segment_disp.c **** *******************************************************************************/
+ 242:Generated_Source\PSoC4/Segment_disp.c **** uint8 Segment_disp_ClearInterrupt(void)
+ 243:Generated_Source\PSoC4/Segment_disp.c **** {
+ 235              		.loc 1 243 0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              		@ link register save eliminated.
+ 244:Generated_Source\PSoC4/Segment_disp.c **** 	uint8 maskedStatus = (uint8)(Segment_disp_INTSTAT & Segment_disp_MASK);
+ 240              		.loc 1 244 0
+ 241 0000 024A     		ldr	r2, .L17
+ 242 0002 1068     		ldr	r0, [r2]
+ 243 0004 7F23     		movs	r3, #127
+ 244 0006 1840     		ands	r0, r3
+ 245              	.LVL9:
+ 245:Generated_Source\PSoC4/Segment_disp.c **** 	Segment_disp_INTSTAT = maskedStatus;
+ 246              		.loc 1 245 0
+ 247 0008 1060     		str	r0, [r2]
+ 246:Generated_Source\PSoC4/Segment_disp.c ****     return maskedStatus >> Segment_disp_SHIFT;
+ 247:Generated_Source\PSoC4/Segment_disp.c **** }
+ 248              		.loc 1 247 0
+ 249              		@ sp needed
+ 250 000a 7047     		bx	lr
+ 251              	.L18:
+ 252              		.align	2
+ 253              	.L17:
+ 254 000c 10000440 		.word	1074003984
+ 255              		.cfi_endproc
+ 256              	.LFE5:
+ 257              		.size	Segment_disp_ClearInterrupt, .-Segment_disp_ClearInterrupt
+ 258              		.text
+ 259              	.Letext0:
+ 260              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 261              		.section	.debug_info,"",%progbits
+ 262              	.Ldebug_info0:
+ 263 0000 97010000 		.4byte	0x197
+ 264 0004 0400     		.2byte	0x4
+ 265 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 266 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 10
+
+
+ 267 000b 01       		.uleb128 0x1
+ 268 000c 5A010000 		.4byte	.LASF28
+ 269 0010 0C       		.byte	0xc
+ 270 0011 44000000 		.4byte	.LASF29
+ 271 0015 0B010000 		.4byte	.LASF30
+ 272 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 273 001d 00000000 		.4byte	0
+ 274 0021 00000000 		.4byte	.Ldebug_line0
+ 275 0025 02       		.uleb128 0x2
+ 276 0026 01       		.byte	0x1
+ 277 0027 06       		.byte	0x6
+ 278 0028 3A020000 		.4byte	.LASF0
+ 279 002c 02       		.uleb128 0x2
+ 280 002d 01       		.byte	0x1
+ 281 002e 08       		.byte	0x8
+ 282 002f 7D000000 		.4byte	.LASF1
+ 283 0033 02       		.uleb128 0x2
+ 284 0034 02       		.byte	0x2
+ 285 0035 05       		.byte	0x5
+ 286 0036 08020000 		.4byte	.LASF2
+ 287 003a 02       		.uleb128 0x2
+ 288 003b 02       		.byte	0x2
+ 289 003c 07       		.byte	0x7
+ 290 003d A3000000 		.4byte	.LASF3
+ 291 0041 02       		.uleb128 0x2
+ 292 0042 04       		.byte	0x4
+ 293 0043 05       		.byte	0x5
+ 294 0044 18020000 		.4byte	.LASF4
+ 295 0048 02       		.uleb128 0x2
+ 296 0049 04       		.byte	0x4
+ 297 004a 07       		.byte	0x7
+ 298 004b 91000000 		.4byte	.LASF5
+ 299 004f 02       		.uleb128 0x2
+ 300 0050 08       		.byte	0x8
+ 301 0051 05       		.byte	0x5
+ 302 0052 E8010000 		.4byte	.LASF6
+ 303 0056 02       		.uleb128 0x2
+ 304 0057 08       		.byte	0x8
+ 305 0058 07       		.byte	0x7
+ 306 0059 3E010000 		.4byte	.LASF7
+ 307 005d 03       		.uleb128 0x3
+ 308 005e 04       		.byte	0x4
+ 309 005f 05       		.byte	0x5
+ 310 0060 696E7400 		.ascii	"int\000"
+ 311 0064 02       		.uleb128 0x2
+ 312 0065 04       		.byte	0x4
+ 313 0066 07       		.byte	0x7
+ 314 0067 6A000000 		.4byte	.LASF8
+ 315 006b 04       		.uleb128 0x4
+ 316 006c 12020000 		.4byte	.LASF9
+ 317 0070 02       		.byte	0x2
+ 318 0071 FB01     		.2byte	0x1fb
+ 319 0073 2C000000 		.4byte	0x2c
+ 320 0077 04       		.uleb128 0x4
+ 321 0078 D9000000 		.4byte	.LASF10
+ 322 007c 02       		.byte	0x2
+ 323 007d FC01     		.2byte	0x1fc
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 11
+
+
+ 324 007f 3A000000 		.4byte	0x3a
+ 325 0083 04       		.uleb128 0x4
+ 326 0084 FC000000 		.4byte	.LASF11
+ 327 0088 02       		.byte	0x2
+ 328 0089 FD01     		.2byte	0x1fd
+ 329 008b 48000000 		.4byte	0x48
+ 330 008f 02       		.uleb128 0x2
+ 331 0090 04       		.byte	0x4
+ 332 0091 04       		.byte	0x4
+ 333 0092 77000000 		.4byte	.LASF12
+ 334 0096 02       		.uleb128 0x2
+ 335 0097 08       		.byte	0x8
+ 336 0098 04       		.byte	0x4
+ 337 0099 D2000000 		.4byte	.LASF13
+ 338 009d 02       		.uleb128 0x2
+ 339 009e 01       		.byte	0x1
+ 340 009f 08       		.byte	0x8
+ 341 00a0 03020000 		.4byte	.LASF14
+ 342 00a4 04       		.uleb128 0x4
+ 343 00a5 00000000 		.4byte	.LASF15
+ 344 00a9 02       		.byte	0x2
+ 345 00aa A702     		.2byte	0x2a7
+ 346 00ac B0000000 		.4byte	0xb0
+ 347 00b0 05       		.uleb128 0x5
+ 348 00b1 83000000 		.4byte	0x83
+ 349 00b5 06       		.uleb128 0x6
+ 350 00b6 2A000000 		.4byte	.LASF16
+ 351 00ba 01       		.byte	0x1
+ 352 00bb 48       		.byte	0x48
+ 353 00bc 00000000 		.4byte	.LFB0
+ 354 00c0 70000000 		.4byte	.LFE0-.LFB0
+ 355 00c4 01       		.uleb128 0x1
+ 356 00c5 9C       		.byte	0x9c
+ 357 00c6 DA000000 		.4byte	0xda
+ 358 00ca 07       		.uleb128 0x7
+ 359 00cb 55010000 		.4byte	.LASF18
+ 360 00cf 01       		.byte	0x1
+ 361 00d0 48       		.byte	0x48
+ 362 00d1 6B000000 		.4byte	0x6b
+ 363 00d5 00000000 		.4byte	.LLST0
+ 364 00d9 00       		.byte	0
+ 365 00da 06       		.uleb128 0x6
+ 366 00db E0000000 		.4byte	.LASF17
+ 367 00df 01       		.byte	0x1
+ 368 00e0 75       		.byte	0x75
+ 369 00e1 00000000 		.4byte	.LFB1
+ 370 00e5 18000000 		.4byte	.LFE1-.LFB1
+ 371 00e9 01       		.uleb128 0x1
+ 372 00ea 9C       		.byte	0x9c
+ 373 00eb 0E010000 		.4byte	0x10e
+ 374 00ef 07       		.uleb128 0x7
+ 375 00f0 24000000 		.4byte	.LASF19
+ 376 00f4 01       		.byte	0x1
+ 377 00f5 75       		.byte	0x75
+ 378 00f6 6B000000 		.4byte	0x6b
+ 379 00fa 21000000 		.4byte	.LLST1
+ 380 00fe 08       		.uleb128 0x8
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 12
+
+
+ 381 00ff 8B000000 		.4byte	.LASF24
+ 382 0103 01       		.byte	0x1
+ 383 0104 77       		.byte	0x77
+ 384 0105 6B000000 		.4byte	0x6b
+ 385 0109 42000000 		.4byte	.LLST2
+ 386 010d 00       		.byte	0
+ 387 010e 09       		.uleb128 0x9
+ 388 010f 46020000 		.4byte	.LASF20
+ 389 0113 01       		.byte	0x1
+ 390 0114 8E       		.byte	0x8e
+ 391 0115 6B000000 		.4byte	0x6b
+ 392 0119 00000000 		.4byte	.LFB2
+ 393 011d 10000000 		.4byte	.LFE2-.LFB2
+ 394 0121 01       		.uleb128 0x1
+ 395 0122 9C       		.byte	0x9c
+ 396 0123 09       		.uleb128 0x9
+ 397 0124 21020000 		.4byte	.LASF21
+ 398 0128 01       		.byte	0x1
+ 399 0129 AA       		.byte	0xaa
+ 400 012a 6B000000 		.4byte	0x6b
+ 401 012e 00000000 		.4byte	.LFB3
+ 402 0132 10000000 		.4byte	.LFE3-.LFB3
+ 403 0136 01       		.uleb128 0x1
+ 404 0137 9C       		.byte	0x9c
+ 405 0138 06       		.uleb128 0x6
+ 406 0139 06000000 		.4byte	.LASF22
+ 407 013d 01       		.byte	0x1
+ 408 013e D5       		.byte	0xd5
+ 409 013f 00000000 		.4byte	.LFB4
+ 410 0143 14000000 		.4byte	.LFE4-.LFB4
+ 411 0147 01       		.uleb128 0x1
+ 412 0148 9C       		.byte	0x9c
+ 413 0149 77010000 		.4byte	0x177
+ 414 014d 07       		.uleb128 0x7
+ 415 014e F3000000 		.4byte	.LASF23
+ 416 0152 01       		.byte	0x1
+ 417 0153 D5       		.byte	0xd5
+ 418 0154 77000000 		.4byte	0x77
+ 419 0158 60000000 		.4byte	.LLST3
+ 420 015c 0A       		.uleb128 0xa
+ 421 015d 55010000 		.4byte	.LASF18
+ 422 0161 01       		.byte	0x1
+ 423 0162 D5       		.byte	0xd5
+ 424 0163 77000000 		.4byte	0x77
+ 425 0167 01       		.uleb128 0x1
+ 426 0168 51       		.byte	0x51
+ 427 0169 0B       		.uleb128 0xb
+ 428 016a 03010000 		.4byte	.LASF25
+ 429 016e 01       		.byte	0x1
+ 430 016f D7       		.byte	0xd7
+ 431 0170 83000000 		.4byte	0x83
+ 432 0174 01       		.uleb128 0x1
+ 433 0175 53       		.byte	0x53
+ 434 0176 00       		.byte	0
+ 435 0177 0C       		.uleb128 0xc
+ 436 0178 B6000000 		.4byte	.LASF26
+ 437 017c 01       		.byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 13
+
+
+ 438 017d F2       		.byte	0xf2
+ 439 017e 6B000000 		.4byte	0x6b
+ 440 0182 00000000 		.4byte	.LFB5
+ 441 0186 10000000 		.4byte	.LFE5-.LFB5
+ 442 018a 01       		.uleb128 0x1
+ 443 018b 9C       		.byte	0x9c
+ 444 018c 0B       		.uleb128 0xb
+ 445 018d F6010000 		.4byte	.LASF27
+ 446 0191 01       		.byte	0x1
+ 447 0192 F4       		.byte	0xf4
+ 448 0193 6B000000 		.4byte	0x6b
+ 449 0197 01       		.uleb128 0x1
+ 450 0198 50       		.byte	0x50
+ 451 0199 00       		.byte	0
+ 452 019a 00       		.byte	0
+ 453              		.section	.debug_abbrev,"",%progbits
+ 454              	.Ldebug_abbrev0:
+ 455 0000 01       		.uleb128 0x1
+ 456 0001 11       		.uleb128 0x11
+ 457 0002 01       		.byte	0x1
+ 458 0003 25       		.uleb128 0x25
+ 459 0004 0E       		.uleb128 0xe
+ 460 0005 13       		.uleb128 0x13
+ 461 0006 0B       		.uleb128 0xb
+ 462 0007 03       		.uleb128 0x3
+ 463 0008 0E       		.uleb128 0xe
+ 464 0009 1B       		.uleb128 0x1b
+ 465 000a 0E       		.uleb128 0xe
+ 466 000b 55       		.uleb128 0x55
+ 467 000c 17       		.uleb128 0x17
+ 468 000d 11       		.uleb128 0x11
+ 469 000e 01       		.uleb128 0x1
+ 470 000f 10       		.uleb128 0x10
+ 471 0010 17       		.uleb128 0x17
+ 472 0011 00       		.byte	0
+ 473 0012 00       		.byte	0
+ 474 0013 02       		.uleb128 0x2
+ 475 0014 24       		.uleb128 0x24
+ 476 0015 00       		.byte	0
+ 477 0016 0B       		.uleb128 0xb
+ 478 0017 0B       		.uleb128 0xb
+ 479 0018 3E       		.uleb128 0x3e
+ 480 0019 0B       		.uleb128 0xb
+ 481 001a 03       		.uleb128 0x3
+ 482 001b 0E       		.uleb128 0xe
+ 483 001c 00       		.byte	0
+ 484 001d 00       		.byte	0
+ 485 001e 03       		.uleb128 0x3
+ 486 001f 24       		.uleb128 0x24
+ 487 0020 00       		.byte	0
+ 488 0021 0B       		.uleb128 0xb
+ 489 0022 0B       		.uleb128 0xb
+ 490 0023 3E       		.uleb128 0x3e
+ 491 0024 0B       		.uleb128 0xb
+ 492 0025 03       		.uleb128 0x3
+ 493 0026 08       		.uleb128 0x8
+ 494 0027 00       		.byte	0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 14
+
+
+ 495 0028 00       		.byte	0
+ 496 0029 04       		.uleb128 0x4
+ 497 002a 16       		.uleb128 0x16
+ 498 002b 00       		.byte	0
+ 499 002c 03       		.uleb128 0x3
+ 500 002d 0E       		.uleb128 0xe
+ 501 002e 3A       		.uleb128 0x3a
+ 502 002f 0B       		.uleb128 0xb
+ 503 0030 3B       		.uleb128 0x3b
+ 504 0031 05       		.uleb128 0x5
+ 505 0032 49       		.uleb128 0x49
+ 506 0033 13       		.uleb128 0x13
+ 507 0034 00       		.byte	0
+ 508 0035 00       		.byte	0
+ 509 0036 05       		.uleb128 0x5
+ 510 0037 35       		.uleb128 0x35
+ 511 0038 00       		.byte	0
+ 512 0039 49       		.uleb128 0x49
+ 513 003a 13       		.uleb128 0x13
+ 514 003b 00       		.byte	0
+ 515 003c 00       		.byte	0
+ 516 003d 06       		.uleb128 0x6
+ 517 003e 2E       		.uleb128 0x2e
+ 518 003f 01       		.byte	0x1
+ 519 0040 3F       		.uleb128 0x3f
+ 520 0041 19       		.uleb128 0x19
+ 521 0042 03       		.uleb128 0x3
+ 522 0043 0E       		.uleb128 0xe
+ 523 0044 3A       		.uleb128 0x3a
+ 524 0045 0B       		.uleb128 0xb
+ 525 0046 3B       		.uleb128 0x3b
+ 526 0047 0B       		.uleb128 0xb
+ 527 0048 27       		.uleb128 0x27
+ 528 0049 19       		.uleb128 0x19
+ 529 004a 11       		.uleb128 0x11
+ 530 004b 01       		.uleb128 0x1
+ 531 004c 12       		.uleb128 0x12
+ 532 004d 06       		.uleb128 0x6
+ 533 004e 40       		.uleb128 0x40
+ 534 004f 18       		.uleb128 0x18
+ 535 0050 9742     		.uleb128 0x2117
+ 536 0052 19       		.uleb128 0x19
+ 537 0053 01       		.uleb128 0x1
+ 538 0054 13       		.uleb128 0x13
+ 539 0055 00       		.byte	0
+ 540 0056 00       		.byte	0
+ 541 0057 07       		.uleb128 0x7
+ 542 0058 05       		.uleb128 0x5
+ 543 0059 00       		.byte	0
+ 544 005a 03       		.uleb128 0x3
+ 545 005b 0E       		.uleb128 0xe
+ 546 005c 3A       		.uleb128 0x3a
+ 547 005d 0B       		.uleb128 0xb
+ 548 005e 3B       		.uleb128 0x3b
+ 549 005f 0B       		.uleb128 0xb
+ 550 0060 49       		.uleb128 0x49
+ 551 0061 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 15
+
+
+ 552 0062 02       		.uleb128 0x2
+ 553 0063 17       		.uleb128 0x17
+ 554 0064 00       		.byte	0
+ 555 0065 00       		.byte	0
+ 556 0066 08       		.uleb128 0x8
+ 557 0067 34       		.uleb128 0x34
+ 558 0068 00       		.byte	0
+ 559 0069 03       		.uleb128 0x3
+ 560 006a 0E       		.uleb128 0xe
+ 561 006b 3A       		.uleb128 0x3a
+ 562 006c 0B       		.uleb128 0xb
+ 563 006d 3B       		.uleb128 0x3b
+ 564 006e 0B       		.uleb128 0xb
+ 565 006f 49       		.uleb128 0x49
+ 566 0070 13       		.uleb128 0x13
+ 567 0071 02       		.uleb128 0x2
+ 568 0072 17       		.uleb128 0x17
+ 569 0073 00       		.byte	0
+ 570 0074 00       		.byte	0
+ 571 0075 09       		.uleb128 0x9
+ 572 0076 2E       		.uleb128 0x2e
+ 573 0077 00       		.byte	0
+ 574 0078 3F       		.uleb128 0x3f
+ 575 0079 19       		.uleb128 0x19
+ 576 007a 03       		.uleb128 0x3
+ 577 007b 0E       		.uleb128 0xe
+ 578 007c 3A       		.uleb128 0x3a
+ 579 007d 0B       		.uleb128 0xb
+ 580 007e 3B       		.uleb128 0x3b
+ 581 007f 0B       		.uleb128 0xb
+ 582 0080 27       		.uleb128 0x27
+ 583 0081 19       		.uleb128 0x19
+ 584 0082 49       		.uleb128 0x49
+ 585 0083 13       		.uleb128 0x13
+ 586 0084 11       		.uleb128 0x11
+ 587 0085 01       		.uleb128 0x1
+ 588 0086 12       		.uleb128 0x12
+ 589 0087 06       		.uleb128 0x6
+ 590 0088 40       		.uleb128 0x40
+ 591 0089 18       		.uleb128 0x18
+ 592 008a 9742     		.uleb128 0x2117
+ 593 008c 19       		.uleb128 0x19
+ 594 008d 00       		.byte	0
+ 595 008e 00       		.byte	0
+ 596 008f 0A       		.uleb128 0xa
+ 597 0090 05       		.uleb128 0x5
+ 598 0091 00       		.byte	0
+ 599 0092 03       		.uleb128 0x3
+ 600 0093 0E       		.uleb128 0xe
+ 601 0094 3A       		.uleb128 0x3a
+ 602 0095 0B       		.uleb128 0xb
+ 603 0096 3B       		.uleb128 0x3b
+ 604 0097 0B       		.uleb128 0xb
+ 605 0098 49       		.uleb128 0x49
+ 606 0099 13       		.uleb128 0x13
+ 607 009a 02       		.uleb128 0x2
+ 608 009b 18       		.uleb128 0x18
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 16
+
+
+ 609 009c 00       		.byte	0
+ 610 009d 00       		.byte	0
+ 611 009e 0B       		.uleb128 0xb
+ 612 009f 34       		.uleb128 0x34
+ 613 00a0 00       		.byte	0
+ 614 00a1 03       		.uleb128 0x3
+ 615 00a2 0E       		.uleb128 0xe
+ 616 00a3 3A       		.uleb128 0x3a
+ 617 00a4 0B       		.uleb128 0xb
+ 618 00a5 3B       		.uleb128 0x3b
+ 619 00a6 0B       		.uleb128 0xb
+ 620 00a7 49       		.uleb128 0x49
+ 621 00a8 13       		.uleb128 0x13
+ 622 00a9 02       		.uleb128 0x2
+ 623 00aa 18       		.uleb128 0x18
+ 624 00ab 00       		.byte	0
+ 625 00ac 00       		.byte	0
+ 626 00ad 0C       		.uleb128 0xc
+ 627 00ae 2E       		.uleb128 0x2e
+ 628 00af 01       		.byte	0x1
+ 629 00b0 3F       		.uleb128 0x3f
+ 630 00b1 19       		.uleb128 0x19
+ 631 00b2 03       		.uleb128 0x3
+ 632 00b3 0E       		.uleb128 0xe
+ 633 00b4 3A       		.uleb128 0x3a
+ 634 00b5 0B       		.uleb128 0xb
+ 635 00b6 3B       		.uleb128 0x3b
+ 636 00b7 0B       		.uleb128 0xb
+ 637 00b8 27       		.uleb128 0x27
+ 638 00b9 19       		.uleb128 0x19
+ 639 00ba 49       		.uleb128 0x49
+ 640 00bb 13       		.uleb128 0x13
+ 641 00bc 11       		.uleb128 0x11
+ 642 00bd 01       		.uleb128 0x1
+ 643 00be 12       		.uleb128 0x12
+ 644 00bf 06       		.uleb128 0x6
+ 645 00c0 40       		.uleb128 0x40
+ 646 00c1 18       		.uleb128 0x18
+ 647 00c2 9742     		.uleb128 0x2117
+ 648 00c4 19       		.uleb128 0x19
+ 649 00c5 00       		.byte	0
+ 650 00c6 00       		.byte	0
+ 651 00c7 00       		.byte	0
+ 652              		.section	.debug_loc,"",%progbits
+ 653              	.Ldebug_loc0:
+ 654              	.LLST0:
+ 655 0000 00000000 		.4byte	.LVL0
+ 656 0004 50000000 		.4byte	.LVL1
+ 657 0008 0100     		.2byte	0x1
+ 658 000a 50       		.byte	0x50
+ 659 000b 50000000 		.4byte	.LVL1
+ 660 000f 70000000 		.4byte	.LFE0
+ 661 0013 0400     		.2byte	0x4
+ 662 0015 F3       		.byte	0xf3
+ 663 0016 01       		.uleb128 0x1
+ 664 0017 50       		.byte	0x50
+ 665 0018 9F       		.byte	0x9f
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 17
+
+
+ 666 0019 00000000 		.4byte	0
+ 667 001d 00000000 		.4byte	0
+ 668              	.LLST1:
+ 669 0021 00000000 		.4byte	.LVL2
+ 670 0025 0C000000 		.4byte	.LVL4
+ 671 0029 0100     		.2byte	0x1
+ 672 002b 50       		.byte	0x50
+ 673 002c 0C000000 		.4byte	.LVL4
+ 674 0030 18000000 		.4byte	.LFE1
+ 675 0034 0400     		.2byte	0x4
+ 676 0036 F3       		.byte	0xf3
+ 677 0037 01       		.uleb128 0x1
+ 678 0038 50       		.byte	0x50
+ 679 0039 9F       		.byte	0x9f
+ 680 003a 00000000 		.4byte	0
+ 681 003e 00000000 		.4byte	0
+ 682              	.LLST2:
+ 683 0042 0A000000 		.4byte	.LVL3
+ 684 0046 0E000000 		.4byte	.LVL5
+ 685 004a 0100     		.2byte	0x1
+ 686 004c 53       		.byte	0x53
+ 687 004d 0E000000 		.4byte	.LVL5
+ 688 0051 18000000 		.4byte	.LFE1
+ 689 0055 0100     		.2byte	0x1
+ 690 0057 50       		.byte	0x50
+ 691 0058 00000000 		.4byte	0
+ 692 005c 00000000 		.4byte	0
+ 693              	.LLST3:
+ 694 0060 00000000 		.4byte	.LVL6
+ 695 0064 08000000 		.4byte	.LVL8
+ 696 0068 0100     		.2byte	0x1
+ 697 006a 50       		.byte	0x50
+ 698 006b 08000000 		.4byte	.LVL8
+ 699 006f 14000000 		.4byte	.LFE4
+ 700 0073 0400     		.2byte	0x4
+ 701 0075 F3       		.byte	0xf3
+ 702 0076 01       		.uleb128 0x1
+ 703 0077 50       		.byte	0x50
+ 704 0078 9F       		.byte	0x9f
+ 705 0079 00000000 		.4byte	0
+ 706 007d 00000000 		.4byte	0
+ 707              		.section	.debug_aranges,"",%progbits
+ 708 0000 44000000 		.4byte	0x44
+ 709 0004 0200     		.2byte	0x2
+ 710 0006 00000000 		.4byte	.Ldebug_info0
+ 711 000a 04       		.byte	0x4
+ 712 000b 00       		.byte	0
+ 713 000c 0000     		.2byte	0
+ 714 000e 0000     		.2byte	0
+ 715 0010 00000000 		.4byte	.LFB0
+ 716 0014 70000000 		.4byte	.LFE0-.LFB0
+ 717 0018 00000000 		.4byte	.LFB1
+ 718 001c 18000000 		.4byte	.LFE1-.LFB1
+ 719 0020 00000000 		.4byte	.LFB2
+ 720 0024 10000000 		.4byte	.LFE2-.LFB2
+ 721 0028 00000000 		.4byte	.LFB3
+ 722 002c 10000000 		.4byte	.LFE3-.LFB3
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 18
+
+
+ 723 0030 00000000 		.4byte	.LFB4
+ 724 0034 14000000 		.4byte	.LFE4-.LFB4
+ 725 0038 00000000 		.4byte	.LFB5
+ 726 003c 10000000 		.4byte	.LFE5-.LFB5
+ 727 0040 00000000 		.4byte	0
+ 728 0044 00000000 		.4byte	0
+ 729              		.section	.debug_ranges,"",%progbits
+ 730              	.Ldebug_ranges0:
+ 731 0000 00000000 		.4byte	.LFB0
+ 732 0004 70000000 		.4byte	.LFE0
+ 733 0008 00000000 		.4byte	.LFB1
+ 734 000c 18000000 		.4byte	.LFE1
+ 735 0010 00000000 		.4byte	.LFB2
+ 736 0014 10000000 		.4byte	.LFE2
+ 737 0018 00000000 		.4byte	.LFB3
+ 738 001c 10000000 		.4byte	.LFE3
+ 739 0020 00000000 		.4byte	.LFB4
+ 740 0024 14000000 		.4byte	.LFE4
+ 741 0028 00000000 		.4byte	.LFB5
+ 742 002c 10000000 		.4byte	.LFE5
+ 743 0030 00000000 		.4byte	0
+ 744 0034 00000000 		.4byte	0
+ 745              		.section	.debug_line,"",%progbits
+ 746              	.Ldebug_line0:
+ 747 0000 C5000000 		.section	.debug_str,"MS",%progbits,1
+ 747      02004900 
+ 747      00000201 
+ 747      FB0E0D00 
+ 747      01010101 
+ 748              	.LASF15:
+ 749 0000 72656733 		.ascii	"reg32\000"
+ 749      3200
+ 750              	.LASF22:
+ 751 0006 5365676D 		.ascii	"Segment_disp_SetInterruptMode\000"
+ 751      656E745F 
+ 751      64697370 
+ 751      5F536574 
+ 751      496E7465 
+ 752              	.LASF19:
+ 753 0024 76616C75 		.ascii	"value\000"
+ 753      6500
+ 754              	.LASF16:
+ 755 002a 5365676D 		.ascii	"Segment_disp_SetDriveMode\000"
+ 755      656E745F 
+ 755      64697370 
+ 755      5F536574 
+ 755      44726976 
+ 756              	.LASF29:
+ 757 0044 47656E65 		.ascii	"Generated_Source\\PSoC4\\Segment_disp.c\000"
+ 757      72617465 
+ 757      645F536F 
+ 757      75726365 
+ 757      5C50536F 
+ 758              	.LASF8:
+ 759 006a 756E7369 		.ascii	"unsigned int\000"
+ 759      676E6564 
+ 759      20696E74 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 19
+
+
+ 759      00
+ 760              	.LASF12:
+ 761 0077 666C6F61 		.ascii	"float\000"
+ 761      7400
+ 762              	.LASF1:
+ 763 007d 756E7369 		.ascii	"unsigned char\000"
+ 763      676E6564 
+ 763      20636861 
+ 763      7200
+ 764              	.LASF24:
+ 765 008b 64725661 		.ascii	"drVal\000"
+ 765      6C00
+ 766              	.LASF5:
+ 767 0091 6C6F6E67 		.ascii	"long unsigned int\000"
+ 767      20756E73 
+ 767      69676E65 
+ 767      6420696E 
+ 767      7400
+ 768              	.LASF3:
+ 769 00a3 73686F72 		.ascii	"short unsigned int\000"
+ 769      7420756E 
+ 769      7369676E 
+ 769      65642069 
+ 769      6E7400
+ 770              	.LASF26:
+ 771 00b6 5365676D 		.ascii	"Segment_disp_ClearInterrupt\000"
+ 771      656E745F 
+ 771      64697370 
+ 771      5F436C65 
+ 771      6172496E 
+ 772              	.LASF13:
+ 773 00d2 646F7562 		.ascii	"double\000"
+ 773      6C6500
+ 774              	.LASF10:
+ 775 00d9 75696E74 		.ascii	"uint16\000"
+ 775      313600
+ 776              	.LASF17:
+ 777 00e0 5365676D 		.ascii	"Segment_disp_Write\000"
+ 777      656E745F 
+ 777      64697370 
+ 777      5F577269 
+ 777      746500
+ 778              	.LASF23:
+ 779 00f3 706F7369 		.ascii	"position\000"
+ 779      74696F6E 
+ 779      00
+ 780              	.LASF11:
+ 781 00fc 75696E74 		.ascii	"uint32\000"
+ 781      333200
+ 782              	.LASF25:
+ 783 0103 696E7472 		.ascii	"intrCfg\000"
+ 783      43666700 
+ 784              	.LASF30:
+ 785 010b 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB2\\Seven_Segment_Display.cyd"
+ 785      55544F52 
+ 785      49414C53 
+ 785      5C50534F 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 20
+
+
+ 785      435F4C41 
+ 786 013b 736E00   		.ascii	"sn\000"
+ 787              	.LASF7:
+ 788 013e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 788      206C6F6E 
+ 788      6720756E 
+ 788      7369676E 
+ 788      65642069 
+ 789              	.LASF18:
+ 790 0155 6D6F6465 		.ascii	"mode\000"
+ 790      00
+ 791              	.LASF28:
+ 792 015a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 792      43313120 
+ 792      352E342E 
+ 792      31203230 
+ 792      31363036 
+ 793 018d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 793      20726576 
+ 793      6973696F 
+ 793      6E203233 
+ 793      37373135 
+ 794 01c0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 794      66756E63 
+ 794      74696F6E 
+ 794      2D736563 
+ 794      74696F6E 
+ 795              	.LASF6:
+ 796 01e8 6C6F6E67 		.ascii	"long long int\000"
+ 796      206C6F6E 
+ 796      6720696E 
+ 796      7400
+ 797              	.LASF27:
+ 798 01f6 6D61736B 		.ascii	"maskedStatus\000"
+ 798      65645374 
+ 798      61747573 
+ 798      00
+ 799              	.LASF14:
+ 800 0203 63686172 		.ascii	"char\000"
+ 800      00
+ 801              	.LASF2:
+ 802 0208 73686F72 		.ascii	"short int\000"
+ 802      7420696E 
+ 802      7400
+ 803              	.LASF9:
+ 804 0212 75696E74 		.ascii	"uint8\000"
+ 804      3800
+ 805              	.LASF4:
+ 806 0218 6C6F6E67 		.ascii	"long int\000"
+ 806      20696E74 
+ 806      00
+ 807              	.LASF21:
+ 808 0221 5365676D 		.ascii	"Segment_disp_ReadDataReg\000"
+ 808      656E745F 
+ 808      64697370 
+ 808      5F526561 
+ 808      64446174 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc8P1ar8.s 			page 21
+
+
+ 809              	.LASF0:
+ 810 023a 7369676E 		.ascii	"signed char\000"
+ 810      65642063 
+ 810      68617200 
+ 811              	.LASF20:
+ 812 0246 5365676D 		.ascii	"Segment_disp_Read\000"
+ 812      656E745F 
+ 812      64697370 
+ 812      5F526561 
+ 812      6400
+ 813              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

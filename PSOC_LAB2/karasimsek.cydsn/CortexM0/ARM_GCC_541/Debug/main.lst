@@ -1,0 +1,1359 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB32:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * zeysaklii@gmail.com, 2021
+   4:main.c        ****  * Open Source
+   5:main.c        ****  * 
+   6:main.c        ****  *
+   7:main.c        ****  * 
+   8:main.c        ****  * 
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** int main(void)
+  14:main.c        **** {
+  28              		.loc 1 14 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  15:main.c        ****     CyGlobalIntEnable; //Genel Kesme
+  36              		.loc 1 15 0
+  37              		.syntax divided
+  38              	@ 15 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+  41              	.LVL0:
+  16:main.c        **** 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 2
+
+
+  17:main.c        **** int led_deger = 0; //Başlangıçta lede değer atanır.
+  42              		.loc 1 17 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 0024     		movs	r4, #0
+  46              	.LVL1:
+  47              	.L19:
+  18:main.c        ****         while(1)   //sonsuz döngü
+  19:main.c        ****         {
+  20:main.c        ****  
+  21:main.c        ****       
+  22:main.c        **** if(led_deger>13)      //led 13ten büyük olunca ledi sıfırlar.
+  48              		.loc 1 22 0
+  49 0006 0D2C     		cmp	r4, #13
+  50 0008 00DD     		ble	.L2
+  23:main.c        **** led_deger = 0;
+  51              		.loc 1 23 0
+  52 000a 0024     		movs	r4, #0
+  53              	.LVL2:
+  54              	.L2:
+  24:main.c        **** 
+  25:main.c        ****   switch(led_deger)
+  55              		.loc 1 25 0
+  56 000c 0D2C     		cmp	r4, #13
+  57 000e 00D9     		bls	.LCB23
+  58 0010 8FE0     		b	.L3	@long jump
+  59              	.LCB23:
+  60 0012 A300     		lsls	r3, r4, #2
+  61 0014 484A     		ldr	r2, .L21
+  62 0016 D358     		ldr	r3, [r2, r3]
+  63 0018 9F46     		mov	pc, r3
+  64              		.section	.rodata
+  65              		.align	2
+  66              	.L5:
+  67 0000 1A000000 		.word	.L4
+  68 0004 30000000 		.word	.L6
+  69 0008 44000000 		.word	.L7
+  70 000c 58000000 		.word	.L8
+  71 0010 6C000000 		.word	.L9
+  72 0014 80000000 		.word	.L10
+  73 0018 94000000 		.word	.L11
+  74 001c A8000000 		.word	.L12
+  75 0020 BC000000 		.word	.L13
+  76 0024 D0000000 		.word	.L14
+  77 0028 E4000000 		.word	.L15
+  78 002c F8000000 		.word	.L16
+  79 0030 0C010000 		.word	.L17
+  80 0034 20010000 		.word	.L18
+  81              		.section	.text.main
+  82              	.L4:
+  26:main.c        ****   {
+  27:main.c        ****   case 0:             //led degeri sıfır ise ilk ledi yakar söndürür.
+  28:main.c        **** 	  A1_Write(1u);   //logic high ledi yakar (initial state lowda baslangicta)
+  83              		.loc 1 28 0
+  84 001a 0120     		movs	r0, #1
+  85 001c FFF7FEFF 		bl	A1_Write
+  86              	.LVL3:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 3
+
+
+  29:main.c        ****     CyDelay(1000);   //500 ms aralık bekleme
+  87              		.loc 1 29 0
+  88 0020 FA20     		movs	r0, #250
+  89 0022 8000     		lsls	r0, r0, #2
+  90 0024 FFF7FEFF 		bl	CyDelay
+  91              	.LVL4:
+  30:main.c        **** 	  A1_Write(0u);  //low'a çeker söndürür
+  92              		.loc 1 30 0
+  93 0028 0020     		movs	r0, #0
+  94 002a FFF7FEFF 		bl	A1_Write
+  95              	.LVL5:
+  31:main.c        **** 	  break;
+  96              		.loc 1 31 0
+  97 002e 80E0     		b	.L3
+  98              	.L6:
+  32:main.c        ****   case 1:       //led değeri bir ise ikinci ledi yakar söndürür.
+  33:main.c        ****        A2_Write(1u);
+  99              		.loc 1 33 0
+ 100 0030 0120     		movs	r0, #1
+ 101 0032 FFF7FEFF 		bl	A2_Write
+ 102              	.LVL6:
+  34:main.c        ****         CyDelay(200);
+ 103              		.loc 1 34 0
+ 104 0036 C820     		movs	r0, #200
+ 105 0038 FFF7FEFF 		bl	CyDelay
+ 106              	.LVL7:
+  35:main.c        ****        A2_Write(0u);
+ 107              		.loc 1 35 0
+ 108 003c 0020     		movs	r0, #0
+ 109 003e FFF7FEFF 		bl	A2_Write
+ 110              	.LVL8:
+  36:main.c        **** 	  break;
+ 111              		.loc 1 36 0
+ 112 0042 76E0     		b	.L3
+ 113              	.L7:
+  37:main.c        ****   case 2:       //led değeri iki ise üçüncü ledi yakar söndürür.
+  38:main.c        ****        A3_Write(1u);
+ 114              		.loc 1 38 0
+ 115 0044 0120     		movs	r0, #1
+ 116 0046 FFF7FEFF 		bl	A3_Write
+ 117              	.LVL9:
+  39:main.c        ****        CyDelay(200);
+ 118              		.loc 1 39 0
+ 119 004a C820     		movs	r0, #200
+ 120 004c FFF7FEFF 		bl	CyDelay
+ 121              	.LVL10:
+  40:main.c        ****        A3_Write(0u);
+ 122              		.loc 1 40 0
+ 123 0050 0020     		movs	r0, #0
+ 124 0052 FFF7FEFF 		bl	A3_Write
+ 125              	.LVL11:
+  41:main.c        **** 	  break;
+ 126              		.loc 1 41 0
+ 127 0056 6CE0     		b	.L3
+ 128              	.L8:
+  42:main.c        ****   case 3:
+  43:main.c        ****        A4_Write(1u); 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 4
+
+
+ 129              		.loc 1 43 0
+ 130 0058 0120     		movs	r0, #1
+ 131 005a FFF7FEFF 		bl	A4_Write
+ 132              	.LVL12:
+  44:main.c        ****          CyDelay(200);
+ 133              		.loc 1 44 0
+ 134 005e C820     		movs	r0, #200
+ 135 0060 FFF7FEFF 		bl	CyDelay
+ 136              	.LVL13:
+  45:main.c        ****        A4_Write(0u);
+ 137              		.loc 1 45 0
+ 138 0064 0020     		movs	r0, #0
+ 139 0066 FFF7FEFF 		bl	A4_Write
+ 140              	.LVL14:
+  46:main.c        **** 	  break;
+ 141              		.loc 1 46 0
+ 142 006a 62E0     		b	.L3
+ 143              	.L9:
+  47:main.c        ****   case 4:
+  48:main.c        ****        A5_Write(1u);
+ 144              		.loc 1 48 0
+ 145 006c 0120     		movs	r0, #1
+ 146 006e FFF7FEFF 		bl	A5_Write
+ 147              	.LVL15:
+  49:main.c        ****          CyDelay(200);
+ 148              		.loc 1 49 0
+ 149 0072 C820     		movs	r0, #200
+ 150 0074 FFF7FEFF 		bl	CyDelay
+ 151              	.LVL16:
+  50:main.c        ****        A5_Write(0u);
+ 152              		.loc 1 50 0
+ 153 0078 0020     		movs	r0, #0
+ 154 007a FFF7FEFF 		bl	A5_Write
+ 155              	.LVL17:
+  51:main.c        **** 	  break;
+ 156              		.loc 1 51 0
+ 157 007e 58E0     		b	.L3
+ 158              	.L10:
+  52:main.c        ****   case 5:
+  53:main.c        ****        A6_Write(1u);
+ 159              		.loc 1 53 0
+ 160 0080 0120     		movs	r0, #1
+ 161 0082 FFF7FEFF 		bl	A6_Write
+ 162              	.LVL18:
+  54:main.c        ****         CyDelay(200);
+ 163              		.loc 1 54 0
+ 164 0086 C820     		movs	r0, #200
+ 165 0088 FFF7FEFF 		bl	CyDelay
+ 166              	.LVL19:
+  55:main.c        ****        A6_Write(0u);
+ 167              		.loc 1 55 0
+ 168 008c 0020     		movs	r0, #0
+ 169 008e FFF7FEFF 		bl	A6_Write
+ 170              	.LVL20:
+  56:main.c        **** 	  break;
+ 171              		.loc 1 56 0
+ 172 0092 4EE0     		b	.L3
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 5
+
+
+ 173              	.L11:
+  57:main.c        ****   case 6:
+  58:main.c        ****      A7_Write(1u);
+ 174              		.loc 1 58 0
+ 175 0094 0120     		movs	r0, #1
+ 176 0096 FFF7FEFF 		bl	A7_Write
+ 177              	.LVL21:
+  59:main.c        ****         CyDelay(200);
+ 178              		.loc 1 59 0
+ 179 009a C820     		movs	r0, #200
+ 180 009c FFF7FEFF 		bl	CyDelay
+ 181              	.LVL22:
+  60:main.c        ****        A7_Write(0u);
+ 182              		.loc 1 60 0
+ 183 00a0 0020     		movs	r0, #0
+ 184 00a2 FFF7FEFF 		bl	A7_Write
+ 185              	.LVL23:
+  61:main.c        **** 	  break;
+ 186              		.loc 1 61 0
+ 187 00a6 44E0     		b	.L3
+ 188              	.L12:
+  62:main.c        ****   case 7:
+  63:main.c        ****       A8_Write(1u);  //led değeri yedi ise sekizinci ledi yakar söndürür.
+ 189              		.loc 1 63 0
+ 190 00a8 0120     		movs	r0, #1
+ 191 00aa FFF7FEFF 		bl	A8_Write
+ 192              	.LVL24:
+  64:main.c        ****        CyDelay(200);
+ 193              		.loc 1 64 0
+ 194 00ae C820     		movs	r0, #200
+ 195 00b0 FFF7FEFF 		bl	CyDelay
+ 196              	.LVL25:
+  65:main.c        ****        A8_Write(0u);
+ 197              		.loc 1 65 0
+ 198 00b4 0020     		movs	r0, #0
+ 199 00b6 FFF7FEFF 		bl	A8_Write
+ 200              	.LVL26:
+  66:main.c        **** 	  break;
+ 201              		.loc 1 66 0
+ 202 00ba 3AE0     		b	.L3
+ 203              	.L13:
+  67:main.c        ****      case 8:
+  68:main.c        **** 	  A7_Write(1u);  // Tersten yakma işlemine geçer 7. ledi yakar söndürür.
+ 204              		.loc 1 68 0
+ 205 00bc 0120     		movs	r0, #1
+ 206 00be FFF7FEFF 		bl	A7_Write
+ 207              	.LVL27:
+  69:main.c        ****     CyDelay(200);
+ 208              		.loc 1 69 0
+ 209 00c2 C820     		movs	r0, #200
+ 210 00c4 FFF7FEFF 		bl	CyDelay
+ 211              	.LVL28:
+  70:main.c        **** 	  A7_Write(0u);
+ 212              		.loc 1 70 0
+ 213 00c8 0020     		movs	r0, #0
+ 214 00ca FFF7FEFF 		bl	A7_Write
+ 215              	.LVL29:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 6
+
+
+  71:main.c        **** 	  break;
+ 216              		.loc 1 71 0
+ 217 00ce 30E0     		b	.L3
+ 218              	.L14:
+  72:main.c        ****   case 9:
+  73:main.c        ****        A6_Write(1u);  // LEd değeri 9 ise 6. ledi yakar söndürür
+ 219              		.loc 1 73 0
+ 220 00d0 0120     		movs	r0, #1
+ 221 00d2 FFF7FEFF 		bl	A6_Write
+ 222              	.LVL30:
+  74:main.c        ****         CyDelay(200);
+ 223              		.loc 1 74 0
+ 224 00d6 C820     		movs	r0, #200
+ 225 00d8 FFF7FEFF 		bl	CyDelay
+ 226              	.LVL31:
+  75:main.c        ****        A6_Write(0u);
+ 227              		.loc 1 75 0
+ 228 00dc 0020     		movs	r0, #0
+ 229 00de FFF7FEFF 		bl	A6_Write
+ 230              	.LVL32:
+  76:main.c        **** 	  break;
+ 231              		.loc 1 76 0
+ 232 00e2 26E0     		b	.L3
+ 233              	.L15:
+  77:main.c        ****   case 10:
+  78:main.c        ****        A5_Write(1u);
+ 234              		.loc 1 78 0
+ 235 00e4 0120     		movs	r0, #1
+ 236 00e6 FFF7FEFF 		bl	A5_Write
+ 237              	.LVL33:
+  79:main.c        ****        CyDelay(200);
+ 238              		.loc 1 79 0
+ 239 00ea C820     		movs	r0, #200
+ 240 00ec FFF7FEFF 		bl	CyDelay
+ 241              	.LVL34:
+  80:main.c        ****        A5_Write(0u);
+ 242              		.loc 1 80 0
+ 243 00f0 0020     		movs	r0, #0
+ 244 00f2 FFF7FEFF 		bl	A5_Write
+ 245              	.LVL35:
+  81:main.c        **** 	  break;
+ 246              		.loc 1 81 0
+ 247 00f6 1CE0     		b	.L3
+ 248              	.L16:
+  82:main.c        ****   case 11:
+  83:main.c        ****        A4_Write(1u);
+ 249              		.loc 1 83 0
+ 250 00f8 0120     		movs	r0, #1
+ 251 00fa FFF7FEFF 		bl	A4_Write
+ 252              	.LVL36:
+  84:main.c        ****          CyDelay(200);
+ 253              		.loc 1 84 0
+ 254 00fe C820     		movs	r0, #200
+ 255 0100 FFF7FEFF 		bl	CyDelay
+ 256              	.LVL37:
+  85:main.c        ****        A4_Write(0u);
+ 257              		.loc 1 85 0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 7
+
+
+ 258 0104 0020     		movs	r0, #0
+ 259 0106 FFF7FEFF 		bl	A4_Write
+ 260              	.LVL38:
+  86:main.c        **** 	  break;
+ 261              		.loc 1 86 0
+ 262 010a 12E0     		b	.L3
+ 263              	.L17:
+  87:main.c        ****   case 12:
+  88:main.c        ****        A3_Write(1u);
+ 264              		.loc 1 88 0
+ 265 010c 0120     		movs	r0, #1
+ 266 010e FFF7FEFF 		bl	A3_Write
+ 267              	.LVL39:
+  89:main.c        ****          CyDelay(200);
+ 268              		.loc 1 89 0
+ 269 0112 C820     		movs	r0, #200
+ 270 0114 FFF7FEFF 		bl	CyDelay
+ 271              	.LVL40:
+  90:main.c        ****        A3_Write(0u);
+ 272              		.loc 1 90 0
+ 273 0118 0020     		movs	r0, #0
+ 274 011a FFF7FEFF 		bl	A3_Write
+ 275              	.LVL41:
+  91:main.c        **** 	  break;
+ 276              		.loc 1 91 0
+ 277 011e 08E0     		b	.L3
+ 278              	.L18:
+  92:main.c        ****   case 13: 
+  93:main.c        **** //Led koşul ifadesini geçmeden en son 1. led yanar söner ve led değeri 14 olmadan döngüde sı
+  94:main.c        ****        A2_Write(1u);  
+ 279              		.loc 1 94 0
+ 280 0120 0120     		movs	r0, #1
+ 281 0122 FFF7FEFF 		bl	A2_Write
+ 282              	.LVL42:
+  95:main.c        ****         CyDelay(200);
+ 283              		.loc 1 95 0
+ 284 0126 C820     		movs	r0, #200
+ 285 0128 FFF7FEFF 		bl	CyDelay
+ 286              	.LVL43:
+  96:main.c        ****        A2_Write(0u);
+ 287              		.loc 1 96 0
+ 288 012c 0020     		movs	r0, #0
+ 289 012e FFF7FEFF 		bl	A2_Write
+ 290              	.LVL44:
+ 291              	.L3:
+  97:main.c        **** 	  break;
+  98:main.c        ****     
+  99:main.c        ****     
+ 100:main.c        ****     
+ 101:main.c        ****   }
+ 102:main.c        ****    led_deger++;  //döngüde led değeri bir arttırılır.
+ 292              		.loc 1 102 0
+ 293 0132 0134     		adds	r4, r4, #1
+ 294              	.LVL45:
+ 103:main.c        ****  }
+ 295              		.loc 1 103 0
+ 296 0134 67E7     		b	.L19
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 8
+
+
+ 297              	.L22:
+ 298 0136 C046     		.align	2
+ 299              	.L21:
+ 300 0138 00000000 		.word	.L5
+ 301              		.cfi_endproc
+ 302              	.LFE32:
+ 303              		.size	main, .-main
+ 304              		.text
+ 305              	.Letext0:
+ 306              		.file 2 "Generated_Source\\PSoC4/A1.h"
+ 307              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 308              		.file 4 "Generated_Source\\PSoC4/A2.h"
+ 309              		.file 5 "Generated_Source\\PSoC4/A3.h"
+ 310              		.file 6 "Generated_Source\\PSoC4/A4.h"
+ 311              		.file 7 "Generated_Source\\PSoC4/A5.h"
+ 312              		.file 8 "Generated_Source\\PSoC4/A6.h"
+ 313              		.file 9 "Generated_Source\\PSoC4/A7.h"
+ 314              		.file 10 "Generated_Source\\PSoC4/A8.h"
+ 315              		.section	.debug_info,"",%progbits
+ 316              	.Ldebug_info0:
+ 317 0000 40040000 		.4byte	0x440
+ 318 0004 0400     		.2byte	0x4
+ 319 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 320 000a 04       		.byte	0x4
+ 321 000b 01       		.uleb128 0x1
+ 322 000c E4000000 		.4byte	.LASF23
+ 323 0010 0C       		.byte	0xc
+ 324 0011 2C000000 		.4byte	.LASF24
+ 325 0015 3C000000 		.4byte	.LASF25
+ 326 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 327 001d 00000000 		.4byte	0
+ 328 0021 00000000 		.4byte	.Ldebug_line0
+ 329 0025 02       		.uleb128 0x2
+ 330 0026 01       		.byte	0x1
+ 331 0027 06       		.byte	0x6
+ 332 0028 85010000 		.4byte	.LASF0
+ 333 002c 02       		.uleb128 0x2
+ 334 002d 01       		.byte	0x1
+ 335 002e 08       		.byte	0x8
+ 336 002f AF000000 		.4byte	.LASF1
+ 337 0033 02       		.uleb128 0x2
+ 338 0034 02       		.byte	0x2
+ 339 0035 05       		.byte	0x5
+ 340 0036 AB010000 		.4byte	.LASF2
+ 341 003a 02       		.uleb128 0x2
+ 342 003b 02       		.byte	0x2
+ 343 003c 07       		.byte	0x7
+ 344 003d 72010000 		.4byte	.LASF3
+ 345 0041 02       		.uleb128 0x2
+ 346 0042 04       		.byte	0x4
+ 347 0043 05       		.byte	0x5
+ 348 0044 CB000000 		.4byte	.LASF4
+ 349 0048 02       		.uleb128 0x2
+ 350 0049 04       		.byte	0x4
+ 351 004a 07       		.byte	0x7
+ 352 004b 6D000000 		.4byte	.LASF5
+ 353 004f 02       		.uleb128 0x2
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 9
+
+
+ 354 0050 08       		.byte	0x8
+ 355 0051 05       		.byte	0x5
+ 356 0052 00000000 		.4byte	.LASF6
+ 357 0056 02       		.uleb128 0x2
+ 358 0057 08       		.byte	0x8
+ 359 0058 07       		.byte	0x7
+ 360 0059 7F000000 		.4byte	.LASF7
+ 361 005d 03       		.uleb128 0x3
+ 362 005e 04       		.byte	0x4
+ 363 005f 05       		.byte	0x5
+ 364 0060 696E7400 		.ascii	"int\000"
+ 365 0064 02       		.uleb128 0x2
+ 366 0065 04       		.byte	0x4
+ 367 0066 07       		.byte	0x7
+ 368 0067 17000000 		.4byte	.LASF8
+ 369 006b 02       		.uleb128 0x2
+ 370 006c 04       		.byte	0x4
+ 371 006d 04       		.byte	0x4
+ 372 006e 96000000 		.4byte	.LASF9
+ 373 0072 02       		.uleb128 0x2
+ 374 0073 08       		.byte	0x8
+ 375 0074 04       		.byte	0x4
+ 376 0075 D4000000 		.4byte	.LASF10
+ 377 0079 02       		.uleb128 0x2
+ 378 007a 01       		.byte	0x1
+ 379 007b 08       		.byte	0x8
+ 380 007c BD000000 		.4byte	.LASF11
+ 381 0080 02       		.uleb128 0x2
+ 382 0081 04       		.byte	0x4
+ 383 0082 07       		.byte	0x7
+ 384 0083 BE010000 		.4byte	.LASF12
+ 385 0087 02       		.uleb128 0x2
+ 386 0088 08       		.byte	0x8
+ 387 0089 04       		.byte	0x4
+ 388 008a 9F010000 		.4byte	.LASF13
+ 389 008e 04       		.uleb128 0x4
+ 390 008f 9A010000 		.4byte	.LASF26
+ 391 0093 01       		.byte	0x1
+ 392 0094 0D       		.byte	0xd
+ 393 0095 5D000000 		.4byte	0x5d
+ 394 0099 00000000 		.4byte	.LFB32
+ 395 009d 3C010000 		.4byte	.LFE32-.LFB32
+ 396 00a1 01       		.uleb128 0x1
+ 397 00a2 9C       		.byte	0x9c
+ 398 00a3 E0030000 		.4byte	0x3e0
+ 399 00a7 05       		.uleb128 0x5
+ 400 00a8 A5000000 		.4byte	.LASF27
+ 401 00ac 01       		.byte	0x1
+ 402 00ad 11       		.byte	0x11
+ 403 00ae 5D000000 		.4byte	0x5d
+ 404 00b2 00000000 		.4byte	.LLST0
+ 405 00b6 06       		.uleb128 0x6
+ 406 00b7 20000000 		.4byte	.LVL3
+ 407 00bb E0030000 		.4byte	0x3e0
+ 408 00bf C9000000 		.4byte	0xc9
+ 409 00c3 07       		.uleb128 0x7
+ 410 00c4 01       		.uleb128 0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 10
+
+
+ 411 00c5 50       		.byte	0x50
+ 412 00c6 01       		.uleb128 0x1
+ 413 00c7 31       		.byte	0x31
+ 414 00c8 00       		.byte	0
+ 415 00c9 06       		.uleb128 0x6
+ 416 00ca 28000000 		.4byte	.LVL4
+ 417 00ce EB030000 		.4byte	0x3eb
+ 418 00d2 DE000000 		.4byte	0xde
+ 419 00d6 07       		.uleb128 0x7
+ 420 00d7 01       		.uleb128 0x1
+ 421 00d8 50       		.byte	0x50
+ 422 00d9 03       		.uleb128 0x3
+ 423 00da 0A       		.byte	0xa
+ 424 00db E803     		.2byte	0x3e8
+ 425 00dd 00       		.byte	0
+ 426 00de 06       		.uleb128 0x6
+ 427 00df 2E000000 		.4byte	.LVL5
+ 428 00e3 E0030000 		.4byte	0x3e0
+ 429 00e7 F1000000 		.4byte	0xf1
+ 430 00eb 07       		.uleb128 0x7
+ 431 00ec 01       		.uleb128 0x1
+ 432 00ed 50       		.byte	0x50
+ 433 00ee 01       		.uleb128 0x1
+ 434 00ef 30       		.byte	0x30
+ 435 00f0 00       		.byte	0
+ 436 00f1 06       		.uleb128 0x6
+ 437 00f2 36000000 		.4byte	.LVL6
+ 438 00f6 F6030000 		.4byte	0x3f6
+ 439 00fa 04010000 		.4byte	0x104
+ 440 00fe 07       		.uleb128 0x7
+ 441 00ff 01       		.uleb128 0x1
+ 442 0100 50       		.byte	0x50
+ 443 0101 01       		.uleb128 0x1
+ 444 0102 31       		.byte	0x31
+ 445 0103 00       		.byte	0
+ 446 0104 06       		.uleb128 0x6
+ 447 0105 3C000000 		.4byte	.LVL7
+ 448 0109 EB030000 		.4byte	0x3eb
+ 449 010d 18010000 		.4byte	0x118
+ 450 0111 07       		.uleb128 0x7
+ 451 0112 01       		.uleb128 0x1
+ 452 0113 50       		.byte	0x50
+ 453 0114 02       		.uleb128 0x2
+ 454 0115 08       		.byte	0x8
+ 455 0116 C8       		.byte	0xc8
+ 456 0117 00       		.byte	0
+ 457 0118 06       		.uleb128 0x6
+ 458 0119 42000000 		.4byte	.LVL8
+ 459 011d F6030000 		.4byte	0x3f6
+ 460 0121 2B010000 		.4byte	0x12b
+ 461 0125 07       		.uleb128 0x7
+ 462 0126 01       		.uleb128 0x1
+ 463 0127 50       		.byte	0x50
+ 464 0128 01       		.uleb128 0x1
+ 465 0129 30       		.byte	0x30
+ 466 012a 00       		.byte	0
+ 467 012b 06       		.uleb128 0x6
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 11
+
+
+ 468 012c 4A000000 		.4byte	.LVL9
+ 469 0130 01040000 		.4byte	0x401
+ 470 0134 3E010000 		.4byte	0x13e
+ 471 0138 07       		.uleb128 0x7
+ 472 0139 01       		.uleb128 0x1
+ 473 013a 50       		.byte	0x50
+ 474 013b 01       		.uleb128 0x1
+ 475 013c 31       		.byte	0x31
+ 476 013d 00       		.byte	0
+ 477 013e 06       		.uleb128 0x6
+ 478 013f 50000000 		.4byte	.LVL10
+ 479 0143 EB030000 		.4byte	0x3eb
+ 480 0147 52010000 		.4byte	0x152
+ 481 014b 07       		.uleb128 0x7
+ 482 014c 01       		.uleb128 0x1
+ 483 014d 50       		.byte	0x50
+ 484 014e 02       		.uleb128 0x2
+ 485 014f 08       		.byte	0x8
+ 486 0150 C8       		.byte	0xc8
+ 487 0151 00       		.byte	0
+ 488 0152 06       		.uleb128 0x6
+ 489 0153 56000000 		.4byte	.LVL11
+ 490 0157 01040000 		.4byte	0x401
+ 491 015b 65010000 		.4byte	0x165
+ 492 015f 07       		.uleb128 0x7
+ 493 0160 01       		.uleb128 0x1
+ 494 0161 50       		.byte	0x50
+ 495 0162 01       		.uleb128 0x1
+ 496 0163 30       		.byte	0x30
+ 497 0164 00       		.byte	0
+ 498 0165 06       		.uleb128 0x6
+ 499 0166 5E000000 		.4byte	.LVL12
+ 500 016a 0C040000 		.4byte	0x40c
+ 501 016e 78010000 		.4byte	0x178
+ 502 0172 07       		.uleb128 0x7
+ 503 0173 01       		.uleb128 0x1
+ 504 0174 50       		.byte	0x50
+ 505 0175 01       		.uleb128 0x1
+ 506 0176 31       		.byte	0x31
+ 507 0177 00       		.byte	0
+ 508 0178 06       		.uleb128 0x6
+ 509 0179 64000000 		.4byte	.LVL13
+ 510 017d EB030000 		.4byte	0x3eb
+ 511 0181 8C010000 		.4byte	0x18c
+ 512 0185 07       		.uleb128 0x7
+ 513 0186 01       		.uleb128 0x1
+ 514 0187 50       		.byte	0x50
+ 515 0188 02       		.uleb128 0x2
+ 516 0189 08       		.byte	0x8
+ 517 018a C8       		.byte	0xc8
+ 518 018b 00       		.byte	0
+ 519 018c 06       		.uleb128 0x6
+ 520 018d 6A000000 		.4byte	.LVL14
+ 521 0191 0C040000 		.4byte	0x40c
+ 522 0195 9F010000 		.4byte	0x19f
+ 523 0199 07       		.uleb128 0x7
+ 524 019a 01       		.uleb128 0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 12
+
+
+ 525 019b 50       		.byte	0x50
+ 526 019c 01       		.uleb128 0x1
+ 527 019d 30       		.byte	0x30
+ 528 019e 00       		.byte	0
+ 529 019f 06       		.uleb128 0x6
+ 530 01a0 72000000 		.4byte	.LVL15
+ 531 01a4 17040000 		.4byte	0x417
+ 532 01a8 B2010000 		.4byte	0x1b2
+ 533 01ac 07       		.uleb128 0x7
+ 534 01ad 01       		.uleb128 0x1
+ 535 01ae 50       		.byte	0x50
+ 536 01af 01       		.uleb128 0x1
+ 537 01b0 31       		.byte	0x31
+ 538 01b1 00       		.byte	0
+ 539 01b2 06       		.uleb128 0x6
+ 540 01b3 78000000 		.4byte	.LVL16
+ 541 01b7 EB030000 		.4byte	0x3eb
+ 542 01bb C6010000 		.4byte	0x1c6
+ 543 01bf 07       		.uleb128 0x7
+ 544 01c0 01       		.uleb128 0x1
+ 545 01c1 50       		.byte	0x50
+ 546 01c2 02       		.uleb128 0x2
+ 547 01c3 08       		.byte	0x8
+ 548 01c4 C8       		.byte	0xc8
+ 549 01c5 00       		.byte	0
+ 550 01c6 06       		.uleb128 0x6
+ 551 01c7 7E000000 		.4byte	.LVL17
+ 552 01cb 17040000 		.4byte	0x417
+ 553 01cf D9010000 		.4byte	0x1d9
+ 554 01d3 07       		.uleb128 0x7
+ 555 01d4 01       		.uleb128 0x1
+ 556 01d5 50       		.byte	0x50
+ 557 01d6 01       		.uleb128 0x1
+ 558 01d7 30       		.byte	0x30
+ 559 01d8 00       		.byte	0
+ 560 01d9 06       		.uleb128 0x6
+ 561 01da 86000000 		.4byte	.LVL18
+ 562 01de 22040000 		.4byte	0x422
+ 563 01e2 EC010000 		.4byte	0x1ec
+ 564 01e6 07       		.uleb128 0x7
+ 565 01e7 01       		.uleb128 0x1
+ 566 01e8 50       		.byte	0x50
+ 567 01e9 01       		.uleb128 0x1
+ 568 01ea 31       		.byte	0x31
+ 569 01eb 00       		.byte	0
+ 570 01ec 06       		.uleb128 0x6
+ 571 01ed 8C000000 		.4byte	.LVL19
+ 572 01f1 EB030000 		.4byte	0x3eb
+ 573 01f5 00020000 		.4byte	0x200
+ 574 01f9 07       		.uleb128 0x7
+ 575 01fa 01       		.uleb128 0x1
+ 576 01fb 50       		.byte	0x50
+ 577 01fc 02       		.uleb128 0x2
+ 578 01fd 08       		.byte	0x8
+ 579 01fe C8       		.byte	0xc8
+ 580 01ff 00       		.byte	0
+ 581 0200 06       		.uleb128 0x6
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 13
+
+
+ 582 0201 92000000 		.4byte	.LVL20
+ 583 0205 22040000 		.4byte	0x422
+ 584 0209 13020000 		.4byte	0x213
+ 585 020d 07       		.uleb128 0x7
+ 586 020e 01       		.uleb128 0x1
+ 587 020f 50       		.byte	0x50
+ 588 0210 01       		.uleb128 0x1
+ 589 0211 30       		.byte	0x30
+ 590 0212 00       		.byte	0
+ 591 0213 06       		.uleb128 0x6
+ 592 0214 9A000000 		.4byte	.LVL21
+ 593 0218 2D040000 		.4byte	0x42d
+ 594 021c 26020000 		.4byte	0x226
+ 595 0220 07       		.uleb128 0x7
+ 596 0221 01       		.uleb128 0x1
+ 597 0222 50       		.byte	0x50
+ 598 0223 01       		.uleb128 0x1
+ 599 0224 31       		.byte	0x31
+ 600 0225 00       		.byte	0
+ 601 0226 06       		.uleb128 0x6
+ 602 0227 A0000000 		.4byte	.LVL22
+ 603 022b EB030000 		.4byte	0x3eb
+ 604 022f 3A020000 		.4byte	0x23a
+ 605 0233 07       		.uleb128 0x7
+ 606 0234 01       		.uleb128 0x1
+ 607 0235 50       		.byte	0x50
+ 608 0236 02       		.uleb128 0x2
+ 609 0237 08       		.byte	0x8
+ 610 0238 C8       		.byte	0xc8
+ 611 0239 00       		.byte	0
+ 612 023a 06       		.uleb128 0x6
+ 613 023b A6000000 		.4byte	.LVL23
+ 614 023f 2D040000 		.4byte	0x42d
+ 615 0243 4D020000 		.4byte	0x24d
+ 616 0247 07       		.uleb128 0x7
+ 617 0248 01       		.uleb128 0x1
+ 618 0249 50       		.byte	0x50
+ 619 024a 01       		.uleb128 0x1
+ 620 024b 30       		.byte	0x30
+ 621 024c 00       		.byte	0
+ 622 024d 06       		.uleb128 0x6
+ 623 024e AE000000 		.4byte	.LVL24
+ 624 0252 38040000 		.4byte	0x438
+ 625 0256 60020000 		.4byte	0x260
+ 626 025a 07       		.uleb128 0x7
+ 627 025b 01       		.uleb128 0x1
+ 628 025c 50       		.byte	0x50
+ 629 025d 01       		.uleb128 0x1
+ 630 025e 31       		.byte	0x31
+ 631 025f 00       		.byte	0
+ 632 0260 06       		.uleb128 0x6
+ 633 0261 B4000000 		.4byte	.LVL25
+ 634 0265 EB030000 		.4byte	0x3eb
+ 635 0269 74020000 		.4byte	0x274
+ 636 026d 07       		.uleb128 0x7
+ 637 026e 01       		.uleb128 0x1
+ 638 026f 50       		.byte	0x50
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 14
+
+
+ 639 0270 02       		.uleb128 0x2
+ 640 0271 08       		.byte	0x8
+ 641 0272 C8       		.byte	0xc8
+ 642 0273 00       		.byte	0
+ 643 0274 06       		.uleb128 0x6
+ 644 0275 BA000000 		.4byte	.LVL26
+ 645 0279 38040000 		.4byte	0x438
+ 646 027d 87020000 		.4byte	0x287
+ 647 0281 07       		.uleb128 0x7
+ 648 0282 01       		.uleb128 0x1
+ 649 0283 50       		.byte	0x50
+ 650 0284 01       		.uleb128 0x1
+ 651 0285 30       		.byte	0x30
+ 652 0286 00       		.byte	0
+ 653 0287 06       		.uleb128 0x6
+ 654 0288 C2000000 		.4byte	.LVL27
+ 655 028c 2D040000 		.4byte	0x42d
+ 656 0290 9A020000 		.4byte	0x29a
+ 657 0294 07       		.uleb128 0x7
+ 658 0295 01       		.uleb128 0x1
+ 659 0296 50       		.byte	0x50
+ 660 0297 01       		.uleb128 0x1
+ 661 0298 31       		.byte	0x31
+ 662 0299 00       		.byte	0
+ 663 029a 06       		.uleb128 0x6
+ 664 029b C8000000 		.4byte	.LVL28
+ 665 029f EB030000 		.4byte	0x3eb
+ 666 02a3 AE020000 		.4byte	0x2ae
+ 667 02a7 07       		.uleb128 0x7
+ 668 02a8 01       		.uleb128 0x1
+ 669 02a9 50       		.byte	0x50
+ 670 02aa 02       		.uleb128 0x2
+ 671 02ab 08       		.byte	0x8
+ 672 02ac C8       		.byte	0xc8
+ 673 02ad 00       		.byte	0
+ 674 02ae 06       		.uleb128 0x6
+ 675 02af CE000000 		.4byte	.LVL29
+ 676 02b3 2D040000 		.4byte	0x42d
+ 677 02b7 C1020000 		.4byte	0x2c1
+ 678 02bb 07       		.uleb128 0x7
+ 679 02bc 01       		.uleb128 0x1
+ 680 02bd 50       		.byte	0x50
+ 681 02be 01       		.uleb128 0x1
+ 682 02bf 30       		.byte	0x30
+ 683 02c0 00       		.byte	0
+ 684 02c1 06       		.uleb128 0x6
+ 685 02c2 D6000000 		.4byte	.LVL30
+ 686 02c6 22040000 		.4byte	0x422
+ 687 02ca D4020000 		.4byte	0x2d4
+ 688 02ce 07       		.uleb128 0x7
+ 689 02cf 01       		.uleb128 0x1
+ 690 02d0 50       		.byte	0x50
+ 691 02d1 01       		.uleb128 0x1
+ 692 02d2 31       		.byte	0x31
+ 693 02d3 00       		.byte	0
+ 694 02d4 06       		.uleb128 0x6
+ 695 02d5 DC000000 		.4byte	.LVL31
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 15
+
+
+ 696 02d9 EB030000 		.4byte	0x3eb
+ 697 02dd E8020000 		.4byte	0x2e8
+ 698 02e1 07       		.uleb128 0x7
+ 699 02e2 01       		.uleb128 0x1
+ 700 02e3 50       		.byte	0x50
+ 701 02e4 02       		.uleb128 0x2
+ 702 02e5 08       		.byte	0x8
+ 703 02e6 C8       		.byte	0xc8
+ 704 02e7 00       		.byte	0
+ 705 02e8 06       		.uleb128 0x6
+ 706 02e9 E2000000 		.4byte	.LVL32
+ 707 02ed 22040000 		.4byte	0x422
+ 708 02f1 FB020000 		.4byte	0x2fb
+ 709 02f5 07       		.uleb128 0x7
+ 710 02f6 01       		.uleb128 0x1
+ 711 02f7 50       		.byte	0x50
+ 712 02f8 01       		.uleb128 0x1
+ 713 02f9 30       		.byte	0x30
+ 714 02fa 00       		.byte	0
+ 715 02fb 06       		.uleb128 0x6
+ 716 02fc EA000000 		.4byte	.LVL33
+ 717 0300 17040000 		.4byte	0x417
+ 718 0304 0E030000 		.4byte	0x30e
+ 719 0308 07       		.uleb128 0x7
+ 720 0309 01       		.uleb128 0x1
+ 721 030a 50       		.byte	0x50
+ 722 030b 01       		.uleb128 0x1
+ 723 030c 31       		.byte	0x31
+ 724 030d 00       		.byte	0
+ 725 030e 06       		.uleb128 0x6
+ 726 030f F0000000 		.4byte	.LVL34
+ 727 0313 EB030000 		.4byte	0x3eb
+ 728 0317 22030000 		.4byte	0x322
+ 729 031b 07       		.uleb128 0x7
+ 730 031c 01       		.uleb128 0x1
+ 731 031d 50       		.byte	0x50
+ 732 031e 02       		.uleb128 0x2
+ 733 031f 08       		.byte	0x8
+ 734 0320 C8       		.byte	0xc8
+ 735 0321 00       		.byte	0
+ 736 0322 06       		.uleb128 0x6
+ 737 0323 F6000000 		.4byte	.LVL35
+ 738 0327 17040000 		.4byte	0x417
+ 739 032b 35030000 		.4byte	0x335
+ 740 032f 07       		.uleb128 0x7
+ 741 0330 01       		.uleb128 0x1
+ 742 0331 50       		.byte	0x50
+ 743 0332 01       		.uleb128 0x1
+ 744 0333 30       		.byte	0x30
+ 745 0334 00       		.byte	0
+ 746 0335 06       		.uleb128 0x6
+ 747 0336 FE000000 		.4byte	.LVL36
+ 748 033a 0C040000 		.4byte	0x40c
+ 749 033e 48030000 		.4byte	0x348
+ 750 0342 07       		.uleb128 0x7
+ 751 0343 01       		.uleb128 0x1
+ 752 0344 50       		.byte	0x50
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 16
+
+
+ 753 0345 01       		.uleb128 0x1
+ 754 0346 31       		.byte	0x31
+ 755 0347 00       		.byte	0
+ 756 0348 06       		.uleb128 0x6
+ 757 0349 04010000 		.4byte	.LVL37
+ 758 034d EB030000 		.4byte	0x3eb
+ 759 0351 5C030000 		.4byte	0x35c
+ 760 0355 07       		.uleb128 0x7
+ 761 0356 01       		.uleb128 0x1
+ 762 0357 50       		.byte	0x50
+ 763 0358 02       		.uleb128 0x2
+ 764 0359 08       		.byte	0x8
+ 765 035a C8       		.byte	0xc8
+ 766 035b 00       		.byte	0
+ 767 035c 06       		.uleb128 0x6
+ 768 035d 0A010000 		.4byte	.LVL38
+ 769 0361 0C040000 		.4byte	0x40c
+ 770 0365 6F030000 		.4byte	0x36f
+ 771 0369 07       		.uleb128 0x7
+ 772 036a 01       		.uleb128 0x1
+ 773 036b 50       		.byte	0x50
+ 774 036c 01       		.uleb128 0x1
+ 775 036d 30       		.byte	0x30
+ 776 036e 00       		.byte	0
+ 777 036f 06       		.uleb128 0x6
+ 778 0370 12010000 		.4byte	.LVL39
+ 779 0374 01040000 		.4byte	0x401
+ 780 0378 82030000 		.4byte	0x382
+ 781 037c 07       		.uleb128 0x7
+ 782 037d 01       		.uleb128 0x1
+ 783 037e 50       		.byte	0x50
+ 784 037f 01       		.uleb128 0x1
+ 785 0380 31       		.byte	0x31
+ 786 0381 00       		.byte	0
+ 787 0382 06       		.uleb128 0x6
+ 788 0383 18010000 		.4byte	.LVL40
+ 789 0387 EB030000 		.4byte	0x3eb
+ 790 038b 96030000 		.4byte	0x396
+ 791 038f 07       		.uleb128 0x7
+ 792 0390 01       		.uleb128 0x1
+ 793 0391 50       		.byte	0x50
+ 794 0392 02       		.uleb128 0x2
+ 795 0393 08       		.byte	0x8
+ 796 0394 C8       		.byte	0xc8
+ 797 0395 00       		.byte	0
+ 798 0396 06       		.uleb128 0x6
+ 799 0397 1E010000 		.4byte	.LVL41
+ 800 039b 01040000 		.4byte	0x401
+ 801 039f A9030000 		.4byte	0x3a9
+ 802 03a3 07       		.uleb128 0x7
+ 803 03a4 01       		.uleb128 0x1
+ 804 03a5 50       		.byte	0x50
+ 805 03a6 01       		.uleb128 0x1
+ 806 03a7 30       		.byte	0x30
+ 807 03a8 00       		.byte	0
+ 808 03a9 06       		.uleb128 0x6
+ 809 03aa 26010000 		.4byte	.LVL42
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 17
+
+
+ 810 03ae F6030000 		.4byte	0x3f6
+ 811 03b2 BC030000 		.4byte	0x3bc
+ 812 03b6 07       		.uleb128 0x7
+ 813 03b7 01       		.uleb128 0x1
+ 814 03b8 50       		.byte	0x50
+ 815 03b9 01       		.uleb128 0x1
+ 816 03ba 31       		.byte	0x31
+ 817 03bb 00       		.byte	0
+ 818 03bc 06       		.uleb128 0x6
+ 819 03bd 2C010000 		.4byte	.LVL43
+ 820 03c1 EB030000 		.4byte	0x3eb
+ 821 03c5 D0030000 		.4byte	0x3d0
+ 822 03c9 07       		.uleb128 0x7
+ 823 03ca 01       		.uleb128 0x1
+ 824 03cb 50       		.byte	0x50
+ 825 03cc 02       		.uleb128 0x2
+ 826 03cd 08       		.byte	0x8
+ 827 03ce C8       		.byte	0xc8
+ 828 03cf 00       		.byte	0
+ 829 03d0 08       		.uleb128 0x8
+ 830 03d1 32010000 		.4byte	.LVL44
+ 831 03d5 F6030000 		.4byte	0x3f6
+ 832 03d9 07       		.uleb128 0x7
+ 833 03da 01       		.uleb128 0x1
+ 834 03db 50       		.byte	0x50
+ 835 03dc 01       		.uleb128 0x1
+ 836 03dd 30       		.byte	0x30
+ 837 03de 00       		.byte	0
+ 838 03df 00       		.byte	0
+ 839 03e0 09       		.uleb128 0x9
+ 840 03e1 0E000000 		.4byte	.LASF14
+ 841 03e5 0E000000 		.4byte	.LASF14
+ 842 03e9 02       		.byte	0x2
+ 843 03ea 33       		.byte	0x33
+ 844 03eb 09       		.uleb128 0x9
+ 845 03ec 24000000 		.4byte	.LASF15
+ 846 03f0 24000000 		.4byte	.LASF15
+ 847 03f4 03       		.byte	0x3
+ 848 03f5 EC       		.byte	0xec
+ 849 03f6 09       		.uleb128 0x9
+ 850 03f7 91010000 		.4byte	.LASF16
+ 851 03fb 91010000 		.4byte	.LASF16
+ 852 03ff 04       		.byte	0x4
+ 853 0400 33       		.byte	0x33
+ 854 0401 09       		.uleb128 0x9
+ 855 0402 9C000000 		.4byte	.LASF17
+ 856 0406 9C000000 		.4byte	.LASF17
+ 857 040a 05       		.byte	0x5
+ 858 040b 33       		.byte	0x33
+ 859 040c 09       		.uleb128 0x9
+ 860 040d 64000000 		.4byte	.LASF18
+ 861 0411 64000000 		.4byte	.LASF18
+ 862 0415 06       		.byte	0x6
+ 863 0416 33       		.byte	0x33
+ 864 0417 09       		.uleb128 0x9
+ 865 0418 C2000000 		.4byte	.LASF19
+ 866 041c C2000000 		.4byte	.LASF19
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 18
+
+
+ 867 0420 07       		.byte	0x7
+ 868 0421 33       		.byte	0x33
+ 869 0422 09       		.uleb128 0x9
+ 870 0423 DB000000 		.4byte	.LASF20
+ 871 0427 DB000000 		.4byte	.LASF20
+ 872 042b 08       		.byte	0x8
+ 873 042c 33       		.byte	0x33
+ 874 042d 09       		.uleb128 0x9
+ 875 042e B5010000 		.4byte	.LASF21
+ 876 0432 B5010000 		.4byte	.LASF21
+ 877 0436 09       		.byte	0x9
+ 878 0437 33       		.byte	0x33
+ 879 0438 09       		.uleb128 0x9
+ 880 0439 33000000 		.4byte	.LASF22
+ 881 043d 33000000 		.4byte	.LASF22
+ 882 0441 0A       		.byte	0xa
+ 883 0442 33       		.byte	0x33
+ 884 0443 00       		.byte	0
+ 885              		.section	.debug_abbrev,"",%progbits
+ 886              	.Ldebug_abbrev0:
+ 887 0000 01       		.uleb128 0x1
+ 888 0001 11       		.uleb128 0x11
+ 889 0002 01       		.byte	0x1
+ 890 0003 25       		.uleb128 0x25
+ 891 0004 0E       		.uleb128 0xe
+ 892 0005 13       		.uleb128 0x13
+ 893 0006 0B       		.uleb128 0xb
+ 894 0007 03       		.uleb128 0x3
+ 895 0008 0E       		.uleb128 0xe
+ 896 0009 1B       		.uleb128 0x1b
+ 897 000a 0E       		.uleb128 0xe
+ 898 000b 55       		.uleb128 0x55
+ 899 000c 17       		.uleb128 0x17
+ 900 000d 11       		.uleb128 0x11
+ 901 000e 01       		.uleb128 0x1
+ 902 000f 10       		.uleb128 0x10
+ 903 0010 17       		.uleb128 0x17
+ 904 0011 00       		.byte	0
+ 905 0012 00       		.byte	0
+ 906 0013 02       		.uleb128 0x2
+ 907 0014 24       		.uleb128 0x24
+ 908 0015 00       		.byte	0
+ 909 0016 0B       		.uleb128 0xb
+ 910 0017 0B       		.uleb128 0xb
+ 911 0018 3E       		.uleb128 0x3e
+ 912 0019 0B       		.uleb128 0xb
+ 913 001a 03       		.uleb128 0x3
+ 914 001b 0E       		.uleb128 0xe
+ 915 001c 00       		.byte	0
+ 916 001d 00       		.byte	0
+ 917 001e 03       		.uleb128 0x3
+ 918 001f 24       		.uleb128 0x24
+ 919 0020 00       		.byte	0
+ 920 0021 0B       		.uleb128 0xb
+ 921 0022 0B       		.uleb128 0xb
+ 922 0023 3E       		.uleb128 0x3e
+ 923 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 19
+
+
+ 924 0025 03       		.uleb128 0x3
+ 925 0026 08       		.uleb128 0x8
+ 926 0027 00       		.byte	0
+ 927 0028 00       		.byte	0
+ 928 0029 04       		.uleb128 0x4
+ 929 002a 2E       		.uleb128 0x2e
+ 930 002b 01       		.byte	0x1
+ 931 002c 3F       		.uleb128 0x3f
+ 932 002d 19       		.uleb128 0x19
+ 933 002e 03       		.uleb128 0x3
+ 934 002f 0E       		.uleb128 0xe
+ 935 0030 3A       		.uleb128 0x3a
+ 936 0031 0B       		.uleb128 0xb
+ 937 0032 3B       		.uleb128 0x3b
+ 938 0033 0B       		.uleb128 0xb
+ 939 0034 27       		.uleb128 0x27
+ 940 0035 19       		.uleb128 0x19
+ 941 0036 49       		.uleb128 0x49
+ 942 0037 13       		.uleb128 0x13
+ 943 0038 8701     		.uleb128 0x87
+ 944 003a 19       		.uleb128 0x19
+ 945 003b 11       		.uleb128 0x11
+ 946 003c 01       		.uleb128 0x1
+ 947 003d 12       		.uleb128 0x12
+ 948 003e 06       		.uleb128 0x6
+ 949 003f 40       		.uleb128 0x40
+ 950 0040 18       		.uleb128 0x18
+ 951 0041 9742     		.uleb128 0x2117
+ 952 0043 19       		.uleb128 0x19
+ 953 0044 01       		.uleb128 0x1
+ 954 0045 13       		.uleb128 0x13
+ 955 0046 00       		.byte	0
+ 956 0047 00       		.byte	0
+ 957 0048 05       		.uleb128 0x5
+ 958 0049 34       		.uleb128 0x34
+ 959 004a 00       		.byte	0
+ 960 004b 03       		.uleb128 0x3
+ 961 004c 0E       		.uleb128 0xe
+ 962 004d 3A       		.uleb128 0x3a
+ 963 004e 0B       		.uleb128 0xb
+ 964 004f 3B       		.uleb128 0x3b
+ 965 0050 0B       		.uleb128 0xb
+ 966 0051 49       		.uleb128 0x49
+ 967 0052 13       		.uleb128 0x13
+ 968 0053 02       		.uleb128 0x2
+ 969 0054 17       		.uleb128 0x17
+ 970 0055 00       		.byte	0
+ 971 0056 00       		.byte	0
+ 972 0057 06       		.uleb128 0x6
+ 973 0058 898201   		.uleb128 0x4109
+ 974 005b 01       		.byte	0x1
+ 975 005c 11       		.uleb128 0x11
+ 976 005d 01       		.uleb128 0x1
+ 977 005e 31       		.uleb128 0x31
+ 978 005f 13       		.uleb128 0x13
+ 979 0060 01       		.uleb128 0x1
+ 980 0061 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 20
+
+
+ 981 0062 00       		.byte	0
+ 982 0063 00       		.byte	0
+ 983 0064 07       		.uleb128 0x7
+ 984 0065 8A8201   		.uleb128 0x410a
+ 985 0068 00       		.byte	0
+ 986 0069 02       		.uleb128 0x2
+ 987 006a 18       		.uleb128 0x18
+ 988 006b 9142     		.uleb128 0x2111
+ 989 006d 18       		.uleb128 0x18
+ 990 006e 00       		.byte	0
+ 991 006f 00       		.byte	0
+ 992 0070 08       		.uleb128 0x8
+ 993 0071 898201   		.uleb128 0x4109
+ 994 0074 01       		.byte	0x1
+ 995 0075 11       		.uleb128 0x11
+ 996 0076 01       		.uleb128 0x1
+ 997 0077 31       		.uleb128 0x31
+ 998 0078 13       		.uleb128 0x13
+ 999 0079 00       		.byte	0
+ 1000 007a 00       		.byte	0
+ 1001 007b 09       		.uleb128 0x9
+ 1002 007c 2E       		.uleb128 0x2e
+ 1003 007d 00       		.byte	0
+ 1004 007e 3F       		.uleb128 0x3f
+ 1005 007f 19       		.uleb128 0x19
+ 1006 0080 3C       		.uleb128 0x3c
+ 1007 0081 19       		.uleb128 0x19
+ 1008 0082 6E       		.uleb128 0x6e
+ 1009 0083 0E       		.uleb128 0xe
+ 1010 0084 03       		.uleb128 0x3
+ 1011 0085 0E       		.uleb128 0xe
+ 1012 0086 3A       		.uleb128 0x3a
+ 1013 0087 0B       		.uleb128 0xb
+ 1014 0088 3B       		.uleb128 0x3b
+ 1015 0089 0B       		.uleb128 0xb
+ 1016 008a 00       		.byte	0
+ 1017 008b 00       		.byte	0
+ 1018 008c 00       		.byte	0
+ 1019              		.section	.debug_loc,"",%progbits
+ 1020              	.Ldebug_loc0:
+ 1021              	.LLST0:
+ 1022 0000 04000000 		.4byte	.LVL0
+ 1023 0004 06000000 		.4byte	.LVL1
+ 1024 0008 0200     		.2byte	0x2
+ 1025 000a 30       		.byte	0x30
+ 1026 000b 9F       		.byte	0x9f
+ 1027 000c 06000000 		.4byte	.LVL1
+ 1028 0010 3C010000 		.4byte	.LFE32
+ 1029 0014 0100     		.2byte	0x1
+ 1030 0016 54       		.byte	0x54
+ 1031 0017 00000000 		.4byte	0
+ 1032 001b 00000000 		.4byte	0
+ 1033              		.section	.debug_aranges,"",%progbits
+ 1034 0000 1C000000 		.4byte	0x1c
+ 1035 0004 0200     		.2byte	0x2
+ 1036 0006 00000000 		.4byte	.Ldebug_info0
+ 1037 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 21
+
+
+ 1038 000b 00       		.byte	0
+ 1039 000c 0000     		.2byte	0
+ 1040 000e 0000     		.2byte	0
+ 1041 0010 00000000 		.4byte	.LFB32
+ 1042 0014 3C010000 		.4byte	.LFE32-.LFB32
+ 1043 0018 00000000 		.4byte	0
+ 1044 001c 00000000 		.4byte	0
+ 1045              		.section	.debug_ranges,"",%progbits
+ 1046              	.Ldebug_ranges0:
+ 1047 0000 00000000 		.4byte	.LFB32
+ 1048 0004 3C010000 		.4byte	.LFE32
+ 1049 0008 00000000 		.4byte	0
+ 1050 000c 00000000 		.4byte	0
+ 1051              		.section	.debug_line,"",%progbits
+ 1052              	.Ldebug_line0:
+ 1053 0000 D2000000 		.section	.debug_str,"MS",%progbits,1
+ 1053      02007F00 
+ 1053      00000201 
+ 1053      FB0E0D00 
+ 1053      01010101 
+ 1054              	.LASF6:
+ 1055 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1055      206C6F6E 
+ 1055      6720696E 
+ 1055      7400
+ 1056              	.LASF14:
+ 1057 000e 41315F57 		.ascii	"A1_Write\000"
+ 1057      72697465 
+ 1057      00
+ 1058              	.LASF8:
+ 1059 0017 756E7369 		.ascii	"unsigned int\000"
+ 1059      676E6564 
+ 1059      20696E74 
+ 1059      00
+ 1060              	.LASF15:
+ 1061 0024 43794465 		.ascii	"CyDelay\000"
+ 1061      6C617900 
+ 1062              	.LASF24:
+ 1063 002c 6D61696E 		.ascii	"main.c\000"
+ 1063      2E6300
+ 1064              	.LASF22:
+ 1065 0033 41385F57 		.ascii	"A8_Write\000"
+ 1065      72697465 
+ 1065      00
+ 1066              	.LASF25:
+ 1067 003c 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB2\\karasimsek.cydsn\000"
+ 1067      55544F52 
+ 1067      49414C53 
+ 1067      5C50534F 
+ 1067      435F4C41 
+ 1068              	.LASF18:
+ 1069 0064 41345F57 		.ascii	"A4_Write\000"
+ 1069      72697465 
+ 1069      00
+ 1070              	.LASF5:
+ 1071 006d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1071      20756E73 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 22
+
+
+ 1071      69676E65 
+ 1071      6420696E 
+ 1071      7400
+ 1072              	.LASF7:
+ 1073 007f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1073      206C6F6E 
+ 1073      6720756E 
+ 1073      7369676E 
+ 1073      65642069 
+ 1074              	.LASF9:
+ 1075 0096 666C6F61 		.ascii	"float\000"
+ 1075      7400
+ 1076              	.LASF17:
+ 1077 009c 41335F57 		.ascii	"A3_Write\000"
+ 1077      72697465 
+ 1077      00
+ 1078              	.LASF27:
+ 1079 00a5 6C65645F 		.ascii	"led_deger\000"
+ 1079      64656765 
+ 1079      7200
+ 1080              	.LASF1:
+ 1081 00af 756E7369 		.ascii	"unsigned char\000"
+ 1081      676E6564 
+ 1081      20636861 
+ 1081      7200
+ 1082              	.LASF11:
+ 1083 00bd 63686172 		.ascii	"char\000"
+ 1083      00
+ 1084              	.LASF19:
+ 1085 00c2 41355F57 		.ascii	"A5_Write\000"
+ 1085      72697465 
+ 1085      00
+ 1086              	.LASF4:
+ 1087 00cb 6C6F6E67 		.ascii	"long int\000"
+ 1087      20696E74 
+ 1087      00
+ 1088              	.LASF10:
+ 1089 00d4 646F7562 		.ascii	"double\000"
+ 1089      6C6500
+ 1090              	.LASF20:
+ 1091 00db 41365F57 		.ascii	"A6_Write\000"
+ 1091      72697465 
+ 1091      00
+ 1092              	.LASF23:
+ 1093 00e4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1093      43313120 
+ 1093      352E342E 
+ 1093      31203230 
+ 1093      31363036 
+ 1094 0117 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1094      20726576 
+ 1094      6973696F 
+ 1094      6E203233 
+ 1094      37373135 
+ 1095 014a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1095      66756E63 
+ 1095      74696F6E 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccJ7nJUS.s 			page 23
+
+
+ 1095      2D736563 
+ 1095      74696F6E 
+ 1096              	.LASF3:
+ 1097 0172 73686F72 		.ascii	"short unsigned int\000"
+ 1097      7420756E 
+ 1097      7369676E 
+ 1097      65642069 
+ 1097      6E7400
+ 1098              	.LASF0:
+ 1099 0185 7369676E 		.ascii	"signed char\000"
+ 1099      65642063 
+ 1099      68617200 
+ 1100              	.LASF16:
+ 1101 0191 41325F57 		.ascii	"A2_Write\000"
+ 1101      72697465 
+ 1101      00
+ 1102              	.LASF26:
+ 1103 019a 6D61696E 		.ascii	"main\000"
+ 1103      00
+ 1104              	.LASF13:
+ 1105 019f 6C6F6E67 		.ascii	"long double\000"
+ 1105      20646F75 
+ 1105      626C6500 
+ 1106              	.LASF2:
+ 1107 01ab 73686F72 		.ascii	"short int\000"
+ 1107      7420696E 
+ 1107      7400
+ 1108              	.LASF21:
+ 1109 01b5 41375F57 		.ascii	"A7_Write\000"
+ 1109      72697465 
+ 1109      00
+ 1110              	.LASF12:
+ 1111 01be 73697A65 		.ascii	"sizetype\000"
+ 1111      74797065 
+ 1111      00
+ 1112              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,10 @@
+# BUTON_LED
+# 2021-03-22 18:47:23Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "LED_Red(0)" iocell 1 6
+set_io "buton(0)" iocell 0 7

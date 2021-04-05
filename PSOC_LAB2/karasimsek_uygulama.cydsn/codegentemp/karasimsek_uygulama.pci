@@ -1,0 +1,16 @@
+# karasimsek_uygulama
+# 2021-03-29 18:10:51Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "Ledler(0)" iocell 0 0
+set_io "Ledler(1)" iocell 0 1
+set_io "Ledler(2)" iocell 0 2
+set_io "Ledler(3)" iocell 0 3
+set_io "Ledler(4)" iocell 0 4
+set_io "Ledler(5)" iocell 0 5
+set_io "Ledler(6)" iocell 0 6
+set_io "Ledler(7)" iocell 0 7

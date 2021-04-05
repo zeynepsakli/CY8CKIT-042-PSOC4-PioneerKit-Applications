@@ -1,0 +1,146 @@
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/Cm0Start.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/cyapicallbacks.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_BOOT.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_PM.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PM.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PM.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_SCBCLK.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_SPI_UART.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_SPI_UART_INT.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_INT.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_INT.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_UART.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_UART.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_UART.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_UART_BOOT.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_UART_BOOT.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_UART_BOOT.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_rx.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_rx_PM.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_PM.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_PM.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_tx.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/UART_modul_tx_PM.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_PM.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_PM.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyPm.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyPm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/CortexM0/ARM_GCC_541/Debug/main.o : D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/core_cm0.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/project.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_BOOT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PINS.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SCBCLK.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_SPI_UART_PVT.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_rx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/UART_modul_tx_aliases.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyPm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/main.c 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/TUTORIALS/PSOC_LAB2/UART_Application.cydsn/main.c : 
+

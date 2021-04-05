@@ -1,0 +1,25 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2021-03-29T15:06:56Z")
+ (DESIGN "Seven_Segment_Display")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "Seven_Segment_Display")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT Segment_disp\(0\)_PAD Segment_disp\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(1\)_PAD Segment_disp\(1\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(2\)_PAD Segment_disp\(2\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(3\)_PAD Segment_disp\(3\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(4\)_PAD Segment_disp\(4\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(5\)_PAD Segment_disp\(5\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Segment_disp\(6\)_PAD Segment_disp\(6\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

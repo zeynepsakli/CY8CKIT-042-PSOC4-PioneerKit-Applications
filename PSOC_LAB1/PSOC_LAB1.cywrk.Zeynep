@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_LAB1\BUTON_LED">
+<ExpandedNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED\TopDesign</v>
+<v>PSOC_LAB1\BUTON_LED\Source Files</v>
+<v>PSOC_LAB1\LED_Blink\TopDesign</v>
+<v>PSOC_LAB1\LED_Blink\Source Files</v>
+<v>PSOC_LAB1\led_blink_pwm\TopDesign</v>
+<v>PSOC_LAB1\led_blink_pwm\Source Files</v>
+<v>PSOC_LAB1\RGB_ButonControl\TopDesign</v>
+<v>PSOC_LAB1\RGB_ButonControl\Source Files</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\TopDesign</v>
+<v>PSOC_LAB1\BUTON_LED\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\LED_Blink\TopDesign</v>
+<v>PSOC_LAB1\LED_Blink\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\led_blink_pwm\TopDesign</v>
+<v>PSOC_LAB1\led_blink_pwm\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+<v>PSOC_LAB1\RGB_ButonControl\TopDesign</v>
+<v>PSOC_LAB1\RGB_ButonControl\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\TopDesign</v>
+<v>PSOC_LAB1\BUTON_LED\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\LED_Blink\TopDesign</v>
+<v>PSOC_LAB1\LED_Blink\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\led_blink_pwm\TopDesign</v>
+<v>PSOC_LAB1\led_blink_pwm\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+<v>PSOC_LAB1\RGB_ButonControl\TopDesign</v>
+<v>PSOC_LAB1\RGB_ButonControl\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\buton.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\buton_PM.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_Red.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_Red_PM.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\BUTON_LED.elf</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\BUTON_LED.hex</v>
+<v>PSOC_LAB1\BUTON_LED\CortexM0\ARM_GCC_541\Debug\BUTON_LED.map</v>
+<v>PSOC_LAB1\BUTON_LED\BUTON_LED.gpdsc</v>
+<v>PSOC_LAB1\BUTON_LED\BUTON_LED.rpt</v>
+<v>PSOC_LAB1\BUTON_LED\BUTON_LED_timing.html</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\led_red.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\led_red_PM.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\LED_Blink.elf</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\LED_Blink.hex</v>
+<v>PSOC_LAB1\LED_Blink\CortexM0\ARM_GCC_541\Debug\LED_Blink.map</v>
+<v>PSOC_LAB1\LED_Blink\LED_Blink.gpdsc</v>
+<v>PSOC_LAB1\LED_Blink\LED_Blink.rpt</v>
+<v>PSOC_LAB1\LED_Blink\LED_Blink_timing.html</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_board.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_board_PM.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\led_blink_pwm.elf</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\led_blink_pwm.hex</v>
+<v>PSOC_LAB1\led_blink_pwm\CortexM0\ARM_GCC_541\Debug\led_blink_pwm.map</v>
+<v>PSOC_LAB1\led_blink_pwm\led_blink_pwm.gpdsc</v>
+<v>PSOC_LAB1\led_blink_pwm\led_blink_pwm.rpt</v>
+<v>PSOC_LAB1\led_blink_pwm\led_blink_pwm_timing.html</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE_PM.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN_PM.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\RED.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\RED_PM.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\sw.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\Listing Files\sw_PM.lst</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\RGB_ButonControl.elf</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\RGB_ButonControl.hex</v>
+<v>PSOC_LAB1\RGB_ButonControl\CortexM0\ARM_GCC_541\Debug\RGB_ButonControl.map</v>
+<v>PSOC_LAB1\RGB_ButonControl\RGB_ButonControl.gpdsc</v>
+<v>PSOC_LAB1\RGB_ButonControl\RGB_ButonControl.rpt</v>
+<v>PSOC_LAB1\RGB_ButonControl\RGB_ButonControl_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\BUTON_LED.rpt</v>
+<v>PSOC_LAB1\BUTON_LED\BUTON_LED_timing.html</v>
+<v>PSOC_LAB1\LED_Blink</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\BUTON_LED\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\BUTON_LED\cy_pins_v2_20</v>
+<v>PSOC_LAB1\BUTON_LED\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\LED_Blink\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\LED_Blink\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\LED_Blink\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\led_blink_pwm\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\led_blink_pwm\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\led_blink_pwm\cy_clock_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm\PWM_v3_30.pdf</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+<v>PSOC_LAB1\RGB_ButonControl\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\RGB_ButonControl\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\RGB_ButonControl\cy_pins_v2_20</v>
+<v>PSOC_LAB1\RGB_ButonControl\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB1</v>
+<v>PSOC_LAB1\BUTON_LED</v>
+<v>PSOC_LAB1\BUTON_LED\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\BUTON_LED\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\BUTON_LED\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\BUTON_LED\cy_pins_v2_20</v>
+<v>PSOC_LAB1\BUTON_LED\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\LED_Blink</v>
+<v>PSOC_LAB1\LED_Blink\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\LED_Blink\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\LED_Blink\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\LED_Blink\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm</v>
+<v>PSOC_LAB1\led_blink_pwm\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\led_blink_pwm\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\led_blink_pwm\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\led_blink_pwm\cy_clock_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB1\led_blink_pwm\PWM_v3_30.pdf</v>
+<v>PSOC_LAB1\RGB_ButonControl</v>
+<v>PSOC_LAB1\RGB_ButonControl\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB1\RGB_ButonControl\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB1\RGB_ButonControl\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB1\RGB_ButonControl\cy_pins_v2_20</v>
+<v>PSOC_LAB1\RGB_ButonControl\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs />
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1110, 438" SelectedTabbedMdiWindow="0a0a9eb4-c96c-42d7-8d3a-7c442e8e39b6"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0a0a9eb4-c96c-42d7-8d3a-7c442e8e39b6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

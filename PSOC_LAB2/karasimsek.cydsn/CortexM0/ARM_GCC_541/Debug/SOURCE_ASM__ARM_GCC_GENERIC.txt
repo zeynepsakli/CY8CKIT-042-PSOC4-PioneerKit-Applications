@@ -1,0 +1,1 @@
+'D:\TUTORIALS\PSOC_LAB2\karasimsek.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s' -o .o -T SOURCE_ASM__ARM_GCC_GENERIC -I 'D:\TUTORIALS\PSOC_LAB2\karasimsek.cydsn' -I 'D:\TUTORIALS\PSOC_LAB2\karasimsek.cydsn\Generated_Source\PSoC4' -f 'D:\TUTORIALS\PSOC_LAB2\karasimsek.cydsn\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.d'

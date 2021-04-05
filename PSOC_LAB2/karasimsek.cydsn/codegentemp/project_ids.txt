@@ -1,0 +1,10 @@
+D:\TUTORIALS\PSOC_LAB2\karasimsek_uygulama.cydsn\karasimsek_uygulama.cyprj|fe08b29c-aa8c-4c6d-88f1-5668d414b7ca
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0e2ae918-9655-4050-9755-0ac2442d4951
+C:\Users\Zeynep\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|1fffae2c-4741-4709-a124-dfdb2442abeb
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|bf369f3d-c472-4757-bb6c-34ff67e0910f
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1c0d6394-90f3-4592-be15-d9957481c4f2
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|b3a0e7ec-1e5f-435a-92d8-fd3653b65e0b
+D:\TUTORIALS\PSOC_LAB2\karasimsek.cydsn\karasimsek.cyprj|1e745746-9c7a-4e19-a8d7-bf6ace86d2f4
+D:\TUTORIALS\PSOC_LAB2\LCD_DisplaY.cydsn\LCD_DisplaY.cyprj|d7f25439-8e81-4f9f-a83d-4931c29c95da
+D:\TUTORIALS\PSOC_LAB2\Seven_Segment_Display.cydsn\Seven_Segment_Display.cyprj|ad886874-8edd-467d-ab6c-5e3f648747f1
+D:\TUTORIALS\PSOC_LAB2\UART_Application.cydsn\UART_Application.cyprj|e26118ac-4af5-45bd-aa96-a58f9f14d904

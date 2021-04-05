@@ -1,0 +1,12 @@
+# RGB_ButonControl
+# 2021-03-21 13:56:41Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "RED(0)" iocell 1 6
+set_io "GREEN(0)" iocell 0 2
+set_io "BLUE(0)" iocell 0 3
+set_io "sw(0)" iocell 0 7

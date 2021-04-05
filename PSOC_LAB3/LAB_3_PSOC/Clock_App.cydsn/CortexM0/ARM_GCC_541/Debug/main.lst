@@ -1,0 +1,1607 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.update_time,"ax",%progbits
+  20              		.align	2
+  21              		.global	update_time
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	update_time, %function
+  25              	update_time:
+  26              	.LFB33:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyleft by Shahariar,2015
+   4:main.c        ****  * All Rights Released
+   5:main.c        ****  * OPEN SOFTWARE, NO WARRENTY 
+   6:main.c        ****  *
+   7:main.c        ****  * DODGY BROTHERS C CODING Inc.  
+   8:main.c        ****  * Programmed With No Style, BUG may appear in Future !!!
+   9:main.c        ****  * Non-Precision Soft-Only Clock, will Lose around 12 sec a day, ( may vary for other PSoC chips)
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** // flag variable is a volatile global variable to check interrupt
+  14:main.c        **** 
+  15:main.c        **** #include <project.h>
+  16:main.c        **** volatile int flag=0; 
+  17:main.c        **** volatile int press_detect=1;
+  18:main.c        **** 
+  19:main.c        **** // Initial time ,set  here
+  20:main.c        **** int sec =05;
+  21:main.c        **** int minu =26;
+  22:main.c        **** int hr = 8;
+  23:main.c        **** int am_pm_flag=1; //  1 for PM , 0 for AM
+  24:main.c        **** void update_time(void);
+  25:main.c        **** 
+  26:main.c        **** int main()
+  27:main.c        **** 
+  28:main.c        **** {
+  29:main.c        **** // Start Timer
+  30:main.c        ****     TCPWM_1_Start();
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 2
+
+
+  31:main.c        **** // Enable Global Interrupt and start ISR  
+  32:main.c        ****     CyGlobalIntEnable; 
+  33:main.c        ****     ISR_Start();
+  34:main.c        ****     SetTime_ISR_Start();
+  35:main.c        **** // ISR code is in the ISR.c file
+  36:main.c        ****     
+  37:main.c        **** //  Supply 5 Vdd to LCD display from MCU and Power Up Back Light  
+  38:main.c        ****     Power_Up_LCD_Pin_1_Write(1); // PSoC Pin 2.0 to LCD Vdd
+  39:main.c        ****     Back_Light_On_N_Write(0);    // PSoC Pin 3.6 to LDC K (BackLight -Ve)
+  40:main.c        ****     Back_Light_On_P_Write(1);    // PSoC Pin 3.5 to LDC A (BackLight +Ve)
+  41:main.c        ****     
+  42:main.c        ****     // Vss to PSoC Gnd
+  43:main.c        **** 
+  44:main.c        **** // Start LCD display    
+  45:main.c        ****     LCD_Char_Start();
+  46:main.c        ****     LCD_Char_DisplayOn();
+  47:main.c        ****     LCD_Char_Position(0,0);
+  48:main.c        ****     LCD_Char_PrintString(" PSoC  Software ");
+  49:main.c        ****     LCD_Char_Position(1,0);
+  50:main.c        ****     LCD_Char_PrintString("Clock");
+  51:main.c        ****     LCD_Char_Position(1,14);
+  52:main.c        ****     LCD_Char_PrintString("PM");
+  53:main.c        ****              
+  54:main.c        ****         for(;;)
+  55:main.c        ****         {
+  56:main.c        ****             // turns off the CPU, saves about 30% (from 10.6 mA to 7.6 mA)
+  57:main.c        ****             // wakes up on next timer interrupt
+  58:main.c        ****             CySysPmSleep();    
+  59:main.c        ****          
+  60:main.c        **** // On-kit Switch (Pin 0.7 SW1-Interrupt driven) to increment time 5 minutes        
+  61:main.c        ****             if(press_detect==0)
+  62:main.c        ****         {
+  63:main.c        ****             minu=minu+5;
+  64:main.c        ****             update_time();
+  65:main.c        ****             CyDelay(50);
+  66:main.c        ****             press_detect=1;
+  67:main.c        ****         }
+  68:main.c        ****             //  clock update code section, executes after interrupt 
+  69:main.c        ****             if (flag==1)
+  70:main.c        ****             {
+  71:main.c        ****                 flag=0;
+  72:main.c        ****                 sec++;
+  73:main.c        ****                 
+  74:main.c        ****         
+  75:main.c        ****             
+  76:main.c        ****                 if (sec>=60)
+  77:main.c        ****                 {
+  78:main.c        ****                 sec=0;
+  79:main.c        ****                 minu++;
+  80:main.c        ****                 update_time();
+  81:main.c        ****                 }
+  82:main.c        ****                 
+  83:main.c        ****                 //LCD_Char_ClearDisplay();
+  84:main.c        ****                 
+  85:main.c        ****                 
+  86:main.c        ****             }
+  87:main.c        ****             
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 3
+
+
+  88:main.c        ****         
+  89:main.c        ****                 LED_Write(1);            
+  90:main.c        ****          
+  91:main.c        ****                 LCD_Char_Position(1,6);
+  92:main.c        ****                 LCD_Char_PrintString("        ");
+  93:main.c        ****                 LCD_Char_Position(1,6);
+  94:main.c        ****                 LCD_Char_PrintNumber(hr);
+  95:main.c        ****                 LCD_Char_PrintString(":");
+  96:main.c        ****                 LCD_Char_PrintNumber(minu);
+  97:main.c        ****                 LCD_Char_PrintString(":");
+  98:main.c        ****                 LCD_Char_PrintNumber(sec);
+  99:main.c        ****         
+ 100:main.c        ****                 CyDelay(10);
+ 101:main.c        ****                 
+ 102:main.c        ****                 LED_Write(0);
+ 103:main.c        ****             
+ 104:main.c        ****                 
+ 105:main.c        ****                 
+ 106:main.c        ****         
+ 107:main.c        ****                 // turns off the CPU, saves about 30% (from 10.6 mA to 7.6 mA)
+ 108:main.c        ****                 // wakes up on next timer interrupt
+ 109:main.c        ****             
+ 110:main.c        ****             
+ 111:main.c        ****             }
+ 112:main.c        ****         
+ 113:main.c        ****        // return 0;
+ 114:main.c        **** }
+ 115:main.c        ****           
+ 116:main.c        **** void update_time(void)
+ 117:main.c        **** {
+  28              		.loc 1 117 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+ 118:main.c        ****      if (minu>=60)
+  36              		.loc 1 118 0
+  37 0002 144B     		ldr	r3, .L5
+  38 0004 1B68     		ldr	r3, [r3]
+  39 0006 3B2B     		cmp	r3, #59
+  40 0008 23DD     		ble	.L1
+ 119:main.c        ****                 {
+ 120:main.c        ****                     minu=0;
+  41              		.loc 1 120 0
+  42 000a 124A     		ldr	r2, .L5
+  43 000c 0023     		movs	r3, #0
+  44 000e 1360     		str	r3, [r2]
+ 121:main.c        ****                     hr++;
+  45              		.loc 1 121 0
+  46 0010 5368     		ldr	r3, [r2, #4]
+  47 0012 0133     		adds	r3, r3, #1
+  48 0014 5360     		str	r3, [r2, #4]
+ 122:main.c        ****                     if (hr>12)
+  49              		.loc 1 122 0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 4
+
+
+  50 0016 0C2B     		cmp	r3, #12
+  51 0018 02DD     		ble	.L3
+ 123:main.c        ****                        {hr=1;}
+  52              		.loc 1 123 0
+  53 001a 0122     		movs	r2, #1
+  54 001c 0D4B     		ldr	r3, .L5
+  55 001e 5A60     		str	r2, [r3, #4]
+  56              	.L3:
+ 124:main.c        ****                     if (hr==12 && minu==0)
+  57              		.loc 1 124 0
+  58 0020 0C4B     		ldr	r3, .L5
+  59 0022 5B68     		ldr	r3, [r3, #4]
+  60 0024 0C2B     		cmp	r3, #12
+  61 0026 14D1     		bne	.L1
+ 125:main.c        ****                        {am_pm_flag=am_pm_flag^1;
+  62              		.loc 1 125 0
+  63 0028 0A4A     		ldr	r2, .L5
+  64 002a 0B3B     		subs	r3, r3, #11
+  65 002c 9168     		ldr	r1, [r2, #8]
+  66 002e 4B40     		eors	r3, r1
+  67 0030 9360     		str	r3, [r2, #8]
+ 126:main.c        ****                                 
+ 127:main.c        ****         if(am_pm_flag==0)
+  68              		.loc 1 127 0
+  69 0032 07D1     		bne	.L4
+ 128:main.c        ****         {
+ 129:main.c        ****             LCD_Char_Position(1,14);
+  70              		.loc 1 129 0
+  71 0034 0E21     		movs	r1, #14
+  72 0036 0120     		movs	r0, #1
+  73 0038 FFF7FEFF 		bl	LCD_Char_Position
+  74              	.LVL0:
+ 130:main.c        ****            LCD_Char_PrintString("AM");
+  75              		.loc 1 130 0
+  76 003c 0648     		ldr	r0, .L5+4
+  77 003e FFF7FEFF 		bl	LCD_Char_PrintString
+  78              	.LVL1:
+  79 0042 06E0     		b	.L1
+  80              	.L4:
+ 131:main.c        ****         }
+ 132:main.c        ****         else
+ 133:main.c        ****         {
+ 134:main.c        ****             LCD_Char_Position(1,14);
+  81              		.loc 1 134 0
+  82 0044 0E21     		movs	r1, #14
+  83 0046 0120     		movs	r0, #1
+  84 0048 FFF7FEFF 		bl	LCD_Char_Position
+  85              	.LVL2:
+ 135:main.c        ****            LCD_Char_PrintString("PM");
+  86              		.loc 1 135 0
+  87 004c 0348     		ldr	r0, .L5+8
+  88 004e FFF7FEFF 		bl	LCD_Char_PrintString
+  89              	.LVL3:
+  90              	.L1:
+ 136:main.c        ****         
+ 137:main.c        ****         }
+ 138:main.c        ****                     
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 5
+
+
+ 139:main.c        ****                     
+ 140:main.c        ****                         }
+ 141:main.c        **** }
+ 142:main.c        **** }
+  91              		.loc 1 142 0
+  92              		@ sp needed
+  93 0052 10BD     		pop	{r4, pc}
+  94              	.L6:
+  95              		.align	2
+  96              	.L5:
+  97 0054 00000000 		.word	.LANCHOR0
+  98 0058 00000000 		.word	.LC1
+  99 005c 04000000 		.word	.LC3
+ 100              		.cfi_endproc
+ 101              	.LFE33:
+ 102              		.size	update_time, .-update_time
+ 103              		.section	.text.main,"ax",%progbits
+ 104              		.align	2
+ 105              		.global	main
+ 106              		.code	16
+ 107              		.thumb_func
+ 108              		.type	main, %function
+ 109              	main:
+ 110              	.LFB32:
+  28:main.c        **** // Start Timer
+ 111              		.loc 1 28 0
+ 112              		.cfi_startproc
+ 113              		@ Volatile: function does not return.
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 70B5     		push	{r4, r5, r6, lr}
+ 117              		.cfi_def_cfa_offset 16
+ 118              		.cfi_offset 4, -16
+ 119              		.cfi_offset 5, -12
+ 120              		.cfi_offset 6, -8
+ 121              		.cfi_offset 14, -4
+  30:main.c        **** // Enable Global Interrupt and start ISR  
+ 122              		.loc 1 30 0
+ 123 0002 FFF7FEFF 		bl	TCPWM_1_Start
+ 124              	.LVL4:
+  32:main.c        ****     ISR_Start();
+ 125              		.loc 1 32 0
+ 126              		.syntax divided
+ 127              	@ 32 "main.c" 1
+ 128 0006 62B6     		CPSIE   i
+ 129              	@ 0 "" 2
+  33:main.c        ****     SetTime_ISR_Start();
+ 130              		.loc 1 33 0
+ 131              		.thumb
+ 132              		.syntax unified
+ 133 0008 FFF7FEFF 		bl	ISR_Start
+ 134              	.LVL5:
+  34:main.c        **** // ISR code is in the ISR.c file
+ 135              		.loc 1 34 0
+ 136 000c FFF7FEFF 		bl	SetTime_ISR_Start
+ 137              	.LVL6:
+  38:main.c        ****     Back_Light_On_N_Write(0);    // PSoC Pin 3.6 to LDC K (BackLight -Ve)
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 6
+
+
+ 138              		.loc 1 38 0
+ 139 0010 0120     		movs	r0, #1
+ 140 0012 FFF7FEFF 		bl	Power_Up_LCD_Pin_1_Write
+ 141              	.LVL7:
+  39:main.c        ****     Back_Light_On_P_Write(1);    // PSoC Pin 3.5 to LDC A (BackLight +Ve)
+ 142              		.loc 1 39 0
+ 143 0016 0020     		movs	r0, #0
+ 144 0018 FFF7FEFF 		bl	Back_Light_On_N_Write
+ 145              	.LVL8:
+  40:main.c        ****     
+ 146              		.loc 1 40 0
+ 147 001c 0120     		movs	r0, #1
+ 148 001e FFF7FEFF 		bl	Back_Light_On_P_Write
+ 149              	.LVL9:
+  45:main.c        ****     LCD_Char_DisplayOn();
+ 150              		.loc 1 45 0
+ 151 0022 FFF7FEFF 		bl	LCD_Char_Start
+ 152              	.LVL10:
+  46:main.c        ****     LCD_Char_Position(0,0);
+ 153              		.loc 1 46 0
+ 154 0026 0C20     		movs	r0, #12
+ 155 0028 FFF7FEFF 		bl	LCD_Char_WriteControl
+ 156              	.LVL11:
+  47:main.c        ****     LCD_Char_PrintString(" PSoC  Software ");
+ 157              		.loc 1 47 0
+ 158 002c 0021     		movs	r1, #0
+ 159 002e 0020     		movs	r0, #0
+ 160 0030 FFF7FEFF 		bl	LCD_Char_Position
+ 161              	.LVL12:
+  48:main.c        ****     LCD_Char_Position(1,0);
+ 162              		.loc 1 48 0
+ 163 0034 3148     		ldr	r0, .L11
+ 164 0036 FFF7FEFF 		bl	LCD_Char_PrintString
+ 165              	.LVL13:
+  49:main.c        ****     LCD_Char_PrintString("Clock");
+ 166              		.loc 1 49 0
+ 167 003a 0021     		movs	r1, #0
+ 168 003c 0120     		movs	r0, #1
+ 169 003e FFF7FEFF 		bl	LCD_Char_Position
+ 170              	.LVL14:
+  50:main.c        ****     LCD_Char_Position(1,14);
+ 171              		.loc 1 50 0
+ 172 0042 2F48     		ldr	r0, .L11+4
+ 173 0044 FFF7FEFF 		bl	LCD_Char_PrintString
+ 174              	.LVL15:
+  51:main.c        ****     LCD_Char_PrintString("PM");
+ 175              		.loc 1 51 0
+ 176 0048 0E21     		movs	r1, #14
+ 177 004a 0120     		movs	r0, #1
+ 178 004c FFF7FEFF 		bl	LCD_Char_Position
+ 179              	.LVL16:
+  52:main.c        ****              
+ 180              		.loc 1 52 0
+ 181 0050 2C48     		ldr	r0, .L11+8
+ 182 0052 FFF7FEFF 		bl	LCD_Char_PrintString
+ 183              	.LVL17:
+ 184              	.L10:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 7
+
+
+  58:main.c        ****          
+ 185              		.loc 1 58 0
+ 186 0056 FFF7FEFF 		bl	CySysPmSleep
+ 187              	.LVL18:
+  61:main.c        ****         {
+ 188              		.loc 1 61 0
+ 189 005a 2B4B     		ldr	r3, .L11+12
+ 190 005c DB68     		ldr	r3, [r3, #12]
+ 191 005e 002B     		cmp	r3, #0
+ 192 0060 0AD1     		bne	.L8
+  63:main.c        ****             update_time();
+ 193              		.loc 1 63 0
+ 194 0062 294C     		ldr	r4, .L11+12
+ 195 0064 2368     		ldr	r3, [r4]
+ 196 0066 0533     		adds	r3, r3, #5
+ 197 0068 2360     		str	r3, [r4]
+  64:main.c        ****             CyDelay(50);
+ 198              		.loc 1 64 0
+ 199 006a FFF7FEFF 		bl	update_time
+ 200              	.LVL19:
+  65:main.c        ****             press_detect=1;
+ 201              		.loc 1 65 0
+ 202 006e 3220     		movs	r0, #50
+ 203 0070 FFF7FEFF 		bl	CyDelay
+ 204              	.LVL20:
+  66:main.c        ****         }
+ 205              		.loc 1 66 0
+ 206 0074 0123     		movs	r3, #1
+ 207 0076 E360     		str	r3, [r4, #12]
+ 208              	.L8:
+  69:main.c        ****             {
+ 209              		.loc 1 69 0
+ 210 0078 244B     		ldr	r3, .L11+16
+ 211 007a 1B68     		ldr	r3, [r3]
+ 212 007c 012B     		cmp	r3, #1
+ 213 007e 10D1     		bne	.L9
+  71:main.c        ****                 sec++;
+ 214              		.loc 1 71 0
+ 215 0080 0022     		movs	r2, #0
+ 216 0082 224B     		ldr	r3, .L11+16
+ 217 0084 1A60     		str	r2, [r3]
+  72:main.c        ****                 
+ 218              		.loc 1 72 0
+ 219 0086 204A     		ldr	r2, .L11+12
+ 220 0088 1369     		ldr	r3, [r2, #16]
+ 221 008a 0133     		adds	r3, r3, #1
+ 222 008c 1361     		str	r3, [r2, #16]
+  76:main.c        ****                 {
+ 223              		.loc 1 76 0
+ 224 008e 3B2B     		cmp	r3, #59
+ 225 0090 07DD     		ble	.L9
+  78:main.c        ****                 minu++;
+ 226              		.loc 1 78 0
+ 227 0092 1300     		movs	r3, r2
+ 228 0094 0022     		movs	r2, #0
+ 229 0096 1A61     		str	r2, [r3, #16]
+  79:main.c        ****                 update_time();
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 8
+
+
+ 230              		.loc 1 79 0
+ 231 0098 1A68     		ldr	r2, [r3]
+ 232 009a 0132     		adds	r2, r2, #1
+ 233 009c 1A60     		str	r2, [r3]
+  80:main.c        ****                 }
+ 234              		.loc 1 80 0
+ 235 009e FFF7FEFF 		bl	update_time
+ 236              	.LVL21:
+ 237              	.L9:
+  89:main.c        ****          
+ 238              		.loc 1 89 0
+ 239 00a2 0120     		movs	r0, #1
+ 240 00a4 FFF7FEFF 		bl	LED_Write
+ 241              	.LVL22:
+  91:main.c        ****                 LCD_Char_PrintString("        ");
+ 242              		.loc 1 91 0
+ 243 00a8 0621     		movs	r1, #6
+ 244 00aa 0120     		movs	r0, #1
+ 245 00ac FFF7FEFF 		bl	LCD_Char_Position
+ 246              	.LVL23:
+  92:main.c        ****                 LCD_Char_Position(1,6);
+ 247              		.loc 1 92 0
+ 248 00b0 1748     		ldr	r0, .L11+20
+ 249 00b2 FFF7FEFF 		bl	LCD_Char_PrintString
+ 250              	.LVL24:
+  93:main.c        ****                 LCD_Char_PrintNumber(hr);
+ 251              		.loc 1 93 0
+ 252 00b6 0621     		movs	r1, #6
+ 253 00b8 0120     		movs	r0, #1
+ 254 00ba FFF7FEFF 		bl	LCD_Char_Position
+ 255              	.LVL25:
+  94:main.c        ****                 LCD_Char_PrintString(":");
+ 256              		.loc 1 94 0
+ 257 00be 124C     		ldr	r4, .L11+12
+ 258 00c0 6368     		ldr	r3, [r4, #4]
+ 259 00c2 1804     		lsls	r0, r3, #16
+ 260 00c4 000C     		lsrs	r0, r0, #16
+ 261 00c6 FFF7FEFF 		bl	LCD_Char_PrintU32Number
+ 262              	.LVL26:
+  95:main.c        ****                 LCD_Char_PrintNumber(minu);
+ 263              		.loc 1 95 0
+ 264 00ca 124D     		ldr	r5, .L11+24
+ 265 00cc 2800     		movs	r0, r5
+ 266 00ce FFF7FEFF 		bl	LCD_Char_PrintString
+ 267              	.LVL27:
+  96:main.c        ****                 LCD_Char_PrintString(":");
+ 268              		.loc 1 96 0
+ 269 00d2 2368     		ldr	r3, [r4]
+ 270 00d4 1804     		lsls	r0, r3, #16
+ 271 00d6 000C     		lsrs	r0, r0, #16
+ 272 00d8 FFF7FEFF 		bl	LCD_Char_PrintU32Number
+ 273              	.LVL28:
+  97:main.c        ****                 LCD_Char_PrintNumber(sec);
+ 274              		.loc 1 97 0
+ 275 00dc 2800     		movs	r0, r5
+ 276 00de FFF7FEFF 		bl	LCD_Char_PrintString
+ 277              	.LVL29:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 9
+
+
+  98:main.c        ****         
+ 278              		.loc 1 98 0
+ 279 00e2 2069     		ldr	r0, [r4, #16]
+ 280 00e4 0004     		lsls	r0, r0, #16
+ 281 00e6 000C     		lsrs	r0, r0, #16
+ 282 00e8 FFF7FEFF 		bl	LCD_Char_PrintU32Number
+ 283              	.LVL30:
+ 100:main.c        ****                 
+ 284              		.loc 1 100 0
+ 285 00ec 0A20     		movs	r0, #10
+ 286 00ee FFF7FEFF 		bl	CyDelay
+ 287              	.LVL31:
+ 102:main.c        ****             
+ 288              		.loc 1 102 0
+ 289 00f2 0020     		movs	r0, #0
+ 290 00f4 FFF7FEFF 		bl	LED_Write
+ 291              	.LVL32:
+ 111:main.c        ****         
+ 292              		.loc 1 111 0
+ 293 00f8 ADE7     		b	.L10
+ 294              	.L12:
+ 295 00fa C046     		.align	2
+ 296              	.L11:
+ 297 00fc 08000000 		.word	.LC5
+ 298 0100 1C000000 		.word	.LC7
+ 299 0104 04000000 		.word	.LC3
+ 300 0108 00000000 		.word	.LANCHOR0
+ 301 010c 00000000 		.word	.LANCHOR1
+ 302 0110 24000000 		.word	.LC12
+ 303 0114 30000000 		.word	.LC14
+ 304              		.cfi_endproc
+ 305              	.LFE32:
+ 306              		.size	main, .-main
+ 307              		.global	am_pm_flag
+ 308              		.global	hr
+ 309              		.global	minu
+ 310              		.global	sec
+ 311              		.global	press_detect
+ 312              		.global	flag
+ 313              		.data
+ 314              		.align	2
+ 315              		.set	.LANCHOR0,. + 0
+ 316              		.type	minu, %object
+ 317              		.size	minu, 4
+ 318              	minu:
+ 319 0000 1A000000 		.word	26
+ 320              		.type	hr, %object
+ 321              		.size	hr, 4
+ 322              	hr:
+ 323 0004 08000000 		.word	8
+ 324              		.type	am_pm_flag, %object
+ 325              		.size	am_pm_flag, 4
+ 326              	am_pm_flag:
+ 327 0008 01000000 		.word	1
+ 328              		.type	press_detect, %object
+ 329              		.size	press_detect, 4
+ 330              	press_detect:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 10
+
+
+ 331 000c 01000000 		.word	1
+ 332              		.type	sec, %object
+ 333              		.size	sec, 4
+ 334              	sec:
+ 335 0010 05000000 		.word	5
+ 336              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 337              		.align	2
+ 338              	.LC1:
+ 339 0000 414D00   		.ascii	"AM\000"
+ 340 0003 00       		.space	1
+ 341              	.LC3:
+ 342 0004 504D00   		.ascii	"PM\000"
+ 343 0007 00       		.space	1
+ 344              	.LC5:
+ 345 0008 2050536F 		.ascii	" PSoC  Software \000"
+ 345      43202053 
+ 345      6F667477 
+ 345      61726520 
+ 345      00
+ 346 0019 000000   		.space	3
+ 347              	.LC7:
+ 348 001c 436C6F63 		.ascii	"Clock\000"
+ 348      6B00
+ 349 0022 0000     		.space	2
+ 350              	.LC12:
+ 351 0024 20202020 		.ascii	"        \000"
+ 351      20202020 
+ 351      00
+ 352 002d 000000   		.space	3
+ 353              	.LC14:
+ 354 0030 3A00     		.ascii	":\000"
+ 355              		.bss
+ 356              		.align	2
+ 357              		.set	.LANCHOR1,. + 0
+ 358              		.type	flag, %object
+ 359              		.size	flag, 4
+ 360              	flag:
+ 361 0000 00000000 		.space	4
+ 362              		.text
+ 363              	.Letext0:
+ 364              		.file 2 "Generated_Source\\PSoC4/LCD_Char.h"
+ 365              		.file 3 "Generated_Source\\PSoC4/TCPWM_1.h"
+ 366              		.file 4 "Generated_Source\\PSoC4/ISR.h"
+ 367              		.file 5 "Generated_Source\\PSoC4/SetTime_ISR.h"
+ 368              		.file 6 "Generated_Source\\PSoC4/Power_Up_LCD_Pin_1.h"
+ 369              		.file 7 "Generated_Source\\PSoC4/Back_Light_On_N.h"
+ 370              		.file 8 "Generated_Source\\PSoC4/Back_Light_On_P.h"
+ 371              		.file 9 "Generated_Source\\PSoC4/cyPm.h"
+ 372              		.file 10 "Generated_Source\\PSoC4/CyLib.h"
+ 373              		.file 11 "Generated_Source\\PSoC4/LED.h"
+ 374              		.file 12 "Generated_Source\\PSoC4/cytypes.h"
+ 375              		.section	.debug_info,"",%progbits
+ 376              	.Ldebug_info0:
+ 377 0000 11040000 		.4byte	0x411
+ 378 0004 0400     		.2byte	0x4
+ 379 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 380 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 11
+
+
+ 381 000b 01       		.uleb128 0x1
+ 382 000c 4D010000 		.4byte	.LASF32
+ 383 0010 0C       		.byte	0xc
+ 384 0011 F2010000 		.4byte	.LASF33
+ 385 0015 2E000000 		.4byte	.LASF34
+ 386 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 387 001d 00000000 		.4byte	0
+ 388 0021 00000000 		.4byte	.Ldebug_line0
+ 389 0025 02       		.uleb128 0x2
+ 390 0026 01       		.byte	0x1
+ 391 0027 06       		.byte	0x6
+ 392 0028 5F020000 		.4byte	.LASF0
+ 393 002c 02       		.uleb128 0x2
+ 394 002d 01       		.byte	0x1
+ 395 002e 08       		.byte	0x8
+ 396 002f 8C000000 		.4byte	.LASF1
+ 397 0033 02       		.uleb128 0x2
+ 398 0034 02       		.byte	0x2
+ 399 0035 05       		.byte	0x5
+ 400 0036 35020000 		.4byte	.LASF2
+ 401 003a 02       		.uleb128 0x2
+ 402 003b 02       		.byte	0x2
+ 403 003c 07       		.byte	0x7
+ 404 003d C4000000 		.4byte	.LASF3
+ 405 0041 02       		.uleb128 0x2
+ 406 0042 04       		.byte	0x4
+ 407 0043 05       		.byte	0x5
+ 408 0044 4A020000 		.4byte	.LASF4
+ 409 0048 02       		.uleb128 0x2
+ 410 0049 04       		.byte	0x4
+ 411 004a 07       		.byte	0x7
+ 412 004b B2000000 		.4byte	.LASF5
+ 413 004f 02       		.uleb128 0x2
+ 414 0050 08       		.byte	0x8
+ 415 0051 05       		.byte	0x5
+ 416 0052 E4010000 		.4byte	.LASF6
+ 417 0056 02       		.uleb128 0x2
+ 418 0057 08       		.byte	0x8
+ 419 0058 07       		.byte	0x7
+ 420 0059 20010000 		.4byte	.LASF7
+ 421 005d 03       		.uleb128 0x3
+ 422 005e 04       		.byte	0x4
+ 423 005f 05       		.byte	0x5
+ 424 0060 696E7400 		.ascii	"int\000"
+ 425 0064 02       		.uleb128 0x2
+ 426 0065 04       		.byte	0x4
+ 427 0066 07       		.byte	0x7
+ 428 0067 13010000 		.4byte	.LASF8
+ 429 006b 04       		.uleb128 0x4
+ 430 006c 07010000 		.4byte	.LASF35
+ 431 0070 0C       		.byte	0xc
+ 432 0071 FC01     		.2byte	0x1fc
+ 433 0073 3A000000 		.4byte	0x3a
+ 434 0077 02       		.uleb128 0x2
+ 435 0078 04       		.byte	0x4
+ 436 0079 04       		.byte	0x4
+ 437 007a 7C000000 		.4byte	.LASF9
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 12
+
+
+ 438 007e 02       		.uleb128 0x2
+ 439 007f 08       		.byte	0x8
+ 440 0080 04       		.byte	0x4
+ 441 0081 FB000000 		.4byte	.LASF10
+ 442 0085 02       		.uleb128 0x2
+ 443 0086 01       		.byte	0x1
+ 444 0087 08       		.byte	0x8
+ 445 0088 F9010000 		.4byte	.LASF11
+ 446 008c 02       		.uleb128 0x2
+ 447 008d 08       		.byte	0x8
+ 448 008e 04       		.byte	0x4
+ 449 008f 53020000 		.4byte	.LASF12
+ 450 0093 02       		.uleb128 0x2
+ 451 0094 04       		.byte	0x4
+ 452 0095 07       		.byte	0x7
+ 453 0096 DB010000 		.4byte	.LASF13
+ 454 009a 05       		.uleb128 0x5
+ 455 009b 14020000 		.4byte	.LASF36
+ 456 009f 01       		.byte	0x1
+ 457 00a0 74       		.byte	0x74
+ 458 00a1 00000000 		.4byte	.LFB33
+ 459 00a5 60000000 		.4byte	.LFE33-.LFB33
+ 460 00a9 01       		.uleb128 0x1
+ 461 00aa 9C       		.byte	0x9c
+ 462 00ab 0A010000 		.4byte	0x10a
+ 463 00af 06       		.uleb128 0x6
+ 464 00b0 3C000000 		.4byte	.LVL0
+ 465 00b4 79030000 		.4byte	0x379
+ 466 00b8 C7000000 		.4byte	0xc7
+ 467 00bc 07       		.uleb128 0x7
+ 468 00bd 01       		.uleb128 0x1
+ 469 00be 50       		.byte	0x50
+ 470 00bf 01       		.uleb128 0x1
+ 471 00c0 31       		.byte	0x31
+ 472 00c1 07       		.uleb128 0x7
+ 473 00c2 01       		.uleb128 0x1
+ 474 00c3 51       		.byte	0x51
+ 475 00c4 01       		.uleb128 0x1
+ 476 00c5 3E       		.byte	0x3e
+ 477 00c6 00       		.byte	0
+ 478 00c7 06       		.uleb128 0x6
+ 479 00c8 42000000 		.4byte	.LVL1
+ 480 00cc 84030000 		.4byte	0x384
+ 481 00d0 DE000000 		.4byte	0xde
+ 482 00d4 07       		.uleb128 0x7
+ 483 00d5 01       		.uleb128 0x1
+ 484 00d6 50       		.byte	0x50
+ 485 00d7 05       		.uleb128 0x5
+ 486 00d8 03       		.byte	0x3
+ 487 00d9 00000000 		.4byte	.LC1
+ 488 00dd 00       		.byte	0
+ 489 00de 06       		.uleb128 0x6
+ 490 00df 4C000000 		.4byte	.LVL2
+ 491 00e3 79030000 		.4byte	0x379
+ 492 00e7 F6000000 		.4byte	0xf6
+ 493 00eb 07       		.uleb128 0x7
+ 494 00ec 01       		.uleb128 0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 13
+
+
+ 495 00ed 50       		.byte	0x50
+ 496 00ee 01       		.uleb128 0x1
+ 497 00ef 31       		.byte	0x31
+ 498 00f0 07       		.uleb128 0x7
+ 499 00f1 01       		.uleb128 0x1
+ 500 00f2 51       		.byte	0x51
+ 501 00f3 01       		.uleb128 0x1
+ 502 00f4 3E       		.byte	0x3e
+ 503 00f5 00       		.byte	0
+ 504 00f6 08       		.uleb128 0x8
+ 505 00f7 52000000 		.4byte	.LVL3
+ 506 00fb 84030000 		.4byte	0x384
+ 507 00ff 07       		.uleb128 0x7
+ 508 0100 01       		.uleb128 0x1
+ 509 0101 50       		.byte	0x50
+ 510 0102 05       		.uleb128 0x5
+ 511 0103 03       		.byte	0x3
+ 512 0104 04000000 		.4byte	.LC3
+ 513 0108 00       		.byte	0
+ 514 0109 00       		.byte	0
+ 515 010a 09       		.uleb128 0x9
+ 516 010b 02010000 		.4byte	.LASF37
+ 517 010f 01       		.byte	0x1
+ 518 0110 1A       		.byte	0x1a
+ 519 0111 5D000000 		.4byte	0x5d
+ 520 0115 00000000 		.4byte	.LFB32
+ 521 0119 18010000 		.4byte	.LFE32-.LFB32
+ 522 011d 01       		.uleb128 0x1
+ 523 011e 9C       		.byte	0x9c
+ 524 011f 0F030000 		.4byte	0x30f
+ 525 0123 0A       		.uleb128 0xa
+ 526 0124 06000000 		.4byte	.LVL4
+ 527 0128 8F030000 		.4byte	0x38f
+ 528 012c 0A       		.uleb128 0xa
+ 529 012d 0C000000 		.4byte	.LVL5
+ 530 0131 9B030000 		.4byte	0x39b
+ 531 0135 0A       		.uleb128 0xa
+ 532 0136 10000000 		.4byte	.LVL6
+ 533 013a A6030000 		.4byte	0x3a6
+ 534 013e 06       		.uleb128 0x6
+ 535 013f 16000000 		.4byte	.LVL7
+ 536 0143 B1030000 		.4byte	0x3b1
+ 537 0147 51010000 		.4byte	0x151
+ 538 014b 07       		.uleb128 0x7
+ 539 014c 01       		.uleb128 0x1
+ 540 014d 50       		.byte	0x50
+ 541 014e 01       		.uleb128 0x1
+ 542 014f 31       		.byte	0x31
+ 543 0150 00       		.byte	0
+ 544 0151 06       		.uleb128 0x6
+ 545 0152 1C000000 		.4byte	.LVL8
+ 546 0156 BC030000 		.4byte	0x3bc
+ 547 015a 64010000 		.4byte	0x164
+ 548 015e 07       		.uleb128 0x7
+ 549 015f 01       		.uleb128 0x1
+ 550 0160 50       		.byte	0x50
+ 551 0161 01       		.uleb128 0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 14
+
+
+ 552 0162 30       		.byte	0x30
+ 553 0163 00       		.byte	0
+ 554 0164 06       		.uleb128 0x6
+ 555 0165 22000000 		.4byte	.LVL9
+ 556 0169 C7030000 		.4byte	0x3c7
+ 557 016d 77010000 		.4byte	0x177
+ 558 0171 07       		.uleb128 0x7
+ 559 0172 01       		.uleb128 0x1
+ 560 0173 50       		.byte	0x50
+ 561 0174 01       		.uleb128 0x1
+ 562 0175 31       		.byte	0x31
+ 563 0176 00       		.byte	0
+ 564 0177 0A       		.uleb128 0xa
+ 565 0178 26000000 		.4byte	.LVL10
+ 566 017c D2030000 		.4byte	0x3d2
+ 567 0180 06       		.uleb128 0x6
+ 568 0181 2C000000 		.4byte	.LVL11
+ 569 0185 DD030000 		.4byte	0x3dd
+ 570 0189 93010000 		.4byte	0x193
+ 571 018d 07       		.uleb128 0x7
+ 572 018e 01       		.uleb128 0x1
+ 573 018f 50       		.byte	0x50
+ 574 0190 01       		.uleb128 0x1
+ 575 0191 3C       		.byte	0x3c
+ 576 0192 00       		.byte	0
+ 577 0193 06       		.uleb128 0x6
+ 578 0194 34000000 		.4byte	.LVL12
+ 579 0198 79030000 		.4byte	0x379
+ 580 019c AB010000 		.4byte	0x1ab
+ 581 01a0 07       		.uleb128 0x7
+ 582 01a1 01       		.uleb128 0x1
+ 583 01a2 50       		.byte	0x50
+ 584 01a3 01       		.uleb128 0x1
+ 585 01a4 30       		.byte	0x30
+ 586 01a5 07       		.uleb128 0x7
+ 587 01a6 01       		.uleb128 0x1
+ 588 01a7 51       		.byte	0x51
+ 589 01a8 01       		.uleb128 0x1
+ 590 01a9 30       		.byte	0x30
+ 591 01aa 00       		.byte	0
+ 592 01ab 06       		.uleb128 0x6
+ 593 01ac 3A000000 		.4byte	.LVL13
+ 594 01b0 84030000 		.4byte	0x384
+ 595 01b4 C2010000 		.4byte	0x1c2
+ 596 01b8 07       		.uleb128 0x7
+ 597 01b9 01       		.uleb128 0x1
+ 598 01ba 50       		.byte	0x50
+ 599 01bb 05       		.uleb128 0x5
+ 600 01bc 03       		.byte	0x3
+ 601 01bd 08000000 		.4byte	.LC5
+ 602 01c1 00       		.byte	0
+ 603 01c2 06       		.uleb128 0x6
+ 604 01c3 42000000 		.4byte	.LVL14
+ 605 01c7 79030000 		.4byte	0x379
+ 606 01cb DA010000 		.4byte	0x1da
+ 607 01cf 07       		.uleb128 0x7
+ 608 01d0 01       		.uleb128 0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 15
+
+
+ 609 01d1 50       		.byte	0x50
+ 610 01d2 01       		.uleb128 0x1
+ 611 01d3 31       		.byte	0x31
+ 612 01d4 07       		.uleb128 0x7
+ 613 01d5 01       		.uleb128 0x1
+ 614 01d6 51       		.byte	0x51
+ 615 01d7 01       		.uleb128 0x1
+ 616 01d8 30       		.byte	0x30
+ 617 01d9 00       		.byte	0
+ 618 01da 06       		.uleb128 0x6
+ 619 01db 48000000 		.4byte	.LVL15
+ 620 01df 84030000 		.4byte	0x384
+ 621 01e3 F1010000 		.4byte	0x1f1
+ 622 01e7 07       		.uleb128 0x7
+ 623 01e8 01       		.uleb128 0x1
+ 624 01e9 50       		.byte	0x50
+ 625 01ea 05       		.uleb128 0x5
+ 626 01eb 03       		.byte	0x3
+ 627 01ec 1C000000 		.4byte	.LC7
+ 628 01f0 00       		.byte	0
+ 629 01f1 06       		.uleb128 0x6
+ 630 01f2 50000000 		.4byte	.LVL16
+ 631 01f6 79030000 		.4byte	0x379
+ 632 01fa 09020000 		.4byte	0x209
+ 633 01fe 07       		.uleb128 0x7
+ 634 01ff 01       		.uleb128 0x1
+ 635 0200 50       		.byte	0x50
+ 636 0201 01       		.uleb128 0x1
+ 637 0202 31       		.byte	0x31
+ 638 0203 07       		.uleb128 0x7
+ 639 0204 01       		.uleb128 0x1
+ 640 0205 51       		.byte	0x51
+ 641 0206 01       		.uleb128 0x1
+ 642 0207 3E       		.byte	0x3e
+ 643 0208 00       		.byte	0
+ 644 0209 06       		.uleb128 0x6
+ 645 020a 56000000 		.4byte	.LVL17
+ 646 020e 84030000 		.4byte	0x384
+ 647 0212 20020000 		.4byte	0x220
+ 648 0216 07       		.uleb128 0x7
+ 649 0217 01       		.uleb128 0x1
+ 650 0218 50       		.byte	0x50
+ 651 0219 05       		.uleb128 0x5
+ 652 021a 03       		.byte	0x3
+ 653 021b 04000000 		.4byte	.LC3
+ 654 021f 00       		.byte	0
+ 655 0220 0A       		.uleb128 0xa
+ 656 0221 5A000000 		.4byte	.LVL18
+ 657 0225 E8030000 		.4byte	0x3e8
+ 658 0229 0A       		.uleb128 0xa
+ 659 022a 6E000000 		.4byte	.LVL19
+ 660 022e 9A000000 		.4byte	0x9a
+ 661 0232 06       		.uleb128 0x6
+ 662 0233 74000000 		.4byte	.LVL20
+ 663 0237 F3030000 		.4byte	0x3f3
+ 664 023b 46020000 		.4byte	0x246
+ 665 023f 07       		.uleb128 0x7
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 16
+
+
+ 666 0240 01       		.uleb128 0x1
+ 667 0241 50       		.byte	0x50
+ 668 0242 02       		.uleb128 0x2
+ 669 0243 08       		.byte	0x8
+ 670 0244 32       		.byte	0x32
+ 671 0245 00       		.byte	0
+ 672 0246 0A       		.uleb128 0xa
+ 673 0247 A2000000 		.4byte	.LVL21
+ 674 024b 9A000000 		.4byte	0x9a
+ 675 024f 06       		.uleb128 0x6
+ 676 0250 A8000000 		.4byte	.LVL22
+ 677 0254 FE030000 		.4byte	0x3fe
+ 678 0258 62020000 		.4byte	0x262
+ 679 025c 07       		.uleb128 0x7
+ 680 025d 01       		.uleb128 0x1
+ 681 025e 50       		.byte	0x50
+ 682 025f 01       		.uleb128 0x1
+ 683 0260 31       		.byte	0x31
+ 684 0261 00       		.byte	0
+ 685 0262 06       		.uleb128 0x6
+ 686 0263 B0000000 		.4byte	.LVL23
+ 687 0267 79030000 		.4byte	0x379
+ 688 026b 7A020000 		.4byte	0x27a
+ 689 026f 07       		.uleb128 0x7
+ 690 0270 01       		.uleb128 0x1
+ 691 0271 50       		.byte	0x50
+ 692 0272 01       		.uleb128 0x1
+ 693 0273 31       		.byte	0x31
+ 694 0274 07       		.uleb128 0x7
+ 695 0275 01       		.uleb128 0x1
+ 696 0276 51       		.byte	0x51
+ 697 0277 01       		.uleb128 0x1
+ 698 0278 36       		.byte	0x36
+ 699 0279 00       		.byte	0
+ 700 027a 06       		.uleb128 0x6
+ 701 027b B6000000 		.4byte	.LVL24
+ 702 027f 84030000 		.4byte	0x384
+ 703 0283 91020000 		.4byte	0x291
+ 704 0287 07       		.uleb128 0x7
+ 705 0288 01       		.uleb128 0x1
+ 706 0289 50       		.byte	0x50
+ 707 028a 05       		.uleb128 0x5
+ 708 028b 03       		.byte	0x3
+ 709 028c 24000000 		.4byte	.LC12
+ 710 0290 00       		.byte	0
+ 711 0291 06       		.uleb128 0x6
+ 712 0292 BE000000 		.4byte	.LVL25
+ 713 0296 79030000 		.4byte	0x379
+ 714 029a A9020000 		.4byte	0x2a9
+ 715 029e 07       		.uleb128 0x7
+ 716 029f 01       		.uleb128 0x1
+ 717 02a0 50       		.byte	0x50
+ 718 02a1 01       		.uleb128 0x1
+ 719 02a2 31       		.byte	0x31
+ 720 02a3 07       		.uleb128 0x7
+ 721 02a4 01       		.uleb128 0x1
+ 722 02a5 51       		.byte	0x51
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 17
+
+
+ 723 02a6 01       		.uleb128 0x1
+ 724 02a7 36       		.byte	0x36
+ 725 02a8 00       		.byte	0
+ 726 02a9 0A       		.uleb128 0xa
+ 727 02aa CA000000 		.4byte	.LVL26
+ 728 02ae 09040000 		.4byte	0x409
+ 729 02b2 06       		.uleb128 0x6
+ 730 02b3 D2000000 		.4byte	.LVL27
+ 731 02b7 84030000 		.4byte	0x384
+ 732 02bb C6020000 		.4byte	0x2c6
+ 733 02bf 07       		.uleb128 0x7
+ 734 02c0 01       		.uleb128 0x1
+ 735 02c1 50       		.byte	0x50
+ 736 02c2 02       		.uleb128 0x2
+ 737 02c3 75       		.byte	0x75
+ 738 02c4 00       		.sleb128 0
+ 739 02c5 00       		.byte	0
+ 740 02c6 0A       		.uleb128 0xa
+ 741 02c7 DC000000 		.4byte	.LVL28
+ 742 02cb 09040000 		.4byte	0x409
+ 743 02cf 06       		.uleb128 0x6
+ 744 02d0 E2000000 		.4byte	.LVL29
+ 745 02d4 84030000 		.4byte	0x384
+ 746 02d8 E3020000 		.4byte	0x2e3
+ 747 02dc 07       		.uleb128 0x7
+ 748 02dd 01       		.uleb128 0x1
+ 749 02de 50       		.byte	0x50
+ 750 02df 02       		.uleb128 0x2
+ 751 02e0 75       		.byte	0x75
+ 752 02e1 00       		.sleb128 0
+ 753 02e2 00       		.byte	0
+ 754 02e3 0A       		.uleb128 0xa
+ 755 02e4 EC000000 		.4byte	.LVL30
+ 756 02e8 09040000 		.4byte	0x409
+ 757 02ec 06       		.uleb128 0x6
+ 758 02ed F2000000 		.4byte	.LVL31
+ 759 02f1 F3030000 		.4byte	0x3f3
+ 760 02f5 FF020000 		.4byte	0x2ff
+ 761 02f9 07       		.uleb128 0x7
+ 762 02fa 01       		.uleb128 0x1
+ 763 02fb 50       		.byte	0x50
+ 764 02fc 01       		.uleb128 0x1
+ 765 02fd 3A       		.byte	0x3a
+ 766 02fe 00       		.byte	0
+ 767 02ff 08       		.uleb128 0x8
+ 768 0300 F8000000 		.4byte	.LVL32
+ 769 0304 FE030000 		.4byte	0x3fe
+ 770 0308 07       		.uleb128 0x7
+ 771 0309 01       		.uleb128 0x1
+ 772 030a 50       		.byte	0x50
+ 773 030b 01       		.uleb128 0x1
+ 774 030c 30       		.byte	0x30
+ 775 030d 00       		.byte	0
+ 776 030e 00       		.byte	0
+ 777 030f 0B       		.uleb128 0xb
+ 778 0310 0E010000 		.4byte	.LASF14
+ 779 0314 01       		.byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 18
+
+
+ 780 0315 10       		.byte	0x10
+ 781 0316 20030000 		.4byte	0x320
+ 782 031a 05       		.uleb128 0x5
+ 783 031b 03       		.byte	0x3
+ 784 031c 00000000 		.4byte	flag
+ 785 0320 0C       		.uleb128 0xc
+ 786 0321 5D000000 		.4byte	0x5d
+ 787 0325 0B       		.uleb128 0xb
+ 788 0326 6B020000 		.4byte	.LASF15
+ 789 032a 01       		.byte	0x1
+ 790 032b 11       		.byte	0x11
+ 791 032c 20030000 		.4byte	0x320
+ 792 0330 05       		.uleb128 0x5
+ 793 0331 03       		.byte	0x3
+ 794 0332 00000000 		.4byte	press_detect
+ 795 0336 0D       		.uleb128 0xd
+ 796 0337 73656300 		.ascii	"sec\000"
+ 797 033b 01       		.byte	0x1
+ 798 033c 14       		.byte	0x14
+ 799 033d 5D000000 		.4byte	0x5d
+ 800 0341 05       		.uleb128 0x5
+ 801 0342 03       		.byte	0x3
+ 802 0343 00000000 		.4byte	sec
+ 803 0347 0B       		.uleb128 0xb
+ 804 0348 91020000 		.4byte	.LASF16
+ 805 034c 01       		.byte	0x1
+ 806 034d 15       		.byte	0x15
+ 807 034e 5D000000 		.4byte	0x5d
+ 808 0352 05       		.uleb128 0x5
+ 809 0353 03       		.byte	0x3
+ 810 0354 00000000 		.4byte	minu
+ 811 0358 0D       		.uleb128 0xd
+ 812 0359 687200   		.ascii	"hr\000"
+ 813 035c 01       		.byte	0x1
+ 814 035d 16       		.byte	0x16
+ 815 035e 5D000000 		.4byte	0x5d
+ 816 0362 05       		.uleb128 0x5
+ 817 0363 03       		.byte	0x3
+ 818 0364 00000000 		.4byte	hr
+ 819 0368 0B       		.uleb128 0xb
+ 820 0369 3F020000 		.4byte	.LASF17
+ 821 036d 01       		.byte	0x1
+ 822 036e 17       		.byte	0x17
+ 823 036f 5D000000 		.4byte	0x5d
+ 824 0373 05       		.uleb128 0x5
+ 825 0374 03       		.byte	0x3
+ 826 0375 00000000 		.4byte	am_pm_flag
+ 827 0379 0E       		.uleb128 0xe
+ 828 037a 12000000 		.4byte	.LASF18
+ 829 037e 12000000 		.4byte	.LASF18
+ 830 0382 02       		.byte	0x2
+ 831 0383 3D       		.byte	0x3d
+ 832 0384 0E       		.uleb128 0xe
+ 833 0385 20020000 		.4byte	.LASF19
+ 834 0389 20020000 		.4byte	.LASF19
+ 835 038d 02       		.byte	0x2
+ 836 038e 3C       		.byte	0x3c
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 19
+
+
+ 837 038f 0F       		.uleb128 0xf
+ 838 0390 D7000000 		.4byte	.LASF20
+ 839 0394 D7000000 		.4byte	.LASF20
+ 840 0398 03       		.byte	0x3
+ 841 0399 3201     		.2byte	0x132
+ 842 039b 0E       		.uleb128 0xe
+ 843 039c 82000000 		.4byte	.LASF21
+ 844 03a0 82000000 		.4byte	.LASF21
+ 845 03a4 04       		.byte	0x4
+ 846 03a5 17       		.byte	0x17
+ 847 03a6 0E       		.uleb128 0xe
+ 848 03a7 00000000 		.4byte	.LASF22
+ 849 03ab 00000000 		.4byte	.LASF22
+ 850 03af 05       		.byte	0x5
+ 851 03b0 17       		.byte	0x17
+ 852 03b1 0E       		.uleb128 0xe
+ 853 03b2 78020000 		.4byte	.LASF23
+ 854 03b6 78020000 		.4byte	.LASF23
+ 855 03ba 06       		.byte	0x6
+ 856 03bb 33       		.byte	0x33
+ 857 03bc 0E       		.uleb128 0xe
+ 858 03bd E5000000 		.4byte	.LASF24
+ 859 03c1 E5000000 		.4byte	.LASF24
+ 860 03c5 07       		.byte	0x7
+ 861 03c6 33       		.byte	0x33
+ 862 03c7 0E       		.uleb128 0xe
+ 863 03c8 37010000 		.4byte	.LASF25
+ 864 03cc 37010000 		.4byte	.LASF25
+ 865 03d0 08       		.byte	0x8
+ 866 03d1 33       		.byte	0x33
+ 867 03d2 0E       		.uleb128 0xe
+ 868 03d3 6D000000 		.4byte	.LASF26
+ 869 03d7 6D000000 		.4byte	.LASF26
+ 870 03db 02       		.byte	0x2
+ 871 03dc 38       		.byte	0x38
+ 872 03dd 0E       		.uleb128 0xe
+ 873 03de FE010000 		.4byte	.LASF27
+ 874 03e2 FE010000 		.4byte	.LASF27
+ 875 03e6 02       		.byte	0x2
+ 876 03e7 3A       		.byte	0x3a
+ 877 03e8 0E       		.uleb128 0xe
+ 878 03e9 60000000 		.4byte	.LASF28
+ 879 03ed 60000000 		.4byte	.LASF28
+ 880 03f1 09       		.byte	0x9
+ 881 03f2 56       		.byte	0x56
+ 882 03f3 0E       		.uleb128 0xe
+ 883 03f4 96020000 		.4byte	.LASF29
+ 884 03f8 96020000 		.4byte	.LASF29
+ 885 03fc 0A       		.byte	0xa
+ 886 03fd EC       		.byte	0xec
+ 887 03fe 0E       		.uleb128 0xe
+ 888 03ff 24000000 		.4byte	.LASF30
+ 889 0403 24000000 		.4byte	.LASF30
+ 890 0407 0B       		.byte	0xb
+ 891 0408 33       		.byte	0x33
+ 892 0409 0E       		.uleb128 0xe
+ 893 040a 9A000000 		.4byte	.LASF31
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 20
+
+
+ 894 040e 9A000000 		.4byte	.LASF31
+ 895 0412 02       		.byte	0x2
+ 896 0413 61       		.byte	0x61
+ 897 0414 00       		.byte	0
+ 898              		.section	.debug_abbrev,"",%progbits
+ 899              	.Ldebug_abbrev0:
+ 900 0000 01       		.uleb128 0x1
+ 901 0001 11       		.uleb128 0x11
+ 902 0002 01       		.byte	0x1
+ 903 0003 25       		.uleb128 0x25
+ 904 0004 0E       		.uleb128 0xe
+ 905 0005 13       		.uleb128 0x13
+ 906 0006 0B       		.uleb128 0xb
+ 907 0007 03       		.uleb128 0x3
+ 908 0008 0E       		.uleb128 0xe
+ 909 0009 1B       		.uleb128 0x1b
+ 910 000a 0E       		.uleb128 0xe
+ 911 000b 55       		.uleb128 0x55
+ 912 000c 17       		.uleb128 0x17
+ 913 000d 11       		.uleb128 0x11
+ 914 000e 01       		.uleb128 0x1
+ 915 000f 10       		.uleb128 0x10
+ 916 0010 17       		.uleb128 0x17
+ 917 0011 00       		.byte	0
+ 918 0012 00       		.byte	0
+ 919 0013 02       		.uleb128 0x2
+ 920 0014 24       		.uleb128 0x24
+ 921 0015 00       		.byte	0
+ 922 0016 0B       		.uleb128 0xb
+ 923 0017 0B       		.uleb128 0xb
+ 924 0018 3E       		.uleb128 0x3e
+ 925 0019 0B       		.uleb128 0xb
+ 926 001a 03       		.uleb128 0x3
+ 927 001b 0E       		.uleb128 0xe
+ 928 001c 00       		.byte	0
+ 929 001d 00       		.byte	0
+ 930 001e 03       		.uleb128 0x3
+ 931 001f 24       		.uleb128 0x24
+ 932 0020 00       		.byte	0
+ 933 0021 0B       		.uleb128 0xb
+ 934 0022 0B       		.uleb128 0xb
+ 935 0023 3E       		.uleb128 0x3e
+ 936 0024 0B       		.uleb128 0xb
+ 937 0025 03       		.uleb128 0x3
+ 938 0026 08       		.uleb128 0x8
+ 939 0027 00       		.byte	0
+ 940 0028 00       		.byte	0
+ 941 0029 04       		.uleb128 0x4
+ 942 002a 16       		.uleb128 0x16
+ 943 002b 00       		.byte	0
+ 944 002c 03       		.uleb128 0x3
+ 945 002d 0E       		.uleb128 0xe
+ 946 002e 3A       		.uleb128 0x3a
+ 947 002f 0B       		.uleb128 0xb
+ 948 0030 3B       		.uleb128 0x3b
+ 949 0031 05       		.uleb128 0x5
+ 950 0032 49       		.uleb128 0x49
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 21
+
+
+ 951 0033 13       		.uleb128 0x13
+ 952 0034 00       		.byte	0
+ 953 0035 00       		.byte	0
+ 954 0036 05       		.uleb128 0x5
+ 955 0037 2E       		.uleb128 0x2e
+ 956 0038 01       		.byte	0x1
+ 957 0039 3F       		.uleb128 0x3f
+ 958 003a 19       		.uleb128 0x19
+ 959 003b 03       		.uleb128 0x3
+ 960 003c 0E       		.uleb128 0xe
+ 961 003d 3A       		.uleb128 0x3a
+ 962 003e 0B       		.uleb128 0xb
+ 963 003f 3B       		.uleb128 0x3b
+ 964 0040 0B       		.uleb128 0xb
+ 965 0041 27       		.uleb128 0x27
+ 966 0042 19       		.uleb128 0x19
+ 967 0043 11       		.uleb128 0x11
+ 968 0044 01       		.uleb128 0x1
+ 969 0045 12       		.uleb128 0x12
+ 970 0046 06       		.uleb128 0x6
+ 971 0047 40       		.uleb128 0x40
+ 972 0048 18       		.uleb128 0x18
+ 973 0049 9742     		.uleb128 0x2117
+ 974 004b 19       		.uleb128 0x19
+ 975 004c 01       		.uleb128 0x1
+ 976 004d 13       		.uleb128 0x13
+ 977 004e 00       		.byte	0
+ 978 004f 00       		.byte	0
+ 979 0050 06       		.uleb128 0x6
+ 980 0051 898201   		.uleb128 0x4109
+ 981 0054 01       		.byte	0x1
+ 982 0055 11       		.uleb128 0x11
+ 983 0056 01       		.uleb128 0x1
+ 984 0057 31       		.uleb128 0x31
+ 985 0058 13       		.uleb128 0x13
+ 986 0059 01       		.uleb128 0x1
+ 987 005a 13       		.uleb128 0x13
+ 988 005b 00       		.byte	0
+ 989 005c 00       		.byte	0
+ 990 005d 07       		.uleb128 0x7
+ 991 005e 8A8201   		.uleb128 0x410a
+ 992 0061 00       		.byte	0
+ 993 0062 02       		.uleb128 0x2
+ 994 0063 18       		.uleb128 0x18
+ 995 0064 9142     		.uleb128 0x2111
+ 996 0066 18       		.uleb128 0x18
+ 997 0067 00       		.byte	0
+ 998 0068 00       		.byte	0
+ 999 0069 08       		.uleb128 0x8
+ 1000 006a 898201   		.uleb128 0x4109
+ 1001 006d 01       		.byte	0x1
+ 1002 006e 11       		.uleb128 0x11
+ 1003 006f 01       		.uleb128 0x1
+ 1004 0070 31       		.uleb128 0x31
+ 1005 0071 13       		.uleb128 0x13
+ 1006 0072 00       		.byte	0
+ 1007 0073 00       		.byte	0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 22
+
+
+ 1008 0074 09       		.uleb128 0x9
+ 1009 0075 2E       		.uleb128 0x2e
+ 1010 0076 01       		.byte	0x1
+ 1011 0077 3F       		.uleb128 0x3f
+ 1012 0078 19       		.uleb128 0x19
+ 1013 0079 03       		.uleb128 0x3
+ 1014 007a 0E       		.uleb128 0xe
+ 1015 007b 3A       		.uleb128 0x3a
+ 1016 007c 0B       		.uleb128 0xb
+ 1017 007d 3B       		.uleb128 0x3b
+ 1018 007e 0B       		.uleb128 0xb
+ 1019 007f 49       		.uleb128 0x49
+ 1020 0080 13       		.uleb128 0x13
+ 1021 0081 8701     		.uleb128 0x87
+ 1022 0083 19       		.uleb128 0x19
+ 1023 0084 11       		.uleb128 0x11
+ 1024 0085 01       		.uleb128 0x1
+ 1025 0086 12       		.uleb128 0x12
+ 1026 0087 06       		.uleb128 0x6
+ 1027 0088 40       		.uleb128 0x40
+ 1028 0089 18       		.uleb128 0x18
+ 1029 008a 9742     		.uleb128 0x2117
+ 1030 008c 19       		.uleb128 0x19
+ 1031 008d 01       		.uleb128 0x1
+ 1032 008e 13       		.uleb128 0x13
+ 1033 008f 00       		.byte	0
+ 1034 0090 00       		.byte	0
+ 1035 0091 0A       		.uleb128 0xa
+ 1036 0092 898201   		.uleb128 0x4109
+ 1037 0095 00       		.byte	0
+ 1038 0096 11       		.uleb128 0x11
+ 1039 0097 01       		.uleb128 0x1
+ 1040 0098 31       		.uleb128 0x31
+ 1041 0099 13       		.uleb128 0x13
+ 1042 009a 00       		.byte	0
+ 1043 009b 00       		.byte	0
+ 1044 009c 0B       		.uleb128 0xb
+ 1045 009d 34       		.uleb128 0x34
+ 1046 009e 00       		.byte	0
+ 1047 009f 03       		.uleb128 0x3
+ 1048 00a0 0E       		.uleb128 0xe
+ 1049 00a1 3A       		.uleb128 0x3a
+ 1050 00a2 0B       		.uleb128 0xb
+ 1051 00a3 3B       		.uleb128 0x3b
+ 1052 00a4 0B       		.uleb128 0xb
+ 1053 00a5 49       		.uleb128 0x49
+ 1054 00a6 13       		.uleb128 0x13
+ 1055 00a7 3F       		.uleb128 0x3f
+ 1056 00a8 19       		.uleb128 0x19
+ 1057 00a9 02       		.uleb128 0x2
+ 1058 00aa 18       		.uleb128 0x18
+ 1059 00ab 00       		.byte	0
+ 1060 00ac 00       		.byte	0
+ 1061 00ad 0C       		.uleb128 0xc
+ 1062 00ae 35       		.uleb128 0x35
+ 1063 00af 00       		.byte	0
+ 1064 00b0 49       		.uleb128 0x49
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 23
+
+
+ 1065 00b1 13       		.uleb128 0x13
+ 1066 00b2 00       		.byte	0
+ 1067 00b3 00       		.byte	0
+ 1068 00b4 0D       		.uleb128 0xd
+ 1069 00b5 34       		.uleb128 0x34
+ 1070 00b6 00       		.byte	0
+ 1071 00b7 03       		.uleb128 0x3
+ 1072 00b8 08       		.uleb128 0x8
+ 1073 00b9 3A       		.uleb128 0x3a
+ 1074 00ba 0B       		.uleb128 0xb
+ 1075 00bb 3B       		.uleb128 0x3b
+ 1076 00bc 0B       		.uleb128 0xb
+ 1077 00bd 49       		.uleb128 0x49
+ 1078 00be 13       		.uleb128 0x13
+ 1079 00bf 3F       		.uleb128 0x3f
+ 1080 00c0 19       		.uleb128 0x19
+ 1081 00c1 02       		.uleb128 0x2
+ 1082 00c2 18       		.uleb128 0x18
+ 1083 00c3 00       		.byte	0
+ 1084 00c4 00       		.byte	0
+ 1085 00c5 0E       		.uleb128 0xe
+ 1086 00c6 2E       		.uleb128 0x2e
+ 1087 00c7 00       		.byte	0
+ 1088 00c8 3F       		.uleb128 0x3f
+ 1089 00c9 19       		.uleb128 0x19
+ 1090 00ca 3C       		.uleb128 0x3c
+ 1091 00cb 19       		.uleb128 0x19
+ 1092 00cc 6E       		.uleb128 0x6e
+ 1093 00cd 0E       		.uleb128 0xe
+ 1094 00ce 03       		.uleb128 0x3
+ 1095 00cf 0E       		.uleb128 0xe
+ 1096 00d0 3A       		.uleb128 0x3a
+ 1097 00d1 0B       		.uleb128 0xb
+ 1098 00d2 3B       		.uleb128 0x3b
+ 1099 00d3 0B       		.uleb128 0xb
+ 1100 00d4 00       		.byte	0
+ 1101 00d5 00       		.byte	0
+ 1102 00d6 0F       		.uleb128 0xf
+ 1103 00d7 2E       		.uleb128 0x2e
+ 1104 00d8 00       		.byte	0
+ 1105 00d9 3F       		.uleb128 0x3f
+ 1106 00da 19       		.uleb128 0x19
+ 1107 00db 3C       		.uleb128 0x3c
+ 1108 00dc 19       		.uleb128 0x19
+ 1109 00dd 6E       		.uleb128 0x6e
+ 1110 00de 0E       		.uleb128 0xe
+ 1111 00df 03       		.uleb128 0x3
+ 1112 00e0 0E       		.uleb128 0xe
+ 1113 00e1 3A       		.uleb128 0x3a
+ 1114 00e2 0B       		.uleb128 0xb
+ 1115 00e3 3B       		.uleb128 0x3b
+ 1116 00e4 05       		.uleb128 0x5
+ 1117 00e5 00       		.byte	0
+ 1118 00e6 00       		.byte	0
+ 1119 00e7 00       		.byte	0
+ 1120              		.section	.debug_aranges,"",%progbits
+ 1121 0000 24000000 		.4byte	0x24
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 24
+
+
+ 1122 0004 0200     		.2byte	0x2
+ 1123 0006 00000000 		.4byte	.Ldebug_info0
+ 1124 000a 04       		.byte	0x4
+ 1125 000b 00       		.byte	0
+ 1126 000c 0000     		.2byte	0
+ 1127 000e 0000     		.2byte	0
+ 1128 0010 00000000 		.4byte	.LFB33
+ 1129 0014 60000000 		.4byte	.LFE33-.LFB33
+ 1130 0018 00000000 		.4byte	.LFB32
+ 1131 001c 18010000 		.4byte	.LFE32-.LFB32
+ 1132 0020 00000000 		.4byte	0
+ 1133 0024 00000000 		.4byte	0
+ 1134              		.section	.debug_ranges,"",%progbits
+ 1135              	.Ldebug_ranges0:
+ 1136 0000 00000000 		.4byte	.LFB33
+ 1137 0004 60000000 		.4byte	.LFE33
+ 1138 0008 00000000 		.4byte	.LFB32
+ 1139 000c 18010000 		.4byte	.LFE32
+ 1140 0010 00000000 		.4byte	0
+ 1141 0014 00000000 		.4byte	0
+ 1142              		.section	.debug_line,"",%progbits
+ 1143              	.Ldebug_line0:
+ 1144 0000 34010000 		.section	.debug_str,"MS",%progbits,1
+ 1144      0200D600 
+ 1144      00000201 
+ 1144      FB0E0D00 
+ 1144      01010101 
+ 1145              	.LASF22:
+ 1146 0000 53657454 		.ascii	"SetTime_ISR_Start\000"
+ 1146      696D655F 
+ 1146      4953525F 
+ 1146      53746172 
+ 1146      7400
+ 1147              	.LASF18:
+ 1148 0012 4C43445F 		.ascii	"LCD_Char_Position\000"
+ 1148      43686172 
+ 1148      5F506F73 
+ 1148      6974696F 
+ 1148      6E00
+ 1149              	.LASF30:
+ 1150 0024 4C45445F 		.ascii	"LED_Write\000"
+ 1150      57726974 
+ 1150      6500
+ 1151              	.LASF34:
+ 1152 002e 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB3\\LAB_3_PSOC\\Clock_App.cyd"
+ 1152      55544F52 
+ 1152      49414C53 
+ 1152      5C50534F 
+ 1152      435F4C41 
+ 1153 005d 736E00   		.ascii	"sn\000"
+ 1154              	.LASF28:
+ 1155 0060 43795379 		.ascii	"CySysPmSleep\000"
+ 1155      73506D53 
+ 1155      6C656570 
+ 1155      00
+ 1156              	.LASF26:
+ 1157 006d 4C43445F 		.ascii	"LCD_Char_Start\000"
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 25
+
+
+ 1157      43686172 
+ 1157      5F537461 
+ 1157      727400
+ 1158              	.LASF9:
+ 1159 007c 666C6F61 		.ascii	"float\000"
+ 1159      7400
+ 1160              	.LASF21:
+ 1161 0082 4953525F 		.ascii	"ISR_Start\000"
+ 1161      53746172 
+ 1161      7400
+ 1162              	.LASF1:
+ 1163 008c 756E7369 		.ascii	"unsigned char\000"
+ 1163      676E6564 
+ 1163      20636861 
+ 1163      7200
+ 1164              	.LASF31:
+ 1165 009a 4C43445F 		.ascii	"LCD_Char_PrintU32Number\000"
+ 1165      43686172 
+ 1165      5F507269 
+ 1165      6E745533 
+ 1165      324E756D 
+ 1166              	.LASF5:
+ 1167 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1167      20756E73 
+ 1167      69676E65 
+ 1167      6420696E 
+ 1167      7400
+ 1168              	.LASF3:
+ 1169 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 1169      7420756E 
+ 1169      7369676E 
+ 1169      65642069 
+ 1169      6E7400
+ 1170              	.LASF20:
+ 1171 00d7 54435057 		.ascii	"TCPWM_1_Start\000"
+ 1171      4D5F315F 
+ 1171      53746172 
+ 1171      7400
+ 1172              	.LASF24:
+ 1173 00e5 4261636B 		.ascii	"Back_Light_On_N_Write\000"
+ 1173      5F4C6967 
+ 1173      68745F4F 
+ 1173      6E5F4E5F 
+ 1173      57726974 
+ 1174              	.LASF10:
+ 1175 00fb 646F7562 		.ascii	"double\000"
+ 1175      6C6500
+ 1176              	.LASF37:
+ 1177 0102 6D61696E 		.ascii	"main\000"
+ 1177      00
+ 1178              	.LASF35:
+ 1179 0107 75696E74 		.ascii	"uint16\000"
+ 1179      313600
+ 1180              	.LASF14:
+ 1181 010e 666C6167 		.ascii	"flag\000"
+ 1181      00
+ 1182              	.LASF8:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 26
+
+
+ 1183 0113 756E7369 		.ascii	"unsigned int\000"
+ 1183      676E6564 
+ 1183      20696E74 
+ 1183      00
+ 1184              	.LASF7:
+ 1185 0120 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1185      206C6F6E 
+ 1185      6720756E 
+ 1185      7369676E 
+ 1185      65642069 
+ 1186              	.LASF25:
+ 1187 0137 4261636B 		.ascii	"Back_Light_On_P_Write\000"
+ 1187      5F4C6967 
+ 1187      68745F4F 
+ 1187      6E5F505F 
+ 1187      57726974 
+ 1188              	.LASF32:
+ 1189 014d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1189      43313120 
+ 1189      352E342E 
+ 1189      31203230 
+ 1189      31363036 
+ 1190 0180 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1190      20726576 
+ 1190      6973696F 
+ 1190      6E203233 
+ 1190      37373135 
+ 1191 01b3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1191      66756E63 
+ 1191      74696F6E 
+ 1191      2D736563 
+ 1191      74696F6E 
+ 1192              	.LASF13:
+ 1193 01db 73697A65 		.ascii	"sizetype\000"
+ 1193      74797065 
+ 1193      00
+ 1194              	.LASF6:
+ 1195 01e4 6C6F6E67 		.ascii	"long long int\000"
+ 1195      206C6F6E 
+ 1195      6720696E 
+ 1195      7400
+ 1196              	.LASF33:
+ 1197 01f2 6D61696E 		.ascii	"main.c\000"
+ 1197      2E6300
+ 1198              	.LASF11:
+ 1199 01f9 63686172 		.ascii	"char\000"
+ 1199      00
+ 1200              	.LASF27:
+ 1201 01fe 4C43445F 		.ascii	"LCD_Char_WriteControl\000"
+ 1201      43686172 
+ 1201      5F577269 
+ 1201      7465436F 
+ 1201      6E74726F 
+ 1202              	.LASF36:
+ 1203 0214 75706461 		.ascii	"update_time\000"
+ 1203      74655F74 
+ 1203      696D6500 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cccktoLN.s 			page 27
+
+
+ 1204              	.LASF19:
+ 1205 0220 4C43445F 		.ascii	"LCD_Char_PrintString\000"
+ 1205      43686172 
+ 1205      5F507269 
+ 1205      6E745374 
+ 1205      72696E67 
+ 1206              	.LASF2:
+ 1207 0235 73686F72 		.ascii	"short int\000"
+ 1207      7420696E 
+ 1207      7400
+ 1208              	.LASF17:
+ 1209 023f 616D5F70 		.ascii	"am_pm_flag\000"
+ 1209      6D5F666C 
+ 1209      616700
+ 1210              	.LASF4:
+ 1211 024a 6C6F6E67 		.ascii	"long int\000"
+ 1211      20696E74 
+ 1211      00
+ 1212              	.LASF12:
+ 1213 0253 6C6F6E67 		.ascii	"long double\000"
+ 1213      20646F75 
+ 1213      626C6500 
+ 1214              	.LASF0:
+ 1215 025f 7369676E 		.ascii	"signed char\000"
+ 1215      65642063 
+ 1215      68617200 
+ 1216              	.LASF15:
+ 1217 026b 70726573 		.ascii	"press_detect\000"
+ 1217      735F6465 
+ 1217      74656374 
+ 1217      00
+ 1218              	.LASF23:
+ 1219 0278 506F7765 		.ascii	"Power_Up_LCD_Pin_1_Write\000"
+ 1219      725F5570 
+ 1219      5F4C4344 
+ 1219      5F50696E 
+ 1219      5F315F57 
+ 1220              	.LASF16:
+ 1221 0291 6D696E75 		.ascii	"minu\000"
+ 1221      00
+ 1222              	.LASF29:
+ 1223 0296 43794465 		.ascii	"CyDelay\000"
+ 1223      6C617900 
+ 1224              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,1342 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"LCD_Char_BarGraph.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.LCD_Char_LoadCustomFonts,"ax",%progbits
+  20              		.align	2
+  21              		.global	LCD_Char_LoadCustomFonts
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	LCD_Char_LoadCustomFonts, %function
+  25              	LCD_Char_LoadCustomFonts:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC4\\LCD_Char_BarGraph.c"
+   1:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * File Name: LCD_Char_BarGraph.c
+   3:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Version 2.20
+   4:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+   5:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Description:
+   6:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  This file provides the custom character data and API for creating and using
+   7:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  bar graphs with the Character LCD component.
+   8:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+   9:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Note:
+  10:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+  11:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** ********************************************************************************
+  12:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *******************************************************************************/
+  17:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  18:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** #include "LCD_Char.h"
+  19:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  20:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  21:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** uint8 const CYCODE LCD_Char_customFonts[] = \
+  22:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** {
+  23:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_0   */
+  24:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u, \
+  25:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_1   */
+  26:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u,    0x10u, \
+  27:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_2   */
+  28:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u,    0x18u, \
+  29:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_3   */
+  30:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu,    0x1Cu, \
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 2
+
+
+  31:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_4   */
+  32:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu,    0x1Eu, \
+  33:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_5   */
+  34:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu,    0x1Fu, \
+  35:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_6   */
+  36:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u, \
+  37:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Character LCD_Char_CUSTOM_7   */
+  38:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u,    0x00u \
+  39:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** };
+  40:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  41:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  42:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** /*******************************************************************************
+  43:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Function Name: LCD_Char_LoadCustomFonts
+  44:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** ********************************************************************************
+  45:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+  46:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Summary:
+  47:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  Loads 8 custom font characters into the LCD Module for use.  Cannot use
+  48:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  characters from two different font sets at once, but font sets can be
+  49:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  switched out during runtime.
+  50:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+  51:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Parameters:
+  52:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  customData:  pointer to a constant array of 64 bytes representing 8 custom
+  53:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *               font characters.
+  54:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Return:
+  55:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  None.
+  56:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *
+  57:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** * Theory:
+  58:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  Prior to using this function user need to import the pointer to custom
+  59:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  font array to your project by writting the following in the source code file
+  60:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  where custom font will be used:
+  61:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *       extern uint8 const CYCODE LCD_Char_customFonts[];
+  62:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  This function is not automatically called by the Start() routine and must be
+  63:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *  called manually by the user.
+  64:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** *******************************************************************************/
+  65:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** void LCD_Char_LoadCustomFonts(uint8 const customData[]) 
+  66:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** {
+  28              		.loc 1 66 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0500     		movs	r5, r0
+  67:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     uint8 indexU8;
+  68:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  69:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     LCD_Char_IsReady();
+  40              		.loc 1 69 0
+  41 0004 FFF7FEFF 		bl	LCD_Char_IsReady
+  42              	.LVL1:
+  70:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Set starting address in the LCD Module */
+  71:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Optionally: Read the current address to restore at a later time */
+  72:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     LCD_Char_WriteControl(LCD_Char_CGRAM_0);
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 3
+
+
+  43              		.loc 1 72 0
+  44 0008 4020     		movs	r0, #64
+  45 000a FFF7FEFF 		bl	LCD_Char_WriteControl
+  46              	.LVL2:
+  73:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  74:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /* Load in the 64 bytes of CustomChar Data */
+  75:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     for(indexU8 = 0u; indexU8 < LCD_Char_CUSTOM_CHAR_SET_LEN; indexU8++)
+  47              		.loc 1 75 0
+  48 000e 0024     		movs	r4, #0
+  49 0010 04E0     		b	.L2
+  50              	.LVL3:
+  51              	.L3:
+  76:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     {
+  77:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Delay between each write */
+  78:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         LCD_Char_WriteData(customData[indexU8]);
+  52              		.loc 1 78 0 discriminator 3
+  53 0012 285D     		ldrb	r0, [r5, r4]
+  54 0014 FFF7FEFF 		bl	LCD_Char_WriteData
+  55              	.LVL4:
+  75:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     {
+  56              		.loc 1 75 0 discriminator 3
+  57 0018 0134     		adds	r4, r4, #1
+  58              	.LVL5:
+  59 001a E4B2     		uxtb	r4, r4
+  60              	.LVL6:
+  61              	.L2:
+  75:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     {
+  62              		.loc 1 75 0 is_stmt 0 discriminator 1
+  63 001c 3F2C     		cmp	r4, #63
+  64 001e F8D9     		bls	.L3
+  79:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     }
+  80:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  81:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     LCD_Char_IsReady();
+  65              		.loc 1 81 0 is_stmt 1
+  66 0020 FFF7FEFF 		bl	LCD_Char_IsReady
+  67              	.LVL7:
+  82:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     LCD_Char_WriteControl(LCD_Char_DDRAM_0);
+  68              		.loc 1 82 0
+  69 0024 8020     		movs	r0, #128
+  70 0026 FFF7FEFF 		bl	LCD_Char_WriteControl
+  71              	.LVL8:
+  83:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** }
+  72              		.loc 1 83 0
+  73              		@ sp needed
+  74              	.LVL9:
+  75              	.LVL10:
+  76 002a 70BD     		pop	{r4, r5, r6, pc}
+  77              		.cfi_endproc
+  78              	.LFE0:
+  79              		.size	LCD_Char_LoadCustomFonts, .-LCD_Char_LoadCustomFonts
+  80              		.global	__aeabi_uidiv
+  81              		.global	__aeabi_uidivmod
+  82              		.section	.text.LCD_Char_DrawHorizontalBG,"ax",%progbits
+  83              		.align	2
+  84              		.global	LCD_Char_DrawHorizontalBG
+  85              		.code	16
+  86              		.thumb_func
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 4
+
+
+  87              		.type	LCD_Char_DrawHorizontalBG, %function
+  88              	LCD_Char_DrawHorizontalBG:
+  89              	.LFB1:
+  84:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  85:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  86:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** #if (LCD_Char_CUSTOM_CHAR_SET == LCD_Char_HORIZONTAL_BG)
+  87:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+  88:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     /*******************************************************************************
+  89:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     * Function Name: LCD_Char_DrawHorizontalBG
+  90:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     ********************************************************************************
+  91:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *
+  92:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     * Summary:
+  93:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  Draws the horizontal bargraph.
+  94:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *
+  95:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     * Parameters:
+  96:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  row:            The row in which the bar graph starts.
+  97:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  column:         The column in which the bar graph starts.
+  98:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  maxCharacters:  The max length of the graph in whole characters.
+  99:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  value:          The current length or height of the graph in pixels.
+ 100:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *
+ 101:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     * Return:
+ 102:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *  void.
+ 103:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *
+ 104:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     *******************************************************************************/
+ 105:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     void LCD_Char_DrawHorizontalBG(uint8 row, uint8 column, uint8 maxCharacters, uint8 value) \
+ 106:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                                                             
+ 107:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     {
+  90              		.loc 1 107 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 8
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              	.LVL11:
+  95 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  96              		.cfi_def_cfa_offset 20
+  97              		.cfi_offset 4, -20
+  98              		.cfi_offset 5, -16
+  99              		.cfi_offset 6, -12
+ 100              		.cfi_offset 7, -8
+ 101              		.cfi_offset 14, -4
+ 102 0002 83B0     		sub	sp, sp, #12
+ 103              		.cfi_def_cfa_offset 32
+ 104 0004 0090     		str	r0, [sp]
+ 105 0006 0191     		str	r1, [sp, #4]
+ 106 0008 1600     		movs	r6, r2
+ 107 000a 1C00     		movs	r4, r3
+ 108:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* 8-bit Counter */
+ 109:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         uint8 count8;
+ 110:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         uint8 fullChars;
+ 111:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         uint8 remainingPixels;
+ 112:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 113:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Number of full characters to draw */
+ 114:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         fullChars = value / LCD_Char_CHARACTER_WIDTH;
+ 108              		.loc 1 114 0
+ 109 000c 0521     		movs	r1, #5
+ 110              	.LVL12:
+ 111 000e 1800     		movs	r0, r3
+ 112              	.LVL13:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 5
+
+
+ 113 0010 FFF7FEFF 		bl	__aeabi_uidiv
+ 114              	.LVL14:
+ 115 0014 C5B2     		uxtb	r5, r0
+ 116              	.LVL15:
+ 115:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 116:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Number of remaining pixels to draw */
+ 117:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         remainingPixels = value % LCD_Char_CHARACTER_WIDTH;
+ 117              		.loc 1 117 0
+ 118 0016 0521     		movs	r1, #5
+ 119 0018 2000     		movs	r0, r4
+ 120 001a FFF7FEFF 		bl	__aeabi_uidivmod
+ 121              	.LVL16:
+ 122 001e CFB2     		uxtb	r7, r1
+ 123              	.LVL17:
+ 118:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 119:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Ensure that the maximum character limit is followed. */
+ 120:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         if(fullChars >= maxCharacters)
+ 124              		.loc 1 120 0
+ 125 0020 B542     		cmp	r5, r6
+ 126 0022 00D3     		bcc	.L5
+ 121:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         {
+ 122:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             fullChars = maxCharacters;
+ 127              		.loc 1 122 0
+ 128 0024 3500     		movs	r5, r6
+ 129              	.LVL18:
+ 130              	.L5:
+ 123:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         }
+ 124:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 125:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Put Cursor at start position */
+ 126:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         LCD_Char_Position(row, column);
+ 131              		.loc 1 126 0
+ 132 0026 0199     		ldr	r1, [sp, #4]
+ 133 0028 0098     		ldr	r0, [sp]
+ 134 002a FFF7FEFF 		bl	LCD_Char_Position
+ 135              	.LVL19:
+ 127:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 128:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         /* Write full characters */
+ 129:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         for(count8 = 0u; count8 < fullChars; count8++)
+ 136              		.loc 1 129 0
+ 137 002e 0024     		movs	r4, #0
+ 138 0030 04E0     		b	.L6
+ 139              	.LVL20:
+ 140              	.L7:
+ 130:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         {
+ 131:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             LCD_Char_WriteData(LCD_Char_CUSTOM_5);
+ 141              		.loc 1 131 0 discriminator 3
+ 142 0032 0520     		movs	r0, #5
+ 143 0034 FFF7FEFF 		bl	LCD_Char_WriteData
+ 144              	.LVL21:
+ 129:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         {
+ 145              		.loc 1 129 0 discriminator 3
+ 146 0038 0134     		adds	r4, r4, #1
+ 147              	.LVL22:
+ 148 003a E4B2     		uxtb	r4, r4
+ 149              	.LVL23:
+ 150              	.L6:
+ 129:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         {
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 6
+
+
+ 151              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 152 003c AC42     		cmp	r4, r5
+ 153 003e F8D3     		bcc	.L7
+ 132:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         }
+ 133:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 134:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         if(fullChars < maxCharacters)
+ 154              		.loc 1 134 0 is_stmt 1
+ 155 0040 B542     		cmp	r5, r6
+ 156 0042 11D2     		bcs	.L4
+ 135:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         {
+ 136:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             /* Write remaining pixels */
+ 137:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             LCD_Char_WriteData(remainingPixels);
+ 157              		.loc 1 137 0
+ 158 0044 3800     		movs	r0, r7
+ 159 0046 FFF7FEFF 		bl	LCD_Char_WriteData
+ 160              	.LVL24:
+ 138:Generated_Source\PSoC4/LCD_Char_BarGraph.c **** 
+ 139:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             if(fullChars < (maxCharacters - 1u))
+ 161              		.loc 1 139 0
+ 162 004a 731E     		subs	r3, r6, #1
+ 163 004c 9D42     		cmp	r5, r3
+ 164 004e 06D3     		bcc	.L12
+ 165 0050 0AE0     		b	.L4
+ 166              	.L10:
+ 140:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             {
+ 141:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 /* Fill with whitespace to end of bar graph */
+ 142:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 for(count8 = 0u; count8 < (maxCharacters - fullChars - 1u); count8++)
+ 143:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 {
+ 144:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                     LCD_Char_WriteData(LCD_Char_CUSTOM_0);
+ 167              		.loc 1 144 0 discriminator 3
+ 168 0052 0020     		movs	r0, #0
+ 169 0054 FFF7FEFF 		bl	LCD_Char_WriteData
+ 170              	.LVL25:
+ 142:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 {
+ 171              		.loc 1 142 0 discriminator 3
+ 172 0058 0134     		adds	r4, r4, #1
+ 173              	.LVL26:
+ 174 005a E4B2     		uxtb	r4, r4
+ 175              	.LVL27:
+ 176 005c 00E0     		b	.L9
+ 177              	.L12:
+ 178 005e 0024     		movs	r4, #0
+ 179              	.LVL28:
+ 180              	.L9:
+ 142:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 {
+ 181              		.loc 1 142 0 is_stmt 0 discriminator 1
+ 182 0060 731B     		subs	r3, r6, r5
+ 183 0062 013B     		subs	r3, r3, #1
+ 184 0064 9C42     		cmp	r4, r3
+ 185 0066 F4D3     		bcc	.L10
+ 186              	.L4:
+ 145:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****                 }
+ 146:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****             }
+ 147:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****         }
+ 148:Generated_Source\PSoC4/LCD_Char_BarGraph.c ****     }
+ 187              		.loc 1 148 0 is_stmt 1
+ 188 0068 03B0     		add	sp, sp, #12
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 7
+
+
+ 189              		@ sp needed
+ 190              	.LVL29:
+ 191              	.LVL30:
+ 192              	.LVL31:
+ 193 006a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 194              		.cfi_endproc
+ 195              	.LFE1:
+ 196              		.size	LCD_Char_DrawHorizontalBG, .-LCD_Char_DrawHorizontalBG
+ 197              		.global	LCD_Char_customFonts
+ 198              		.section	.rodata
+ 199              		.align	2
+ 200              		.type	LCD_Char_customFonts, %object
+ 201              		.size	LCD_Char_customFonts, 64
+ 202              	LCD_Char_customFonts:
+ 203 0000 00       		.byte	0
+ 204 0001 00       		.byte	0
+ 205 0002 00       		.byte	0
+ 206 0003 00       		.byte	0
+ 207 0004 00       		.byte	0
+ 208 0005 00       		.byte	0
+ 209 0006 00       		.byte	0
+ 210 0007 00       		.byte	0
+ 211 0008 10       		.byte	16
+ 212 0009 10       		.byte	16
+ 213 000a 10       		.byte	16
+ 214 000b 10       		.byte	16
+ 215 000c 10       		.byte	16
+ 216 000d 10       		.byte	16
+ 217 000e 10       		.byte	16
+ 218 000f 10       		.byte	16
+ 219 0010 18       		.byte	24
+ 220 0011 18       		.byte	24
+ 221 0012 18       		.byte	24
+ 222 0013 18       		.byte	24
+ 223 0014 18       		.byte	24
+ 224 0015 18       		.byte	24
+ 225 0016 18       		.byte	24
+ 226 0017 18       		.byte	24
+ 227 0018 1C       		.byte	28
+ 228 0019 1C       		.byte	28
+ 229 001a 1C       		.byte	28
+ 230 001b 1C       		.byte	28
+ 231 001c 1C       		.byte	28
+ 232 001d 1C       		.byte	28
+ 233 001e 1C       		.byte	28
+ 234 001f 1C       		.byte	28
+ 235 0020 1E       		.byte	30
+ 236 0021 1E       		.byte	30
+ 237 0022 1E       		.byte	30
+ 238 0023 1E       		.byte	30
+ 239 0024 1E       		.byte	30
+ 240 0025 1E       		.byte	30
+ 241 0026 1E       		.byte	30
+ 242 0027 1E       		.byte	30
+ 243 0028 1F       		.byte	31
+ 244 0029 1F       		.byte	31
+ 245 002a 1F       		.byte	31
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 8
+
+
+ 246 002b 1F       		.byte	31
+ 247 002c 1F       		.byte	31
+ 248 002d 1F       		.byte	31
+ 249 002e 1F       		.byte	31
+ 250 002f 1F       		.byte	31
+ 251 0030 00       		.byte	0
+ 252 0031 00       		.byte	0
+ 253 0032 00       		.byte	0
+ 254 0033 00       		.byte	0
+ 255 0034 00       		.byte	0
+ 256 0035 00       		.byte	0
+ 257 0036 00       		.byte	0
+ 258 0037 00       		.byte	0
+ 259 0038 00       		.byte	0
+ 260 0039 00       		.byte	0
+ 261 003a 00       		.byte	0
+ 262 003b 00       		.byte	0
+ 263 003c 00       		.byte	0
+ 264 003d 00       		.byte	0
+ 265 003e 00       		.byte	0
+ 266 003f 00       		.byte	0
+ 267              		.text
+ 268              	.Letext0:
+ 269              		.file 2 "Generated_Source\\PSoC4\\LCD_Char.h"
+ 270              		.file 3 "Generated_Source\\PSoC4\\cytypes.h"
+ 271              		.section	.debug_info,"",%progbits
+ 272              	.Ldebug_info0:
+ 273 0000 33020000 		.4byte	0x233
+ 274 0004 0400     		.2byte	0x4
+ 275 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 276 000a 04       		.byte	0x4
+ 277 000b 01       		.uleb128 0x1
+ 278 000c A4000000 		.4byte	.LASF27
+ 279 0010 0C       		.byte	0xc
+ 280 0011 00000000 		.4byte	.LASF28
+ 281 0015 1F020000 		.4byte	.LASF29
+ 282 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 283 001d 00000000 		.4byte	0
+ 284 0021 00000000 		.4byte	.Ldebug_line0
+ 285 0025 02       		.uleb128 0x2
+ 286 0026 01       		.byte	0x1
+ 287 0027 06       		.byte	0x6
+ 288 0028 B0010000 		.4byte	.LASF0
+ 289 002c 02       		.uleb128 0x2
+ 290 002d 01       		.byte	0x1
+ 291 002e 08       		.byte	0x8
+ 292 002f 80010000 		.4byte	.LASF1
+ 293 0033 02       		.uleb128 0x2
+ 294 0034 02       		.byte	0x2
+ 295 0035 05       		.byte	0x5
+ 296 0036 5C000000 		.4byte	.LASF2
+ 297 003a 02       		.uleb128 0x2
+ 298 003b 02       		.byte	0x2
+ 299 003c 07       		.byte	0x7
+ 300 003d EE010000 		.4byte	.LASF3
+ 301 0041 02       		.uleb128 0x2
+ 302 0042 04       		.byte	0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 9
+
+
+ 303 0043 05       		.byte	0x5
+ 304 0044 4C010000 		.4byte	.LASF4
+ 305 0048 02       		.uleb128 0x2
+ 306 0049 04       		.byte	0x4
+ 307 004a 07       		.byte	0x7
+ 308 004b 06020000 		.4byte	.LASF5
+ 309 004f 02       		.uleb128 0x2
+ 310 0050 08       		.byte	0x8
+ 311 0051 05       		.byte	0x5
+ 312 0052 3E010000 		.4byte	.LASF6
+ 313 0056 02       		.uleb128 0x2
+ 314 0057 08       		.byte	0x8
+ 315 0058 07       		.byte	0x7
+ 316 0059 BC010000 		.4byte	.LASF7
+ 317 005d 03       		.uleb128 0x3
+ 318 005e 04       		.byte	0x4
+ 319 005f 05       		.byte	0x5
+ 320 0060 696E7400 		.ascii	"int\000"
+ 321 0064 02       		.uleb128 0x2
+ 322 0065 04       		.byte	0x4
+ 323 0066 07       		.byte	0x7
+ 324 0067 D3010000 		.4byte	.LASF8
+ 325 006b 04       		.uleb128 0x4
+ 326 006c 32010000 		.4byte	.LASF30
+ 327 0070 03       		.byte	0x3
+ 328 0071 FB01     		.2byte	0x1fb
+ 329 0073 2C000000 		.4byte	0x2c
+ 330 0077 02       		.uleb128 0x2
+ 331 0078 04       		.byte	0x4
+ 332 0079 04       		.byte	0x4
+ 333 007a 38010000 		.4byte	.LASF9
+ 334 007e 02       		.uleb128 0x2
+ 335 007f 08       		.byte	0x8
+ 336 0080 04       		.byte	0x4
+ 337 0081 18020000 		.4byte	.LASF10
+ 338 0085 02       		.uleb128 0x2
+ 339 0086 01       		.byte	0x1
+ 340 0087 08       		.byte	0x8
+ 341 0088 01020000 		.4byte	.LASF11
+ 342 008c 05       		.uleb128 0x5
+ 343 008d 43000000 		.4byte	.LASF12
+ 344 0091 01       		.byte	0x1
+ 345 0092 41       		.byte	0x41
+ 346 0093 00000000 		.4byte	.LFB0
+ 347 0097 2C000000 		.4byte	.LFE0-.LFB0
+ 348 009b 01       		.uleb128 0x1
+ 349 009c 9C       		.byte	0x9c
+ 350 009d FF000000 		.4byte	0xff
+ 351 00a1 06       		.uleb128 0x6
+ 352 00a2 55010000 		.4byte	.LASF14
+ 353 00a6 01       		.byte	0x1
+ 354 00a7 41       		.byte	0x41
+ 355 00a8 FF000000 		.4byte	0xff
+ 356 00ac 00000000 		.4byte	.LLST0
+ 357 00b0 07       		.uleb128 0x7
+ 358 00b1 6B020000 		.4byte	.LASF18
+ 359 00b5 01       		.byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 10
+
+
+ 360 00b6 43       		.byte	0x43
+ 361 00b7 6B000000 		.4byte	0x6b
+ 362 00bb 2C000000 		.4byte	.LLST1
+ 363 00bf 08       		.uleb128 0x8
+ 364 00c0 08000000 		.4byte	.LVL1
+ 365 00c4 0A020000 		.4byte	0x20a
+ 366 00c8 09       		.uleb128 0x9
+ 367 00c9 0E000000 		.4byte	.LVL2
+ 368 00cd 15020000 		.4byte	0x215
+ 369 00d1 DC000000 		.4byte	0xdc
+ 370 00d5 0A       		.uleb128 0xa
+ 371 00d6 01       		.uleb128 0x1
+ 372 00d7 50       		.byte	0x50
+ 373 00d8 02       		.uleb128 0x2
+ 374 00d9 08       		.byte	0x8
+ 375 00da 40       		.byte	0x40
+ 376 00db 00       		.byte	0
+ 377 00dc 08       		.uleb128 0x8
+ 378 00dd 18000000 		.4byte	.LVL4
+ 379 00e1 20020000 		.4byte	0x220
+ 380 00e5 08       		.uleb128 0x8
+ 381 00e6 24000000 		.4byte	.LVL7
+ 382 00ea 0A020000 		.4byte	0x20a
+ 383 00ee 0B       		.uleb128 0xb
+ 384 00ef 2A000000 		.4byte	.LVL8
+ 385 00f3 15020000 		.4byte	0x215
+ 386 00f7 0A       		.uleb128 0xa
+ 387 00f8 01       		.uleb128 0x1
+ 388 00f9 50       		.byte	0x50
+ 389 00fa 02       		.uleb128 0x2
+ 390 00fb 09       		.byte	0x9
+ 391 00fc 80       		.byte	0x80
+ 392 00fd 00       		.byte	0
+ 393 00fe 00       		.byte	0
+ 394 00ff 0C       		.uleb128 0xc
+ 395 0100 04       		.byte	0x4
+ 396 0101 05010000 		.4byte	0x105
+ 397 0105 0D       		.uleb128 0xd
+ 398 0106 6B000000 		.4byte	0x6b
+ 399 010a 0E       		.uleb128 0xe
+ 400 010b 84000000 		.4byte	.LASF13
+ 401 010f 01       		.byte	0x1
+ 402 0110 69       		.byte	0x69
+ 403 0111 00000000 		.4byte	.LFB1
+ 404 0115 6C000000 		.4byte	.LFE1-.LFB1
+ 405 0119 01       		.uleb128 0x1
+ 406 011a 9C       		.byte	0x9c
+ 407 011b DD010000 		.4byte	0x1dd
+ 408 011f 0F       		.uleb128 0xf
+ 409 0120 726F7700 		.ascii	"row\000"
+ 410 0124 01       		.byte	0x1
+ 411 0125 69       		.byte	0x69
+ 412 0126 6B000000 		.4byte	0x6b
+ 413 012a 56000000 		.4byte	.LLST2
+ 414 012e 06       		.uleb128 0x6
+ 415 012f 3C000000 		.4byte	.LASF15
+ 416 0133 01       		.byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 11
+
+
+ 417 0134 69       		.byte	0x69
+ 418 0135 6B000000 		.4byte	0x6b
+ 419 0139 77000000 		.4byte	.LLST3
+ 420 013d 06       		.uleb128 0x6
+ 421 013e E0010000 		.4byte	.LASF16
+ 422 0142 01       		.byte	0x1
+ 423 0143 69       		.byte	0x69
+ 424 0144 6B000000 		.4byte	0x6b
+ 425 0148 98000000 		.4byte	.LLST4
+ 426 014c 06       		.uleb128 0x6
+ 427 014d 9E000000 		.4byte	.LASF17
+ 428 0151 01       		.byte	0x1
+ 429 0152 69       		.byte	0x69
+ 430 0153 6B000000 		.4byte	0x6b
+ 431 0157 B9000000 		.4byte	.LLST5
+ 432 015b 07       		.uleb128 0x7
+ 433 015c 64020000 		.4byte	.LASF19
+ 434 0160 01       		.byte	0x1
+ 435 0161 6D       		.byte	0x6d
+ 436 0162 6B000000 		.4byte	0x6b
+ 437 0166 DA000000 		.4byte	.LLST6
+ 438 016a 07       		.uleb128 0x7
+ 439 016b 76010000 		.4byte	.LASF20
+ 440 016f 01       		.byte	0x1
+ 441 0170 6E       		.byte	0x6e
+ 442 0171 6B000000 		.4byte	0x6b
+ 443 0175 0F010000 		.4byte	.LLST7
+ 444 0179 07       		.uleb128 0x7
+ 445 017a A0010000 		.4byte	.LASF21
+ 446 017e 01       		.byte	0x1
+ 447 017f 6F       		.byte	0x6f
+ 448 0180 6B000000 		.4byte	0x6b
+ 449 0184 22010000 		.4byte	.LLST8
+ 450 0188 09       		.uleb128 0x9
+ 451 0189 2E000000 		.4byte	.LVL19
+ 452 018d 2B020000 		.4byte	0x22b
+ 453 0191 A6010000 		.4byte	0x1a6
+ 454 0195 0A       		.uleb128 0xa
+ 455 0196 01       		.uleb128 0x1
+ 456 0197 50       		.byte	0x50
+ 457 0198 04       		.uleb128 0x4
+ 458 0199 7D       		.byte	0x7d
+ 459 019a 00       		.sleb128 0
+ 460 019b 94       		.byte	0x94
+ 461 019c 01       		.byte	0x1
+ 462 019d 0A       		.uleb128 0xa
+ 463 019e 01       		.uleb128 0x1
+ 464 019f 51       		.byte	0x51
+ 465 01a0 04       		.uleb128 0x4
+ 466 01a1 91       		.byte	0x91
+ 467 01a2 64       		.sleb128 -28
+ 468 01a3 94       		.byte	0x94
+ 469 01a4 01       		.byte	0x1
+ 470 01a5 00       		.byte	0
+ 471 01a6 09       		.uleb128 0x9
+ 472 01a7 38000000 		.4byte	.LVL21
+ 473 01ab 20020000 		.4byte	0x220
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 12
+
+
+ 474 01af B9010000 		.4byte	0x1b9
+ 475 01b3 0A       		.uleb128 0xa
+ 476 01b4 01       		.uleb128 0x1
+ 477 01b5 50       		.byte	0x50
+ 478 01b6 01       		.uleb128 0x1
+ 479 01b7 35       		.byte	0x35
+ 480 01b8 00       		.byte	0
+ 481 01b9 09       		.uleb128 0x9
+ 482 01ba 4A000000 		.4byte	.LVL24
+ 483 01be 20020000 		.4byte	0x220
+ 484 01c2 CD010000 		.4byte	0x1cd
+ 485 01c6 0A       		.uleb128 0xa
+ 486 01c7 01       		.uleb128 0x1
+ 487 01c8 50       		.byte	0x50
+ 488 01c9 02       		.uleb128 0x2
+ 489 01ca 77       		.byte	0x77
+ 490 01cb 00       		.sleb128 0
+ 491 01cc 00       		.byte	0
+ 492 01cd 0B       		.uleb128 0xb
+ 493 01ce 58000000 		.4byte	.LVL25
+ 494 01d2 20020000 		.4byte	0x220
+ 495 01d6 0A       		.uleb128 0xa
+ 496 01d7 01       		.uleb128 0x1
+ 497 01d8 50       		.byte	0x50
+ 498 01d9 01       		.uleb128 0x1
+ 499 01da 30       		.byte	0x30
+ 500 01db 00       		.byte	0
+ 501 01dc 00       		.byte	0
+ 502 01dd 10       		.uleb128 0x10
+ 503 01de 05010000 		.4byte	0x105
+ 504 01e2 ED010000 		.4byte	0x1ed
+ 505 01e6 11       		.uleb128 0x11
+ 506 01e7 ED010000 		.4byte	0x1ed
+ 507 01eb 3F       		.byte	0x3f
+ 508 01ec 00       		.byte	0
+ 509 01ed 02       		.uleb128 0x2
+ 510 01ee 04       		.byte	0x4
+ 511 01ef 07       		.byte	0x7
+ 512 01f0 66000000 		.4byte	.LASF22
+ 513 01f4 12       		.uleb128 0x12
+ 514 01f5 6F000000 		.4byte	.LASF31
+ 515 01f9 01       		.byte	0x1
+ 516 01fa 15       		.byte	0x15
+ 517 01fb 05020000 		.4byte	0x205
+ 518 01ff 05       		.uleb128 0x5
+ 519 0200 03       		.byte	0x3
+ 520 0201 00000000 		.4byte	LCD_Char_customFonts
+ 521 0205 0D       		.uleb128 0xd
+ 522 0206 DD010000 		.4byte	0x1dd
+ 523 020a 13       		.uleb128 0x13
+ 524 020b 2B000000 		.4byte	.LASF23
+ 525 020f 2B000000 		.4byte	.LASF23
+ 526 0213 02       		.byte	0x2
+ 527 0214 3F       		.byte	0x3f
+ 528 0215 13       		.uleb128 0x13
+ 529 0216 60010000 		.4byte	.LASF24
+ 530 021a 60010000 		.4byte	.LASF24
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 13
+
+
+ 531 021e 02       		.byte	0x2
+ 532 021f 3A       		.byte	0x3a
+ 533 0220 13       		.uleb128 0x13
+ 534 0221 51020000 		.4byte	.LASF25
+ 535 0225 51020000 		.4byte	.LASF25
+ 536 0229 02       		.byte	0x2
+ 537 022a 3B       		.byte	0x3b
+ 538 022b 13       		.uleb128 0x13
+ 539 022c 8E010000 		.4byte	.LASF26
+ 540 0230 8E010000 		.4byte	.LASF26
+ 541 0234 02       		.byte	0x2
+ 542 0235 3D       		.byte	0x3d
+ 543 0236 00       		.byte	0
+ 544              		.section	.debug_abbrev,"",%progbits
+ 545              	.Ldebug_abbrev0:
+ 546 0000 01       		.uleb128 0x1
+ 547 0001 11       		.uleb128 0x11
+ 548 0002 01       		.byte	0x1
+ 549 0003 25       		.uleb128 0x25
+ 550 0004 0E       		.uleb128 0xe
+ 551 0005 13       		.uleb128 0x13
+ 552 0006 0B       		.uleb128 0xb
+ 553 0007 03       		.uleb128 0x3
+ 554 0008 0E       		.uleb128 0xe
+ 555 0009 1B       		.uleb128 0x1b
+ 556 000a 0E       		.uleb128 0xe
+ 557 000b 55       		.uleb128 0x55
+ 558 000c 17       		.uleb128 0x17
+ 559 000d 11       		.uleb128 0x11
+ 560 000e 01       		.uleb128 0x1
+ 561 000f 10       		.uleb128 0x10
+ 562 0010 17       		.uleb128 0x17
+ 563 0011 00       		.byte	0
+ 564 0012 00       		.byte	0
+ 565 0013 02       		.uleb128 0x2
+ 566 0014 24       		.uleb128 0x24
+ 567 0015 00       		.byte	0
+ 568 0016 0B       		.uleb128 0xb
+ 569 0017 0B       		.uleb128 0xb
+ 570 0018 3E       		.uleb128 0x3e
+ 571 0019 0B       		.uleb128 0xb
+ 572 001a 03       		.uleb128 0x3
+ 573 001b 0E       		.uleb128 0xe
+ 574 001c 00       		.byte	0
+ 575 001d 00       		.byte	0
+ 576 001e 03       		.uleb128 0x3
+ 577 001f 24       		.uleb128 0x24
+ 578 0020 00       		.byte	0
+ 579 0021 0B       		.uleb128 0xb
+ 580 0022 0B       		.uleb128 0xb
+ 581 0023 3E       		.uleb128 0x3e
+ 582 0024 0B       		.uleb128 0xb
+ 583 0025 03       		.uleb128 0x3
+ 584 0026 08       		.uleb128 0x8
+ 585 0027 00       		.byte	0
+ 586 0028 00       		.byte	0
+ 587 0029 04       		.uleb128 0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 14
+
+
+ 588 002a 16       		.uleb128 0x16
+ 589 002b 00       		.byte	0
+ 590 002c 03       		.uleb128 0x3
+ 591 002d 0E       		.uleb128 0xe
+ 592 002e 3A       		.uleb128 0x3a
+ 593 002f 0B       		.uleb128 0xb
+ 594 0030 3B       		.uleb128 0x3b
+ 595 0031 05       		.uleb128 0x5
+ 596 0032 49       		.uleb128 0x49
+ 597 0033 13       		.uleb128 0x13
+ 598 0034 00       		.byte	0
+ 599 0035 00       		.byte	0
+ 600 0036 05       		.uleb128 0x5
+ 601 0037 2E       		.uleb128 0x2e
+ 602 0038 01       		.byte	0x1
+ 603 0039 3F       		.uleb128 0x3f
+ 604 003a 19       		.uleb128 0x19
+ 605 003b 03       		.uleb128 0x3
+ 606 003c 0E       		.uleb128 0xe
+ 607 003d 3A       		.uleb128 0x3a
+ 608 003e 0B       		.uleb128 0xb
+ 609 003f 3B       		.uleb128 0x3b
+ 610 0040 0B       		.uleb128 0xb
+ 611 0041 27       		.uleb128 0x27
+ 612 0042 19       		.uleb128 0x19
+ 613 0043 11       		.uleb128 0x11
+ 614 0044 01       		.uleb128 0x1
+ 615 0045 12       		.uleb128 0x12
+ 616 0046 06       		.uleb128 0x6
+ 617 0047 40       		.uleb128 0x40
+ 618 0048 18       		.uleb128 0x18
+ 619 0049 9742     		.uleb128 0x2117
+ 620 004b 19       		.uleb128 0x19
+ 621 004c 01       		.uleb128 0x1
+ 622 004d 13       		.uleb128 0x13
+ 623 004e 00       		.byte	0
+ 624 004f 00       		.byte	0
+ 625 0050 06       		.uleb128 0x6
+ 626 0051 05       		.uleb128 0x5
+ 627 0052 00       		.byte	0
+ 628 0053 03       		.uleb128 0x3
+ 629 0054 0E       		.uleb128 0xe
+ 630 0055 3A       		.uleb128 0x3a
+ 631 0056 0B       		.uleb128 0xb
+ 632 0057 3B       		.uleb128 0x3b
+ 633 0058 0B       		.uleb128 0xb
+ 634 0059 49       		.uleb128 0x49
+ 635 005a 13       		.uleb128 0x13
+ 636 005b 02       		.uleb128 0x2
+ 637 005c 17       		.uleb128 0x17
+ 638 005d 00       		.byte	0
+ 639 005e 00       		.byte	0
+ 640 005f 07       		.uleb128 0x7
+ 641 0060 34       		.uleb128 0x34
+ 642 0061 00       		.byte	0
+ 643 0062 03       		.uleb128 0x3
+ 644 0063 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 15
+
+
+ 645 0064 3A       		.uleb128 0x3a
+ 646 0065 0B       		.uleb128 0xb
+ 647 0066 3B       		.uleb128 0x3b
+ 648 0067 0B       		.uleb128 0xb
+ 649 0068 49       		.uleb128 0x49
+ 650 0069 13       		.uleb128 0x13
+ 651 006a 02       		.uleb128 0x2
+ 652 006b 17       		.uleb128 0x17
+ 653 006c 00       		.byte	0
+ 654 006d 00       		.byte	0
+ 655 006e 08       		.uleb128 0x8
+ 656 006f 898201   		.uleb128 0x4109
+ 657 0072 00       		.byte	0
+ 658 0073 11       		.uleb128 0x11
+ 659 0074 01       		.uleb128 0x1
+ 660 0075 31       		.uleb128 0x31
+ 661 0076 13       		.uleb128 0x13
+ 662 0077 00       		.byte	0
+ 663 0078 00       		.byte	0
+ 664 0079 09       		.uleb128 0x9
+ 665 007a 898201   		.uleb128 0x4109
+ 666 007d 01       		.byte	0x1
+ 667 007e 11       		.uleb128 0x11
+ 668 007f 01       		.uleb128 0x1
+ 669 0080 31       		.uleb128 0x31
+ 670 0081 13       		.uleb128 0x13
+ 671 0082 01       		.uleb128 0x1
+ 672 0083 13       		.uleb128 0x13
+ 673 0084 00       		.byte	0
+ 674 0085 00       		.byte	0
+ 675 0086 0A       		.uleb128 0xa
+ 676 0087 8A8201   		.uleb128 0x410a
+ 677 008a 00       		.byte	0
+ 678 008b 02       		.uleb128 0x2
+ 679 008c 18       		.uleb128 0x18
+ 680 008d 9142     		.uleb128 0x2111
+ 681 008f 18       		.uleb128 0x18
+ 682 0090 00       		.byte	0
+ 683 0091 00       		.byte	0
+ 684 0092 0B       		.uleb128 0xb
+ 685 0093 898201   		.uleb128 0x4109
+ 686 0096 01       		.byte	0x1
+ 687 0097 11       		.uleb128 0x11
+ 688 0098 01       		.uleb128 0x1
+ 689 0099 31       		.uleb128 0x31
+ 690 009a 13       		.uleb128 0x13
+ 691 009b 00       		.byte	0
+ 692 009c 00       		.byte	0
+ 693 009d 0C       		.uleb128 0xc
+ 694 009e 0F       		.uleb128 0xf
+ 695 009f 00       		.byte	0
+ 696 00a0 0B       		.uleb128 0xb
+ 697 00a1 0B       		.uleb128 0xb
+ 698 00a2 49       		.uleb128 0x49
+ 699 00a3 13       		.uleb128 0x13
+ 700 00a4 00       		.byte	0
+ 701 00a5 00       		.byte	0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 16
+
+
+ 702 00a6 0D       		.uleb128 0xd
+ 703 00a7 26       		.uleb128 0x26
+ 704 00a8 00       		.byte	0
+ 705 00a9 49       		.uleb128 0x49
+ 706 00aa 13       		.uleb128 0x13
+ 707 00ab 00       		.byte	0
+ 708 00ac 00       		.byte	0
+ 709 00ad 0E       		.uleb128 0xe
+ 710 00ae 2E       		.uleb128 0x2e
+ 711 00af 01       		.byte	0x1
+ 712 00b0 3F       		.uleb128 0x3f
+ 713 00b1 19       		.uleb128 0x19
+ 714 00b2 03       		.uleb128 0x3
+ 715 00b3 0E       		.uleb128 0xe
+ 716 00b4 3A       		.uleb128 0x3a
+ 717 00b5 0B       		.uleb128 0xb
+ 718 00b6 3B       		.uleb128 0x3b
+ 719 00b7 0B       		.uleb128 0xb
+ 720 00b8 27       		.uleb128 0x27
+ 721 00b9 19       		.uleb128 0x19
+ 722 00ba 11       		.uleb128 0x11
+ 723 00bb 01       		.uleb128 0x1
+ 724 00bc 12       		.uleb128 0x12
+ 725 00bd 06       		.uleb128 0x6
+ 726 00be 40       		.uleb128 0x40
+ 727 00bf 18       		.uleb128 0x18
+ 728 00c0 9642     		.uleb128 0x2116
+ 729 00c2 19       		.uleb128 0x19
+ 730 00c3 01       		.uleb128 0x1
+ 731 00c4 13       		.uleb128 0x13
+ 732 00c5 00       		.byte	0
+ 733 00c6 00       		.byte	0
+ 734 00c7 0F       		.uleb128 0xf
+ 735 00c8 05       		.uleb128 0x5
+ 736 00c9 00       		.byte	0
+ 737 00ca 03       		.uleb128 0x3
+ 738 00cb 08       		.uleb128 0x8
+ 739 00cc 3A       		.uleb128 0x3a
+ 740 00cd 0B       		.uleb128 0xb
+ 741 00ce 3B       		.uleb128 0x3b
+ 742 00cf 0B       		.uleb128 0xb
+ 743 00d0 49       		.uleb128 0x49
+ 744 00d1 13       		.uleb128 0x13
+ 745 00d2 02       		.uleb128 0x2
+ 746 00d3 17       		.uleb128 0x17
+ 747 00d4 00       		.byte	0
+ 748 00d5 00       		.byte	0
+ 749 00d6 10       		.uleb128 0x10
+ 750 00d7 01       		.uleb128 0x1
+ 751 00d8 01       		.byte	0x1
+ 752 00d9 49       		.uleb128 0x49
+ 753 00da 13       		.uleb128 0x13
+ 754 00db 01       		.uleb128 0x1
+ 755 00dc 13       		.uleb128 0x13
+ 756 00dd 00       		.byte	0
+ 757 00de 00       		.byte	0
+ 758 00df 11       		.uleb128 0x11
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 17
+
+
+ 759 00e0 21       		.uleb128 0x21
+ 760 00e1 00       		.byte	0
+ 761 00e2 49       		.uleb128 0x49
+ 762 00e3 13       		.uleb128 0x13
+ 763 00e4 2F       		.uleb128 0x2f
+ 764 00e5 0B       		.uleb128 0xb
+ 765 00e6 00       		.byte	0
+ 766 00e7 00       		.byte	0
+ 767 00e8 12       		.uleb128 0x12
+ 768 00e9 34       		.uleb128 0x34
+ 769 00ea 00       		.byte	0
+ 770 00eb 03       		.uleb128 0x3
+ 771 00ec 0E       		.uleb128 0xe
+ 772 00ed 3A       		.uleb128 0x3a
+ 773 00ee 0B       		.uleb128 0xb
+ 774 00ef 3B       		.uleb128 0x3b
+ 775 00f0 0B       		.uleb128 0xb
+ 776 00f1 49       		.uleb128 0x49
+ 777 00f2 13       		.uleb128 0x13
+ 778 00f3 3F       		.uleb128 0x3f
+ 779 00f4 19       		.uleb128 0x19
+ 780 00f5 02       		.uleb128 0x2
+ 781 00f6 18       		.uleb128 0x18
+ 782 00f7 00       		.byte	0
+ 783 00f8 00       		.byte	0
+ 784 00f9 13       		.uleb128 0x13
+ 785 00fa 2E       		.uleb128 0x2e
+ 786 00fb 00       		.byte	0
+ 787 00fc 3F       		.uleb128 0x3f
+ 788 00fd 19       		.uleb128 0x19
+ 789 00fe 3C       		.uleb128 0x3c
+ 790 00ff 19       		.uleb128 0x19
+ 791 0100 6E       		.uleb128 0x6e
+ 792 0101 0E       		.uleb128 0xe
+ 793 0102 03       		.uleb128 0x3
+ 794 0103 0E       		.uleb128 0xe
+ 795 0104 3A       		.uleb128 0x3a
+ 796 0105 0B       		.uleb128 0xb
+ 797 0106 3B       		.uleb128 0x3b
+ 798 0107 0B       		.uleb128 0xb
+ 799 0108 00       		.byte	0
+ 800 0109 00       		.byte	0
+ 801 010a 00       		.byte	0
+ 802              		.section	.debug_loc,"",%progbits
+ 803              	.Ldebug_loc0:
+ 804              	.LLST0:
+ 805 0000 00000000 		.4byte	.LVL0
+ 806 0004 07000000 		.4byte	.LVL1-1
+ 807 0008 0100     		.2byte	0x1
+ 808 000a 50       		.byte	0x50
+ 809 000b 07000000 		.4byte	.LVL1-1
+ 810 000f 2A000000 		.4byte	.LVL10
+ 811 0013 0100     		.2byte	0x1
+ 812 0015 55       		.byte	0x55
+ 813 0016 2A000000 		.4byte	.LVL10
+ 814 001a 2C000000 		.4byte	.LFE0
+ 815 001e 0400     		.2byte	0x4
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 18
+
+
+ 816 0020 F3       		.byte	0xf3
+ 817 0021 01       		.uleb128 0x1
+ 818 0022 50       		.byte	0x50
+ 819 0023 9F       		.byte	0x9f
+ 820 0024 00000000 		.4byte	0
+ 821 0028 00000000 		.4byte	0
+ 822              	.LLST1:
+ 823 002c 0E000000 		.4byte	.LVL2
+ 824 0030 12000000 		.4byte	.LVL3
+ 825 0034 0200     		.2byte	0x2
+ 826 0036 30       		.byte	0x30
+ 827 0037 9F       		.byte	0x9f
+ 828 0038 12000000 		.4byte	.LVL3
+ 829 003c 1A000000 		.4byte	.LVL5
+ 830 0040 0100     		.2byte	0x1
+ 831 0042 54       		.byte	0x54
+ 832 0043 1C000000 		.4byte	.LVL6
+ 833 0047 2A000000 		.4byte	.LVL9
+ 834 004b 0100     		.2byte	0x1
+ 835 004d 54       		.byte	0x54
+ 836 004e 00000000 		.4byte	0
+ 837 0052 00000000 		.4byte	0
+ 838              	.LLST2:
+ 839 0056 00000000 		.4byte	.LVL11
+ 840 005a 10000000 		.4byte	.LVL13
+ 841 005e 0100     		.2byte	0x1
+ 842 0060 50       		.byte	0x50
+ 843 0061 10000000 		.4byte	.LVL13
+ 844 0065 6C000000 		.4byte	.LFE1
+ 845 0069 0400     		.2byte	0x4
+ 846 006b F3       		.byte	0xf3
+ 847 006c 01       		.uleb128 0x1
+ 848 006d 50       		.byte	0x50
+ 849 006e 9F       		.byte	0x9f
+ 850 006f 00000000 		.4byte	0
+ 851 0073 00000000 		.4byte	0
+ 852              	.LLST3:
+ 853 0077 00000000 		.4byte	.LVL11
+ 854 007b 0E000000 		.4byte	.LVL12
+ 855 007f 0100     		.2byte	0x1
+ 856 0081 51       		.byte	0x51
+ 857 0082 0E000000 		.4byte	.LVL12
+ 858 0086 6C000000 		.4byte	.LFE1
+ 859 008a 0400     		.2byte	0x4
+ 860 008c F3       		.byte	0xf3
+ 861 008d 01       		.uleb128 0x1
+ 862 008e 51       		.byte	0x51
+ 863 008f 9F       		.byte	0x9f
+ 864 0090 00000000 		.4byte	0
+ 865 0094 00000000 		.4byte	0
+ 866              	.LLST4:
+ 867 0098 00000000 		.4byte	.LVL11
+ 868 009c 13000000 		.4byte	.LVL14-1
+ 869 00a0 0100     		.2byte	0x1
+ 870 00a2 52       		.byte	0x52
+ 871 00a3 13000000 		.4byte	.LVL14-1
+ 872 00a7 6C000000 		.4byte	.LFE1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 19
+
+
+ 873 00ab 0400     		.2byte	0x4
+ 874 00ad F3       		.byte	0xf3
+ 875 00ae 01       		.uleb128 0x1
+ 876 00af 52       		.byte	0x52
+ 877 00b0 9F       		.byte	0x9f
+ 878 00b1 00000000 		.4byte	0
+ 879 00b5 00000000 		.4byte	0
+ 880              	.LLST5:
+ 881 00b9 00000000 		.4byte	.LVL11
+ 882 00bd 13000000 		.4byte	.LVL14-1
+ 883 00c1 0100     		.2byte	0x1
+ 884 00c3 53       		.byte	0x53
+ 885 00c4 13000000 		.4byte	.LVL14-1
+ 886 00c8 6C000000 		.4byte	.LFE1
+ 887 00cc 0400     		.2byte	0x4
+ 888 00ce F3       		.byte	0xf3
+ 889 00cf 01       		.uleb128 0x1
+ 890 00d0 53       		.byte	0x53
+ 891 00d1 9F       		.byte	0x9f
+ 892 00d2 00000000 		.4byte	0
+ 893 00d6 00000000 		.4byte	0
+ 894              	.LLST6:
+ 895 00da 2E000000 		.4byte	.LVL19
+ 896 00de 32000000 		.4byte	.LVL20
+ 897 00e2 0200     		.2byte	0x2
+ 898 00e4 30       		.byte	0x30
+ 899 00e5 9F       		.byte	0x9f
+ 900 00e6 32000000 		.4byte	.LVL20
+ 901 00ea 3A000000 		.4byte	.LVL22
+ 902 00ee 0100     		.2byte	0x1
+ 903 00f0 54       		.byte	0x54
+ 904 00f1 3C000000 		.4byte	.LVL23
+ 905 00f5 5A000000 		.4byte	.LVL26
+ 906 00f9 0100     		.2byte	0x1
+ 907 00fb 54       		.byte	0x54
+ 908 00fc 5C000000 		.4byte	.LVL27
+ 909 0100 6A000000 		.4byte	.LVL29
+ 910 0104 0100     		.2byte	0x1
+ 911 0106 54       		.byte	0x54
+ 912 0107 00000000 		.4byte	0
+ 913 010b 00000000 		.4byte	0
+ 914              	.LLST7:
+ 915 010f 16000000 		.4byte	.LVL15
+ 916 0113 6A000000 		.4byte	.LVL30
+ 917 0117 0100     		.2byte	0x1
+ 918 0119 55       		.byte	0x55
+ 919 011a 00000000 		.4byte	0
+ 920 011e 00000000 		.4byte	0
+ 921              	.LLST8:
+ 922 0122 20000000 		.4byte	.LVL17
+ 923 0126 6A000000 		.4byte	.LVL31
+ 924 012a 0100     		.2byte	0x1
+ 925 012c 57       		.byte	0x57
+ 926 012d 00000000 		.4byte	0
+ 927 0131 00000000 		.4byte	0
+ 928              		.section	.debug_aranges,"",%progbits
+ 929 0000 24000000 		.4byte	0x24
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 20
+
+
+ 930 0004 0200     		.2byte	0x2
+ 931 0006 00000000 		.4byte	.Ldebug_info0
+ 932 000a 04       		.byte	0x4
+ 933 000b 00       		.byte	0
+ 934 000c 0000     		.2byte	0
+ 935 000e 0000     		.2byte	0
+ 936 0010 00000000 		.4byte	.LFB0
+ 937 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 938 0018 00000000 		.4byte	.LFB1
+ 939 001c 6C000000 		.4byte	.LFE1-.LFB1
+ 940 0020 00000000 		.4byte	0
+ 941 0024 00000000 		.4byte	0
+ 942              		.section	.debug_ranges,"",%progbits
+ 943              	.Ldebug_ranges0:
+ 944 0000 00000000 		.4byte	.LFB0
+ 945 0004 2C000000 		.4byte	.LFE0
+ 946 0008 00000000 		.4byte	.LFB1
+ 947 000c 6C000000 		.4byte	.LFE1
+ 948 0010 00000000 		.4byte	0
+ 949 0014 00000000 		.4byte	0
+ 950              		.section	.debug_line,"",%progbits
+ 951              	.Ldebug_line0:
+ 952 0000 C5000000 		.section	.debug_str,"MS",%progbits,1
+ 952      02005C00 
+ 952      00000201 
+ 952      FB0E0D00 
+ 952      01010101 
+ 953              	.LASF28:
+ 954 0000 47656E65 		.ascii	"Generated_Source\\PSoC4\\LCD_Char_BarGraph.c\000"
+ 954      72617465 
+ 954      645F536F 
+ 954      75726365 
+ 954      5C50536F 
+ 955              	.LASF23:
+ 956 002b 4C43445F 		.ascii	"LCD_Char_IsReady\000"
+ 956      43686172 
+ 956      5F497352 
+ 956      65616479 
+ 956      00
+ 957              	.LASF15:
+ 958 003c 636F6C75 		.ascii	"column\000"
+ 958      6D6E00
+ 959              	.LASF12:
+ 960 0043 4C43445F 		.ascii	"LCD_Char_LoadCustomFonts\000"
+ 960      43686172 
+ 960      5F4C6F61 
+ 960      64437573 
+ 960      746F6D46 
+ 961              	.LASF2:
+ 962 005c 73686F72 		.ascii	"short int\000"
+ 962      7420696E 
+ 962      7400
+ 963              	.LASF22:
+ 964 0066 73697A65 		.ascii	"sizetype\000"
+ 964      74797065 
+ 964      00
+ 965              	.LASF31:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 21
+
+
+ 966 006f 4C43445F 		.ascii	"LCD_Char_customFonts\000"
+ 966      43686172 
+ 966      5F637573 
+ 966      746F6D46 
+ 966      6F6E7473 
+ 967              	.LASF13:
+ 968 0084 4C43445F 		.ascii	"LCD_Char_DrawHorizontalBG\000"
+ 968      43686172 
+ 968      5F447261 
+ 968      77486F72 
+ 968      697A6F6E 
+ 969              	.LASF17:
+ 970 009e 76616C75 		.ascii	"value\000"
+ 970      6500
+ 971              	.LASF27:
+ 972 00a4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 972      43313120 
+ 972      352E342E 
+ 972      31203230 
+ 972      31363036 
+ 973 00d7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 973      20726576 
+ 973      6973696F 
+ 973      6E203233 
+ 973      37373135 
+ 974 010a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 974      66756E63 
+ 974      74696F6E 
+ 974      2D736563 
+ 974      74696F6E 
+ 975              	.LASF30:
+ 976 0132 75696E74 		.ascii	"uint8\000"
+ 976      3800
+ 977              	.LASF9:
+ 978 0138 666C6F61 		.ascii	"float\000"
+ 978      7400
+ 979              	.LASF6:
+ 980 013e 6C6F6E67 		.ascii	"long long int\000"
+ 980      206C6F6E 
+ 980      6720696E 
+ 980      7400
+ 981              	.LASF4:
+ 982 014c 6C6F6E67 		.ascii	"long int\000"
+ 982      20696E74 
+ 982      00
+ 983              	.LASF14:
+ 984 0155 63757374 		.ascii	"customData\000"
+ 984      6F6D4461 
+ 984      746100
+ 985              	.LASF24:
+ 986 0160 4C43445F 		.ascii	"LCD_Char_WriteControl\000"
+ 986      43686172 
+ 986      5F577269 
+ 986      7465436F 
+ 986      6E74726F 
+ 987              	.LASF20:
+ 988 0176 66756C6C 		.ascii	"fullChars\000"
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 22
+
+
+ 988      43686172 
+ 988      7300
+ 989              	.LASF1:
+ 990 0180 756E7369 		.ascii	"unsigned char\000"
+ 990      676E6564 
+ 990      20636861 
+ 990      7200
+ 991              	.LASF26:
+ 992 018e 4C43445F 		.ascii	"LCD_Char_Position\000"
+ 992      43686172 
+ 992      5F506F73 
+ 992      6974696F 
+ 992      6E00
+ 993              	.LASF21:
+ 994 01a0 72656D61 		.ascii	"remainingPixels\000"
+ 994      696E696E 
+ 994      67506978 
+ 994      656C7300 
+ 995              	.LASF0:
+ 996 01b0 7369676E 		.ascii	"signed char\000"
+ 996      65642063 
+ 996      68617200 
+ 997              	.LASF7:
+ 998 01bc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 998      206C6F6E 
+ 998      6720756E 
+ 998      7369676E 
+ 998      65642069 
+ 999              	.LASF8:
+ 1000 01d3 756E7369 		.ascii	"unsigned int\000"
+ 1000      676E6564 
+ 1000      20696E74 
+ 1000      00
+ 1001              	.LASF16:
+ 1002 01e0 6D617843 		.ascii	"maxCharacters\000"
+ 1002      68617261 
+ 1002      63746572 
+ 1002      7300
+ 1003              	.LASF3:
+ 1004 01ee 73686F72 		.ascii	"short unsigned int\000"
+ 1004      7420756E 
+ 1004      7369676E 
+ 1004      65642069 
+ 1004      6E7400
+ 1005              	.LASF11:
+ 1006 0201 63686172 		.ascii	"char\000"
+ 1006      00
+ 1007              	.LASF5:
+ 1008 0206 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1008      20756E73 
+ 1008      69676E65 
+ 1008      6420696E 
+ 1008      7400
+ 1009              	.LASF10:
+ 1010 0218 646F7562 		.ascii	"double\000"
+ 1010      6C6500
+ 1011              	.LASF29:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccM2CZBH.s 			page 23
+
+
+ 1012 021f 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB3\\LAB_3_PSOC\\Clock_App.cyd"
+ 1012      55544F52 
+ 1012      49414C53 
+ 1012      5C50534F 
+ 1012      435F4C41 
+ 1013 024e 736E00   		.ascii	"sn\000"
+ 1014              	.LASF25:
+ 1015 0251 4C43445F 		.ascii	"LCD_Char_WriteData\000"
+ 1015      43686172 
+ 1015      5F577269 
+ 1015      74654461 
+ 1015      746100
+ 1016              	.LASF19:
+ 1017 0264 636F756E 		.ascii	"count8\000"
+ 1017      743800
+ 1018              	.LASF18:
+ 1019 026b 696E6465 		.ascii	"indexU8\000"
+ 1019      78553800 
+ 1020              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

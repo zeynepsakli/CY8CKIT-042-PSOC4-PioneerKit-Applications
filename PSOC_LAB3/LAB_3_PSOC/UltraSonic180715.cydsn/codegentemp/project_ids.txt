@@ -1,0 +1,11 @@
+C:\Users\Zeynep\Desktop\PSoC4-MCU-Analog-Designs-master\ADC\CE95275 - Sequencing SAR ADC and Die temperature sensor with PSoC 4\ADC_SAR_Seq_DieTemp_PSoC4.cydsn\ADC_SAR_Seq_DieTemp_PSoC4.cyprj|97fb2125-b754-453a-aeb6-79e56eaca2a7
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d7e4bfca-7418-4a80-a03a-92b74e2a92e2
+C:\Users\Zeynep\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|37ebde8d-637b-4bf0-bf99-876c39b3e86a
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|13ca7762-044f-4bbb-b6ff-0ab8a1b36ba7
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|cde5b4ab-6ccb-4565-b4c4-d9f74cd0a9c4
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e98f493c-f1c3-4500-8e35-983916321f99
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|5f144b43-6165-4f0d-9fef-182cce808228
+D:\TUTORIALS\PSOC_LAB3\LAB_3_PSOC\049kit_LED_Blink.cydsn\049kit_LED_Blink.cyprj|401c8420-d6cc-42aa-afc7-4ddb360181e3
+D:\TUTORIALS\PSOC_LAB3\LAB_3_PSOC\Capsense_049.cydsn\Capsense_049.cyprj|754d54bb-d162-4fd9-889b-e373657bcb65
+D:\TUTORIALS\PSOC_LAB3\LAB_3_PSOC\8x8DOT_Matrix.cydsn\8x8DOT_Matrix.cyprj|ca435196-c216-4616-b927-7e854ba3b77e
+D:\TUTORIALS\PSOC_LAB3\LAB_3_PSOC\UltraSonic180715.cydsn\UltraSonic180715.cyprj|e15488b8-6af7-46ec-b986-21677a34c5b4

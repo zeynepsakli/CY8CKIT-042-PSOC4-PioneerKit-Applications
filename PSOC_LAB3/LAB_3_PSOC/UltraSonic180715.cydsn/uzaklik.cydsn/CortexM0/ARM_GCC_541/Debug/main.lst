@@ -1,0 +1,1383 @@
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.init_hardware,"ax",%progbits
+  20              		.align	2
+  21              		.global	init_hardware
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	init_hardware, %function
+  25              	init_hardware:
+  26              	.LFB33:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  * HC-SR04 test program for CY8CKIT-044
+   3:main.c        ****  * For this appliation, VDD must be set to 5V
+   4:main.c        ****  * Set J9 Jumper to 3+2.
+   5:main.c        ****  * ========================================
+   6:main.c        **** */
+   7:main.c        **** #include "project.h"
+   8:main.c        **** #include <stdio.h>
+   9:main.c        **** 
+  10:main.c        **** /* https://keisan.casio.jp/exec/system/1231998943 */
+  11:main.c        **** #define MACH    346.513     /* Mach 1.0 at 25.0 */
+  12:main.c        **** 
+  13:main.c        **** char str[128] ; /* print buffer */
+  14:main.c        **** 
+  15:main.c        **** void init_hardware(void)
+  16:main.c        **** {
+  28              		.loc 1 16 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  17:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  36              		.loc 1 17 0
+  37              		.syntax divided
+  38              	@ 17 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 2
+
+
+  18:main.c        ****     Clock_12MHz_Start() ;
+  41              		.loc 1 18 0
+  42              		.thumb
+  43              		.syntax unified
+  44 0004 FFF7FEFF 		bl	Clock_12MHz_Start
+  45              	.LVL0:
+  19:main.c        ****     UART_Start() ;
+  46              		.loc 1 19 0
+  47 0008 FFF7FEFF 		bl	UART_Start
+  48              	.LVL1:
+  20:main.c        ****     Timer_Start() ;
+  49              		.loc 1 20 0
+  50 000c FFF7FEFF 		bl	Timer_Start
+  51              	.LVL2:
+  21:main.c        **** }
+  52              		.loc 1 21 0
+  53              		@ sp needed
+  54 0010 10BD     		pop	{r4, pc}
+  55              		.cfi_endproc
+  56              	.LFE33:
+  57              		.size	init_hardware, .-init_hardware
+  58 0012 C046     		.section	.text.pulse_trigger,"ax",%progbits
+  59              		.align	2
+  60              		.global	pulse_trigger
+  61              		.code	16
+  62              		.thumb_func
+  63              		.type	pulse_trigger, %function
+  64              	pulse_trigger:
+  65              	.LFB34:
+  22:main.c        **** 
+  23:main.c        **** /**
+  24:main.c        ****  * pulse_trigger
+  25:main.c        ****  * Generate 10us high pulse from trigger pin
+  26:main.c        ****  */
+  27:main.c        **** void pulse_trigger(void)
+  28:main.c        **** {
+  66              		.loc 1 28 0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70 0000 10B5     		push	{r4, lr}
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 4, -8
+  73              		.cfi_offset 14, -4
+  29:main.c        ****     Trigger_Write(1) ;
+  74              		.loc 1 29 0
+  75 0002 0120     		movs	r0, #1
+  76 0004 FFF7FEFF 		bl	Trigger_Write
+  77              	.LVL3:
+  30:main.c        ****     CyDelayUs(10) ;
+  78              		.loc 1 30 0
+  79 0008 0A20     		movs	r0, #10
+  80 000a FFF7FEFF 		bl	CyDelayUs
+  81              	.LVL4:
+  31:main.c        ****     Trigger_Write(0) ;
+  82              		.loc 1 31 0
+  83 000e 0020     		movs	r0, #0
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 3
+
+
+  84 0010 FFF7FEFF 		bl	Trigger_Write
+  85              	.LVL5:
+  32:main.c        **** }
+  86              		.loc 1 32 0
+  87              		@ sp needed
+  88 0014 10BD     		pop	{r4, pc}
+  89              		.cfi_endproc
+  90              	.LFE34:
+  91              		.size	pulse_trigger, .-pulse_trigger
+  92 0016 C046     		.section	.text.measure_echo,"ax",%progbits
+  93              		.align	2
+  94              		.global	measure_echo
+  95              		.code	16
+  96              		.thumb_func
+  97              		.type	measure_echo, %function
+  98              	measure_echo:
+  99              	.LFB35:
+  33:main.c        **** 
+  34:main.c        **** /**
+  35:main.c        ****  * measure_echo
+  36:main.c        ****  * Measure high pulse width of echo pin
+  37:main.c        ****  */
+  38:main.c        **** uint32_t measure_echo(void)
+  39:main.c        **** {
+ 100              		.loc 1 39 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 10B5     		push	{r4, lr}
+ 105              		.cfi_def_cfa_offset 8
+ 106              		.cfi_offset 4, -8
+ 107              		.cfi_offset 14, -4
+  40:main.c        ****     uint32_t length ;
+  41:main.c        **** #if 0
+  42:main.c        ****     while(Echo_Read() == 0) ;
+  43:main.c        ****     Timer_WriteCounter(0) ;
+  44:main.c        ****     while(Echo_Read() != 0) ;
+  45:main.c        ****     length = Timer_ReadCounter() ;
+  46:main.c        ****     return( length ) ;    
+  47:main.c        **** #else
+  48:main.c        ****     Timer_Stop() ;
+ 108              		.loc 1 48 0
+ 109 0002 FFF7FEFF 		bl	Timer_Stop
+ 110              	.LVL6:
+  49:main.c        ****     Timer_WriteCounter(0) ;
+ 111              		.loc 1 49 0
+ 112 0006 0020     		movs	r0, #0
+ 113 0008 FFF7FEFF 		bl	Timer_WriteCounter
+ 114              	.LVL7:
+ 115              	.L4:
+  50:main.c        ****     while(Echo_Read() == 0) ;
+ 116              		.loc 1 50 0 discriminator 1
+ 117 000c FFF7FEFF 		bl	Echo_Read
+ 118              	.LVL8:
+ 119 0010 0028     		cmp	r0, #0
+ 120 0012 FBD0     		beq	.L4
+  51:main.c        ****     Timer_Start() ;
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 4
+
+
+ 121              		.loc 1 51 0
+ 122 0014 FFF7FEFF 		bl	Timer_Start
+ 123              	.LVL9:
+ 124              	.L5:
+  52:main.c        ****     while(Echo_Read() != 0) ;
+ 125              		.loc 1 52 0 discriminator 1
+ 126 0018 FFF7FEFF 		bl	Echo_Read
+ 127              	.LVL10:
+ 128 001c 0028     		cmp	r0, #0
+ 129 001e FBD1     		bne	.L5
+  53:main.c        ****     Timer_Stop() ;
+ 130              		.loc 1 53 0
+ 131 0020 FFF7FEFF 		bl	Timer_Stop
+ 132              	.LVL11:
+  54:main.c        ****     length = Timer_ReadCounter() ;
+ 133              		.loc 1 54 0
+ 134 0024 FFF7FEFF 		bl	Timer_ReadCounter
+ 135              	.LVL12:
+  55:main.c        ****     return( length ) ; 
+  56:main.c        **** #endif
+  57:main.c        **** }
+ 136              		.loc 1 57 0
+ 137              		@ sp needed
+ 138 0028 10BD     		pop	{r4, pc}
+ 139              		.cfi_endproc
+ 140              	.LFE35:
+ 141              		.size	measure_echo, .-measure_echo
+ 142              		.global	__aeabi_ui2d
+ 143              		.global	__aeabi_dmul
+ 144              		.global	__aeabi_ddiv
+ 145              		.global	__aeabi_d2iz
+ 146              		.global	__aeabi_idivmod
+ 147 002a C046     		.section	.text.print_value,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	print_value
+ 150              		.code	16
+ 151              		.thumb_func
+ 152              		.type	print_value, %function
+ 153              	print_value:
+ 154              	.LFB36:
+  58:main.c        **** 
+  59:main.c        **** /**
+  60:main.c        ****  * print_value
+  61:main.c        ****  * Calculate distance from the duration
+  62:main.c        ****  * Since the duration include both way of the trip
+  63:main.c        ****  * to get the distance, the real duration is the half 
+  64:main.c        ****  * of the duration.
+  65:main.c        ****  *
+  66:main.c        ****  * distance = duration * MACH(m/s) * 100(cm) / (2 * 12000000(Hz)) ;
+  67:main.c        ****  *
+  68:main.c        ****  */
+  69:main.c        **** void print_value(uint32_t duration)
+  70:main.c        **** {
+ 155              		.loc 1 70 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 5
+
+
+ 159              	.LVL13:
+ 160 0000 70B5     		push	{r4, r5, r6, lr}
+ 161              		.cfi_def_cfa_offset 16
+ 162              		.cfi_offset 4, -16
+ 163              		.cfi_offset 5, -12
+ 164              		.cfi_offset 6, -8
+ 165              		.cfi_offset 14, -4
+ 166              	.LVL14:
+  71:main.c        ****     double distance = 0.0 ;
+  72:main.c        ****     
+  73:main.c        ****     distance = (double)(duration) * MACH / 240000.0 ;
+ 167              		.loc 1 73 0
+ 168 0002 FFF7FEFF 		bl	__aeabi_ui2d
+ 169              	.LVL15:
+ 170 0006 114A     		ldr	r2, .L7
+ 171 0008 114B     		ldr	r3, .L7+4
+ 172 000a FFF7FEFF 		bl	__aeabi_dmul
+ 173              	.LVL16:
+ 174 000e 0022     		movs	r2, #0
+ 175 0010 104B     		ldr	r3, .L7+8
+ 176 0012 FFF7FEFF 		bl	__aeabi_ddiv
+ 177              	.LVL17:
+ 178 0016 0400     		movs	r4, r0
+ 179 0018 0D00     		movs	r5, r1
+ 180              	.LVL18:
+  74:main.c        ****     sprintf(str, "%d.%02dcm\n", (int)distance, (int)(100 * distance)%100) ;
+ 181              		.loc 1 74 0
+ 182 001a 0022     		movs	r2, #0
+ 183 001c 0E4B     		ldr	r3, .L7+12
+ 184 001e FFF7FEFF 		bl	__aeabi_dmul
+ 185              	.LVL19:
+ 186 0022 FFF7FEFF 		bl	__aeabi_d2iz
+ 187              	.LVL20:
+ 188 0026 6421     		movs	r1, #100
+ 189 0028 FFF7FEFF 		bl	__aeabi_idivmod
+ 190              	.LVL21:
+ 191 002c 0E00     		movs	r6, r1
+ 192 002e 2000     		movs	r0, r4
+ 193 0030 2900     		movs	r1, r5
+ 194 0032 FFF7FEFF 		bl	__aeabi_d2iz
+ 195              	.LVL22:
+ 196 0036 0200     		movs	r2, r0
+ 197 0038 084C     		ldr	r4, .L7+16
+ 198              	.LVL23:
+ 199 003a 3300     		movs	r3, r6
+ 200 003c 0849     		ldr	r1, .L7+20
+ 201 003e 2000     		movs	r0, r4
+ 202 0040 FFF7FEFF 		bl	sprintf
+ 203              	.LVL24:
+  75:main.c        ****     UART_UartPutString(str) ;
+ 204              		.loc 1 75 0
+ 205 0044 2000     		movs	r0, r4
+ 206 0046 FFF7FEFF 		bl	UART_UartPutString
+ 207              	.LVL25:
+  76:main.c        **** }
+ 208              		.loc 1 76 0
+ 209              		@ sp needed
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 6
+
+
+ 210 004a 70BD     		pop	{r4, r5, r6, pc}
+ 211              	.L8:
+ 212              		.align	2
+ 213              	.L7:
+ 214 004c 91ED7C3F 		.word	1065151889
+ 215 0050 35A87540 		.word	1081452597
+ 216 0054 004C0D41 		.word	1091390464
+ 217 0058 00005940 		.word	1079574528
+ 218 005c 00000000 		.word	str
+ 219 0060 00000000 		.word	.LC0
+ 220              		.cfi_endproc
+ 221              	.LFE36:
+ 222              		.size	print_value, .-print_value
+ 223              		.section	.text.main,"ax",%progbits
+ 224              		.align	2
+ 225              		.global	main
+ 226              		.code	16
+ 227              		.thumb_func
+ 228              		.type	main, %function
+ 229              	main:
+ 230              	.LFB37:
+  77:main.c        **** 
+  78:main.c        **** int main(void)
+  79:main.c        **** {
+ 231              		.loc 1 79 0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 10B5     		push	{r4, lr}
+ 236              		.cfi_def_cfa_offset 8
+ 237              		.cfi_offset 4, -8
+ 238              		.cfi_offset 14, -4
+  80:main.c        ****     uint32_t duration ;
+  81:main.c        ****     
+  82:main.c        ****     init_hardware() ;
+ 239              		.loc 1 82 0
+ 240 0002 FFF7FEFF 		bl	init_hardware
+ 241              	.LVL26:
+ 242              	.L10:
+  83:main.c        **** 
+  84:main.c        ****     for(;;) {
+  85:main.c        ****         pulse_trigger() ;
+ 243              		.loc 1 85 0 discriminator 1
+ 244 0006 FFF7FEFF 		bl	pulse_trigger
+ 245              	.LVL27:
+  86:main.c        ****         duration = measure_echo() ;
+ 246              		.loc 1 86 0 discriminator 1
+ 247 000a FFF7FEFF 		bl	measure_echo
+ 248              	.LVL28:
+  87:main.c        ****         print_value(duration) ;
+ 249              		.loc 1 87 0 discriminator 1
+ 250 000e FFF7FEFF 		bl	print_value
+ 251              	.LVL29:
+  88:main.c        ****         CyDelay(1000) ;
+ 252              		.loc 1 88 0 discriminator 1
+ 253 0012 FA20     		movs	r0, #250
+ 254 0014 8000     		lsls	r0, r0, #2
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 7
+
+
+ 255 0016 FFF7FEFF 		bl	CyDelay
+ 256              	.LVL30:
+ 257 001a F4E7     		b	.L10
+ 258              		.cfi_endproc
+ 259              	.LFE37:
+ 260              		.size	main, .-main
+ 261              		.comm	str,128,4
+ 262              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 263              		.align	2
+ 264              	.LC0:
+ 265 0000 25642E25 		.ascii	"%d.%02dcm\012\000"
+ 265      30326463 
+ 265      6D0A00
+ 266              		.text
+ 267              	.Letext0:
+ 268              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 269              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 270              		.file 4 "Generated_Source\\PSoC4/Clock_12MHz.h"
+ 271              		.file 5 "Generated_Source\\PSoC4/UART.h"
+ 272              		.file 6 "Generated_Source\\PSoC4/Timer.h"
+ 273              		.file 7 "Generated_Source\\PSoC4/Trigger.h"
+ 274              		.file 8 "Generated_Source\\PSoC4/CyLib.h"
+ 275              		.file 9 "Generated_Source\\PSoC4/Echo.h"
+ 276              		.file 10 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
+ 277              		.file 11 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 278              		.section	.debug_info,"",%progbits
+ 279              	.Ldebug_info0:
+ 280 0000 FC020000 		.4byte	0x2fc
+ 281 0004 0400     		.2byte	0x4
+ 282 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 283 000a 04       		.byte	0x4
+ 284 000b 01       		.uleb128 0x1
+ 285 000c 56010000 		.4byte	.LASF34
+ 286 0010 0C       		.byte	0xc
+ 287 0011 0E020000 		.4byte	.LASF35
+ 288 0015 2A000000 		.4byte	.LASF36
+ 289 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 290 001d 00000000 		.4byte	0
+ 291 0021 00000000 		.4byte	.Ldebug_line0
+ 292 0025 02       		.uleb128 0x2
+ 293 0026 01       		.byte	0x1
+ 294 0027 06       		.byte	0x6
+ 295 0028 49020000 		.4byte	.LASF0
+ 296 002c 02       		.uleb128 0x2
+ 297 002d 01       		.byte	0x1
+ 298 002e 08       		.byte	0x8
+ 299 002f 91000000 		.4byte	.LASF1
+ 300 0033 02       		.uleb128 0x2
+ 301 0034 02       		.byte	0x2
+ 302 0035 05       		.byte	0x5
+ 303 0036 1A020000 		.4byte	.LASF2
+ 304 003a 02       		.uleb128 0x2
+ 305 003b 02       		.byte	0x2
+ 306 003c 07       		.byte	0x7
+ 307 003d BF000000 		.4byte	.LASF3
+ 308 0041 02       		.uleb128 0x2
+ 309 0042 04       		.byte	0x4
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 8
+
+
+ 310 0043 05       		.byte	0x5
+ 311 0044 34020000 		.4byte	.LASF4
+ 312 0048 03       		.uleb128 0x3
+ 313 0049 02010000 		.4byte	.LASF9
+ 314 004d 02       		.byte	0x2
+ 315 004e 41       		.byte	0x41
+ 316 004f 53000000 		.4byte	0x53
+ 317 0053 02       		.uleb128 0x2
+ 318 0054 04       		.byte	0x4
+ 319 0055 07       		.byte	0x7
+ 320 0056 9F000000 		.4byte	.LASF5
+ 321 005a 02       		.uleb128 0x2
+ 322 005b 08       		.byte	0x8
+ 323 005c 05       		.byte	0x5
+ 324 005d 00020000 		.4byte	.LASF6
+ 325 0061 02       		.uleb128 0x2
+ 326 0062 08       		.byte	0x8
+ 327 0063 07       		.byte	0x7
+ 328 0064 3F010000 		.4byte	.LASF7
+ 329 0068 04       		.uleb128 0x4
+ 330 0069 04       		.byte	0x4
+ 331 006a 05       		.byte	0x5
+ 332 006b 696E7400 		.ascii	"int\000"
+ 333 006f 02       		.uleb128 0x2
+ 334 0070 04       		.byte	0x4
+ 335 0071 07       		.byte	0x7
+ 336 0072 28010000 		.4byte	.LASF8
+ 337 0076 03       		.uleb128 0x3
+ 338 0077 2B020000 		.4byte	.LASF10
+ 339 007b 03       		.byte	0x3
+ 340 007c 30       		.byte	0x30
+ 341 007d 48000000 		.4byte	0x48
+ 342 0081 02       		.uleb128 0x2
+ 343 0082 04       		.byte	0x4
+ 344 0083 04       		.byte	0x4
+ 345 0084 8B000000 		.4byte	.LASF11
+ 346 0088 02       		.uleb128 0x2
+ 347 0089 08       		.byte	0x8
+ 348 008a 04       		.byte	0x4
+ 349 008b E9000000 		.4byte	.LASF12
+ 350 008f 02       		.uleb128 0x2
+ 351 0090 01       		.byte	0x1
+ 352 0091 08       		.byte	0x8
+ 353 0092 15020000 		.4byte	.LASF13
+ 354 0096 02       		.uleb128 0x2
+ 355 0097 08       		.byte	0x8
+ 356 0098 04       		.byte	0x4
+ 357 0099 3D020000 		.4byte	.LASF14
+ 358 009d 02       		.uleb128 0x2
+ 359 009e 04       		.byte	0x4
+ 360 009f 07       		.byte	0x7
+ 361 00a0 F7010000 		.4byte	.LASF15
+ 362 00a4 05       		.uleb128 0x5
+ 363 00a5 72020000 		.4byte	.LASF16
+ 364 00a9 01       		.byte	0x1
+ 365 00aa 0F       		.byte	0xf
+ 366 00ab 00000000 		.4byte	.LFB33
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 9
+
+
+ 367 00af 12000000 		.4byte	.LFE33-.LFB33
+ 368 00b3 01       		.uleb128 0x1
+ 369 00b4 9C       		.byte	0x9c
+ 370 00b5 D5000000 		.4byte	0xd5
+ 371 00b9 06       		.uleb128 0x6
+ 372 00ba 08000000 		.4byte	.LVL0
+ 373 00be 76020000 		.4byte	0x276
+ 374 00c2 06       		.uleb128 0x6
+ 375 00c3 0C000000 		.4byte	.LVL1
+ 376 00c7 81020000 		.4byte	0x281
+ 377 00cb 06       		.uleb128 0x6
+ 378 00cc 10000000 		.4byte	.LVL2
+ 379 00d0 8C020000 		.4byte	0x28c
+ 380 00d4 00       		.byte	0
+ 381 00d5 05       		.uleb128 0x5
+ 382 00d6 B1000000 		.4byte	.LASF17
+ 383 00da 01       		.byte	0x1
+ 384 00db 1B       		.byte	0x1b
+ 385 00dc 00000000 		.4byte	.LFB34
+ 386 00e0 16000000 		.4byte	.LFE34-.LFB34
+ 387 00e4 01       		.uleb128 0x1
+ 388 00e5 9C       		.byte	0x9c
+ 389 00e6 20010000 		.4byte	0x120
+ 390 00ea 07       		.uleb128 0x7
+ 391 00eb 08000000 		.4byte	.LVL3
+ 392 00ef 98020000 		.4byte	0x298
+ 393 00f3 FD000000 		.4byte	0xfd
+ 394 00f7 08       		.uleb128 0x8
+ 395 00f8 01       		.uleb128 0x1
+ 396 00f9 50       		.byte	0x50
+ 397 00fa 01       		.uleb128 0x1
+ 398 00fb 31       		.byte	0x31
+ 399 00fc 00       		.byte	0
+ 400 00fd 07       		.uleb128 0x7
+ 401 00fe 0E000000 		.4byte	.LVL4
+ 402 0102 A3020000 		.4byte	0x2a3
+ 403 0106 10010000 		.4byte	0x110
+ 404 010a 08       		.uleb128 0x8
+ 405 010b 01       		.uleb128 0x1
+ 406 010c 50       		.byte	0x50
+ 407 010d 01       		.uleb128 0x1
+ 408 010e 3A       		.byte	0x3a
+ 409 010f 00       		.byte	0
+ 410 0110 09       		.uleb128 0x9
+ 411 0111 14000000 		.4byte	.LVL5
+ 412 0115 98020000 		.4byte	0x298
+ 413 0119 08       		.uleb128 0x8
+ 414 011a 01       		.uleb128 0x1
+ 415 011b 50       		.byte	0x50
+ 416 011c 01       		.uleb128 0x1
+ 417 011d 30       		.byte	0x30
+ 418 011e 00       		.byte	0
+ 419 011f 00       		.byte	0
+ 420 0120 0A       		.uleb128 0xa
+ 421 0121 55020000 		.4byte	.LASF37
+ 422 0125 01       		.byte	0x1
+ 423 0126 26       		.byte	0x26
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 10
+
+
+ 424 0127 76000000 		.4byte	0x76
+ 425 012b 00000000 		.4byte	.LFB35
+ 426 012f 2A000000 		.4byte	.LFE35-.LFB35
+ 427 0133 01       		.uleb128 0x1
+ 428 0134 9C       		.byte	0x9c
+ 429 0135 90010000 		.4byte	0x190
+ 430 0139 0B       		.uleb128 0xb
+ 431 013a 24020000 		.4byte	.LASF19
+ 432 013e 01       		.byte	0x1
+ 433 013f 28       		.byte	0x28
+ 434 0140 76000000 		.4byte	0x76
+ 435 0144 01       		.uleb128 0x1
+ 436 0145 50       		.byte	0x50
+ 437 0146 06       		.uleb128 0x6
+ 438 0147 06000000 		.4byte	.LVL6
+ 439 014b AE020000 		.4byte	0x2ae
+ 440 014f 07       		.uleb128 0x7
+ 441 0150 0C000000 		.4byte	.LVL7
+ 442 0154 BA020000 		.4byte	0x2ba
+ 443 0158 62010000 		.4byte	0x162
+ 444 015c 08       		.uleb128 0x8
+ 445 015d 01       		.uleb128 0x1
+ 446 015e 50       		.byte	0x50
+ 447 015f 01       		.uleb128 0x1
+ 448 0160 30       		.byte	0x30
+ 449 0161 00       		.byte	0
+ 450 0162 06       		.uleb128 0x6
+ 451 0163 10000000 		.4byte	.LVL8
+ 452 0167 C6020000 		.4byte	0x2c6
+ 453 016b 06       		.uleb128 0x6
+ 454 016c 18000000 		.4byte	.LVL9
+ 455 0170 8C020000 		.4byte	0x28c
+ 456 0174 06       		.uleb128 0x6
+ 457 0175 1C000000 		.4byte	.LVL10
+ 458 0179 C6020000 		.4byte	0x2c6
+ 459 017d 06       		.uleb128 0x6
+ 460 017e 24000000 		.4byte	.LVL11
+ 461 0182 AE020000 		.4byte	0x2ae
+ 462 0186 06       		.uleb128 0x6
+ 463 0187 28000000 		.4byte	.LVL12
+ 464 018b D1020000 		.4byte	0x2d1
+ 465 018f 00       		.byte	0
+ 466 0190 0C       		.uleb128 0xc
+ 467 0191 DD000000 		.4byte	.LASF18
+ 468 0195 01       		.byte	0x1
+ 469 0196 45       		.byte	0x45
+ 470 0197 00000000 		.4byte	.LFB36
+ 471 019b 64000000 		.4byte	.LFE36-.LFB36
+ 472 019f 01       		.uleb128 0x1
+ 473 01a0 9C       		.byte	0x9c
+ 474 01a1 F7010000 		.4byte	0x1f7
+ 475 01a5 0D       		.uleb128 0xd
+ 476 01a6 21000000 		.4byte	.LASF21
+ 477 01aa 01       		.byte	0x1
+ 478 01ab 45       		.byte	0x45
+ 479 01ac 76000000 		.4byte	0x76
+ 480 01b0 00000000 		.4byte	.LLST0
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 11
+
+
+ 481 01b4 0E       		.uleb128 0xe
+ 482 01b5 82000000 		.4byte	.LASF20
+ 483 01b9 01       		.byte	0x1
+ 484 01ba 47       		.byte	0x47
+ 485 01bb 88000000 		.4byte	0x88
+ 486 01bf 21000000 		.4byte	.LLST1
+ 487 01c3 07       		.uleb128 0x7
+ 488 01c4 44000000 		.4byte	.LVL24
+ 489 01c8 DD020000 		.4byte	0x2dd
+ 490 01cc E6010000 		.4byte	0x1e6
+ 491 01d0 08       		.uleb128 0x8
+ 492 01d1 01       		.uleb128 0x1
+ 493 01d2 50       		.byte	0x50
+ 494 01d3 02       		.uleb128 0x2
+ 495 01d4 74       		.byte	0x74
+ 496 01d5 00       		.sleb128 0
+ 497 01d6 08       		.uleb128 0x8
+ 498 01d7 01       		.uleb128 0x1
+ 499 01d8 51       		.byte	0x51
+ 500 01d9 05       		.uleb128 0x5
+ 501 01da 03       		.byte	0x3
+ 502 01db 00000000 		.4byte	.LC0
+ 503 01df 08       		.uleb128 0x8
+ 504 01e0 01       		.uleb128 0x1
+ 505 01e1 53       		.byte	0x53
+ 506 01e2 02       		.uleb128 0x2
+ 507 01e3 76       		.byte	0x76
+ 508 01e4 00       		.sleb128 0
+ 509 01e5 00       		.byte	0
+ 510 01e6 09       		.uleb128 0x9
+ 511 01e7 4A000000 		.4byte	.LVL25
+ 512 01eb E8020000 		.4byte	0x2e8
+ 513 01ef 08       		.uleb128 0x8
+ 514 01f0 01       		.uleb128 0x1
+ 515 01f1 50       		.byte	0x50
+ 516 01f2 02       		.uleb128 0x2
+ 517 01f3 74       		.byte	0x74
+ 518 01f4 00       		.sleb128 0
+ 519 01f5 00       		.byte	0
+ 520 01f6 00       		.byte	0
+ 521 01f7 0F       		.uleb128 0xf
+ 522 01f8 17010000 		.4byte	.LASF38
+ 523 01fc 01       		.byte	0x1
+ 524 01fd 4E       		.byte	0x4e
+ 525 01fe 68000000 		.4byte	0x68
+ 526 0202 00000000 		.4byte	.LFB37
+ 527 0206 1C000000 		.4byte	.LFE37-.LFB37
+ 528 020a 01       		.uleb128 0x1
+ 529 020b 9C       		.byte	0x9c
+ 530 020c 55020000 		.4byte	0x255
+ 531 0210 0E       		.uleb128 0xe
+ 532 0211 21000000 		.4byte	.LASF21
+ 533 0215 01       		.byte	0x1
+ 534 0216 50       		.byte	0x50
+ 535 0217 76000000 		.4byte	0x76
+ 536 021b 4D000000 		.4byte	.LLST2
+ 537 021f 06       		.uleb128 0x6
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 12
+
+
+ 538 0220 06000000 		.4byte	.LVL26
+ 539 0224 A4000000 		.4byte	0xa4
+ 540 0228 06       		.uleb128 0x6
+ 541 0229 0A000000 		.4byte	.LVL27
+ 542 022d D5000000 		.4byte	0xd5
+ 543 0231 06       		.uleb128 0x6
+ 544 0232 0E000000 		.4byte	.LVL28
+ 545 0236 20010000 		.4byte	0x120
+ 546 023a 06       		.uleb128 0x6
+ 547 023b 12000000 		.4byte	.LVL29
+ 548 023f 90010000 		.4byte	0x190
+ 549 0243 09       		.uleb128 0x9
+ 550 0244 1A000000 		.4byte	.LVL30
+ 551 0248 F4020000 		.4byte	0x2f4
+ 552 024c 08       		.uleb128 0x8
+ 553 024d 01       		.uleb128 0x1
+ 554 024e 50       		.byte	0x50
+ 555 024f 03       		.uleb128 0x3
+ 556 0250 0A       		.byte	0xa
+ 557 0251 E803     		.2byte	0x3e8
+ 558 0253 00       		.byte	0
+ 559 0254 00       		.byte	0
+ 560 0255 10       		.uleb128 0x10
+ 561 0256 8F000000 		.4byte	0x8f
+ 562 025a 65020000 		.4byte	0x265
+ 563 025e 11       		.uleb128 0x11
+ 564 025f 9D000000 		.4byte	0x9d
+ 565 0263 7F       		.byte	0x7f
+ 566 0264 00       		.byte	0
+ 567 0265 12       		.uleb128 0x12
+ 568 0266 73747200 		.ascii	"str\000"
+ 569 026a 01       		.byte	0x1
+ 570 026b 0D       		.byte	0xd
+ 571 026c 55020000 		.4byte	0x255
+ 572 0270 05       		.uleb128 0x5
+ 573 0271 03       		.byte	0x3
+ 574 0272 00000000 		.4byte	str
+ 575 0276 13       		.uleb128 0x13
+ 576 0277 F0000000 		.4byte	.LASF22
+ 577 027b F0000000 		.4byte	.LASF22
+ 578 027f 04       		.byte	0x4
+ 579 0280 23       		.byte	0x23
+ 580 0281 13       		.uleb128 0x13
+ 581 0282 D2000000 		.4byte	.LASF23
+ 582 0286 D2000000 		.4byte	.LASF23
+ 583 028a 05       		.byte	0x5
+ 584 028b 72       		.byte	0x72
+ 585 028c 14       		.uleb128 0x14
+ 586 028d 1C010000 		.4byte	.LASF24
+ 587 0291 1C010000 		.4byte	.LASF24
+ 588 0295 06       		.byte	0x6
+ 589 0296 3201     		.2byte	0x132
+ 590 0298 13       		.uleb128 0x13
+ 591 0299 13000000 		.4byte	.LASF25
+ 592 029d 13000000 		.4byte	.LASF25
+ 593 02a1 07       		.byte	0x7
+ 594 02a2 33       		.byte	0x33
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 13
+
+
+ 595 02a3 13       		.uleb128 0x13
+ 596 02a4 0D010000 		.4byte	.LASF26
+ 597 02a8 0D010000 		.4byte	.LASF26
+ 598 02ac 08       		.byte	0x8
+ 599 02ad ED       		.byte	0xed
+ 600 02ae 14       		.uleb128 0x14
+ 601 02af 77000000 		.4byte	.LASF27
+ 602 02b3 77000000 		.4byte	.LASF27
+ 603 02b7 06       		.byte	0x6
+ 604 02b8 3301     		.2byte	0x133
+ 605 02ba 14       		.uleb128 0x14
+ 606 02bb 00000000 		.4byte	.LASF28
+ 607 02bf 00000000 		.4byte	.LASF28
+ 608 02c3 06       		.byte	0x6
+ 609 02c4 4A01     		.2byte	0x14a
+ 610 02c6 13       		.uleb128 0x13
+ 611 02c7 35010000 		.4byte	.LASF29
+ 612 02cb 35010000 		.4byte	.LASF29
+ 613 02cf 09       		.byte	0x9
+ 614 02d0 32       		.byte	0x32
+ 615 02d1 14       		.uleb128 0x14
+ 616 02d2 65000000 		.4byte	.LASF30
+ 617 02d6 65000000 		.4byte	.LASF30
+ 618 02da 06       		.byte	0x6
+ 619 02db 4B01     		.2byte	0x14b
+ 620 02dd 13       		.uleb128 0x13
+ 621 02de 62020000 		.4byte	.LASF31
+ 622 02e2 62020000 		.4byte	.LASF31
+ 623 02e6 0A       		.byte	0xa
+ 624 02e7 E7       		.byte	0xe7
+ 625 02e8 14       		.uleb128 0x14
+ 626 02e9 E4010000 		.4byte	.LASF32
+ 627 02ed E4010000 		.4byte	.LASF32
+ 628 02f1 0B       		.byte	0xb
+ 629 02f2 2A03     		.2byte	0x32a
+ 630 02f4 13       		.uleb128 0x13
+ 631 02f5 6A020000 		.4byte	.LASF33
+ 632 02f9 6A020000 		.4byte	.LASF33
+ 633 02fd 08       		.byte	0x8
+ 634 02fe EC       		.byte	0xec
+ 635 02ff 00       		.byte	0
+ 636              		.section	.debug_abbrev,"",%progbits
+ 637              	.Ldebug_abbrev0:
+ 638 0000 01       		.uleb128 0x1
+ 639 0001 11       		.uleb128 0x11
+ 640 0002 01       		.byte	0x1
+ 641 0003 25       		.uleb128 0x25
+ 642 0004 0E       		.uleb128 0xe
+ 643 0005 13       		.uleb128 0x13
+ 644 0006 0B       		.uleb128 0xb
+ 645 0007 03       		.uleb128 0x3
+ 646 0008 0E       		.uleb128 0xe
+ 647 0009 1B       		.uleb128 0x1b
+ 648 000a 0E       		.uleb128 0xe
+ 649 000b 55       		.uleb128 0x55
+ 650 000c 17       		.uleb128 0x17
+ 651 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 14
+
+
+ 652 000e 01       		.uleb128 0x1
+ 653 000f 10       		.uleb128 0x10
+ 654 0010 17       		.uleb128 0x17
+ 655 0011 00       		.byte	0
+ 656 0012 00       		.byte	0
+ 657 0013 02       		.uleb128 0x2
+ 658 0014 24       		.uleb128 0x24
+ 659 0015 00       		.byte	0
+ 660 0016 0B       		.uleb128 0xb
+ 661 0017 0B       		.uleb128 0xb
+ 662 0018 3E       		.uleb128 0x3e
+ 663 0019 0B       		.uleb128 0xb
+ 664 001a 03       		.uleb128 0x3
+ 665 001b 0E       		.uleb128 0xe
+ 666 001c 00       		.byte	0
+ 667 001d 00       		.byte	0
+ 668 001e 03       		.uleb128 0x3
+ 669 001f 16       		.uleb128 0x16
+ 670 0020 00       		.byte	0
+ 671 0021 03       		.uleb128 0x3
+ 672 0022 0E       		.uleb128 0xe
+ 673 0023 3A       		.uleb128 0x3a
+ 674 0024 0B       		.uleb128 0xb
+ 675 0025 3B       		.uleb128 0x3b
+ 676 0026 0B       		.uleb128 0xb
+ 677 0027 49       		.uleb128 0x49
+ 678 0028 13       		.uleb128 0x13
+ 679 0029 00       		.byte	0
+ 680 002a 00       		.byte	0
+ 681 002b 04       		.uleb128 0x4
+ 682 002c 24       		.uleb128 0x24
+ 683 002d 00       		.byte	0
+ 684 002e 0B       		.uleb128 0xb
+ 685 002f 0B       		.uleb128 0xb
+ 686 0030 3E       		.uleb128 0x3e
+ 687 0031 0B       		.uleb128 0xb
+ 688 0032 03       		.uleb128 0x3
+ 689 0033 08       		.uleb128 0x8
+ 690 0034 00       		.byte	0
+ 691 0035 00       		.byte	0
+ 692 0036 05       		.uleb128 0x5
+ 693 0037 2E       		.uleb128 0x2e
+ 694 0038 01       		.byte	0x1
+ 695 0039 3F       		.uleb128 0x3f
+ 696 003a 19       		.uleb128 0x19
+ 697 003b 03       		.uleb128 0x3
+ 698 003c 0E       		.uleb128 0xe
+ 699 003d 3A       		.uleb128 0x3a
+ 700 003e 0B       		.uleb128 0xb
+ 701 003f 3B       		.uleb128 0x3b
+ 702 0040 0B       		.uleb128 0xb
+ 703 0041 27       		.uleb128 0x27
+ 704 0042 19       		.uleb128 0x19
+ 705 0043 11       		.uleb128 0x11
+ 706 0044 01       		.uleb128 0x1
+ 707 0045 12       		.uleb128 0x12
+ 708 0046 06       		.uleb128 0x6
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 15
+
+
+ 709 0047 40       		.uleb128 0x40
+ 710 0048 18       		.uleb128 0x18
+ 711 0049 9742     		.uleb128 0x2117
+ 712 004b 19       		.uleb128 0x19
+ 713 004c 01       		.uleb128 0x1
+ 714 004d 13       		.uleb128 0x13
+ 715 004e 00       		.byte	0
+ 716 004f 00       		.byte	0
+ 717 0050 06       		.uleb128 0x6
+ 718 0051 898201   		.uleb128 0x4109
+ 719 0054 00       		.byte	0
+ 720 0055 11       		.uleb128 0x11
+ 721 0056 01       		.uleb128 0x1
+ 722 0057 31       		.uleb128 0x31
+ 723 0058 13       		.uleb128 0x13
+ 724 0059 00       		.byte	0
+ 725 005a 00       		.byte	0
+ 726 005b 07       		.uleb128 0x7
+ 727 005c 898201   		.uleb128 0x4109
+ 728 005f 01       		.byte	0x1
+ 729 0060 11       		.uleb128 0x11
+ 730 0061 01       		.uleb128 0x1
+ 731 0062 31       		.uleb128 0x31
+ 732 0063 13       		.uleb128 0x13
+ 733 0064 01       		.uleb128 0x1
+ 734 0065 13       		.uleb128 0x13
+ 735 0066 00       		.byte	0
+ 736 0067 00       		.byte	0
+ 737 0068 08       		.uleb128 0x8
+ 738 0069 8A8201   		.uleb128 0x410a
+ 739 006c 00       		.byte	0
+ 740 006d 02       		.uleb128 0x2
+ 741 006e 18       		.uleb128 0x18
+ 742 006f 9142     		.uleb128 0x2111
+ 743 0071 18       		.uleb128 0x18
+ 744 0072 00       		.byte	0
+ 745 0073 00       		.byte	0
+ 746 0074 09       		.uleb128 0x9
+ 747 0075 898201   		.uleb128 0x4109
+ 748 0078 01       		.byte	0x1
+ 749 0079 11       		.uleb128 0x11
+ 750 007a 01       		.uleb128 0x1
+ 751 007b 31       		.uleb128 0x31
+ 752 007c 13       		.uleb128 0x13
+ 753 007d 00       		.byte	0
+ 754 007e 00       		.byte	0
+ 755 007f 0A       		.uleb128 0xa
+ 756 0080 2E       		.uleb128 0x2e
+ 757 0081 01       		.byte	0x1
+ 758 0082 3F       		.uleb128 0x3f
+ 759 0083 19       		.uleb128 0x19
+ 760 0084 03       		.uleb128 0x3
+ 761 0085 0E       		.uleb128 0xe
+ 762 0086 3A       		.uleb128 0x3a
+ 763 0087 0B       		.uleb128 0xb
+ 764 0088 3B       		.uleb128 0x3b
+ 765 0089 0B       		.uleb128 0xb
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 16
+
+
+ 766 008a 27       		.uleb128 0x27
+ 767 008b 19       		.uleb128 0x19
+ 768 008c 49       		.uleb128 0x49
+ 769 008d 13       		.uleb128 0x13
+ 770 008e 11       		.uleb128 0x11
+ 771 008f 01       		.uleb128 0x1
+ 772 0090 12       		.uleb128 0x12
+ 773 0091 06       		.uleb128 0x6
+ 774 0092 40       		.uleb128 0x40
+ 775 0093 18       		.uleb128 0x18
+ 776 0094 9742     		.uleb128 0x2117
+ 777 0096 19       		.uleb128 0x19
+ 778 0097 01       		.uleb128 0x1
+ 779 0098 13       		.uleb128 0x13
+ 780 0099 00       		.byte	0
+ 781 009a 00       		.byte	0
+ 782 009b 0B       		.uleb128 0xb
+ 783 009c 34       		.uleb128 0x34
+ 784 009d 00       		.byte	0
+ 785 009e 03       		.uleb128 0x3
+ 786 009f 0E       		.uleb128 0xe
+ 787 00a0 3A       		.uleb128 0x3a
+ 788 00a1 0B       		.uleb128 0xb
+ 789 00a2 3B       		.uleb128 0x3b
+ 790 00a3 0B       		.uleb128 0xb
+ 791 00a4 49       		.uleb128 0x49
+ 792 00a5 13       		.uleb128 0x13
+ 793 00a6 02       		.uleb128 0x2
+ 794 00a7 18       		.uleb128 0x18
+ 795 00a8 00       		.byte	0
+ 796 00a9 00       		.byte	0
+ 797 00aa 0C       		.uleb128 0xc
+ 798 00ab 2E       		.uleb128 0x2e
+ 799 00ac 01       		.byte	0x1
+ 800 00ad 3F       		.uleb128 0x3f
+ 801 00ae 19       		.uleb128 0x19
+ 802 00af 03       		.uleb128 0x3
+ 803 00b0 0E       		.uleb128 0xe
+ 804 00b1 3A       		.uleb128 0x3a
+ 805 00b2 0B       		.uleb128 0xb
+ 806 00b3 3B       		.uleb128 0x3b
+ 807 00b4 0B       		.uleb128 0xb
+ 808 00b5 27       		.uleb128 0x27
+ 809 00b6 19       		.uleb128 0x19
+ 810 00b7 11       		.uleb128 0x11
+ 811 00b8 01       		.uleb128 0x1
+ 812 00b9 12       		.uleb128 0x12
+ 813 00ba 06       		.uleb128 0x6
+ 814 00bb 40       		.uleb128 0x40
+ 815 00bc 18       		.uleb128 0x18
+ 816 00bd 9642     		.uleb128 0x2116
+ 817 00bf 19       		.uleb128 0x19
+ 818 00c0 01       		.uleb128 0x1
+ 819 00c1 13       		.uleb128 0x13
+ 820 00c2 00       		.byte	0
+ 821 00c3 00       		.byte	0
+ 822 00c4 0D       		.uleb128 0xd
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 17
+
+
+ 823 00c5 05       		.uleb128 0x5
+ 824 00c6 00       		.byte	0
+ 825 00c7 03       		.uleb128 0x3
+ 826 00c8 0E       		.uleb128 0xe
+ 827 00c9 3A       		.uleb128 0x3a
+ 828 00ca 0B       		.uleb128 0xb
+ 829 00cb 3B       		.uleb128 0x3b
+ 830 00cc 0B       		.uleb128 0xb
+ 831 00cd 49       		.uleb128 0x49
+ 832 00ce 13       		.uleb128 0x13
+ 833 00cf 02       		.uleb128 0x2
+ 834 00d0 17       		.uleb128 0x17
+ 835 00d1 00       		.byte	0
+ 836 00d2 00       		.byte	0
+ 837 00d3 0E       		.uleb128 0xe
+ 838 00d4 34       		.uleb128 0x34
+ 839 00d5 00       		.byte	0
+ 840 00d6 03       		.uleb128 0x3
+ 841 00d7 0E       		.uleb128 0xe
+ 842 00d8 3A       		.uleb128 0x3a
+ 843 00d9 0B       		.uleb128 0xb
+ 844 00da 3B       		.uleb128 0x3b
+ 845 00db 0B       		.uleb128 0xb
+ 846 00dc 49       		.uleb128 0x49
+ 847 00dd 13       		.uleb128 0x13
+ 848 00de 02       		.uleb128 0x2
+ 849 00df 17       		.uleb128 0x17
+ 850 00e0 00       		.byte	0
+ 851 00e1 00       		.byte	0
+ 852 00e2 0F       		.uleb128 0xf
+ 853 00e3 2E       		.uleb128 0x2e
+ 854 00e4 01       		.byte	0x1
+ 855 00e5 3F       		.uleb128 0x3f
+ 856 00e6 19       		.uleb128 0x19
+ 857 00e7 03       		.uleb128 0x3
+ 858 00e8 0E       		.uleb128 0xe
+ 859 00e9 3A       		.uleb128 0x3a
+ 860 00ea 0B       		.uleb128 0xb
+ 861 00eb 3B       		.uleb128 0x3b
+ 862 00ec 0B       		.uleb128 0xb
+ 863 00ed 27       		.uleb128 0x27
+ 864 00ee 19       		.uleb128 0x19
+ 865 00ef 49       		.uleb128 0x49
+ 866 00f0 13       		.uleb128 0x13
+ 867 00f1 8701     		.uleb128 0x87
+ 868 00f3 19       		.uleb128 0x19
+ 869 00f4 11       		.uleb128 0x11
+ 870 00f5 01       		.uleb128 0x1
+ 871 00f6 12       		.uleb128 0x12
+ 872 00f7 06       		.uleb128 0x6
+ 873 00f8 40       		.uleb128 0x40
+ 874 00f9 18       		.uleb128 0x18
+ 875 00fa 9742     		.uleb128 0x2117
+ 876 00fc 19       		.uleb128 0x19
+ 877 00fd 01       		.uleb128 0x1
+ 878 00fe 13       		.uleb128 0x13
+ 879 00ff 00       		.byte	0
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 18
+
+
+ 880 0100 00       		.byte	0
+ 881 0101 10       		.uleb128 0x10
+ 882 0102 01       		.uleb128 0x1
+ 883 0103 01       		.byte	0x1
+ 884 0104 49       		.uleb128 0x49
+ 885 0105 13       		.uleb128 0x13
+ 886 0106 01       		.uleb128 0x1
+ 887 0107 13       		.uleb128 0x13
+ 888 0108 00       		.byte	0
+ 889 0109 00       		.byte	0
+ 890 010a 11       		.uleb128 0x11
+ 891 010b 21       		.uleb128 0x21
+ 892 010c 00       		.byte	0
+ 893 010d 49       		.uleb128 0x49
+ 894 010e 13       		.uleb128 0x13
+ 895 010f 2F       		.uleb128 0x2f
+ 896 0110 0B       		.uleb128 0xb
+ 897 0111 00       		.byte	0
+ 898 0112 00       		.byte	0
+ 899 0113 12       		.uleb128 0x12
+ 900 0114 34       		.uleb128 0x34
+ 901 0115 00       		.byte	0
+ 902 0116 03       		.uleb128 0x3
+ 903 0117 08       		.uleb128 0x8
+ 904 0118 3A       		.uleb128 0x3a
+ 905 0119 0B       		.uleb128 0xb
+ 906 011a 3B       		.uleb128 0x3b
+ 907 011b 0B       		.uleb128 0xb
+ 908 011c 49       		.uleb128 0x49
+ 909 011d 13       		.uleb128 0x13
+ 910 011e 3F       		.uleb128 0x3f
+ 911 011f 19       		.uleb128 0x19
+ 912 0120 02       		.uleb128 0x2
+ 913 0121 18       		.uleb128 0x18
+ 914 0122 00       		.byte	0
+ 915 0123 00       		.byte	0
+ 916 0124 13       		.uleb128 0x13
+ 917 0125 2E       		.uleb128 0x2e
+ 918 0126 00       		.byte	0
+ 919 0127 3F       		.uleb128 0x3f
+ 920 0128 19       		.uleb128 0x19
+ 921 0129 3C       		.uleb128 0x3c
+ 922 012a 19       		.uleb128 0x19
+ 923 012b 6E       		.uleb128 0x6e
+ 924 012c 0E       		.uleb128 0xe
+ 925 012d 03       		.uleb128 0x3
+ 926 012e 0E       		.uleb128 0xe
+ 927 012f 3A       		.uleb128 0x3a
+ 928 0130 0B       		.uleb128 0xb
+ 929 0131 3B       		.uleb128 0x3b
+ 930 0132 0B       		.uleb128 0xb
+ 931 0133 00       		.byte	0
+ 932 0134 00       		.byte	0
+ 933 0135 14       		.uleb128 0x14
+ 934 0136 2E       		.uleb128 0x2e
+ 935 0137 00       		.byte	0
+ 936 0138 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 19
+
+
+ 937 0139 19       		.uleb128 0x19
+ 938 013a 3C       		.uleb128 0x3c
+ 939 013b 19       		.uleb128 0x19
+ 940 013c 6E       		.uleb128 0x6e
+ 941 013d 0E       		.uleb128 0xe
+ 942 013e 03       		.uleb128 0x3
+ 943 013f 0E       		.uleb128 0xe
+ 944 0140 3A       		.uleb128 0x3a
+ 945 0141 0B       		.uleb128 0xb
+ 946 0142 3B       		.uleb128 0x3b
+ 947 0143 05       		.uleb128 0x5
+ 948 0144 00       		.byte	0
+ 949 0145 00       		.byte	0
+ 950 0146 00       		.byte	0
+ 951              		.section	.debug_loc,"",%progbits
+ 952              	.Ldebug_loc0:
+ 953              	.LLST0:
+ 954 0000 00000000 		.4byte	.LVL13
+ 955 0004 05000000 		.4byte	.LVL15-1
+ 956 0008 0100     		.2byte	0x1
+ 957 000a 50       		.byte	0x50
+ 958 000b 05000000 		.4byte	.LVL15-1
+ 959 000f 64000000 		.4byte	.LFE36
+ 960 0013 0400     		.2byte	0x4
+ 961 0015 F3       		.byte	0xf3
+ 962 0016 01       		.uleb128 0x1
+ 963 0017 50       		.byte	0x50
+ 964 0018 9F       		.byte	0x9f
+ 965 0019 00000000 		.4byte	0
+ 966 001d 00000000 		.4byte	0
+ 967              	.LLST1:
+ 968 0021 02000000 		.4byte	.LVL14
+ 969 0025 1A000000 		.4byte	.LVL18
+ 970 0029 0A00     		.2byte	0xa
+ 971 002b 9E       		.byte	0x9e
+ 972 002c 08       		.uleb128 0x8
+ 973 002d 00000000 		.4byte	0
+ 974 0031 00000000 		.4byte	0
+ 975 0035 1A000000 		.4byte	.LVL18
+ 976 0039 3A000000 		.4byte	.LVL23
+ 977 003d 0600     		.2byte	0x6
+ 978 003f 54       		.byte	0x54
+ 979 0040 93       		.byte	0x93
+ 980 0041 04       		.uleb128 0x4
+ 981 0042 55       		.byte	0x55
+ 982 0043 93       		.byte	0x93
+ 983 0044 04       		.uleb128 0x4
+ 984 0045 00000000 		.4byte	0
+ 985 0049 00000000 		.4byte	0
+ 986              	.LLST2:
+ 987 004d 0E000000 		.4byte	.LVL28
+ 988 0051 11000000 		.4byte	.LVL29-1
+ 989 0055 0100     		.2byte	0x1
+ 990 0057 50       		.byte	0x50
+ 991 0058 00000000 		.4byte	0
+ 992 005c 00000000 		.4byte	0
+ 993              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 20
+
+
+ 994 0000 3C000000 		.4byte	0x3c
+ 995 0004 0200     		.2byte	0x2
+ 996 0006 00000000 		.4byte	.Ldebug_info0
+ 997 000a 04       		.byte	0x4
+ 998 000b 00       		.byte	0
+ 999 000c 0000     		.2byte	0
+ 1000 000e 0000     		.2byte	0
+ 1001 0010 00000000 		.4byte	.LFB33
+ 1002 0014 12000000 		.4byte	.LFE33-.LFB33
+ 1003 0018 00000000 		.4byte	.LFB34
+ 1004 001c 16000000 		.4byte	.LFE34-.LFB34
+ 1005 0020 00000000 		.4byte	.LFB35
+ 1006 0024 2A000000 		.4byte	.LFE35-.LFB35
+ 1007 0028 00000000 		.4byte	.LFB36
+ 1008 002c 64000000 		.4byte	.LFE36-.LFB36
+ 1009 0030 00000000 		.4byte	.LFB37
+ 1010 0034 1C000000 		.4byte	.LFE37-.LFB37
+ 1011 0038 00000000 		.4byte	0
+ 1012 003c 00000000 		.4byte	0
+ 1013              		.section	.debug_ranges,"",%progbits
+ 1014              	.Ldebug_ranges0:
+ 1015 0000 00000000 		.4byte	.LFB33
+ 1016 0004 12000000 		.4byte	.LFE33
+ 1017 0008 00000000 		.4byte	.LFB34
+ 1018 000c 16000000 		.4byte	.LFE34
+ 1019 0010 00000000 		.4byte	.LFB35
+ 1020 0014 2A000000 		.4byte	.LFE35
+ 1021 0018 00000000 		.4byte	.LFB36
+ 1022 001c 64000000 		.4byte	.LFE36
+ 1023 0020 00000000 		.4byte	.LFB37
+ 1024 0024 1C000000 		.4byte	.LFE37
+ 1025 0028 00000000 		.4byte	0
+ 1026 002c 00000000 		.4byte	0
+ 1027              		.section	.debug_line,"",%progbits
+ 1028              	.Ldebug_line0:
+ 1029 0000 87020000 		.section	.debug_str,"MS",%progbits,1
+ 1029      0200FF01 
+ 1029      00000201 
+ 1029      FB0E0D00 
+ 1029      01010101 
+ 1030              	.LASF28:
+ 1031 0000 54696D65 		.ascii	"Timer_WriteCounter\000"
+ 1031      725F5772 
+ 1031      69746543 
+ 1031      6F756E74 
+ 1031      657200
+ 1032              	.LASF25:
+ 1033 0013 54726967 		.ascii	"Trigger_Write\000"
+ 1033      6765725F 
+ 1033      57726974 
+ 1033      6500
+ 1034              	.LASF21:
+ 1035 0021 64757261 		.ascii	"duration\000"
+ 1035      74696F6E 
+ 1035      00
+ 1036              	.LASF36:
+ 1037 002a 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\UltraSonic180715.cydsn\\u"
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 21
+
+
+ 1037      73657273 
+ 1037      5C757365 
+ 1037      725C4465 
+ 1037      736B746F 
+ 1038 0058 7A616B6C 		.ascii	"zaklik.cydsn\000"
+ 1038      696B2E63 
+ 1038      7964736E 
+ 1038      00
+ 1039              	.LASF30:
+ 1040 0065 54696D65 		.ascii	"Timer_ReadCounter\000"
+ 1040      725F5265 
+ 1040      6164436F 
+ 1040      756E7465 
+ 1040      7200
+ 1041              	.LASF27:
+ 1042 0077 54696D65 		.ascii	"Timer_Stop\000"
+ 1042      725F5374 
+ 1042      6F7000
+ 1043              	.LASF20:
+ 1044 0082 64697374 		.ascii	"distance\000"
+ 1044      616E6365 
+ 1044      00
+ 1045              	.LASF11:
+ 1046 008b 666C6F61 		.ascii	"float\000"
+ 1046      7400
+ 1047              	.LASF1:
+ 1048 0091 756E7369 		.ascii	"unsigned char\000"
+ 1048      676E6564 
+ 1048      20636861 
+ 1048      7200
+ 1049              	.LASF5:
+ 1050 009f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1050      20756E73 
+ 1050      69676E65 
+ 1050      6420696E 
+ 1050      7400
+ 1051              	.LASF17:
+ 1052 00b1 70756C73 		.ascii	"pulse_trigger\000"
+ 1052      655F7472 
+ 1052      69676765 
+ 1052      7200
+ 1053              	.LASF3:
+ 1054 00bf 73686F72 		.ascii	"short unsigned int\000"
+ 1054      7420756E 
+ 1054      7369676E 
+ 1054      65642069 
+ 1054      6E7400
+ 1055              	.LASF23:
+ 1056 00d2 55415254 		.ascii	"UART_Start\000"
+ 1056      5F537461 
+ 1056      727400
+ 1057              	.LASF18:
+ 1058 00dd 7072696E 		.ascii	"print_value\000"
+ 1058      745F7661 
+ 1058      6C756500 
+ 1059              	.LASF12:
+ 1060 00e9 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 22
+
+
+ 1060      6C6500
+ 1061              	.LASF22:
+ 1062 00f0 436C6F63 		.ascii	"Clock_12MHz_Start\000"
+ 1062      6B5F3132 
+ 1062      4D487A5F 
+ 1062      53746172 
+ 1062      7400
+ 1063              	.LASF9:
+ 1064 0102 5F5F7569 		.ascii	"__uint32_t\000"
+ 1064      6E743332 
+ 1064      5F7400
+ 1065              	.LASF26:
+ 1066 010d 43794465 		.ascii	"CyDelayUs\000"
+ 1066      6C617955 
+ 1066      7300
+ 1067              	.LASF38:
+ 1068 0117 6D61696E 		.ascii	"main\000"
+ 1068      00
+ 1069              	.LASF24:
+ 1070 011c 54696D65 		.ascii	"Timer_Start\000"
+ 1070      725F5374 
+ 1070      61727400 
+ 1071              	.LASF8:
+ 1072 0128 756E7369 		.ascii	"unsigned int\000"
+ 1072      676E6564 
+ 1072      20696E74 
+ 1072      00
+ 1073              	.LASF29:
+ 1074 0135 4563686F 		.ascii	"Echo_Read\000"
+ 1074      5F526561 
+ 1074      6400
+ 1075              	.LASF7:
+ 1076 013f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1076      206C6F6E 
+ 1076      6720756E 
+ 1076      7369676E 
+ 1076      65642069 
+ 1077              	.LASF34:
+ 1078 0156 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1078      43313120 
+ 1078      352E342E 
+ 1078      31203230 
+ 1078      31363036 
+ 1079 0189 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1079      20726576 
+ 1079      6973696F 
+ 1079      6E203233 
+ 1079      37373135 
+ 1080 01bc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1080      66756E63 
+ 1080      74696F6E 
+ 1080      2D736563 
+ 1080      74696F6E 
+ 1081              	.LASF32:
+ 1082 01e4 55415254 		.ascii	"UART_UartPutString\000"
+ 1082      5F556172 
+ 1082      74507574 
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 23
+
+
+ 1082      53747269 
+ 1082      6E6700
+ 1083              	.LASF15:
+ 1084 01f7 73697A65 		.ascii	"sizetype\000"
+ 1084      74797065 
+ 1084      00
+ 1085              	.LASF6:
+ 1086 0200 6C6F6E67 		.ascii	"long long int\000"
+ 1086      206C6F6E 
+ 1086      6720696E 
+ 1086      7400
+ 1087              	.LASF35:
+ 1088 020e 6D61696E 		.ascii	"main.c\000"
+ 1088      2E6300
+ 1089              	.LASF13:
+ 1090 0215 63686172 		.ascii	"char\000"
+ 1090      00
+ 1091              	.LASF2:
+ 1092 021a 73686F72 		.ascii	"short int\000"
+ 1092      7420696E 
+ 1092      7400
+ 1093              	.LASF19:
+ 1094 0224 6C656E67 		.ascii	"length\000"
+ 1094      746800
+ 1095              	.LASF10:
+ 1096 022b 75696E74 		.ascii	"uint32_t\000"
+ 1096      33325F74 
+ 1096      00
+ 1097              	.LASF4:
+ 1098 0234 6C6F6E67 		.ascii	"long int\000"
+ 1098      20696E74 
+ 1098      00
+ 1099              	.LASF14:
+ 1100 023d 6C6F6E67 		.ascii	"long double\000"
+ 1100      20646F75 
+ 1100      626C6500 
+ 1101              	.LASF0:
+ 1102 0249 7369676E 		.ascii	"signed char\000"
+ 1102      65642063 
+ 1102      68617200 
+ 1103              	.LASF37:
+ 1104 0255 6D656173 		.ascii	"measure_echo\000"
+ 1104      7572655F 
+ 1104      6563686F 
+ 1104      00
+ 1105              	.LASF31:
+ 1106 0262 73707269 		.ascii	"sprintf\000"
+ 1106      6E746600 
+ 1107              	.LASF33:
+ 1108 026a 43794465 		.ascii	"CyDelay\000"
+ 1108      6C617900 
+ 1109              	.LASF16:
+ 1110 0272 696E6974 		.ascii	"init_hardware\000"
+ 1110      5F686172 
+ 1110      64776172 
+ 1110      6500
+ 1111              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\user\AppData\Local\Temp\cclTfpIl.s 			page 24
+
+

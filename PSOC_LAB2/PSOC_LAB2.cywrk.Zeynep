@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr">
+<ExpandedNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek\TopDesign</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Pins</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Analog</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Clocks</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Interrupts</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\System</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Directives</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.cydwr\Flash Security</v>
+<v>PSOC_LAB2\karasimsek\Header Files</v>
+<v>PSOC_LAB2\karasimsek\Header Files\cyapicallbacks.h</v>
+<v>PSOC_LAB2\karasimsek\Source Files</v>
+<v>PSOC_LAB2\karasimsek\Source Files\main.c</v>
+<v>PSOC_LAB2\karasimsek\Generated_Source</v>
+<v>PSOC_LAB2\karasimsek\Generated_Source\PSoC4</v>
+<v>PSOC_LAB2\karasimsek_uygulama\TopDesign</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Pins</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Analog</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Clocks</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Interrupts</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\System</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Directives</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.cydwr\Flash Security</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Header Files</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Header Files\cyapicallbacks.h</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Source Files</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Source Files\main.c</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Generated_Source</v>
+<v>PSOC_LAB2\karasimsek_uygulama\Generated_Source\PSoC4</v>
+<v>PSOC_LAB2\LCD_DisplaY\TopDesign</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Pins</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Analog</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Clocks</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Interrupts</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\System</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Directives</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.cydwr\Flash Security</v>
+<v>PSOC_LAB2\LCD_DisplaY\Header Files</v>
+<v>PSOC_LAB2\LCD_DisplaY\Header Files\cyapicallbacks.h</v>
+<v>PSOC_LAB2\LCD_DisplaY\Source Files</v>
+<v>PSOC_LAB2\LCD_DisplaY\Source Files\main.c</v>
+<v>PSOC_LAB2\LCD_DisplaY\Generated_Source</v>
+<v>PSOC_LAB2\LCD_DisplaY\Generated_Source\PSoC4</v>
+<v>PSOC_LAB2\Seven_Segment_Display\TopDesign</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Pins</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Analog</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Clocks</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Interrupts</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\System</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Directives</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.cydwr\Flash Security</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Header Files</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Header Files\cyapicallbacks.h</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Source Files</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Source Files\main.c</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Generated_Source</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Generated_Source\PSoC4</v>
+<v>PSOC_LAB2\UART_Application\TopDesign</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Pins</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Analog</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Clocks</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Interrupts</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\System</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Directives</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.cydwr\Flash Security</v>
+<v>PSOC_LAB2\UART_Application\Header Files</v>
+<v>PSOC_LAB2\UART_Application\Header Files\cyapicallbacks.h</v>
+<v>PSOC_LAB2\UART_Application\Source Files</v>
+<v>PSOC_LAB2\UART_Application\Source Files\main.c</v>
+<v>PSOC_LAB2\UART_Application\Generated_Source</v>
+<v>PSOC_LAB2\UART_Application\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\UART_Application</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\TopDesign</v>
+<v>PSOC_LAB2\karasimsek\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\karasimsek_uygulama\TopDesign</v>
+<v>PSOC_LAB2\karasimsek_uygulama\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\LCD_DisplaY\TopDesign</v>
+<v>PSOC_LAB2\LCD_DisplaY\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\Seven_Segment_Display\TopDesign</v>
+<v>PSOC_LAB2\Seven_Segment_Display\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\UART_Application</v>
+<v>PSOC_LAB2\UART_Application\TopDesign</v>
+<v>PSOC_LAB2\UART_Application\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\TopDesign</v>
+<v>PSOC_LAB2\karasimsek\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\karasimsek_uygulama\TopDesign</v>
+<v>PSOC_LAB2\karasimsek_uygulama\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\LCD_DisplaY\TopDesign</v>
+<v>PSOC_LAB2\LCD_DisplaY\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\Seven_Segment_Display\TopDesign</v>
+<v>PSOC_LAB2\Seven_Segment_Display\TopDesign\TopDesign.cysch</v>
+<v>PSOC_LAB2\UART_Application</v>
+<v>PSOC_LAB2\UART_Application\TopDesign</v>
+<v>PSOC_LAB2\UART_Application\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\CortexM0</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A1.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A1_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A2.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A2_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A3.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A3_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A4.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A4_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A5.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A5_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A6.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A6_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A7.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A7_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A8.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A8_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.elf</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.hex</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.map</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.gpdsc</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.rpt</v>
+<v>PSOC_LAB2\karasimsek\karasimsek_timing.html</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\Ledler.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\Ledler_PM.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\karasimsek_uygulama.elf</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\karasimsek_uygulama.hex</v>
+<v>PSOC_LAB2\karasimsek_uygulama\CortexM0\ARM_GCC_541\Debug\karasimsek_uygulama.map</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.gpdsc</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama.rpt</v>
+<v>PSOC_LAB2\karasimsek_uygulama\karasimsek_uygulama_timing.html</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_A.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_A_PM.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_K.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_K_PM.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort_PM.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\LCD_DisplaY.elf</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\LCD_DisplaY.hex</v>
+<v>PSOC_LAB2\LCD_DisplaY\CortexM0\ARM_GCC_541\Debug\LCD_DisplaY.map</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.gpdsc</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY.rpt</v>
+<v>PSOC_LAB2\LCD_DisplaY\LCD_DisplaY_timing.html</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\Segment_disp.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Listing Files\Segment_disp_PM.lst</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Seven_Segment_Display.elf</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Seven_Segment_Display.hex</v>
+<v>PSOC_LAB2\Seven_Segment_Display\CortexM0\ARM_GCC_541\Debug\Seven_Segment_Display.map</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.gpdsc</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display.rpt</v>
+<v>PSOC_LAB2\Seven_Segment_Display\Seven_Segment_Display_timing.html</v>
+<v>PSOC_LAB2\UART_Application</v>
+<v>PSOC_LAB2\UART_Application\CortexM0</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_BOOT.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_PM.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_rx.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_rx_PM.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_SCBCLK.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_SPI_UART.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_SPI_UART_INT.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_tx.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_tx_PM.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_UART.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_modul_UART_BOOT.lst</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\UART_Application.elf</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\UART_Application.hex</v>
+<v>PSOC_LAB2\UART_Application\CortexM0\ARM_GCC_541\Debug\UART_Application.map</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.gpdsc</v>
+<v>PSOC_LAB2\UART_Application\UART_Application.rpt</v>
+<v>PSOC_LAB2\UART_Application\UART_Application_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\CortexM0</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A1.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A1_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A2.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A2_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A3.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A3_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A4.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A4_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A5.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A5_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A6.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A6_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A7.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A7_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A8.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\A8_PM.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.elf</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.hex</v>
+<v>PSOC_LAB2\karasimsek\CortexM0\ARM_GCC_541\Debug\karasimsek.map</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.gpdsc</v>
+<v>PSOC_LAB2\karasimsek\karasimsek.rpt</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\karasimsek\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\karasimsek\cy_pins_v2_20</v>
+<v>PSOC_LAB2\karasimsek\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\karasimsek_uygulama\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\karasimsek_uygulama\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\karasimsek_uygulama\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\LCD_DisplaY\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\LCD_DisplaY\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\LCD_DisplaY\CharLCD_v2_20.pdf</v>
+<v>PSOC_LAB2\LCD_DisplaY\cy_pins_v2_20</v>
+<v>PSOC_LAB2\LCD_DisplaY\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\Seven_Segment_Display\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\Seven_Segment_Display\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\Seven_Segment_Display\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\UART_Application</v>
+<v>PSOC_LAB2\UART_Application\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\UART_Application\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\UART_Application\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSOC_LAB2</v>
+<v>PSOC_LAB2\karasimsek</v>
+<v>PSOC_LAB2\karasimsek\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\karasimsek\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\karasimsek\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\karasimsek\cy_pins_v2_20</v>
+<v>PSOC_LAB2\karasimsek\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\karasimsek_uygulama</v>
+<v>PSOC_LAB2\karasimsek_uygulama\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\karasimsek_uygulama\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\karasimsek_uygulama\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\karasimsek_uygulama\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\LCD_DisplaY</v>
+<v>PSOC_LAB2\LCD_DisplaY\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\LCD_DisplaY\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\LCD_DisplaY\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\LCD_DisplaY\CharLCD_v2_20.pdf</v>
+<v>PSOC_LAB2\LCD_DisplaY\cy_pins_v2_20</v>
+<v>PSOC_LAB2\LCD_DisplaY\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\Seven_Segment_Display</v>
+<v>PSOC_LAB2\Seven_Segment_Display\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\Seven_Segment_Display\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\Seven_Segment_Display\System Reference Guides\cy_lfclk_v1_20</v>
+<v>PSOC_LAB2\Seven_Segment_Display\cy_pins_v2_20.pdf</v>
+<v>PSOC_LAB2\UART_Application</v>
+<v>PSOC_LAB2\UART_Application\PSoC 4 Architecture TRM</v>
+<v>PSOC_LAB2\UART_Application\PSoC 4200 Family Datasheet</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides\cy_boot_v6_0</v>
+<v>PSOC_LAB2\UART_Application\System Reference Guides\cy_lfclk_v1_20</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\karasimsek_uygulama.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\karasimsek_uygulama.cydsn\karasimsek_uygulama.cydwr" />
+<name v=".\karasimsek_uygulama.cydsn\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="941, 560" SelectedTabbedMdiWindow="14010526-762e-45ad-9bdd-9efff4465a7b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0a0a9eb4-c96c-42d7-8d3a-7c442e8e39b6" /><DocumentWindow Key="D:\TUTORIALS\PSOC_LAB2\karasimsek_uygulama.cydsn\TopDesign\TopDesign.cysch" Guid="14010526-762e-45ad-9bdd-9efff4465a7b" /><DocumentWindow Key="D:\TUTORIALS\PSOC_LAB2\karasimsek_uygulama.cydsn\karasimsek_uygulama.cydwr" Guid="3d0d3b1e-9bf9-4b18-9475-0c14f0eb3339" /><DocumentWindow Key="D:\TUTORIALS\PSOC_LAB2\karasimsek_uygulama.cydsn\main.c" Guid="070911cf-d3aa-4c36-aa36-071a2dd723e7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

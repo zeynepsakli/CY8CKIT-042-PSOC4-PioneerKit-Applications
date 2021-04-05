@@ -1,0 +1,621 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB32:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * zeysaklii@gmail.com, 2021
+   4:main.c        ****  * Open Source
+   5:main.c        ****  * 
+   6:main.c        ****  *
+   7:main.c        ****  * 
+   8:main.c        ****  * 
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        ****    
+  14:main.c        **** 
+  15:main.c        ****     // 0'dan 9'a kadar sayması için pinleri yakacak dizi oluşturuldu.
+  16:main.c        ****     const char dizi[]={0x40,0x79,0x24,0x30,0x19,0x12,0x02,0x78,0x00,0x18};
+  17:main.c        **** int main(void)
+  18:main.c        **** {
+  28              		.loc 1 18 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  19:main.c        ****     CyGlobalIntEnable; //Genel Kesme
+  36              		.loc 1 19 0
+  37              		.syntax divided
+  38              	@ 19 "main.c" 1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 2
+
+
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+  41              		.thumb
+  42              		.syntax unified
+  43              	.L4:
+  44              	.LVL0:
+  20:main.c        ****    int i;     //for döngüsü için değişken atandı
+  21:main.c        ****     for(;;)   
+  22:main.c        ****     {   for(i=0;i<10;i++)  // i değişkeni 10dan küçük olana kadar dönecek
+  45              		.loc 1 22 0
+  46 0004 0024     		movs	r4, #0
+  47 0006 08E0     		b	.L2
+  48              	.LVL1:
+  49              	.L3:
+  23:main.c        ****     {
+  24:main.c        ****         Segment_disp_Write(dizi[i]);   // Seven segmentte ledleri yakacak komut
+  50              		.loc 1 24 0 discriminator 3
+  51 0008 054B     		ldr	r3, .L5
+  52 000a 185D     		ldrb	r0, [r3, r4]
+  53 000c FFF7FEFF 		bl	Segment_disp_Write
+  54              	.LVL2:
+  25:main.c        ****         CyDelay(500);             //Akışı görmek adına 500 ms bekleme komutu
+  55              		.loc 1 25 0 discriminator 3
+  56 0010 FA20     		movs	r0, #250
+  57 0012 4000     		lsls	r0, r0, #1
+  58 0014 FFF7FEFF 		bl	CyDelay
+  59              	.LVL3:
+  22:main.c        ****     {
+  60              		.loc 1 22 0 discriminator 3
+  61 0018 0134     		adds	r4, r4, #1
+  62              	.LVL4:
+  63              	.L2:
+  22:main.c        ****     {
+  64              		.loc 1 22 0 is_stmt 0 discriminator 1
+  65 001a 092C     		cmp	r4, #9
+  66 001c F4DD     		ble	.L3
+  67 001e F1E7     		b	.L4
+  68              	.L6:
+  69              		.align	2
+  70              	.L5:
+  71 0020 00000000 		.word	.LANCHOR0
+  72              		.cfi_endproc
+  73              	.LFE32:
+  74              		.size	main, .-main
+  75              		.global	dizi
+  76              		.section	.rodata
+  77              		.align	2
+  78              		.set	.LANCHOR0,. + 0
+  79              		.type	dizi, %object
+  80              		.size	dizi, 10
+  81              	dizi:
+  82 0000 40       		.byte	64
+  83 0001 79       		.byte	121
+  84 0002 24       		.byte	36
+  85 0003 30       		.byte	48
+  86 0004 19       		.byte	25
+  87 0005 12       		.byte	18
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 3
+
+
+  88 0006 02       		.byte	2
+  89 0007 78       		.byte	120
+  90 0008 00       		.byte	0
+  91 0009 18       		.byte	24
+  92              		.text
+  93              	.Letext0:
+  94              		.file 2 "Generated_Source\\PSoC4/Segment_disp.h"
+  95              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+  96              		.section	.debug_info,"",%progbits
+  97              	.Ldebug_info0:
+  98 0000 20010000 		.4byte	0x120
+  99 0004 0400     		.2byte	0x4
+ 100 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 101 000a 04       		.byte	0x4
+ 102 000b 01       		.uleb128 0x1
+ 103 000c B4000000 		.4byte	.LASF16
+ 104 0010 0C       		.byte	0xc
+ 105 0011 1B000000 		.4byte	.LASF17
+ 106 0015 7A000000 		.4byte	.LASF18
+ 107 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 108 001d 00000000 		.4byte	0
+ 109 0021 00000000 		.4byte	.Ldebug_line0
+ 110 0025 02       		.uleb128 0x2
+ 111 0026 01       		.byte	0x1
+ 112 0027 06       		.byte	0x6
+ 113 0028 55010000 		.4byte	.LASF0
+ 114 002c 02       		.uleb128 0x2
+ 115 002d 01       		.byte	0x1
+ 116 002e 08       		.byte	0x8
+ 117 002f 5E000000 		.4byte	.LASF1
+ 118 0033 02       		.uleb128 0x2
+ 119 0034 02       		.byte	0x2
+ 120 0035 05       		.byte	0x5
+ 121 0036 80010000 		.4byte	.LASF2
+ 122 003a 02       		.uleb128 0x2
+ 123 003b 02       		.byte	0x2
+ 124 003c 07       		.byte	0x7
+ 125 003d 42010000 		.4byte	.LASF3
+ 126 0041 02       		.uleb128 0x2
+ 127 0042 04       		.byte	0x4
+ 128 0043 05       		.byte	0x5
+ 129 0044 71000000 		.4byte	.LASF4
+ 130 0048 02       		.uleb128 0x2
+ 131 0049 04       		.byte	0x4
+ 132 004a 07       		.byte	0x7
+ 133 004b 2F000000 		.4byte	.LASF5
+ 134 004f 02       		.uleb128 0x2
+ 135 0050 08       		.byte	0x8
+ 136 0051 05       		.byte	0x5
+ 137 0052 00000000 		.4byte	.LASF6
+ 138 0056 02       		.uleb128 0x2
+ 139 0057 08       		.byte	0x8
+ 140 0058 07       		.byte	0x7
+ 141 0059 41000000 		.4byte	.LASF7
+ 142 005d 03       		.uleb128 0x3
+ 143 005e 04       		.byte	0x4
+ 144 005f 05       		.byte	0x5
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 4
+
+
+ 145 0060 696E7400 		.ascii	"int\000"
+ 146 0064 02       		.uleb128 0x2
+ 147 0065 04       		.byte	0x4
+ 148 0066 07       		.byte	0x7
+ 149 0067 0E000000 		.4byte	.LASF8
+ 150 006b 02       		.uleb128 0x2
+ 151 006c 04       		.byte	0x4
+ 152 006d 04       		.byte	0x4
+ 153 006e 58000000 		.4byte	.LASF9
+ 154 0072 02       		.uleb128 0x2
+ 155 0073 08       		.byte	0x8
+ 156 0074 04       		.byte	0x4
+ 157 0075 AD000000 		.4byte	.LASF10
+ 158 0079 02       		.uleb128 0x2
+ 159 007a 01       		.byte	0x1
+ 160 007b 08       		.byte	0x8
+ 161 007c 6C000000 		.4byte	.LASF11
+ 162 0080 02       		.uleb128 0x2
+ 163 0081 04       		.byte	0x4
+ 164 0082 07       		.byte	0x7
+ 165 0083 8F010000 		.4byte	.LASF12
+ 166 0087 02       		.uleb128 0x2
+ 167 0088 08       		.byte	0x8
+ 168 0089 04       		.byte	0x4
+ 169 008a 74010000 		.4byte	.LASF13
+ 170 008e 04       		.uleb128 0x4
+ 171 008f 79000000 		.4byte	0x79
+ 172 0093 05       		.uleb128 0x5
+ 173 0094 22000000 		.4byte	.LASF19
+ 174 0098 01       		.byte	0x1
+ 175 0099 11       		.byte	0x11
+ 176 009a 5D000000 		.4byte	0x5d
+ 177 009e 00000000 		.4byte	.LFB32
+ 178 00a2 24000000 		.4byte	.LFE32-.LFB32
+ 179 00a6 01       		.uleb128 0x1
+ 180 00a7 9C       		.byte	0x9c
+ 181 00a8 E7000000 		.4byte	0xe7
+ 182 00ac 06       		.uleb128 0x6
+ 183 00ad 6900     		.ascii	"i\000"
+ 184 00af 01       		.byte	0x1
+ 185 00b0 14       		.byte	0x14
+ 186 00b1 5D000000 		.4byte	0x5d
+ 187 00b5 00000000 		.4byte	.LLST0
+ 188 00b9 07       		.uleb128 0x7
+ 189 00ba 10000000 		.4byte	.LVL2
+ 190 00be 0D010000 		.4byte	0x10d
+ 191 00c2 D5000000 		.4byte	0xd5
+ 192 00c6 08       		.uleb128 0x8
+ 193 00c7 01       		.uleb128 0x1
+ 194 00c8 50       		.byte	0x50
+ 195 00c9 0A       		.uleb128 0xa
+ 196 00ca 74       		.byte	0x74
+ 197 00cb 00       		.sleb128 0
+ 198 00cc 03       		.byte	0x3
+ 199 00cd 00000000 		.4byte	.LANCHOR0
+ 200 00d1 22       		.byte	0x22
+ 201 00d2 94       		.byte	0x94
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 5
+
+
+ 202 00d3 01       		.byte	0x1
+ 203 00d4 00       		.byte	0
+ 204 00d5 09       		.uleb128 0x9
+ 205 00d6 18000000 		.4byte	.LVL3
+ 206 00da 18010000 		.4byte	0x118
+ 207 00de 08       		.uleb128 0x8
+ 208 00df 01       		.uleb128 0x1
+ 209 00e0 50       		.byte	0x50
+ 210 00e1 03       		.uleb128 0x3
+ 211 00e2 0A       		.byte	0xa
+ 212 00e3 F401     		.2byte	0x1f4
+ 213 00e5 00       		.byte	0
+ 214 00e6 00       		.byte	0
+ 215 00e7 0A       		.uleb128 0xa
+ 216 00e8 8E000000 		.4byte	0x8e
+ 217 00ec F7000000 		.4byte	0xf7
+ 218 00f0 0B       		.uleb128 0xb
+ 219 00f1 80000000 		.4byte	0x80
+ 220 00f5 09       		.byte	0x9
+ 221 00f6 00       		.byte	0
+ 222 00f7 0C       		.uleb128 0xc
+ 223 00f8 8A010000 		.4byte	.LASF20
+ 224 00fc 01       		.byte	0x1
+ 225 00fd 10       		.byte	0x10
+ 226 00fe 08010000 		.4byte	0x108
+ 227 0102 05       		.uleb128 0x5
+ 228 0103 03       		.byte	0x3
+ 229 0104 00000000 		.4byte	dizi
+ 230 0108 04       		.uleb128 0x4
+ 231 0109 E7000000 		.4byte	0xe7
+ 232 010d 0D       		.uleb128 0xd
+ 233 010e 61010000 		.4byte	.LASF14
+ 234 0112 61010000 		.4byte	.LASF14
+ 235 0116 02       		.byte	0x2
+ 236 0117 33       		.byte	0x33
+ 237 0118 0D       		.uleb128 0xd
+ 238 0119 27000000 		.4byte	.LASF15
+ 239 011d 27000000 		.4byte	.LASF15
+ 240 0121 03       		.byte	0x3
+ 241 0122 EC       		.byte	0xec
+ 242 0123 00       		.byte	0
+ 243              		.section	.debug_abbrev,"",%progbits
+ 244              	.Ldebug_abbrev0:
+ 245 0000 01       		.uleb128 0x1
+ 246 0001 11       		.uleb128 0x11
+ 247 0002 01       		.byte	0x1
+ 248 0003 25       		.uleb128 0x25
+ 249 0004 0E       		.uleb128 0xe
+ 250 0005 13       		.uleb128 0x13
+ 251 0006 0B       		.uleb128 0xb
+ 252 0007 03       		.uleb128 0x3
+ 253 0008 0E       		.uleb128 0xe
+ 254 0009 1B       		.uleb128 0x1b
+ 255 000a 0E       		.uleb128 0xe
+ 256 000b 55       		.uleb128 0x55
+ 257 000c 17       		.uleb128 0x17
+ 258 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 6
+
+
+ 259 000e 01       		.uleb128 0x1
+ 260 000f 10       		.uleb128 0x10
+ 261 0010 17       		.uleb128 0x17
+ 262 0011 00       		.byte	0
+ 263 0012 00       		.byte	0
+ 264 0013 02       		.uleb128 0x2
+ 265 0014 24       		.uleb128 0x24
+ 266 0015 00       		.byte	0
+ 267 0016 0B       		.uleb128 0xb
+ 268 0017 0B       		.uleb128 0xb
+ 269 0018 3E       		.uleb128 0x3e
+ 270 0019 0B       		.uleb128 0xb
+ 271 001a 03       		.uleb128 0x3
+ 272 001b 0E       		.uleb128 0xe
+ 273 001c 00       		.byte	0
+ 274 001d 00       		.byte	0
+ 275 001e 03       		.uleb128 0x3
+ 276 001f 24       		.uleb128 0x24
+ 277 0020 00       		.byte	0
+ 278 0021 0B       		.uleb128 0xb
+ 279 0022 0B       		.uleb128 0xb
+ 280 0023 3E       		.uleb128 0x3e
+ 281 0024 0B       		.uleb128 0xb
+ 282 0025 03       		.uleb128 0x3
+ 283 0026 08       		.uleb128 0x8
+ 284 0027 00       		.byte	0
+ 285 0028 00       		.byte	0
+ 286 0029 04       		.uleb128 0x4
+ 287 002a 26       		.uleb128 0x26
+ 288 002b 00       		.byte	0
+ 289 002c 49       		.uleb128 0x49
+ 290 002d 13       		.uleb128 0x13
+ 291 002e 00       		.byte	0
+ 292 002f 00       		.byte	0
+ 293 0030 05       		.uleb128 0x5
+ 294 0031 2E       		.uleb128 0x2e
+ 295 0032 01       		.byte	0x1
+ 296 0033 3F       		.uleb128 0x3f
+ 297 0034 19       		.uleb128 0x19
+ 298 0035 03       		.uleb128 0x3
+ 299 0036 0E       		.uleb128 0xe
+ 300 0037 3A       		.uleb128 0x3a
+ 301 0038 0B       		.uleb128 0xb
+ 302 0039 3B       		.uleb128 0x3b
+ 303 003a 0B       		.uleb128 0xb
+ 304 003b 27       		.uleb128 0x27
+ 305 003c 19       		.uleb128 0x19
+ 306 003d 49       		.uleb128 0x49
+ 307 003e 13       		.uleb128 0x13
+ 308 003f 8701     		.uleb128 0x87
+ 309 0041 19       		.uleb128 0x19
+ 310 0042 11       		.uleb128 0x11
+ 311 0043 01       		.uleb128 0x1
+ 312 0044 12       		.uleb128 0x12
+ 313 0045 06       		.uleb128 0x6
+ 314 0046 40       		.uleb128 0x40
+ 315 0047 18       		.uleb128 0x18
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 7
+
+
+ 316 0048 9742     		.uleb128 0x2117
+ 317 004a 19       		.uleb128 0x19
+ 318 004b 01       		.uleb128 0x1
+ 319 004c 13       		.uleb128 0x13
+ 320 004d 00       		.byte	0
+ 321 004e 00       		.byte	0
+ 322 004f 06       		.uleb128 0x6
+ 323 0050 34       		.uleb128 0x34
+ 324 0051 00       		.byte	0
+ 325 0052 03       		.uleb128 0x3
+ 326 0053 08       		.uleb128 0x8
+ 327 0054 3A       		.uleb128 0x3a
+ 328 0055 0B       		.uleb128 0xb
+ 329 0056 3B       		.uleb128 0x3b
+ 330 0057 0B       		.uleb128 0xb
+ 331 0058 49       		.uleb128 0x49
+ 332 0059 13       		.uleb128 0x13
+ 333 005a 02       		.uleb128 0x2
+ 334 005b 17       		.uleb128 0x17
+ 335 005c 00       		.byte	0
+ 336 005d 00       		.byte	0
+ 337 005e 07       		.uleb128 0x7
+ 338 005f 898201   		.uleb128 0x4109
+ 339 0062 01       		.byte	0x1
+ 340 0063 11       		.uleb128 0x11
+ 341 0064 01       		.uleb128 0x1
+ 342 0065 31       		.uleb128 0x31
+ 343 0066 13       		.uleb128 0x13
+ 344 0067 01       		.uleb128 0x1
+ 345 0068 13       		.uleb128 0x13
+ 346 0069 00       		.byte	0
+ 347 006a 00       		.byte	0
+ 348 006b 08       		.uleb128 0x8
+ 349 006c 8A8201   		.uleb128 0x410a
+ 350 006f 00       		.byte	0
+ 351 0070 02       		.uleb128 0x2
+ 352 0071 18       		.uleb128 0x18
+ 353 0072 9142     		.uleb128 0x2111
+ 354 0074 18       		.uleb128 0x18
+ 355 0075 00       		.byte	0
+ 356 0076 00       		.byte	0
+ 357 0077 09       		.uleb128 0x9
+ 358 0078 898201   		.uleb128 0x4109
+ 359 007b 01       		.byte	0x1
+ 360 007c 11       		.uleb128 0x11
+ 361 007d 01       		.uleb128 0x1
+ 362 007e 31       		.uleb128 0x31
+ 363 007f 13       		.uleb128 0x13
+ 364 0080 00       		.byte	0
+ 365 0081 00       		.byte	0
+ 366 0082 0A       		.uleb128 0xa
+ 367 0083 01       		.uleb128 0x1
+ 368 0084 01       		.byte	0x1
+ 369 0085 49       		.uleb128 0x49
+ 370 0086 13       		.uleb128 0x13
+ 371 0087 01       		.uleb128 0x1
+ 372 0088 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 8
+
+
+ 373 0089 00       		.byte	0
+ 374 008a 00       		.byte	0
+ 375 008b 0B       		.uleb128 0xb
+ 376 008c 21       		.uleb128 0x21
+ 377 008d 00       		.byte	0
+ 378 008e 49       		.uleb128 0x49
+ 379 008f 13       		.uleb128 0x13
+ 380 0090 2F       		.uleb128 0x2f
+ 381 0091 0B       		.uleb128 0xb
+ 382 0092 00       		.byte	0
+ 383 0093 00       		.byte	0
+ 384 0094 0C       		.uleb128 0xc
+ 385 0095 34       		.uleb128 0x34
+ 386 0096 00       		.byte	0
+ 387 0097 03       		.uleb128 0x3
+ 388 0098 0E       		.uleb128 0xe
+ 389 0099 3A       		.uleb128 0x3a
+ 390 009a 0B       		.uleb128 0xb
+ 391 009b 3B       		.uleb128 0x3b
+ 392 009c 0B       		.uleb128 0xb
+ 393 009d 49       		.uleb128 0x49
+ 394 009e 13       		.uleb128 0x13
+ 395 009f 3F       		.uleb128 0x3f
+ 396 00a0 19       		.uleb128 0x19
+ 397 00a1 02       		.uleb128 0x2
+ 398 00a2 18       		.uleb128 0x18
+ 399 00a3 00       		.byte	0
+ 400 00a4 00       		.byte	0
+ 401 00a5 0D       		.uleb128 0xd
+ 402 00a6 2E       		.uleb128 0x2e
+ 403 00a7 00       		.byte	0
+ 404 00a8 3F       		.uleb128 0x3f
+ 405 00a9 19       		.uleb128 0x19
+ 406 00aa 3C       		.uleb128 0x3c
+ 407 00ab 19       		.uleb128 0x19
+ 408 00ac 6E       		.uleb128 0x6e
+ 409 00ad 0E       		.uleb128 0xe
+ 410 00ae 03       		.uleb128 0x3
+ 411 00af 0E       		.uleb128 0xe
+ 412 00b0 3A       		.uleb128 0x3a
+ 413 00b1 0B       		.uleb128 0xb
+ 414 00b2 3B       		.uleb128 0x3b
+ 415 00b3 0B       		.uleb128 0xb
+ 416 00b4 00       		.byte	0
+ 417 00b5 00       		.byte	0
+ 418 00b6 00       		.byte	0
+ 419              		.section	.debug_loc,"",%progbits
+ 420              	.Ldebug_loc0:
+ 421              	.LLST0:
+ 422 0000 04000000 		.4byte	.LVL0
+ 423 0004 08000000 		.4byte	.LVL1
+ 424 0008 0200     		.2byte	0x2
+ 425 000a 30       		.byte	0x30
+ 426 000b 9F       		.byte	0x9f
+ 427 000c 08000000 		.4byte	.LVL1
+ 428 0010 24000000 		.4byte	.LFE32
+ 429 0014 0100     		.2byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 9
+
+
+ 430 0016 54       		.byte	0x54
+ 431 0017 00000000 		.4byte	0
+ 432 001b 00000000 		.4byte	0
+ 433              		.section	.debug_aranges,"",%progbits
+ 434 0000 1C000000 		.4byte	0x1c
+ 435 0004 0200     		.2byte	0x2
+ 436 0006 00000000 		.4byte	.Ldebug_info0
+ 437 000a 04       		.byte	0x4
+ 438 000b 00       		.byte	0
+ 439 000c 0000     		.2byte	0
+ 440 000e 0000     		.2byte	0
+ 441 0010 00000000 		.4byte	.LFB32
+ 442 0014 24000000 		.4byte	.LFE32-.LFB32
+ 443 0018 00000000 		.4byte	0
+ 444 001c 00000000 		.4byte	0
+ 445              		.section	.debug_ranges,"",%progbits
+ 446              	.Ldebug_ranges0:
+ 447 0000 00000000 		.4byte	.LFB32
+ 448 0004 24000000 		.4byte	.LFE32
+ 449 0008 00000000 		.4byte	0
+ 450 000c 00000000 		.4byte	0
+ 451              		.section	.debug_line,"",%progbits
+ 452              	.Ldebug_line0:
+ 453 0000 7D000000 		.section	.debug_str,"MS",%progbits,1
+ 453      02005100 
+ 453      00000201 
+ 453      FB0E0D00 
+ 453      01010101 
+ 454              	.LASF6:
+ 455 0000 6C6F6E67 		.ascii	"long long int\000"
+ 455      206C6F6E 
+ 455      6720696E 
+ 455      7400
+ 456              	.LASF8:
+ 457 000e 756E7369 		.ascii	"unsigned int\000"
+ 457      676E6564 
+ 457      20696E74 
+ 457      00
+ 458              	.LASF17:
+ 459 001b 6D61696E 		.ascii	"main.c\000"
+ 459      2E6300
+ 460              	.LASF19:
+ 461 0022 6D61696E 		.ascii	"main\000"
+ 461      00
+ 462              	.LASF15:
+ 463 0027 43794465 		.ascii	"CyDelay\000"
+ 463      6C617900 
+ 464              	.LASF5:
+ 465 002f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 465      20756E73 
+ 465      69676E65 
+ 465      6420696E 
+ 465      7400
+ 466              	.LASF7:
+ 467 0041 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 467      206C6F6E 
+ 467      6720756E 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 10
+
+
+ 467      7369676E 
+ 467      65642069 
+ 468              	.LASF9:
+ 469 0058 666C6F61 		.ascii	"float\000"
+ 469      7400
+ 470              	.LASF1:
+ 471 005e 756E7369 		.ascii	"unsigned char\000"
+ 471      676E6564 
+ 471      20636861 
+ 471      7200
+ 472              	.LASF11:
+ 473 006c 63686172 		.ascii	"char\000"
+ 473      00
+ 474              	.LASF4:
+ 475 0071 6C6F6E67 		.ascii	"long int\000"
+ 475      20696E74 
+ 475      00
+ 476              	.LASF18:
+ 477 007a 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB2\\Seven_Segment_Display.cyd"
+ 477      55544F52 
+ 477      49414C53 
+ 477      5C50534F 
+ 477      435F4C41 
+ 478 00aa 736E00   		.ascii	"sn\000"
+ 479              	.LASF10:
+ 480 00ad 646F7562 		.ascii	"double\000"
+ 480      6C6500
+ 481              	.LASF16:
+ 482 00b4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 482      43313120 
+ 482      352E342E 
+ 482      31203230 
+ 482      31363036 
+ 483 00e7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 483      20726576 
+ 483      6973696F 
+ 483      6E203233 
+ 483      37373135 
+ 484 011a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 484      66756E63 
+ 484      74696F6E 
+ 484      2D736563 
+ 484      74696F6E 
+ 485              	.LASF3:
+ 486 0142 73686F72 		.ascii	"short unsigned int\000"
+ 486      7420756E 
+ 486      7369676E 
+ 486      65642069 
+ 486      6E7400
+ 487              	.LASF0:
+ 488 0155 7369676E 		.ascii	"signed char\000"
+ 488      65642063 
+ 488      68617200 
+ 489              	.LASF14:
+ 490 0161 5365676D 		.ascii	"Segment_disp_Write\000"
+ 490      656E745F 
+ 490      64697370 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\ccaZhkEo.s 			page 11
+
+
+ 490      5F577269 
+ 490      746500
+ 491              	.LASF13:
+ 492 0174 6C6F6E67 		.ascii	"long double\000"
+ 492      20646F75 
+ 492      626C6500 
+ 493              	.LASF2:
+ 494 0180 73686F72 		.ascii	"short int\000"
+ 494      7420696E 
+ 494      7400
+ 495              	.LASF20:
+ 496 018a 64697A69 		.ascii	"dizi\000"
+ 496      00
+ 497              	.LASF12:
+ 498 018f 73697A65 		.ascii	"sizetype\000"
+ 498      74797065 
+ 498      00
+ 499              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

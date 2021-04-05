@@ -1,0 +1,702 @@
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB32:
+  27              		.file 1 "main.c"
+   1:main.c        **** 
+   2:main.c        **** #include "project.h"
+   3:main.c        **** 
+   4:main.c        **** int main(void)
+   5:main.c        **** {
+  28              		.loc 1 5 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   6:main.c        ****     CyGlobalIntEnable; 
+  36              		.loc 1 6 0
+  37              		.syntax divided
+  38              	@ 6 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+   7:main.c        ****      
+   8:main.c        ****     CapSense_Start(); //Capsense modülü başlatılır.
+  41              		.loc 1 8 0
+  42              		.thumb
+  43              		.syntax unified
+  44 0004 FFF7FEFF 		bl	CapSense_Start
+  45              	.LVL0:
+   9:main.c        ****     CapSense_InitializeAllBaselines();
+  46              		.loc 1 9 0
+  47 0008 FFF7FEFF 		bl	CapSense_InitializeAllBaselines
+  48              	.LVL1:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 2
+
+
+  10:main.c        ****     CapSense_ScanEnabledWidgets(); //tarama özelliği başlatılır
+  49              		.loc 1 10 0
+  50 000c FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
+  51              	.LVL2:
+  11:main.c        ****     
+  12:main.c        ****     PWM_Start(); //pwm sinyali başlatılır.
+  52              		.loc 1 12 0
+  53 0010 FFF7FEFF 		bl	PWM_Start
+  54              	.LVL3:
+  55              	.L2:
+  13:main.c        **** 
+  14:main.c        ****     for(;;)
+  15:main.c        ****     {
+  16:main.c        ****         
+  17:main.c        ****         if( CapSense_IsBusy()==0) //tarama tamamlandığında yani cap sense busy değilse
+  56              		.loc 1 17 0
+  57 0014 FFF7FEFF 		bl	CapSense_IsBusy
+  58              	.LVL4:
+  59 0018 0028     		cmp	r0, #0
+  60 001a FBD1     		bne	.L2
+  61              	.LBB2:
+  18:main.c        ****         { 
+  19:main.c        ****             //slider'ın pozisyonunu alır.
+  20:main.c        ****              uint16 value=CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);
+  62              		.loc 1 20 0
+  63 001c FFF7FEFF 		bl	CapSense_GetCentroidPos
+  64              	.LVL5:
+  21:main.c        ****              //eğer ilgili pinlere dokunulmuyorsa 0xFFFF döndürür 
+  22:main.c        ****             if(value != 0xFFFF) //slider işlemi yapılıyorsa
+  65              		.loc 1 22 0
+  66 0020 064B     		ldr	r3, .L5
+  67 0022 9842     		cmp	r0, r3
+  68 0024 04D0     		beq	.L3
+  23:main.c        ****             { 
+  24:main.c        ****                 PWM_WriteCompare(value); //pwm sliderın konumuna göre 0 ile 100 arasında değiş
+  69              		.loc 1 24 0
+  70 0026 FFF7FEFF 		bl	PWM_WriteCompare
+  71              	.LVL6:
+  25:main.c        ****                  CyDelay(50); //Led parlaklığının azaldığını daha rahat gözlemlemek için
+  72              		.loc 1 25 0
+  73 002a 3220     		movs	r0, #50
+  74 002c FFF7FEFF 		bl	CyDelay
+  75              	.LVL7:
+  76              	.L3:
+  26:main.c        ****             }
+  27:main.c        ****             CapSense_UpdateEnabledBaselines(); //yeni tarama olursa druumu günceller 
+  77              		.loc 1 27 0
+  78 0030 FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
+  79              	.LVL8:
+  28:main.c        ****             CapSense_ScanEnabledWidgets(); //yeni tarama başlatılır
+  80              		.loc 1 28 0
+  81 0034 FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
+  82              	.LVL9:
+  83 0038 ECE7     		b	.L2
+  84              	.L6:
+  85 003a C046     		.align	2
+  86              	.L5:
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 3
+
+
+  87 003c FFFF0000 		.word	65535
+  88              	.LBE2:
+  89              		.cfi_endproc
+  90              	.LFE32:
+  91              		.size	main, .-main
+  92              		.text
+  93              	.Letext0:
+  94              		.file 2 "Generated_Source\\PSoC4/CapSense_CSHL.h"
+  95              		.file 3 "Generated_Source\\PSoC4/PWM.h"
+  96              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+  97              		.file 5 "Generated_Source\\PSoC4/CapSense.h"
+  98              		.file 6 "Generated_Source\\PSoC4/cytypes.h"
+  99              		.section	.debug_info,"",%progbits
+ 100              	.Ldebug_info0:
+ 101 0000 98010000 		.4byte	0x198
+ 102 0004 0400     		.2byte	0x4
+ 103 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 104 000a 04       		.byte	0x4
+ 105 000b 01       		.uleb128 0x1
+ 106 000c FF000000 		.4byte	.LASF23
+ 107 0010 0C       		.byte	0xc
+ 108 0011 1B000000 		.4byte	.LASF24
+ 109 0015 C8010000 		.4byte	.LASF25
+ 110 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 111 001d 00000000 		.4byte	0
+ 112 0021 00000000 		.4byte	.Ldebug_line0
+ 113 0025 02       		.uleb128 0x2
+ 114 0026 01       		.byte	0x1
+ 115 0027 06       		.byte	0x6
+ 116 0028 A0010000 		.4byte	.LASF0
+ 117 002c 02       		.uleb128 0x2
+ 118 002d 01       		.byte	0x1
+ 119 002e 08       		.byte	0x8
+ 120 002f A0000000 		.4byte	.LASF1
+ 121 0033 02       		.uleb128 0x2
+ 122 0034 02       		.byte	0x2
+ 123 0035 05       		.byte	0x5
+ 124 0036 12020000 		.4byte	.LASF2
+ 125 003a 02       		.uleb128 0x2
+ 126 003b 02       		.byte	0x2
+ 127 003c 07       		.byte	0x7
+ 128 003d 8D010000 		.4byte	.LASF3
+ 129 0041 02       		.uleb128 0x2
+ 130 0042 04       		.byte	0x4
+ 131 0043 05       		.byte	0x5
+ 132 0044 CF000000 		.4byte	.LASF4
+ 133 0048 02       		.uleb128 0x2
+ 134 0049 04       		.byte	0x4
+ 135 004a 07       		.byte	0x7
+ 136 004b 47000000 		.4byte	.LASF5
+ 137 004f 02       		.uleb128 0x2
+ 138 0050 08       		.byte	0x8
+ 139 0051 05       		.byte	0x5
+ 140 0052 00000000 		.4byte	.LASF6
+ 141 0056 02       		.uleb128 0x2
+ 142 0057 08       		.byte	0x8
+ 143 0058 07       		.byte	0x7
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 4
+
+
+ 144 0059 59000000 		.4byte	.LASF7
+ 145 005d 03       		.uleb128 0x3
+ 146 005e 04       		.byte	0x4
+ 147 005f 05       		.byte	0x5
+ 148 0060 696E7400 		.ascii	"int\000"
+ 149 0064 02       		.uleb128 0x2
+ 150 0065 04       		.byte	0x4
+ 151 0066 07       		.byte	0x7
+ 152 0067 0E000000 		.4byte	.LASF8
+ 153 006b 04       		.uleb128 0x4
+ 154 006c 1C020000 		.4byte	.LASF26
+ 155 0070 06       		.byte	0x6
+ 156 0071 FC01     		.2byte	0x1fc
+ 157 0073 3A000000 		.4byte	0x3a
+ 158 0077 02       		.uleb128 0x2
+ 159 0078 04       		.byte	0x4
+ 160 0079 04       		.byte	0x4
+ 161 007a 70000000 		.4byte	.LASF9
+ 162 007e 02       		.uleb128 0x2
+ 163 007f 08       		.byte	0x8
+ 164 0080 04       		.byte	0x4
+ 165 0081 D8000000 		.4byte	.LASF10
+ 166 0085 02       		.uleb128 0x2
+ 167 0086 01       		.byte	0x1
+ 168 0087 08       		.byte	0x8
+ 169 0088 AE000000 		.4byte	.LASF11
+ 170 008c 02       		.uleb128 0x2
+ 171 008d 08       		.byte	0x8
+ 172 008e 04       		.byte	0x4
+ 173 008f AC010000 		.4byte	.LASF12
+ 174 0093 02       		.uleb128 0x2
+ 175 0094 04       		.byte	0x4
+ 176 0095 07       		.byte	0x7
+ 177 0096 34020000 		.4byte	.LASF13
+ 178 009a 05       		.uleb128 0x5
+ 179 009b 3A000000 		.4byte	.LASF27
+ 180 009f 01       		.byte	0x1
+ 181 00a0 04       		.byte	0x4
+ 182 00a1 5D000000 		.4byte	0x5d
+ 183 00a5 00000000 		.4byte	.LFB32
+ 184 00a9 40000000 		.4byte	.LFE32-.LFB32
+ 185 00ad 01       		.uleb128 0x1
+ 186 00ae 9C       		.byte	0x9c
+ 187 00af 36010000 		.4byte	0x136
+ 188 00b3 06       		.uleb128 0x6
+ 189 00b4 1C000000 		.4byte	.LBB2
+ 190 00b8 24000000 		.4byte	.LBE2-.LBB2
+ 191 00bc 08010000 		.4byte	0x108
+ 192 00c0 07       		.uleb128 0x7
+ 193 00c1 0C020000 		.4byte	.LASF28
+ 194 00c5 01       		.byte	0x1
+ 195 00c6 14       		.byte	0x14
+ 196 00c7 6B000000 		.4byte	0x6b
+ 197 00cb 00000000 		.4byte	.LLST0
+ 198 00cf 08       		.uleb128 0x8
+ 199 00d0 20000000 		.4byte	.LVL5
+ 200 00d4 36010000 		.4byte	0x136
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 5
+
+
+ 201 00d8 08       		.uleb128 0x8
+ 202 00d9 2A000000 		.4byte	.LVL6
+ 203 00dd 41010000 		.4byte	0x141
+ 204 00e1 09       		.uleb128 0x9
+ 205 00e2 30000000 		.4byte	.LVL7
+ 206 00e6 4D010000 		.4byte	0x14d
+ 207 00ea F5000000 		.4byte	0xf5
+ 208 00ee 0A       		.uleb128 0xa
+ 209 00ef 01       		.uleb128 0x1
+ 210 00f0 50       		.byte	0x50
+ 211 00f1 02       		.uleb128 0x2
+ 212 00f2 08       		.byte	0x8
+ 213 00f3 32       		.byte	0x32
+ 214 00f4 00       		.byte	0
+ 215 00f5 08       		.uleb128 0x8
+ 216 00f6 34000000 		.4byte	.LVL8
+ 217 00fa 58010000 		.4byte	0x158
+ 218 00fe 08       		.uleb128 0x8
+ 219 00ff 38000000 		.4byte	.LVL9
+ 220 0103 63010000 		.4byte	0x163
+ 221 0107 00       		.byte	0
+ 222 0108 08       		.uleb128 0x8
+ 223 0109 08000000 		.4byte	.LVL0
+ 224 010d 6E010000 		.4byte	0x16e
+ 225 0111 08       		.uleb128 0x8
+ 226 0112 0C000000 		.4byte	.LVL1
+ 227 0116 79010000 		.4byte	0x179
+ 228 011a 08       		.uleb128 0x8
+ 229 011b 10000000 		.4byte	.LVL2
+ 230 011f 63010000 		.4byte	0x163
+ 231 0123 08       		.uleb128 0x8
+ 232 0124 14000000 		.4byte	.LVL3
+ 233 0128 84010000 		.4byte	0x184
+ 234 012c 08       		.uleb128 0x8
+ 235 012d 18000000 		.4byte	.LVL4
+ 236 0131 90010000 		.4byte	0x190
+ 237 0135 00       		.byte	0
+ 238 0136 0B       		.uleb128 0xb
+ 239 0137 22000000 		.4byte	.LASF14
+ 240 013b 22000000 		.4byte	.LASF14
+ 241 013f 02       		.byte	0x2
+ 242 0140 E2       		.byte	0xe2
+ 243 0141 0C       		.uleb128 0xc
+ 244 0142 23020000 		.4byte	.LASF15
+ 245 0146 23020000 		.4byte	.LASF15
+ 246 014a 03       		.byte	0x3
+ 247 014b 5501     		.2byte	0x155
+ 248 014d 0B       		.uleb128 0xb
+ 249 014e 3F000000 		.4byte	.LASF16
+ 250 0152 3F000000 		.4byte	.LASF16
+ 251 0156 04       		.byte	0x4
+ 252 0157 EC       		.byte	0xec
+ 253 0158 0B       		.uleb128 0xb
+ 254 0159 DF000000 		.4byte	.LASF17
+ 255 015d DF000000 		.4byte	.LASF17
+ 256 0161 02       		.byte	0x2
+ 257 0162 AF       		.byte	0xaf
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 6
+
+
+ 258 0163 0B       		.uleb128 0xb
+ 259 0164 B3000000 		.4byte	.LASF18
+ 260 0168 B3000000 		.4byte	.LASF18
+ 261 016c 05       		.byte	0x5
+ 262 016d A2       		.byte	0xa2
+ 263 016e 0B       		.uleb128 0xb
+ 264 016f FD010000 		.4byte	.LASF19
+ 265 0173 FD010000 		.4byte	.LASF19
+ 266 0177 05       		.byte	0x5
+ 267 0178 99       		.byte	0x99
+ 268 0179 0B       		.uleb128 0xb
+ 269 017a 80000000 		.4byte	.LASF20
+ 270 017e 80000000 		.4byte	.LASF20
+ 271 0182 02       		.byte	0x2
+ 272 0183 AB       		.byte	0xab
+ 273 0184 0C       		.uleb128 0xc
+ 274 0185 76000000 		.4byte	.LASF21
+ 275 0189 76000000 		.4byte	.LASF21
+ 276 018d 03       		.byte	0x3
+ 277 018e 3201     		.2byte	0x132
+ 278 0190 0B       		.uleb128 0xb
+ 279 0191 B8010000 		.4byte	.LASF22
+ 280 0195 B8010000 		.4byte	.LASF22
+ 281 0199 05       		.byte	0x5
+ 282 019a 9F       		.byte	0x9f
+ 283 019b 00       		.byte	0
+ 284              		.section	.debug_abbrev,"",%progbits
+ 285              	.Ldebug_abbrev0:
+ 286 0000 01       		.uleb128 0x1
+ 287 0001 11       		.uleb128 0x11
+ 288 0002 01       		.byte	0x1
+ 289 0003 25       		.uleb128 0x25
+ 290 0004 0E       		.uleb128 0xe
+ 291 0005 13       		.uleb128 0x13
+ 292 0006 0B       		.uleb128 0xb
+ 293 0007 03       		.uleb128 0x3
+ 294 0008 0E       		.uleb128 0xe
+ 295 0009 1B       		.uleb128 0x1b
+ 296 000a 0E       		.uleb128 0xe
+ 297 000b 55       		.uleb128 0x55
+ 298 000c 17       		.uleb128 0x17
+ 299 000d 11       		.uleb128 0x11
+ 300 000e 01       		.uleb128 0x1
+ 301 000f 10       		.uleb128 0x10
+ 302 0010 17       		.uleb128 0x17
+ 303 0011 00       		.byte	0
+ 304 0012 00       		.byte	0
+ 305 0013 02       		.uleb128 0x2
+ 306 0014 24       		.uleb128 0x24
+ 307 0015 00       		.byte	0
+ 308 0016 0B       		.uleb128 0xb
+ 309 0017 0B       		.uleb128 0xb
+ 310 0018 3E       		.uleb128 0x3e
+ 311 0019 0B       		.uleb128 0xb
+ 312 001a 03       		.uleb128 0x3
+ 313 001b 0E       		.uleb128 0xe
+ 314 001c 00       		.byte	0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 7
+
+
+ 315 001d 00       		.byte	0
+ 316 001e 03       		.uleb128 0x3
+ 317 001f 24       		.uleb128 0x24
+ 318 0020 00       		.byte	0
+ 319 0021 0B       		.uleb128 0xb
+ 320 0022 0B       		.uleb128 0xb
+ 321 0023 3E       		.uleb128 0x3e
+ 322 0024 0B       		.uleb128 0xb
+ 323 0025 03       		.uleb128 0x3
+ 324 0026 08       		.uleb128 0x8
+ 325 0027 00       		.byte	0
+ 326 0028 00       		.byte	0
+ 327 0029 04       		.uleb128 0x4
+ 328 002a 16       		.uleb128 0x16
+ 329 002b 00       		.byte	0
+ 330 002c 03       		.uleb128 0x3
+ 331 002d 0E       		.uleb128 0xe
+ 332 002e 3A       		.uleb128 0x3a
+ 333 002f 0B       		.uleb128 0xb
+ 334 0030 3B       		.uleb128 0x3b
+ 335 0031 05       		.uleb128 0x5
+ 336 0032 49       		.uleb128 0x49
+ 337 0033 13       		.uleb128 0x13
+ 338 0034 00       		.byte	0
+ 339 0035 00       		.byte	0
+ 340 0036 05       		.uleb128 0x5
+ 341 0037 2E       		.uleb128 0x2e
+ 342 0038 01       		.byte	0x1
+ 343 0039 3F       		.uleb128 0x3f
+ 344 003a 19       		.uleb128 0x19
+ 345 003b 03       		.uleb128 0x3
+ 346 003c 0E       		.uleb128 0xe
+ 347 003d 3A       		.uleb128 0x3a
+ 348 003e 0B       		.uleb128 0xb
+ 349 003f 3B       		.uleb128 0x3b
+ 350 0040 0B       		.uleb128 0xb
+ 351 0041 27       		.uleb128 0x27
+ 352 0042 19       		.uleb128 0x19
+ 353 0043 49       		.uleb128 0x49
+ 354 0044 13       		.uleb128 0x13
+ 355 0045 8701     		.uleb128 0x87
+ 356 0047 19       		.uleb128 0x19
+ 357 0048 11       		.uleb128 0x11
+ 358 0049 01       		.uleb128 0x1
+ 359 004a 12       		.uleb128 0x12
+ 360 004b 06       		.uleb128 0x6
+ 361 004c 40       		.uleb128 0x40
+ 362 004d 18       		.uleb128 0x18
+ 363 004e 9742     		.uleb128 0x2117
+ 364 0050 19       		.uleb128 0x19
+ 365 0051 01       		.uleb128 0x1
+ 366 0052 13       		.uleb128 0x13
+ 367 0053 00       		.byte	0
+ 368 0054 00       		.byte	0
+ 369 0055 06       		.uleb128 0x6
+ 370 0056 0B       		.uleb128 0xb
+ 371 0057 01       		.byte	0x1
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 8
+
+
+ 372 0058 11       		.uleb128 0x11
+ 373 0059 01       		.uleb128 0x1
+ 374 005a 12       		.uleb128 0x12
+ 375 005b 06       		.uleb128 0x6
+ 376 005c 01       		.uleb128 0x1
+ 377 005d 13       		.uleb128 0x13
+ 378 005e 00       		.byte	0
+ 379 005f 00       		.byte	0
+ 380 0060 07       		.uleb128 0x7
+ 381 0061 34       		.uleb128 0x34
+ 382 0062 00       		.byte	0
+ 383 0063 03       		.uleb128 0x3
+ 384 0064 0E       		.uleb128 0xe
+ 385 0065 3A       		.uleb128 0x3a
+ 386 0066 0B       		.uleb128 0xb
+ 387 0067 3B       		.uleb128 0x3b
+ 388 0068 0B       		.uleb128 0xb
+ 389 0069 49       		.uleb128 0x49
+ 390 006a 13       		.uleb128 0x13
+ 391 006b 02       		.uleb128 0x2
+ 392 006c 17       		.uleb128 0x17
+ 393 006d 00       		.byte	0
+ 394 006e 00       		.byte	0
+ 395 006f 08       		.uleb128 0x8
+ 396 0070 898201   		.uleb128 0x4109
+ 397 0073 00       		.byte	0
+ 398 0074 11       		.uleb128 0x11
+ 399 0075 01       		.uleb128 0x1
+ 400 0076 31       		.uleb128 0x31
+ 401 0077 13       		.uleb128 0x13
+ 402 0078 00       		.byte	0
+ 403 0079 00       		.byte	0
+ 404 007a 09       		.uleb128 0x9
+ 405 007b 898201   		.uleb128 0x4109
+ 406 007e 01       		.byte	0x1
+ 407 007f 11       		.uleb128 0x11
+ 408 0080 01       		.uleb128 0x1
+ 409 0081 31       		.uleb128 0x31
+ 410 0082 13       		.uleb128 0x13
+ 411 0083 01       		.uleb128 0x1
+ 412 0084 13       		.uleb128 0x13
+ 413 0085 00       		.byte	0
+ 414 0086 00       		.byte	0
+ 415 0087 0A       		.uleb128 0xa
+ 416 0088 8A8201   		.uleb128 0x410a
+ 417 008b 00       		.byte	0
+ 418 008c 02       		.uleb128 0x2
+ 419 008d 18       		.uleb128 0x18
+ 420 008e 9142     		.uleb128 0x2111
+ 421 0090 18       		.uleb128 0x18
+ 422 0091 00       		.byte	0
+ 423 0092 00       		.byte	0
+ 424 0093 0B       		.uleb128 0xb
+ 425 0094 2E       		.uleb128 0x2e
+ 426 0095 00       		.byte	0
+ 427 0096 3F       		.uleb128 0x3f
+ 428 0097 19       		.uleb128 0x19
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 9
+
+
+ 429 0098 3C       		.uleb128 0x3c
+ 430 0099 19       		.uleb128 0x19
+ 431 009a 6E       		.uleb128 0x6e
+ 432 009b 0E       		.uleb128 0xe
+ 433 009c 03       		.uleb128 0x3
+ 434 009d 0E       		.uleb128 0xe
+ 435 009e 3A       		.uleb128 0x3a
+ 436 009f 0B       		.uleb128 0xb
+ 437 00a0 3B       		.uleb128 0x3b
+ 438 00a1 0B       		.uleb128 0xb
+ 439 00a2 00       		.byte	0
+ 440 00a3 00       		.byte	0
+ 441 00a4 0C       		.uleb128 0xc
+ 442 00a5 2E       		.uleb128 0x2e
+ 443 00a6 00       		.byte	0
+ 444 00a7 3F       		.uleb128 0x3f
+ 445 00a8 19       		.uleb128 0x19
+ 446 00a9 3C       		.uleb128 0x3c
+ 447 00aa 19       		.uleb128 0x19
+ 448 00ab 6E       		.uleb128 0x6e
+ 449 00ac 0E       		.uleb128 0xe
+ 450 00ad 03       		.uleb128 0x3
+ 451 00ae 0E       		.uleb128 0xe
+ 452 00af 3A       		.uleb128 0x3a
+ 453 00b0 0B       		.uleb128 0xb
+ 454 00b1 3B       		.uleb128 0x3b
+ 455 00b2 05       		.uleb128 0x5
+ 456 00b3 00       		.byte	0
+ 457 00b4 00       		.byte	0
+ 458 00b5 00       		.byte	0
+ 459              		.section	.debug_loc,"",%progbits
+ 460              	.Ldebug_loc0:
+ 461              	.LLST0:
+ 462 0000 20000000 		.4byte	.LVL5
+ 463 0004 29000000 		.4byte	.LVL6-1
+ 464 0008 0100     		.2byte	0x1
+ 465 000a 50       		.byte	0x50
+ 466 000b 00000000 		.4byte	0
+ 467 000f 00000000 		.4byte	0
+ 468              		.section	.debug_aranges,"",%progbits
+ 469 0000 1C000000 		.4byte	0x1c
+ 470 0004 0200     		.2byte	0x2
+ 471 0006 00000000 		.4byte	.Ldebug_info0
+ 472 000a 04       		.byte	0x4
+ 473 000b 00       		.byte	0
+ 474 000c 0000     		.2byte	0
+ 475 000e 0000     		.2byte	0
+ 476 0010 00000000 		.4byte	.LFB32
+ 477 0014 40000000 		.4byte	.LFE32-.LFB32
+ 478 0018 00000000 		.4byte	0
+ 479 001c 00000000 		.4byte	0
+ 480              		.section	.debug_ranges,"",%progbits
+ 481              	.Ldebug_ranges0:
+ 482 0000 00000000 		.4byte	.LFB32
+ 483 0004 40000000 		.4byte	.LFE32
+ 484 0008 00000000 		.4byte	0
+ 485 000c 00000000 		.4byte	0
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 10
+
+
+ 486              		.section	.debug_line,"",%progbits
+ 487              	.Ldebug_line0:
+ 488 0000 95000000 		.section	.debug_str,"MS",%progbits,1
+ 488      02007600 
+ 488      00000201 
+ 488      FB0E0D00 
+ 488      01010101 
+ 489              	.LASF6:
+ 490 0000 6C6F6E67 		.ascii	"long long int\000"
+ 490      206C6F6E 
+ 490      6720696E 
+ 490      7400
+ 491              	.LASF8:
+ 492 000e 756E7369 		.ascii	"unsigned int\000"
+ 492      676E6564 
+ 492      20696E74 
+ 492      00
+ 493              	.LASF24:
+ 494 001b 6D61696E 		.ascii	"main.c\000"
+ 494      2E6300
+ 495              	.LASF14:
+ 496 0022 43617053 		.ascii	"CapSense_GetCentroidPos\000"
+ 496      656E7365 
+ 496      5F476574 
+ 496      43656E74 
+ 496      726F6964 
+ 497              	.LASF27:
+ 498 003a 6D61696E 		.ascii	"main\000"
+ 498      00
+ 499              	.LASF16:
+ 500 003f 43794465 		.ascii	"CyDelay\000"
+ 500      6C617900 
+ 501              	.LASF5:
+ 502 0047 6C6F6E67 		.ascii	"long unsigned int\000"
+ 502      20756E73 
+ 502      69676E65 
+ 502      6420696E 
+ 502      7400
+ 503              	.LASF7:
+ 504 0059 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 504      206C6F6E 
+ 504      6720756E 
+ 504      7369676E 
+ 504      65642069 
+ 505              	.LASF9:
+ 506 0070 666C6F61 		.ascii	"float\000"
+ 506      7400
+ 507              	.LASF21:
+ 508 0076 50574D5F 		.ascii	"PWM_Start\000"
+ 508      53746172 
+ 508      7400
+ 509              	.LASF20:
+ 510 0080 43617053 		.ascii	"CapSense_InitializeAllBaselines\000"
+ 510      656E7365 
+ 510      5F496E69 
+ 510      7469616C 
+ 510      697A6541 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 11
+
+
+ 511              	.LASF1:
+ 512 00a0 756E7369 		.ascii	"unsigned char\000"
+ 512      676E6564 
+ 512      20636861 
+ 512      7200
+ 513              	.LASF11:
+ 514 00ae 63686172 		.ascii	"char\000"
+ 514      00
+ 515              	.LASF18:
+ 516 00b3 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
+ 516      656E7365 
+ 516      5F536361 
+ 516      6E456E61 
+ 516      626C6564 
+ 517              	.LASF4:
+ 518 00cf 6C6F6E67 		.ascii	"long int\000"
+ 518      20696E74 
+ 518      00
+ 519              	.LASF10:
+ 520 00d8 646F7562 		.ascii	"double\000"
+ 520      6C6500
+ 521              	.LASF17:
+ 522 00df 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
+ 522      656E7365 
+ 522      5F557064 
+ 522      61746545 
+ 522      6E61626C 
+ 523              	.LASF23:
+ 524 00ff 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 524      43313120 
+ 524      352E342E 
+ 524      31203230 
+ 524      31363036 
+ 525 0132 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 525      20726576 
+ 525      6973696F 
+ 525      6E203233 
+ 525      37373135 
+ 526 0165 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 526      66756E63 
+ 526      74696F6E 
+ 526      2D736563 
+ 526      74696F6E 
+ 527              	.LASF3:
+ 528 018d 73686F72 		.ascii	"short unsigned int\000"
+ 528      7420756E 
+ 528      7369676E 
+ 528      65642069 
+ 528      6E7400
+ 529              	.LASF0:
+ 530 01a0 7369676E 		.ascii	"signed char\000"
+ 530      65642063 
+ 530      68617200 
+ 531              	.LASF12:
+ 532 01ac 6C6F6E67 		.ascii	"long double\000"
+ 532      20646F75 
+ 532      626C6500 
+ARM GAS  C:\Users\Zeynep\AppData\Local\Temp\cc6jklPd.s 			page 12
+
+
+ 533              	.LASF22:
+ 534 01b8 43617053 		.ascii	"CapSense_IsBusy\000"
+ 534      656E7365 
+ 534      5F497342 
+ 534      75737900 
+ 535              	.LASF25:
+ 536 01c8 443A5C54 		.ascii	"D:\\TUTORIALS\\PSOC_LAB3\\LAB_3_PSOC\\Capsense_049."
+ 536      55544F52 
+ 536      49414C53 
+ 536      5C50534F 
+ 536      435F4C41 
+ 537 01f7 63796473 		.ascii	"cydsn\000"
+ 537      6E00
+ 538              	.LASF19:
+ 539 01fd 43617053 		.ascii	"CapSense_Start\000"
+ 539      656E7365 
+ 539      5F537461 
+ 539      727400
+ 540              	.LASF28:
+ 541 020c 76616C75 		.ascii	"value\000"
+ 541      6500
+ 542              	.LASF2:
+ 543 0212 73686F72 		.ascii	"short int\000"
+ 543      7420696E 
+ 543      7400
+ 544              	.LASF26:
+ 545 021c 75696E74 		.ascii	"uint16\000"
+ 545      313600
+ 546              	.LASF15:
+ 547 0223 50574D5F 		.ascii	"PWM_WriteCompare\000"
+ 547      57726974 
+ 547      65436F6D 
+ 547      70617265 
+ 547      00
+ 548              	.LASF13:
+ 549 0234 73697A65 		.ascii	"sizetype\000"
+ 549      74797065 
+ 549      00
+ 550              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

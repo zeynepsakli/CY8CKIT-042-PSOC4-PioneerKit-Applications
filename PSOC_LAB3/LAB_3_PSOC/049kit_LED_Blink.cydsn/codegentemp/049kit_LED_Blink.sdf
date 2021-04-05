@@ -1,0 +1,19 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2021-04-05T17:27:25Z")
+ (DESIGN "049kit_LED_Blink")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "049kit_LED_Blink")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT Led_blink\(0\)_PAD Led_blink\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

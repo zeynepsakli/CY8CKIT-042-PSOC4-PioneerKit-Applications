@@ -1,0 +1,26 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2021-03-29T18:10:52Z")
+ (DESIGN "karasimsek_uygulama")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.4")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "karasimsek_uygulama")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT Ledler\(0\)_PAD Ledler\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(1\)_PAD Ledler\(1\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(2\)_PAD Ledler\(2\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(3\)_PAD Ledler\(3\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(4\)_PAD Ledler\(4\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(5\)_PAD Ledler\(5\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(6\)_PAD Ledler\(6\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Ledler\(7\)_PAD Ledler\(7\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

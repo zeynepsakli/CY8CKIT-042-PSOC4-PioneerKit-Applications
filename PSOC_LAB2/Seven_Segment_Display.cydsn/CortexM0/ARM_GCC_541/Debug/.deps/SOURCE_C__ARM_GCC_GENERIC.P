@@ -1,0 +1,88 @@
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Cm0Start.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/cyapicallbacks.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/Segment_disp.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_aliases.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_aliases.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/Segment_disp_PM.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_PM.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_aliases.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_PM.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyPm.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyPm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cy_em_eeprom.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/cyapicallbacks.h 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/CortexM0/ARM_GCC_541/Debug/main.o : D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/core_cm0.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/project.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyFlash.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/CyLib.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/Segment_disp_aliases.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyPm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cypins.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cytypes.h D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/main.c 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/TUTORIALS/PSOC_LAB2/Seven_Segment_Display.cydsn/main.c : 
+
